@@ -74,15 +74,17 @@ bash Scripts/check_local.sh          # testy regresji offline, bez konta i sieci
 
 FindHub Android powstał dzięki pracy autorów poniższych projektów. Pełne teksty licencji są w [`ACKNOWLEDGEMENTS-pl.txt`](App/Resources/Licenses/ACKNOWLEDGEMENTS-pl.txt) ([English](App/Resources/Licenses/ACKNOWLEDGEMENTS-en.txt)) oraz w aplikacji: **Ustawienia → Licencje i kod źródłowy**.
 
-| Projekt | Autorzy | Licencja | Zastosowanie |
-|---|---|---|---|
-| [GoogleFindMyTools](https://github.com/leonboe1/GoogleFindMyTools) | Leon Böttger (SEEMOO, TU Darmstadt) | GPL-3.0 | Definicje protokołu oraz przeniesiona logika logowania, Nova, Spot, kluczy i odszyfrowania raportów |
-| [firebase-messaging](https://github.com/sdb9696/firebase-messaging) | Matthieu Lemoine, Steven Beth | MIT | Rejestracja FCM i połączenie push MCS (port) |
-| [gpsoauth](https://github.com/simon-weber/gpsoauth) | Simon Weber | MIT | Wymiana tokenów konta Google (port) |
-| [encrypted-content-encoding](https://github.com/martinthomson/encrypted-content-encoding) | Martin Thomson | MIT | Odszyfrowanie Web Push `aesgcm` (port) |
-| [micro-ecc](https://github.com/kmackay/micro-ecc) | Kenneth MacKay | BSD-2-Clause | Operacje na krzywej eliptycznej SECP160r1 (dołączona biblioteka) |
-| [Chromium](https://chromium.googlesource.com/chromium/src) | The Chromium Authors | BSD-3-Clause | Definicje protobuf checkin i MCS |
-| [SwiftProtobuf](https://github.com/apple/swift-protobuf) | Apple Inc. i współtwórcy | Apache-2.0 | Biblioteka protobuf (Swift Package) |
+| Projekt | Autorzy | Licencja | Wersja | Zastosowanie |
+|---|---|---|---|---|
+| [GoogleFindMyTools](https://github.com/leonboe1/GoogleFindMyTools) | Leon Böttger (SEEMOO, TU Darmstadt) | GPL-3.0 | `d46e952` (2026-05-05) | Definicje protokołu oraz przeniesiona logika logowania, Nova, Spot, kluczy i odszyfrowania raportów |
+| [firebase-messaging](https://github.com/sdb9696/firebase-messaging) | Matthieu Lemoine, Steven Beth | MIT | z GoogleFindMyTools `d46e952` | Rejestracja FCM i połączenie push MCS (port) |
+| [gpsoauth](https://github.com/simon-weber/gpsoauth) | Simon Weber | MIT | 2.0.0 | Wymiana tokenów konta Google (port) |
+| [encrypted-content-encoding](https://github.com/web-push-libs/encrypted-content-encoding) | Martin Thomson | MIT | 1.2.1 | Odszyfrowanie Web Push `aesgcm` (port) |
+| [micro-ecc](https://github.com/kmackay/micro-ecc) | Kenneth MacKay | BSD-2-Clause | `541b3a7` (2024-11-14) | Operacje na krzywej eliptycznej SECP160r1 (dołączona biblioteka) |
+| [Chromium](https://chromium.googlesource.com/chromium/src/+/main/google_apis/gcm/protocol/) | The Chromium Authors | BSD-3-Clause | `main` | Definicje protobuf checkin i MCS |
+| [SwiftProtobuf](https://github.com/apple/swift-protobuf) | Apple Inc. i współtwórcy | Apache-2.0 | 1.38.1 | Biblioteka protobuf (Swift Package) |
+
+Wszystkie linki prowadzą do oryginalnych repozytoriów autorów. Wersje to dokładne rewizje, z których przeniesiono kod lub które dołączono; pliki micro-ecc sprawdzono bajt po bajcie (SHA-256) z repozytorium autora.
 
 Materiały referencyjne: [specyfikacja akcesoriów Find Hub](https://developers.google.com/nearby/fast-pair/specifications/extensions/fmdn), [IETF DULT](https://datatracker.ietf.org/wg/dult/about/), [Material Design 3](https://m3.material.io).
 

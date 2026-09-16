@@ -8,18 +8,19 @@ English version of this notice: NOTICE
 
 Produkt zawiera elementy następujących projektów lub na nich się opiera:
 
-- GoogleFindMyTools — Copyright (c) 2024 Leon Böttger — GPL-3.0
+- GoogleFindMyTools — Copyright (c) 2024 Leon Böttger — GPL-3.0 — commit d46e952
   https://github.com/leonboe1/GoogleFindMyTools
 - firebase-messaging — Copyright (c) 2017 Matthieu Lemoine, (c) 2023 Steven Beth — MIT
   https://github.com/sdb9696/firebase-messaging
-- gpsoauth — Copyright (c) 2015 Simon Weber — MIT
+- gpsoauth 2.0.0 — Copyright (c) 2015 Simon Weber — MIT
   https://github.com/simon-weber/gpsoauth
-- encrypted-content-encoding (http_ece) — Martin Thomson — MIT
-  https://github.com/martinthomson/encrypted-content-encoding
-- micro-ecc — Copyright (c) 2014 Kenneth MacKay — BSD-2-Clause
+- encrypted-content-encoding (http_ece) 1.2.1 — Martin Thomson — MIT
+  https://github.com/web-push-libs/encrypted-content-encoding
+- micro-ecc — Copyright (c) 2014 Kenneth MacKay — BSD-2-Clause — commit 541b3a7
   https://github.com/kmackay/micro-ecc
 - definicje protokołu checkin/MCS z Chromium — The Chromium Authors — BSD-3-Clause
-- SwiftProtobuf — Apple Inc. i autorzy projektu SwiftProtobuf — Apache-2.0
+  https://chromium.googlesource.com/chromium/src/+/main/google_apis/gcm/protocol/
+- SwiftProtobuf — Apple Inc. i autorzy projektu SwiftProtobuf — Apache-2.0 — 1.38.1
   https://github.com/apple/swift-protobuf
 
 Pełne teksty licencji: App/Resources/Licenses/ACKNOWLEDGEMENTS-pl.txt,

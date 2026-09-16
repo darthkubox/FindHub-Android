@@ -94,6 +94,11 @@ struct AccountSheet: View {
                         Divider().padding(.leading, 52)
                         actionRow("Ustawienia", "gearshape") { onSettings() }
                         Divider().padding(.leading, 52)
+                        NavigationLink { LegalInfoView() } label: {
+                            rowLabel("Informacje prawne i licencje", "doc.text", chevron: true)
+                        }
+                        .buttonStyle(.plain)
+                        Divider().padding(.leading, 52)
                         actionRow("Wyloguj się", "rectangle.portrait.and.arrow.right", destructive: true) {
                             model.logout(); dismiss()
                         }
@@ -112,16 +117,60 @@ struct AccountSheet: View {
     }
 
     private func actionRow(_ title: LocalizedStringKey, _ icon: String, destructive: Bool = false, _ action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            HStack(spacing: 14) {
-                Image(systemName: icon).frame(width: 24)
-                    .foregroundStyle(destructive ? Color.red : M3.primary(scheme))
-                Text(title).foregroundStyle(destructive ? Color.red : M3.onSurface(scheme))
-                Spacer()
+        Button(action: action) { rowLabel(title, icon, destructive: destructive) }
+            .buttonStyle(.plain)
+    }
+
+    private func rowLabel(_ title: LocalizedStringKey, _ icon: String, destructive: Bool = false, chevron: Bool = false) -> some View {
+        HStack(spacing: 14) {
+            Image(systemName: icon).frame(width: 24)
+                .foregroundStyle(destructive ? Color.red : M3.primary(scheme))
+            Text(title).foregroundStyle(destructive ? Color.red : M3.onSurface(scheme))
+            Spacer()
+            if chevron {
+                Image(systemName: "chevron.right")
+                    .font(.footnote.weight(.semibold)).foregroundStyle(M3.onSurfaceVariant(scheme))
             }
-            .padding(.horizontal, 16).padding(.vertical, 14).contentShape(Rectangle())
         }
-        .buttonStyle(.plain)
+        .padding(.horizontal, 16).padding(.vertical, 14).contentShape(Rectangle())
+    }
+}
+
+/// Privacy policy, terms of use, licences and publisher details in one place,
+/// reachable from the account menu and from Settings.
+struct LegalInfoView: View {
+    @Environment(\.colorScheme) private var scheme
+
+    var body: some View {
+        List {
+            Section {
+                ForEach(LegalDocument.allCases) { document in
+                    NavigationLink { LegalDocumentView(document: document) } label: {
+                        Label(document.title, systemImage: document == .privacy ? "hand.raised" : "doc.plaintext")
+                    }
+                }
+                NavigationLink { LicensesView() } label: {
+                    Label("Licencje i kod źródłowy", systemImage: "doc.text")
+                }
+            } footer: {
+                Text("FindHub Android to niezależna, nieoficjalna aplikacja wydawana przez mintstudio. Nie jest powiązana z Google, Motorola ani Apple. Find Hub i Android są znakami towarowymi Google LLC; nazwy służą wyłącznie opisaniu zgodności.")
+            }
+            Section("O aplikacji") {
+                LabeledContent("Wydawca", value: LicensesView.publisher)
+                if let contact = LicensesView.contactURL {
+                    Link(destination: contact) {
+                        Label(contact.absoluteString.replacingOccurrences(of: "mailto:", with: ""), systemImage: "envelope")
+                    }
+                }
+                if let source = LicensesView.sourceCodeURL {
+                    Link(destination: source) {
+                        Label("Kod źródłowy na GitHubie", systemImage: "chevron.left.forwardslash.chevron.right")
+                    }
+                }
+            }
+        }
+        .navigationTitle("Informacje prawne i licencje")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

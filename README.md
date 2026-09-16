@@ -74,15 +74,17 @@ bash Scripts/check_local.sh          # offline regression tests, no account or n
 
 FindHub Android stands on the work of these projects. Full licence texts are in [`ACKNOWLEDGEMENTS-en.txt`](App/Resources/Licenses/ACKNOWLEDGEMENTS-en.txt) ([Polish](App/Resources/Licenses/ACKNOWLEDGEMENTS-pl.txt)) and are shown in the app under **Settings → Licences and source code**.
 
-| Project | Authors | License | Used for |
-|---|---|---|---|
-| [GoogleFindMyTools](https://github.com/leonboe1/GoogleFindMyTools) | Leon Böttger (SEEMOO, TU Darmstadt) | GPL-3.0 | Protocol definitions and the ported auth, Nova, Spot, key and report-decryption logic |
-| [firebase-messaging](https://github.com/sdb9696/firebase-messaging) | Matthieu Lemoine, Steven Beth | MIT | FCM registration and MCS push connection (ported) |
-| [gpsoauth](https://github.com/simon-weber/gpsoauth) | Simon Weber | MIT | Google account token exchange (ported) |
-| [encrypted-content-encoding](https://github.com/martinthomson/encrypted-content-encoding) | Martin Thomson | MIT | Web Push `aesgcm` decryption (ported) |
-| [micro-ecc](https://github.com/kmackay/micro-ecc) | Kenneth MacKay | BSD-2-Clause | SECP160r1 elliptic-curve operations (bundled) |
-| [Chromium](https://chromium.googlesource.com/chromium/src) | The Chromium Authors | BSD-3-Clause | Checkin and MCS protobuf definitions |
-| [SwiftProtobuf](https://github.com/apple/swift-protobuf) | Apple Inc. and contributors | Apache-2.0 | Protobuf runtime (Swift Package) |
+| Project | Authors | License | Version | Used for |
+|---|---|---|---|---|
+| [GoogleFindMyTools](https://github.com/leonboe1/GoogleFindMyTools) | Leon Böttger (SEEMOO, TU Darmstadt) | GPL-3.0 | `d46e952` (2026-05-05) | Protocol definitions and the ported auth, Nova, Spot, key and report-decryption logic |
+| [firebase-messaging](https://github.com/sdb9696/firebase-messaging) | Matthieu Lemoine, Steven Beth | MIT | GoogleFindMyTools `d46e952` | FCM registration and MCS push connection (ported) |
+| [gpsoauth](https://github.com/simon-weber/gpsoauth) | Simon Weber | MIT | 2.0.0 | Google account token exchange (ported) |
+| [encrypted-content-encoding](https://github.com/web-push-libs/encrypted-content-encoding) | Martin Thomson | MIT | 1.2.1 | Web Push `aesgcm` decryption (ported) |
+| [micro-ecc](https://github.com/kmackay/micro-ecc) | Kenneth MacKay | BSD-2-Clause | `541b3a7` (2024-11-14) | SECP160r1 elliptic-curve operations (bundled) |
+| [Chromium](https://chromium.googlesource.com/chromium/src/+/main/google_apis/gcm/protocol/) | The Chromium Authors | BSD-3-Clause | `main` | Checkin and MCS protobuf definitions |
+| [SwiftProtobuf](https://github.com/apple/swift-protobuf) | Apple Inc. and contributors | Apache-2.0 | 1.38.1 | Protobuf runtime (Swift Package) |
+
+All links point to the original upstream repositories. Versions are the exact revisions this app was ported from or bundles; micro-ecc files were verified byte-for-byte (SHA-256) against upstream.
 
 References: [Find Hub Network Accessory Specification](https://developers.google.com/nearby/fast-pair/specifications/extensions/fmdn), [IETF DULT](https://datatracker.ietf.org/wg/dult/about/), [Material Design 3](https://m3.material.io).
 

@@ -30,6 +30,19 @@ final class LegalTests: XCTestCase {
             XCTAssertNotNil(Bundle.main.url(forResource: resource, withExtension: "txt"), "\(resource).txt missing")
         }
         XCTAssertNotNil(Bundle.main.url(forResource: "PrivacyInfo", withExtension: "xcprivacy"))
+
+        // Every upstream project shown in Settings is credited, with its link, in both licence files.
+        XCTAssertEqual(UpstreamProject.all.count, 7)
+        for language in ["pl", "en"] {
+            let url = try XCTUnwrap(Bundle.main.url(forResource: "ACKNOWLEDGEMENTS-\(language)", withExtension: "txt"))
+            let acknowledgements = try String(contentsOf: url, encoding: .utf8)
+            for project in UpstreamProject.all {
+                XCTAssertEqual(project.url.scheme, "https")
+                XCTAssertTrue(acknowledgements.contains(project.name.components(separatedBy: " (").first!), "\(language): \(project.name)")
+                XCTAssertTrue(acknowledgements.contains(project.url.absoluteString.trimmingCharacters(in: CharacterSet(charactersIn: "/"))),
+                              "\(language): link for \(project.name)")
+            }
+        }
         XCTAssertEqual(LicensesView.publisher, "mintstudio")
         XCTAssertEqual(LicensesView.sourceCodeURL?.host, "github.com")
 
@@ -55,6 +68,41 @@ final class LegalTests: XCTestCase {
         XCTAssertTrue(LegalConsent.isAccepted)
         UserDefaults.standard.set(LegalDocument.currentVersion - 1, forKey: key)
         XCTAssertFalse(LegalConsent.isAccepted, "an older acceptance must be renewed")
+    }
+}
+
+/// The account menu, legal screen and licences screen render; captures are kept
+/// as attachments (and written to MOTOHUB_SNAPSHOT_DIR when set) for review.
+final class LegalScreensTests: XCTestCase {
+    @MainActor
+    func testAccountMenuLegalAndLicenceScreens() async throws {
+        let model = AppModel()
+        let scene = try XCTUnwrap(UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.first)
+        let window = UIWindow(windowScene: scene)
+        defer { window.isHidden = true; window.rootViewController = nil }
+        let outputDirectory = ProcessInfo.processInfo.environment["MOTOHUB_SNAPSHOT_DIR"]
+        let screens: [(String, AnyView)] = [
+            ("account-menu", AnyView(AccountSheet(model: model, onAddAccount: {}, onSettings: {}))),
+            ("legal-info", AnyView(NavigationStack { LegalInfoView() })),
+            ("licences", AnyView(NavigationStack { LicensesView() })),
+        ]
+        for (name, view) in screens {
+            window.rootViewController = UIHostingController(rootView: view)
+            window.makeKeyAndVisible()
+            try await Task.sleep(for: .milliseconds(900))
+            window.layoutIfNeeded()
+            let image = UIGraphicsImageRenderer(bounds: window.bounds).image { _ in
+                window.drawHierarchy(in: window.bounds, afterScreenUpdates: true)
+            }
+            XCTAssertGreaterThan(image.size.height, 0)
+            let attachment = XCTAttachment(image: image)
+            attachment.name = name
+            attachment.lifetime = .keepAlways
+            add(attachment)
+            if let outputDirectory, let png = image.pngData() {
+                try? png.write(to: URL(fileURLWithPath: outputDirectory).appendingPathComponent("\(name).png"))
+            }
+        }
     }
 }
 

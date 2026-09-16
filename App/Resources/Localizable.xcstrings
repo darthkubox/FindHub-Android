@@ -2587,6 +2587,40 @@
         }
       }
     },
+    "Definicje protokołu checkin i MCS": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checkin and MCS protocol definitions"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protokolldefinitionen für Checkin und MCS"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Définitions des protocoles checkin et MCS"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Definiciones de los protocolos checkin y MCS"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Definizioni dei protocolli checkin e MCS"
+          }
+        }
+      }
+    },
     "Diagnostyka odczytu": {
       "localizations": {
         "en": {
@@ -3059,6 +3093,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Due rapporti confermano una posizione fuori dall’area. Ultimo: %@."
+          }
+        }
+      }
+    },
+    "Dziękujemy autorom tych projektów. Linki prowadzą do ich oryginalnych repozytoriów.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thank you to the authors of these projects. Links lead to their original repositories."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Danke an die Autoren dieser Projekte. Die Links führen zu ihren Original-Repositorys."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Merci aux auteurs de ces projets. Les liens mènent à leurs dépôts d’origine."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gracias a los autores de estos proyectos. Los enlaces llevan a sus repositorios originales."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grazie agli autori di questi progetti. I link portano ai loro repository originali."
           }
         }
       }
@@ -3607,6 +3675,40 @@
         }
       }
     },
+    "IETF DULT — wykrywanie niechcianych lokalizatorów": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IETF DULT — detecting unwanted location trackers"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IETF DULT – Erkennung unerwünschter Tracker"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IETF DULT — détection des traceurs indésirables"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IETF DULT: detección de localizadores no deseados"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IETF DULT: rilevamento di localizzatori indesiderati"
+          }
+        }
+      }
+    },
     "Ikona": {
       "localizations": {
         "en": {
@@ -3739,6 +3841,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Note legali"
+          }
+        }
+      }
+    },
+    "Informacje prawne i licencje": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Legal information and licences"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechtliches und Lizenzen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informations légales et licences"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Información legal y licencias"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Note legali e licenze"
           }
         }
       }
@@ -4259,6 +4395,40 @@
         }
       }
     },
+    "Kryptografia krzywych eliptycznych SECP160r1": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SECP160r1 elliptic-curve cryptography"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elliptische-Kurven-Kryptografie SECP160r1"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cryptographie sur courbe elliptique SECP160r1"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criptografía de curva elíptica SECP160r1"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crittografia a curva ellittica SECP160r1"
+          }
+        }
+      }
+    },
     "Licencje": {
       "localizations": {
         "en": {
@@ -4493,6 +4663,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mappe di Apple"
+          }
+        }
+      }
+    },
+    "Material Design 3": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Material Design 3"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Material Design 3"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Material Design 3"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Material Design 3"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Material Design 3"
           }
         }
       }
@@ -6061,6 +6265,40 @@
         }
       }
     },
+    "Obsługa formatu Protocol Buffers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protocol Buffers support"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unterstützung für Protocol Buffers"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prise en charge de Protocol Buffers"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compatibilidad con Protocol Buffers"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supporto per Protocol Buffers"
+          }
+        }
+      }
+    },
     "Od Ciebie w linii prostej": {
       "localizations": {
         "en": {
@@ -6477,6 +6715,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "La distanza apparirà quando sarà nota la tua posizione."
+          }
+        }
+      }
+    },
+    "Odszyfrowanie wiadomości push": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push message decryption"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entschlüsselung von Push-Nachrichten"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Déchiffrement des messages push"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descifrado de mensajes push"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Decrittografia dei messaggi push"
           }
         }
       }
@@ -7949,6 +8221,40 @@
         }
       }
     },
+    "Projekty, na których opiera się aplikacja": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Projects this app builds on"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Projekte, auf denen die App basiert"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Projets sur lesquels repose l’app"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proyectos en los que se basa la app"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progetti su cui si basa l’app"
+          }
+        }
+      }
+    },
     "Promień %lld m": {
       "localizations": {
         "en": {
@@ -8013,6 +8319,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Raggio: %lld m"
+          }
+        }
+      }
+    },
+    "Protokół Find Hub: logowanie, lista urządzeń, klucze i odszyfrowanie raportów": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find Hub protocol: sign-in, device list, keys and report decryption"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find-Hub-Protokoll: Anmeldung, Geräteliste, Schlüssel und Berichtsentschlüsselung"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protocole Find Hub : connexion, liste des appareils, clés et déchiffrement des rapports"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protocolo de Find Hub: inicio de sesión, lista de dispositivos, claves y descifrado de informes"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protocollo Find Hub: accesso, elenco dispositivi, chiavi e decrittografia dei rapporti"
           }
         }
       }
@@ -8363,6 +8703,40 @@
         }
       }
     },
+    "Rejestracja powiadomień push i połączenie MCS": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push notification registration and MCS connection"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registrierung für Push-Mitteilungen und MCS-Verbindung"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inscription aux notifications push et connexion MCS"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registro de notificaciones push y conexión MCS"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registrazione delle notifiche push e connessione MCS"
+          }
+        }
+      }
+    },
     "Rejestracja urządzenia (checkin)…": {
       "localizations": {
         "en": {
@@ -8495,6 +8869,74 @@
           "stringUnit": {
             "state": "translated",
             "value": "Associato"
+          }
+        }
+      }
+    },
+    "Specyfikacja akcesoriów sieci Find Hub (Google)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find Hub Network Accessory Specification (Google)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find-Hub-Netzwerk: Zubehörspezifikation (Google)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spécification des accessoires du réseau Find Hub (Google)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Especificación de accesorios de la red Find Hub (Google)"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Specifica degli accessori della rete Find Hub (Google)"
+          }
+        }
+      }
+    },
+    "Specyfikacje i materiały referencyjne": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Specifications and references"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spezifikationen und Referenzen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spécifications et références"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Especificaciones y referencias"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Specifiche e riferimenti"
           }
         }
       }
@@ -8733,6 +9175,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Crittografia (E2EE)"
+          }
+        }
+      }
+    },
+    "Szyfrowanie wiadomości Web Push (IETF)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Web Push message encryption (IETF)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verschlüsselung von Web-Push-Nachrichten (IETF)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiffrement des messages Web Push (IETF)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cifrado de mensajes Web Push (IETF)"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crittografia dei messaggi Web Push (IETF)"
           }
         }
       }
@@ -9005,6 +9481,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Indicazioni"
+          }
+        }
+      }
+    },
+    "Tryb szyfrowania EAX (Bellare, Rogaway, Wagner)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EAX mode of operation (Bellare, Rogaway, Wagner)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EAX-Betriebsmodus (Bellare, Rogaway, Wagner)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mode de chiffrement EAX (Bellare, Rogaway, Wagner)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modo de cifrado EAX (Bellare, Rogaway, Wagner)"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modalità di cifratura EAX (Bellare, Rogaway, Wagner)"
           }
         }
       }
@@ -10501,6 +11011,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Scambio del token dell’account…"
+          }
+        }
+      }
+    },
+    "Wymiana tokenów konta Google": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google account token exchange"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Austausch von Google-Kontotokens"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Échange de jetons du compte Google"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intercambio de tokens de la cuenta de Google"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scambio dei token dell’account Google"
           }
         }
       }
