@@ -14,7 +14,7 @@ Nazwa jest ustalona: **FindHub Android**. Pozostałe metadane wymagają zamknię
 | Kategoria | [WYBRAĆ WEDŁUG GŁÓWNEJ FUNKCJI] |
 | Bundle ID / SKU | `pl.mintstudio.findhubandroid` / [SKU] |
 | Wersja i build | [DOKŁADNY KANDYDAT] |
-| Support URL / Privacy Policy URL | https://github.com/darthkubox/FindHub-Android (support: Issues, kontakt@mintstudio.pl) / [PUBLICZNE HTTPS] |
+| Support URL / Privacy Policy URL | https://github.com/darthkubox/FindHub-Android (support: Issues, kontakt@mintstudio.pl) / https://github.com/darthkubox/FindHub-Android/blob/main/App/Resources/Legal/polityka-prywatnosci.md |
 | Copyright / wydawca | © 2026 mintstudio Jakub Koncewicz / mintstudio |
 | Kraje / model płatności | [ ] |
 

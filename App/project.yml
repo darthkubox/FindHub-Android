@@ -22,6 +22,7 @@ targets:
       - Tests/JournalViewTests.swift
       - Tests/PlacesViewTests.swift
       - Tests/TabBarTests.swift
+      - Tests/LegalTests.swift
     dependencies:
       - target: FindHub Android
     settings:

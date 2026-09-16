@@ -35,7 +35,14 @@ FindHub Android lets iPhone users see the Find Hub tags (for example Motorola mo
 
 ## Privacy
 
-There is **no server** operated by this project. Tokens and encryption keys stay in the iPhone Keychain. History, places and notes are stored locally and excluded from device backups; custom device names, icons and photos are stored in regular app storage. The app contacts Google (sign-in, device list, location reports, ring requests) and Apple (MapKit) only to provide its features. Nothing is sent to mintstudio. See [docs/04-PRYWATNOSC-I-BEZPIECZENSTWO.md](docs/04-PRYWATNOSC-I-BEZPIECZENSTWO.md) (Polish).
+There is **no server** operated by this project. Tokens and encryption keys stay in the iPhone Keychain. History, places and notes are stored locally and excluded from device backups; custom device names, icons and photos are stored in regular app storage. The app contacts Google (sign-in, device list, location reports, ring requests) and Apple (MapKit) only to provide its features. Nothing is sent to mintstudio.
+
+## Legal
+
+- **Privacy policy** (Polish, binding): [App/Resources/Legal/polityka-prywatnosci.md](App/Resources/Legal/polityka-prywatnosci.md)
+- **Terms of use** (Polish, binding): [App/Resources/Legal/warunki-korzystania.md](App/Resources/Legal/warunki-korzystania.md)
+- Both documents ship inside the app (**Ustawienia → Informacje prawne**) and must be accepted before signing in. In short: the app is free GPLv3 software provided without warranty; use it only with your own Google account and devices, never to track other people; mintstudio receives no personal data.
+- Data-flow analysis (Polish): [docs/04-PRYWATNOSC-I-BEZPIECZENSTWO.md](docs/04-PRYWATNOSC-I-BEZPIECZENSTWO.md)
 
 ## Install
 

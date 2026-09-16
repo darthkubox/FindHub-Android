@@ -87,3 +87,11 @@ Weryfikacja: [evidence/altstore-prep-2026-09-16.txt](evidence/altstore-prep-2026
 - Szablony źródła AltStore, metadanych i polityki prywatności uzupełnione o wydawcę.
 
 Weryfikacja: [evidence/github-release-prep-2026-09-16.txt](evidence/github-release-prep-2026-09-16.txt).
+
+## Polityka prywatności i warunki korzystania — 2026-09-17
+
+- `App/Resources/Legal/polityka-prywatnosci.md` i `warunki-korzystania.md` (wersja 1). Treść polityki oparta na przeglądzie kodu: endpointy Google (`android.clients.google.com`, `android.googleapis.com/nova`, `spot-pa.googleapis.com`, FCM/Firebase Installations, `mtalk.google.com`, `accounts.google.com`, `openidconnect.googleapis.com`), MapKit i `CLGeocoder` Apple, zewnętrzne aplikacje map na polecenie użytkownika, `PhotosPicker`, Keychain `AfterFirstUnlockThisDeviceOnly`, historia wyłączona z kopii zapasowej.
+- `LegalDocumentView.swift`: wyświetlanie dokumentów, `LegalConsent` z wersjonowaniem. Ekran logowania: informacja o nieoficjalnym kliencie, linki i akceptacja; logowanie nieaktywne bez akceptacji. Ustawienia: sekcja „Informacje prawne”.
+- Publiczne URL: https://github.com/darthkubox/FindHub-Android/blob/main/App/Resources/Legal/polityka-prywatnosci.md oraz https://github.com/darthkubox/FindHub-Android/blob/main/App/Resources/Legal/warunki-korzystania.md.
+- Testy: `Tests/LegalTests.swift` (dokumenty i licencje w paczce, wydawca, renderowanie, wersjonowanie zgody). Wyniki: [evidence/legal-2026-09-17.txt](evidence/legal-2026-09-17.txt) — XCTest 6/6, regresje 45, historia 50, build Release PASS. Zrzut ekranu logowania z symulatora obejrzany. Ekranów dokumentów nie klikano ręcznie; na telefonie nie testowano.
+- Po podbiciu `LegalDocument.currentVersion` zalogowany użytkownik widzi pełnoekranową prośbę o ponowną akceptację (nie da się jej zamknąć bez akceptacji).

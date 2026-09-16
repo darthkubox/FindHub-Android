@@ -9,6 +9,7 @@ struct ContentView: View {
     @State private var showingLogin = false
     @State private var showingSettings = false
     @State private var showingAccounts = false
+    @State private var legalAccepted = LegalConsent.isAccepted
     @State private var tab: MainTab = .devices
     @Environment(\.colorScheme) private var scheme
 
@@ -45,6 +46,25 @@ struct ContentView: View {
                     },
                     onError: { message in model.status = message; model.showingVaultUnlock = false })
             }
+        }
+        .fullScreenCover(isPresented: Binding(get: { model.loggedIn && !legalAccepted }, set: { _ in })) {
+            // Signed-in users see updated terms again after a document version bump.
+            NavigationStack {
+                ZStack {
+                    M3.background(scheme).ignoresSafeArea()
+                    VStack(spacing: 20) {
+                        Spacer()
+                        Text("Zaktualizowane dokumenty").font(.title2.bold()).foregroundStyle(M3.onSurface(scheme))
+                        Text("Aby dalej korzystać z aplikacji, zapoznaj się z warunkami korzystania i polityką prywatności.")
+                            .font(.subheadline).multilineTextAlignment(.center)
+                            .foregroundStyle(M3.onSurfaceVariant(scheme)).padding(.horizontal, 24)
+                        unofficialNotice
+                        Spacer()
+                    }
+                }
+                .navigationBarTitleDisplayMode(.inline)
+            }
+            .interactiveDismissDisabled()
         }
         .task(id: model.activeAccount) { await model.refreshAccountPhotos() }
         .task(id: scenePhase) {
@@ -110,16 +130,50 @@ struct ContentView: View {
             }
             if model.isBusy { ProgressView().tint(M3.primary(scheme)) }
             Spacer()
+            unofficialNotice
             Button {
                 showingLogin = true
             } label: {
                 Label("Zaloguj się przez Google", systemImage: "person.badge.key.fill")
             }
             .buttonStyle(M3FilledButtonStyle())
-            .disabled(model.isBusy)
+            .disabled(model.isBusy || !legalAccepted)
             .padding(.horizontal, 24)
             .padding(.bottom, 24)
         }
+    }
+
+    /// Shown before sign-in: the app is an unofficial client, and the terms and
+    /// privacy policy must be accepted before any request reaches Google.
+    private var unofficialNotice: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Label {
+                Text("Nieoficjalna aplikacja, niepowiązana z Google. Google może zmienić lub zablokować dostęp w każdej chwili, a korzystanie z nieoficjalnego klienta może naruszać warunki Google.")
+            } icon: {
+                Image(systemName: "exclamationmark.shield")
+            }
+            .font(.footnote)
+            .foregroundStyle(M3.onSurfaceVariant(scheme))
+
+            HStack(spacing: 16) {
+                ForEach(LegalDocument.allCases) { document in
+                    NavigationLink(document.title) { LegalDocumentView(document: document) }
+                        .font(.footnote.weight(.medium))
+                }
+            }
+
+            Toggle(isOn: Binding(get: { legalAccepted }, set: { accepted in
+                if accepted { LegalConsent.accept() }
+                legalAccepted = accepted && LegalConsent.isAccepted
+            })) {
+                Text("Akceptuję warunki korzystania i politykę prywatności")
+                    .font(.footnote).foregroundStyle(M3.onSurface(scheme))
+            }
+            .disabled(legalAccepted)
+        }
+        .padding(16)
+        .background(M3.surface(scheme), in: RoundedRectangle(cornerRadius: 16))
+        .padding(.horizontal, 24)
     }
 }
 

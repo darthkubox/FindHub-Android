@@ -9,7 +9,7 @@ Wszystkie ścieżki odnoszą się do `App/` w tym nowym projekcie. Priorytet P0 
 | OSS-01 | P0 | Publikacja kodu na GPLv3 | `LICENSE`, licencje komponentów w aplikacji, publiczne repozytorium i `SOURCE_CODE_URL`, tag każdej wersji | CZĘŚCIOWO — pliki i ekran gotowe (2026-09-16); brak repozytorium |
 | LIC-02 | P0 | Notices i licencje w aplikacji | `Resources/Licenses/ACKNOWLEDGEMENTS.txt`, `GPL-3.0.txt`, ekran „Licencje i kod źródłowy” | ZROBIONE 2026-09-16 |
 | PRIV-01 | P1 | Privacy manifest | `Resources/PrivacyInfo.xcprivacy` w bundle, prawdziwe powody | ZROBIONE 2026-09-16 (UserDefaults CA92.1) |
-| PRIV-02 | P1 | Polityka prywatności i strona projektu | Publiczny HTTPS URL, link w opisie źródła i w ustawieniach | OTWARTE — zależy od hostingu |
+| PRIV-02 | P1 | Polityka prywatności i warunki korzystania | Dokumenty w aplikacji (Ustawienia → Informacje prawne), akceptacja przed logowaniem, publiczne URL w repozytorium | ZROBIONE 2026-09-17 |
 | PRIV-03 | P1 | Pełne usunięcie lokalnych danych konta | Historia, miejsca, notatki, nazwy, ikony, zdjęcia, alerty, Keychain; konto B nienaruszone | ZROBIONE 2026-09-16; brak testu na urządzeniu |
 | PRIV-04 | P2 | Informacja o cofnięciu dostępu | Instrukcja: myaccount.google.com → Bezpieczeństwo → urządzenia/aplikacje; bez twierdzenia, że aplikacja odwołuje tokeny | OTWARTE |
 | SEC-01 | P1 | Logi i sekrety | Brak nazw urządzeń, współrzędnych i tokenów w logach `.public` | ZROBIONE 2026-09-16 (Nova) |
@@ -17,7 +17,7 @@ Wszystkie ścieżki odnoszą się do `App/` w tym nowym projekcie. Priorytet P0 
 | UX-01 | P1 | Stany uprawnień i błędów | Lokalizacja odmówiona/przybliżona, BLE wyłączone, offline, brak tagów, błąd konta/Google | OTWARTE |
 | BLE-01 | P1 | Uczciwe dzwonienie lokalne | UI mówi „najbliższy zgodny tag”; wysłanie ≠ potwierdzony dźwięk | OTWARTE |
 | BG-01 | P1 | Realne możliwości tła | Brak obietnic stałego śledzenia; opis zgodny z testem | OTWARTE |
-| DISCL-01 | P1 | Informacja o nieoficjalnym kliencie | Ekran licencji (zrobione); dodatkowo krótka informacja przy pierwszym logowaniu | CZĘŚCIOWO |
+| DISCL-01 | P1 | Informacja o nieoficjalnym kliencie | Ekran licencji, informacja i akceptacja na ekranie logowania | ZROBIONE 2026-09-17 |
 | RELEASE-01 | P1 | Konfiguracja dystrybucyjna | Finalny Bundle ID, podpis, wersja, archiwum | OTWARTE |
 | DIST-01 | P1 | Konta i umowy | Apple Developer, Alternative Terms Addendum, token AltStore PAL | OTWARTE — użytkownik |
 | DIST-02 | P1 | Notaryzacja | Zatwierdzony build | OTWARTE |

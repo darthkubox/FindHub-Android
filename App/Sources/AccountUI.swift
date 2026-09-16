@@ -209,9 +209,20 @@ struct SettingsView: View {
                 }
 
                 Section("Prywatność") {
-                    Label("Tokeny i klucze są w Keychain iPhone’a.",
+                    Label("Tokeny i klucze są w Keychain iPhone’a. mintstudio nie otrzymuje żadnych Twoich danych.",
                           systemImage: "iphone.gen3")
                         .font(.footnote).foregroundStyle(M3.onSurfaceVariant(scheme))
+                }
+
+                Section("Informacje prawne") {
+                    ForEach(LegalDocument.allCases) { document in
+                        NavigationLink { LegalDocumentView(document: document) } label: {
+                            Label(document.title, systemImage: document == .privacy ? "hand.raised" : "doc.plaintext")
+                        }
+                    }
+                    NavigationLink { LicensesView() } label: {
+                        Label("Licencje i kod źródłowy", systemImage: "doc.text")
+                    }
                 }
 
                 Section("O aplikacji") {
@@ -227,9 +238,6 @@ struct SettingsView: View {
                         Link(destination: source) {
                             Label("Kod źródłowy na GitHubie", systemImage: "chevron.left.forwardslash.chevron.right")
                         }
-                    }
-                    NavigationLink { LicensesView() } label: {
-                        Label("Licencje i kod źródłowy", systemImage: "doc.text")
                     }
                 }
 

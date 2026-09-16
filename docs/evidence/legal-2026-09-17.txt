@@ -1,0 +1,15 @@
+Data: 2026-09-17. FindHub Android 1.0.0 (1), pl.mintstudio.findhubandroid. Xcode 26.6.
+  45 checks passed
+  50 journal checks passed
+  App/Resources/Info.plist: OK
+  ** BUILD SUCCEEDED **
+  ** TEST SUCCEEDED **
+  Test Case '-[FindHubAndroidAppearanceTests.AppearanceTests testThemeChangesReachRootAndOpenSettingsAndRestoreSystem]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.JournalViewTests testJournalScreensInBothAppearances]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.LegalTests testConsentIsVersioned]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.LegalTests testLegalDocumentsAndLicencesShipAndRender]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.PlacesViewTests testPlacesTabInBothAppearances]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.TabBarTests testSwitchingTabsChangesThePageAndKeepsTheHandleOnTheBottomEdge]' passed.
+  Paczka .app zawiera polityka-prywatnosci.md, warunki-korzystania.md, ACKNOWLEDGEMENTS.txt, GPL-3.0.txt, PrivacyInfo.xcprivacy.
+  Zrzut ekranu logowania (symulator iPhone 17 Pro): informacja o nieoficjalnym kliencie, linki do dokumentów, przełącznik akceptacji, przycisk logowania nieaktywny.
+Nie wykonano: ręcznego przejścia ekranów dokumentów, testu na telefonie.

@@ -1,3 +1,5 @@
+> **Zastąpione 2026-09-17** przez obowiązującą politykę w `App/Resources/Legal/polityka-prywatnosci.md` (wyświetlaną w aplikacji). Ten szablon zostaje jako lista kontrolna.
+
 # Polityka prywatności — SZABLON, NIE PUBLIKOWAĆ W TEJ POSTACI
 
 Wypełnić pola, porównać z końcową implementacją i zatwierdzić dla rzeczywistego operatora oraz krajów. To nie jest gotowy dokument prawny. Jeśli określona funkcja nie została wdrożona, nie deklarować jej istnienia.
