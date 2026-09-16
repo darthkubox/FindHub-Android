@@ -6503,40 +6503,6 @@
         }
       }
     },
-    "Odczyt lokalizatorów Find Hub": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "View your Find Hub trackers"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deine Find-Hub-Tracker ansehen"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Consultez vos traceurs Find Hub"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Consulta tus localizadores de Find Hub"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Visualizza i tuoi localizzatori Find Hub"
-          }
-        }
-      }
-    },
     "Odebrano lokalizacje: %lld/%lld.": {
       "localizations": {
         "pl": {
@@ -8971,6 +8937,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "La posizione dell’oggetto viene verificata con Google Find Hub. Le rilevazioni possono arrivare in ritardo; l’uscita del telefono da casa non vale come uscita dell’oggetto."
+          }
+        }
+      }
+    },
+    "Sprawdź swoje androidowe lokalizatory na iOS": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check your Android trackers on iOS"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Android-Tracker auf iOS im Blick"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrouvez vos traceurs Android sur iOS"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consulta tus localizadores de Android en iOS"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Controlla i tuoi localizzatori Android su iOS"
           }
         }
       }

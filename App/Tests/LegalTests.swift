@@ -82,6 +82,7 @@ final class LegalScreensTests: XCTestCase {
         defer { window.isHidden = true; window.rootViewController = nil }
         let outputDirectory = ProcessInfo.processInfo.environment["MOTOHUB_SNAPSHOT_DIR"]
         let screens: [(String, AnyView)] = [
+            ("login", AnyView(ContentView())),
             ("account-menu", AnyView(AccountSheet(model: model, onAddAccount: {}, onSettings: {}))),
             ("legal-info", AnyView(NavigationStack { LegalInfoView() })),
             ("licences", AnyView(NavigationStack { LicensesView() })),
@@ -95,6 +96,7 @@ final class LegalScreensTests: XCTestCase {
                 window.drawHierarchy(in: window.bounds, afterScreenUpdates: true)
             }
             XCTAssertGreaterThan(image.size.height, 0)
+            if name == "login" { XCTAssertNotNil(UIImage(named: "AppLogo"), "app logo asset is bundled") }
             let attachment = XCTAttachment(image: image)
             attachment.name = name
             attachment.lifetime = .keepAlways

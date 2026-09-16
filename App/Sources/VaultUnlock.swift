@@ -52,6 +52,8 @@ struct VaultUnlockWebView: UIViewRepresentable {
                                       forMainFrameOnly: false)
         config.userContentController.addUserScript(userScript)
         let webView = WKWebView(frame: .zero, configuration: config)
+        // Keep the page still while a pattern or PIN is drawn on it.
+        webView.scrollView.bounces = false
         webView.navigationDelegate = context.coordinator
         context.coordinator.webView = webView
         webView.load(URLRequest(url: URL(string: "https://accounts.google.com/")!))

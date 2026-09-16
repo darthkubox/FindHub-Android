@@ -112,3 +112,9 @@ Polecenie użytkownika: dokumenty i licencje po polsku i angielsku, aplikacja w 
 - Menu konta (stuknięcie w awatar): nowa pozycja „Informacje prawne i licencje” → `LegalInfoView` (polityka, warunki, licencje, wydawca, kontakt, kod źródłowy).
 - Poprawka skryptu katalogu tłumaczeń: klucze z liczbą mnogą są eksportowane jako warianty i wcześniej wypadały z katalogu; wykrył to `LocalizationTests`. Katalog: 345 tekstów.
 - Testy: nowy `LegalScreensTests` (menu konta, informacje prawne, licencje — zrzuty obejrzane), `LegalTests` sprawdza zgodność listy projektów z plikami licencji w obu językach. XCTest 8/8, regresje 45, historia 50, build Release PASS.
+
+## Ekran logowania i odblokowanie kluczy — 2026-09-17 (zgłoszenie z testu na telefonie)
+
+- Ekran startowy: ikona aplikacji (`AppLogo`, kształt ikony iOS) zamiast symbolu; podtytuł „Sprawdź swoje androidowe lokalizatory na iOS” we wszystkich 6 językach.
+- Odblokowanie kluczy E2EE i logowanie Google: zamiast arkusza okno pełnoekranowe, bez gestu ściągania; WebView bez efektu sprężynowania. Otwieranie logowania z menu konta i ustawień czeka na zamknięcie poprzedniego arkusza.
+- Weryfikacja: zrzut ekranu logowania z testu (`LegalScreensTests`), XCTest 8/8, regresje 45, historia 50, build Release PASS. Rysowania wzoru na telefonie po zmianie nie sprawdzano — do potwierdzenia przez użytkownika.

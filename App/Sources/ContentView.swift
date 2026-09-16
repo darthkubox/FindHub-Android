@@ -21,13 +21,15 @@ struct ContentView: View {
         .disclosureGroupStyle(UpDownDisclosureStyle())
         .sheet(isPresented: $showingAccounts) {
             AccountSheet(model: model,
-                         onAddAccount: { showingAccounts = false; showingLogin = true },
+                         onAddAccount: { showingAccounts = false; presentLoginAfterDismissal() },
                          onSettings: { showingAccounts = false; showingSettings = true })
         }
         .sheet(isPresented: $showingSettings) {
-            SettingsView(model: model, onAddAccount: { showingSettings = false; showingLogin = true })
+            SettingsView(model: model, onAddAccount: { showingSettings = false; presentLoginAfterDismissal() })
         }
-        .sheet(isPresented: $showingLogin) {
+        // Full screen, not a sheet: drawing an unlock pattern downwards used to drag
+        // the sheet with it. A full-screen cover has no swipe-to-dismiss gesture.
+        .fullScreenCover(isPresented: $showingLogin) {
             GoogleWebSheet(title: "Logowanie Google") {
                 LoginWebView(
                     onToken: { token in
@@ -37,7 +39,7 @@ struct ContentView: View {
                     onError: { message in model.status = message; showingLogin = false })
             }
         }
-        .sheet(isPresented: $model.showingVaultUnlock) {
+        .fullScreenCover(isPresented: $model.showingVaultUnlock) {
             GoogleWebSheet(title: "Odblokowanie kluczy") {
                 VaultUnlockWebView(
                     onVaultKeys: { keys in
@@ -82,6 +84,15 @@ struct ContentView: View {
         }
     }
 
+    /// A sheet that is still animating away blocks the next presentation, so the
+    /// Google sign-in cover opens once the account menu or settings are gone.
+    private func presentLoginAfterDismissal() {
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(450))
+            showingLogin = true
+        }
+    }
+
     private var mainTabs: some View {
         MainTabsView(model: model, selection: $tab) { avatarToolbar }
     }
@@ -112,15 +123,18 @@ struct ContentView: View {
     private var loginScreen: some View {
         VStack(spacing: 24) {
             Spacer()
-            ZStack {
-                Circle().fill(M3.primaryContainer(scheme)).frame(width: 112, height: 112)
-                Image(systemName: "location.north.circle.fill")
-                    .font(.system(size: 60))
-                    .foregroundStyle(M3.primary(scheme))
-            }
+            Image("AppLogo")
+                .resizable()
+                .interpolation(.high)
+                .frame(width: 120, height: 120)
+                // Same continuous corner shape iOS uses for home-screen icons.
+                .clipShape(RoundedRectangle(cornerRadius: 120 * 0.2237, style: .continuous))
+                .shadow(color: .black.opacity(scheme == .dark ? 0.45 : 0.15), radius: 12, y: 4)
+                .accessibilityHidden(true)
             VStack(spacing: 6) {
                 Text("FindHub Android").font(.largeTitle.bold()).foregroundStyle(M3.onSurface(scheme))
-                Text("Odczyt lokalizatorów Find Hub")
+                Text("Sprawdź swoje androidowe lokalizatory na iOS")
+                    .multilineTextAlignment(.center)
                     .font(.subheadline).foregroundStyle(M3.onSurfaceVariant(scheme))
             }
             if !model.status.isEmpty {
