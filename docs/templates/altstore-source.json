@@ -1,0 +1,41 @@
+{
+  "name": "FindHub Android",
+  "subtitle": "Nieoficjalny klient Find Hub na iPhone’a",
+  "description": "Źródło AltStore PAL aplikacji FindHub Android. Niezależny, nieoficjalny projekt open source (GPLv3) wydawany przez mintstudio, niepowiązany z Google ani Motorola.",
+  "iconURL": "https://TODO-HOSTING/icon.png",
+  "website": "https://github.com/darthkubox/FindHub-Android",
+  "tintColor": "#1A73E8",
+  "apps": [
+    {
+      "name": "FindHub Android",
+      "bundleIdentifier": "pl.mintstudio.findhubandroid",
+      "marketplaceID": "TODO-APPLE-ID-APLIKACJI",
+      "developerName": "mintstudio",
+      "subtitle": "Tagi Find Hub na mapie iPhone’a",
+      "localizedDescription": "Nieoficjalna aplikacja do przeglądania ostatnich znanych lokalizacji urządzeń z Twojego konta Google Find Hub. Wymaga konta Google i tagów wcześniej sparowanych na Androidzie. Korzysta z nieoficjalnego dostępu do usług Google, dlatego może przestać działać po zmianach po stronie Google. Nie obsługuje UWB, parowania nowych tagów ani odczytu baterii; alerty w tle zależą od iOS. Find Hub i Android są znakami towarowymi Google LLC. Wydawca: mintstudio. Kod źródłowy (GPLv3): https://github.com/darthkubox/FindHub-Android. Aplikacja korzysta z pracy autorów GoogleFindMyTools (Leon Böttger), firebase-messaging, gpsoauth, http_ece, micro-ecc, Chromium i SwiftProtobuf — pełne licencje w aplikacji i w repozytorium.",
+      "iconURL": "https://TODO-HOSTING/icon.png",
+      "tintColor": "#1A73E8",
+      "category": "utilities",
+      "screenshots": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "buildVersion": "1",
+          "date": "TODO-2026-MM-DDTHH:MM:SSZ",
+          "localizedDescription": "Pierwsze wydanie.",
+          "downloadURL": "https://TODO-HOSTING/adp/manifest.json",
+          "size": 0,
+          "minOSVersion": "17.0"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSBluetoothAlwaysUsageDescription": "FindHub Android używa Bluetooth do namierzania i powiadamiania o utracie kontaktu z Twoimi tagami.",
+          "NSLocationWhenInUseUsageDescription": "FindHub Android pokazuje Twoją pozycję i pozwala zaznaczyć obszar domu lub pracy."
+        }
+      }
+    }
+  ],
+  "news": []
+}

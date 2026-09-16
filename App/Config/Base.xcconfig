@@ -1,0 +1,2 @@
+// Tracked shared settings. Personal signing values live in the untracked Local.xcconfig.
+#include? "Local.xcconfig"

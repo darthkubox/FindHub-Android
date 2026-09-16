@@ -1,0 +1,12 @@
+Date: 2026-09-16
+Command: xcodebuild -project App/MotoHubRelease.xcodeproj -scheme MotoHubRelease -configuration Release -destination generic/platform=iOS -derivedDataPath /tmp/motohub-appstore-build build CODE_SIGNING_ALLOWED=NO
+Xcode: 26.6 (17F113)
+SDK: iphoneos26.5
+Bundle ID: com.kuba.motohub.appstorecandidate
+Display name: MotoHub Release
+Version: 1.0.0 (1)
+Process exit code: 0
+BUILD SUCCEEDED
+Signing, archive, App Store validation, installation and upload: NOT PERFORMED
+Warnings:
+2026-09-16 20:07:43.082 appintentsmetadataprocessor[3809:12965600] warning: Metadata extraction skipped. No AppIntents.framework dependency found.

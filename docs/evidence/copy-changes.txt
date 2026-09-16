@@ -1,0 +1,12 @@
+Comparison: copy versus SHA-256 snapshot at start, not the concurrently edited live original.
+PASS: 76 files unchanged from snapshot.
+Intentional differences:
+README.md
+Resources/Info.plist
+Sources/AccountUI.swift
+Sources/ContentView.swift
+Sources/GuardianBackground.swift
+Sources/Keychain.swift
+project.yml
+Generated Xcode project renamed MotoHubRelease; user state not copied.
+No unexpected changes in copied source files.

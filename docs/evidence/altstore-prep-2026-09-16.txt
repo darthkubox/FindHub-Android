@@ -1,0 +1,21 @@
+Data: 2026-09-16. Wersja 1.0.0 (1), Bundle ID com.kuba.motohub.appstorecandidate.
+Xcode: Xcode 26.6
+
+bash Scripts/check_local.sh --build:
+  45 checks passed
+  50 journal checks passed
+  App/Resources/Info.plist: OK
+  ** BUILD SUCCEEDED **
+
+XCTest, symulator iPhone 17 Pro:
+  ** TEST SUCCEEDED **
+  Test Case '-[FindHubAndroidAppearanceTests.AppearanceTests testThemeChangesReachRootAndOpenSettingsAndRestoreSystem]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.JournalViewTests testJournalScreensInBothAppearances]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.PlacesViewTests testPlacesTabInBothAppearances]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.TabBarTests testSwitchingTabsChangesThePageAndKeepsTheHandleOnTheBottomEdge]' passed.
+
+Zawartość zbudowanego .app (Release-iphoneos, bez podpisu):
+  PrivacyInfo.xcprivacy, ACKNOWLEDGEMENTS.txt, GPL-3.0.txt obecne; FHASourceCodeURL = "" (do ustawienia).
+plutil -lint App/Resources/PrivacyInfo.xcprivacy: OK
+
+Nie wykonano: testu na telefonie, ręcznego sprawdzenia nowych ekranów w symulatorze z zalogowanym kontem, podpisu dystrybucyjnego, notaryzacji.

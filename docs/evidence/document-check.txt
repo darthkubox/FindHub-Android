@@ -1,0 +1,2 @@
+PASS: 17 Markdown files; 13 local links resolve; code fences balanced.
+Name update 2026-09-16: local document links checked after folder rename; accepted icon byte-identical to original.

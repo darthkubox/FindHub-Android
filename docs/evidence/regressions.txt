@@ -1,0 +1,46 @@
+PASS: Google profile photo accepted for matching account
+PASS: another account's avatar rejected
+PASS: missing Google photo allows monogram fallback
+PASS: untrusted avatar URL rejected
+PASS: untrusted avatar URL rejected
+PASS: untrusted avatar URL rejected
+PASS: untrusted avatar URL rejected
+PASS: missing callback times out promptly
+PASS: late callback after timeout is harmless
+PASS: first callback wins
+PASS: deadline after success does not resume twice
+PASS: callback error is not converted to success
+PASS: in-flight cancellation resumes the waiter
+PASS: pre-cancellation does not start hardware/network
+PASS: matching device and request accepted
+PASS: different device rejected
+PASS: stale request rejected
+PASS: missing identifiers rejected
+PASS: all reported canonical IDs are matched
+PASS: alias does not bypass request correlation
+PASS: network crypto matches Python vector
+PASS: modified authentication tag rejected
+PASS: overview contains user and device
+PASS: coincident positions retain a usable viewport
+PASS: device focus scale allows opening details
+PASS: manual closer zoom also allows details
+PASS: zooming out restores zoom-first behavior
+PASS: unknown camera scale cannot skip zooming
+PASS: focus centres the target above the drawer, not in the middle of the view
+PASS: banded device focus still counts as a close-up
+PASS: invalid coordinates do not move the map
+PASS: dateline neighbors do not zoom out to the world
+PASS: colocated phone watch headphones and user all remain visible
+PASS: overlapping marker frames merge
+PASS: zooming in separates nearby markers
+PASS: groups never drop icons beyond the first row
+PASS: no positions produce no invented markers
+PASS: missing report fields do not appear as 1970 or perfect accuracy
+PASS: available report metadata is retained
+PASS: device names cannot corrupt map link parameters
+PASS: directions target the reported coordinates
+PASS: invalid coordinates never produce a navigation link
+PASS: Google Maps pin uses coordinates and required API version
+PASS: Google Maps route uses coordinates and required API version
+PASS: invalid distances are marked unavailable
+45 checks passed

@@ -1,0 +1,45 @@
+PASS: future report is rejected
+PASS: older than seven days is rejected
+PASS: invalid coordinate is rejected
+PASS: duplicate reports do not duplicate history
+PASS: 24-hour range
+PASS: 48-hour range
+PASS: seven-day range
+PASS: more accurate same-time report replaces old fix
+PASS: expired history is pruned
+PASS: route sorts points and leaves a gap after one hour
+PASS: valid saved area
+PASS: blank area name rejected
+PASS: invalid radius rejected
+PASS: outside initial state does not trigger departure
+PASS: inside arms without notifying
+PASS: first outside fix waits for confirmation
+PASS: duplicate outside fix is not confirmation
+PASS: second distinct outside fix notifies
+PASS: remaining outside does not spam alerts
+PASS: returning inside rearms next departure
+PASS: inaccurate location never triggers exit
+PASS: uncertain fix breaks outside sequence
+PASS: stale report cannot arm rule
+PASS: pre-enablement report cannot arm rule
+PASS: unconfirmed tag never triggers separation
+PASS: confirmed connection loss triggers separation
+PASS: duplicate disconnect cannot trigger another alarm
+PASS: Bluetooth disabled is not separation
+PASS: paused or disabled watch cannot alert
+PASS: reconnection rearms protection
+PASS: note saved
+PASS: area saved
+PASS: ingestion saves reports and generates one confirmed exit
+PASS: replayed response does not notify
+PASS: accounts isolate same device ID and areas
+PASS: notes survive reload and account switch
+PASS: area survives reload
+PASS: history survives reload
+PASS: deleting area cleans assignments and boundary state
+PASS: logout disables persisted protection
+PASS: logout preserves note for future login
+PASS: history can be cleared
+PASS: unreadable storage blocks writes
+PASS: corrupt storage is not silently overwritten
+44 journal checks passed

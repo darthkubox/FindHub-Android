@@ -1,0 +1,32 @@
+FindHub Android
+Copyright (c) 2026 mintstudio Jakub Koncewicz
+https://github.com/darthkubox/FindHub-Android
+
+Licensed under the GNU General Public License v3.0 or later (see LICENSE).
+
+This product includes or is derived from:
+
+- GoogleFindMyTools — Copyright (c) 2024 Leon Böttger — GPL-3.0
+  https://github.com/leonboe1/GoogleFindMyTools
+- firebase-messaging — Copyright (c) 2017 Matthieu Lemoine, (c) 2023 Steven Beth — MIT
+  https://github.com/sdb9696/firebase-messaging
+- gpsoauth — Copyright (c) 2015 Simon Weber — MIT
+  https://github.com/simon-weber/gpsoauth
+- encrypted-content-encoding (http_ece) — Martin Thomson — MIT
+  https://github.com/martinthomson/encrypted-content-encoding
+- micro-ecc — Copyright (c) 2014 Kenneth MacKay — BSD-2-Clause
+  https://github.com/kmackay/micro-ecc
+- Chromium checkin/MCS protocol definitions — The Chromium Authors — BSD-3-Clause
+- SwiftProtobuf — Apple Inc. and the SwiftProtobuf project authors — Apache-2.0
+  https://github.com/apple/swift-protobuf
+
+Full license texts: App/Resources/Licenses/ACKNOWLEDGEMENTS.txt and Legal/.
+
+FindHub Android is an independent, unofficial project and is not affiliated
+with, endorsed or supported by Google LLC, Motorola or Apple Inc.
+Google, Find Hub and Android are trademarks of Google LLC. Motorola and
+moto tag are trademarks of Motorola Trademark Holdings, LLC. Apple and
+iPhone are trademarks of Apple Inc.
+
+The mintstudio name and logo (docs/assets/mintstudio*.png) are not licensed
+under the GPL; all rights reserved.

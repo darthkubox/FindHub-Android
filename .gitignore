@@ -1,0 +1,23 @@
+# Build and IDE state
+.DS_Store
+DerivedData/
+.build/
+.build-logs/
+xcuserdata/
+*.xcuserstate
+*.xcarchive
+*.ipa
+*.dSYM/
+*.xcresult/
+# Credentials and private evidence
+.env
+.env.*
+secrets.json
+Auth/
+*.p12
+*.mobileprovision
+*.key
+private-evidence/
+# Keep asset Contents.json, manifests and Package.resolved tracked.
+# Local signing
+App/Config/Local.xcconfig

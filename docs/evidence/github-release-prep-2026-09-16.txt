@@ -1,0 +1,11 @@
+Data: 2026-09-16. FindHub Android 1.0.0 (1), pl.mintstudio.findhubandroid. Xcode 26.6.
+
+  45 checks passed
+  50 journal checks passed
+  App/Resources/Info.plist: OK
+  ** BUILD SUCCEEDED **
+  Executed 4 tests, with 0 failures (0 unexpected)
+  ** TEST SUCCEEDED **
+  Info.plist zbudowanej aplikacji: CFBundleIdentifier, FHAPublisher=mintstudio, FHAPublisherContact, FHASourceCodeURL=https://github.com/darthkubox/FindHub-Android.
+
+Nie wykonano: ręcznego obejrzenia sekcji O aplikacji z zalogowanym kontem, testu na telefonie, notaryzacji.

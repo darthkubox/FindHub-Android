@@ -1,0 +1,785 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06CFEFA89FC986DF186BB9EA /* NameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981F94DB0C05A181E15083EE /* NameStore.swift */; };
+		0A7EA960653828701AFF6E4B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B3BB806E5ED76A8DEBEE95 /* Session.swift */; };
+		0AD91D50DE0E06BF39FF2579 /* TabBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6611054FE898F1E01C6B16F9 /* TabBarTests.swift */; };
+		12AE700A88A8BE2521B284FB /* LicensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D6A7CCAE95267BF5DF48D /* LicensesView.swift */; };
+		13856DE5C8D3FAF4B6C270E2 /* MapClusterMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138CE4B79DC08EFFE2CD9AD8 /* MapClusterMarker.swift */; };
+		17119C30F1952F7513C496C3 /* AppearanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946347D71E13B61637055DC1 /* AppearanceTests.swift */; };
+		171D515EFF2CDACB4911CC83 /* TrackerJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8BB68C94E53222C315ED00 /* TrackerJournal.swift */; };
+		23F7ECFB677C02D1219A03E0 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 23CE03D88D3B984633D11937 /* PrivacyInfo.xcprivacy */; };
+		27DA3AC867D0B1941A684918 /* FcmRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66BD62EDCFEE2EA6C33AA74 /* FcmRegister.swift */; };
+		28F73E4C47FB04D08F0E0974 /* IconStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDF0928ECFB96D0C97CEC0 /* IconStore.swift */; };
+		32672D73FAAD02745D02579E /* LoginWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD468995F5899A9839761025 /* LoginWebView.swift */; };
+		3C9EB615A5282D4F9DE4E149 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE743139DBF4271A19CFDE /* Keychain.swift */; };
+		404B2E1E2181213B850E014F /* HttpEce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044361B34029B1D0B702CE3A /* HttpEce.swift */; };
+		412E32696CC0D33DC16A927E /* LocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9EAB050934EDCADD42D2B /* LocationResponse.swift */; };
+		41AC523D833BBE3CB755EF9E /* DeviceJournalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F36E1BB2A0A4DBB647FDC98 /* DeviceJournalViews.swift */; };
+		4E07E6EB810F93FF7B87BBFD /* Common.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83DD16783B474ABF108058 /* Common.pb.swift */; };
+		4F6DC69C58F8B30574B5D5A9 /* McsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F6571E0067FFFF16C248B /* McsClient.swift */; };
+		52A0CC0189FC2D7A06F1FAFB /* mcs.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F7F350652E52B701BDE35 /* mcs.pb.swift */; };
+		58CF647B8BB2D76FE45CAC6F /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 256B468EBE1D6C020141773D /* SwiftProtobuf */; };
+		5CEF8B92E45AD980F40C678D /* curve-specific.inc in Resources */ = {isa = PBXBuildFile; fileRef = E062BF7F4610BF95AA8431F8 /* curve-specific.inc */; };
+		619A231CAD55704CB74522A5 /* AccountUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E21E0F9C766C8EF37705E64 /* AccountUI.swift */; };
+		641387C749F5B5EFA24F1FA3 /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393C292607A68058A424039 /* PlaceDetailView.swift */; };
+		641F5DAA045D113580606743 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8189DDD6CA90804C99B384B /* AppSettings.swift */; };
+		64CA349CA708DB977E7D10D2 /* M3BottomDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A48F8D37086112BAC8C147 /* M3BottomDrawer.swift */; };
+		671FC6263941650E80392500 /* CallbackWaiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4205C192FA275CADAD7986 /* CallbackWaiter.swift */; };
+		69DD4B4D052A065919E075FF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4A0C2AE85B729F9F8DEC69 /* LocationManager.swift */; };
+		7401E01CBD5073869F1B8A9D /* SpotClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AA460D2675EC9268C498FD /* SpotClient.swift */; };
+		7459150735262827D2D8460D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA903445C9A31A509699697 /* ContentView.swift */; };
+		74E14A1980901D44AA86EBED /* MapViewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935C7DB4A2AFF699FC7218AA /* MapViewport.swift */; };
+		759E37D917039F9064D738E5 /* AccountProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0CEF7D1D5195B2C16ABE2 /* AccountProfile.swift */; };
+		82D56FE977AD7C51C0E094A1 /* checkin.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDDF64F2698B67CD07B43AB /* checkin.pb.swift */; };
+		8387312DAB776AC27D92C34F /* platform-specific.inc in Resources */ = {isa = PBXBuildFile; fileRef = EBF5099407BF6B115AD3D862 /* platform-specific.inc */; };
+		865955DFD66A0563DBAA3076 /* GuardianBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C42EB860A8CDA46776FF6E /* GuardianBackground.swift */; };
+		883BEFD5F72E1B3588D9682D /* uECC.c in Sources */ = {isa = PBXBuildFile; fileRef = 14F76869B99AC059EBFA8FF1 /* uECC.c */; };
+		8A8D3E360B7B050886F9AB61 /* asm_arm.inc in Resources */ = {isa = PBXBuildFile; fileRef = 6A2E532D612F63CAA966B74C /* asm_arm.inc */; };
+		8B4BE0F33FA5CAB5D7E652C7 /* DeviceThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D72EB51A70AFA2F4A2ED2 /* DeviceThumbnail.swift */; };
+		8CF1FAF56EA9050B94730B9F /* AesEax.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04676B276A797EE7E10D47D /* AesEax.swift */; };
+		8D11E7952BB0ABA10C13F059 /* FinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BADE0D59623FA2359EA64C6 /* FinderView.swift */; };
+		8F382AB2301435969B729528 /* M3TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6186CA38EA47FA9BD14BF216 /* M3TabBar.swift */; };
+		90BBCE95316E3E508294AF36 /* ACKNOWLEDGEMENTS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 02EB8E4CA6BD01298388B8FD /* ACKNOWLEDGEMENTS.txt */; };
+		945B80E77605955EF6909B77 /* PlacesHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144B97B52DCCDC5E3CEACB0 /* PlacesHomeView.swift */; };
+		948D7ACD83CB04A08D08C5A8 /* LocationDecrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B6A6CB41C2208F46FF1C66 /* LocationDecrypt.swift */; };
+		9EF0C5C1089C11EC4A0D7E88 /* BleRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D0DDEE0491F580DBCAA9 /* BleRing.swift */; };
+		A1F8AA9140B6F4759191017C /* TrackerJournalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8E97AE74F9FD219DEB93E0 /* TrackerJournalData.swift */; };
+		A3507AF6D12F34BF9F86D661 /* MapHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DFE012AB44C6D1830F181 /* MapHomeView.swift */; };
+		A64DD45D04B3BB9307851798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EE64CB86BAE1289DB2AAFC5 /* Assets.xcassets */; };
+		A75889BA9E0518A9220D3592 /* FindHubAndroidApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBEDFBE0E33FC5B318466E /* FindHubAndroidApp.swift */; };
+		AFCCCC289309224B1A27081C /* MapClusters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE787C97DA9E9BA4F8AC09 /* MapClusters.swift */; };
+		B3EF5B453A14A29AAB4A211B /* VaultUnlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB9C5195BDAF88A94A9297 /* VaultUnlock.swift */; };
+		B4527812110DDB4CAD32E8DC /* LocationReportsUpload.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFCB6D4EA99ECA7662721A5 /* LocationReportsUpload.pb.swift */; };
+		B5F77C718A632ED749DA69A5 /* JournalViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F2256369ABDCC22144291 /* JournalViewTests.swift */; };
+		CEFCEE7E2867C0779FE6C2C7 /* Nova.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7799A603D74A7736193E3849 /* Nova.swift */; };
+		D004EC07CF565A569A3EF27E /* android_checkin.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062513F777E20755090D2D3C /* android_checkin.pb.swift */; };
+		D39A0F932CC42821E9FAA703 /* ForeignTrackerCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA682E23990C589656FC6B /* ForeignTrackerCryptor.swift */; };
+		D46EBFCFC05656A1A3D954D9 /* GPL-3.0.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6FE0A9AB07F63136DC57B01 /* GPL-3.0.txt */; };
+		D9F22172B33E08C9C0393869 /* PlacesViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4006F45A24F768F8F07013 /* PlacesViewTests.swift */; };
+		DC74DCE5ABE0C8DDD21152AF /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CE24E323142BC245BDABF /* AppModel.swift */; };
+		EF24FDA0290FCD601B1A6BC1 /* LocationPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF145D0A3DFCE08E3E2303 /* LocationPresentation.swift */; };
+		F03AAE64C4C1B68555FB1649 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3B9D3524BE6BE20C303BE /* Theme.swift */; };
+		F0675F2D32E840A1443D69E4 /* DeviceUpdate.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F68258F7BBEF0ACCAE0D0 /* DeviceUpdate.pb.swift */; };
+		F5B53DA25904EAFF3935BDB3 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA40DFDA936ECDD04AF7D5B /* Crypto.swift */; };
+		F61941AA9C6F8935E44F8A03 /* DeviceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A9E7F2CAC9F173A57A0D67 /* DeviceDetailView.swift */; };
+		F6931BE54EAF5D63DC10A87C /* asm_avr.inc in Resources */ = {isa = PBXBuildFile; fileRef = 613CDF91CA756F596298E557 /* asm_avr.inc */; };
+		F81C3029C354CE8464F616B3 /* DeviceImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDBC26563AC17E195076D2 /* DeviceImageStore.swift */; };
+		F8EC1CB886B5FFEA5286BA4E /* GoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A9BBEEF4352B56433C201 /* GoogleAuth.swift */; };
+		F9E64653FC0BF049BB2A2A28 /* LocationReportDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028434C5CB586D97CBF9CE9 /* LocationReportDecoder.swift */; };
+		FBF6D936E80E27A05B1016D9 /* BleFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68843825C11808DCB5E08225 /* BleFinder.swift */; };
+		FE36FDB9DE94F7065F22E1EF /* DeviceProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA188EED06FE2639A1BC58F7 /* DeviceProtection.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD7257270C813C76CD82DF20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5173764084032D72FC27CA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06B8836720A0349795B75FB6;
+			remoteInfo = "FindHub Android";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01AA682E23990C589656FC6B /* ForeignTrackerCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignTrackerCryptor.swift; sourceTree = "<group>"; };
+		02EB8E4CA6BD01298388B8FD /* ACKNOWLEDGEMENTS.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ACKNOWLEDGEMENTS.txt; sourceTree = "<group>"; };
+		044361B34029B1D0B702CE3A /* HttpEce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpEce.swift; sourceTree = "<group>"; };
+		04C3363AA6F21CEA6A1317EB /* uECC_vli.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uECC_vli.h; sourceTree = "<group>"; };
+		062513F777E20755090D2D3C /* android_checkin.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = android_checkin.pb.swift; sourceTree = "<group>"; };
+		0EA0CEF7D1D5195B2C16ABE2 /* AccountProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProfile.swift; sourceTree = "<group>"; };
+		0EEE787C97DA9E9BA4F8AC09 /* MapClusters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapClusters.swift; sourceTree = "<group>"; };
+		11D3B9D3524BE6BE20C303BE /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		138CE4B79DC08EFFE2CD9AD8 /* MapClusterMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapClusterMarker.swift; sourceTree = "<group>"; };
+		14F76869B99AC059EBFA8FF1 /* uECC.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = uECC.c; sourceTree = "<group>"; };
+		160F2256369ABDCC22144291 /* JournalViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewTests.swift; sourceTree = "<group>"; };
+		16BF145D0A3DFCE08E3E2303 /* LocationPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPresentation.swift; sourceTree = "<group>"; };
+		21BDBC26563AC17E195076D2 /* DeviceImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceImageStore.swift; sourceTree = "<group>"; };
+		23CE03D88D3B984633D11937 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		2AA40DFDA936ECDD04AF7D5B /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		2BEDF0928ECFB96D0C97CEC0 /* IconStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconStore.swift; sourceTree = "<group>"; };
+		2EE64CB86BAE1289DB2AAFC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		35A48F8D37086112BAC8C147 /* M3BottomDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M3BottomDrawer.swift; sourceTree = "<group>"; };
+		3A3F7F350652E52B701BDE35 /* mcs.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mcs.pb.swift; sourceTree = "<group>"; };
+		3CDDF64F2698B67CD07B43AB /* checkin.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkin.pb.swift; sourceTree = "<group>"; };
+		44FE743139DBF4271A19CFDE /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		4A5D6A7CCAE95267BF5DF48D /* LicensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesView.swift; sourceTree = "<group>"; };
+		4BADE0D59623FA2359EA64C6 /* FinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderView.swift; sourceTree = "<group>"; };
+		4D4205C192FA275CADAD7986 /* CallbackWaiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackWaiter.swift; sourceTree = "<group>"; };
+		56216499561EB8361419CF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5B83DD16783B474ABF108058 /* Common.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.pb.swift; sourceTree = "<group>"; };
+		613CDF91CA756F596298E557 /* asm_avr.inc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.pascal; path = asm_avr.inc; sourceTree = "<group>"; };
+		6186CA38EA47FA9BD14BF216 /* M3TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M3TabBar.swift; sourceTree = "<group>"; };
+		61B6A6CB41C2208F46FF1C66 /* LocationDecrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDecrypt.swift; sourceTree = "<group>"; };
+		6611054FE898F1E01C6B16F9 /* TabBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTests.swift; sourceTree = "<group>"; };
+		68843825C11808DCB5E08225 /* BleFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleFinder.swift; sourceTree = "<group>"; };
+		6A2E532D612F63CAA966B74C /* asm_arm.inc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.pascal; path = asm_arm.inc; sourceTree = "<group>"; };
+		6E9DFE012AB44C6D1830F181 /* MapHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHomeView.swift; sourceTree = "<group>"; };
+		7799A603D74A7736193E3849 /* Nova.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nova.swift; sourceTree = "<group>"; };
+		7C3CE24E323142BC245BDABF /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		7DA903445C9A31A509699697 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7F36E1BB2A0A4DBB647FDC98 /* DeviceJournalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceJournalViews.swift; sourceTree = "<group>"; };
+		83AA460D2675EC9268C498FD /* SpotClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotClient.swift; sourceTree = "<group>"; };
+		85B3BB806E5ED76A8DEBEE95 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		880F6571E0067FFFF16C248B /* McsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = McsClient.swift; sourceTree = "<group>"; };
+		8E21E0F9C766C8EF37705E64 /* AccountUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUI.swift; sourceTree = "<group>"; };
+		9028434C5CB586D97CBF9CE9 /* LocationReportDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReportDecoder.swift; sourceTree = "<group>"; };
+		935C7DB4A2AFF699FC7218AA /* MapViewport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewport.swift; sourceTree = "<group>"; };
+		946347D71E13B61637055DC1 /* AppearanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceTests.swift; sourceTree = "<group>"; };
+		958D72EB51A70AFA2F4A2ED2 /* DeviceThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceThumbnail.swift; sourceTree = "<group>"; };
+		981F94DB0C05A181E15083EE /* NameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameStore.swift; sourceTree = "<group>"; };
+		9E4A0C2AE85B729F9F8DEC69 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A393C292607A68058A424039 /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
+		A54FCEC04A23C06F735D5B26 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		A97F5AA3B44235C4CEC3099A /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		A9FBEDFBE0E33FC5B318466E /* FindHubAndroidApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHubAndroidApp.swift; sourceTree = "<group>"; };
+		ADC9EAB050934EDCADD42D2B /* LocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResponse.swift; sourceTree = "<group>"; };
+		BA4006F45A24F768F8F07013 /* PlacesViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewTests.swift; sourceTree = "<group>"; };
+		BADB9C5195BDAF88A94A9297 /* VaultUnlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultUnlock.swift; sourceTree = "<group>"; };
+		BD8BB68C94E53222C315ED00 /* TrackerJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerJournal.swift; sourceTree = "<group>"; };
+		C04676B276A797EE7E10D47D /* AesEax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AesEax.swift; sourceTree = "<group>"; };
+		C17F68258F7BBEF0ACCAE0D0 /* DeviceUpdate.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUpdate.pb.swift; sourceTree = "<group>"; };
+		C6FE0A9AB07F63136DC57B01 /* GPL-3.0.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "GPL-3.0.txt"; sourceTree = "<group>"; };
+		C8DDE4FEC3196AF3A76CD014 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		CF6B3CE2FC1C0120DD908930 /* uECC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uECC.h; sourceTree = "<group>"; };
+		CF8E97AE74F9FD219DEB93E0 /* TrackerJournalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerJournalData.swift; sourceTree = "<group>"; };
+		D03A9BBEEF4352B56433C201 /* GoogleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuth.swift; sourceTree = "<group>"; };
+		D3ADCEBD2984E3C848CA9507 /* FindHubAndroidAppearanceTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = FindHubAndroidAppearanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8189DDD6CA90804C99B384B /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		DFFCB6D4EA99ECA7662721A5 /* LocationReportsUpload.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReportsUpload.pb.swift; sourceTree = "<group>"; };
+		E062BF7F4610BF95AA8431F8 /* curve-specific.inc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.pascal; path = "curve-specific.inc"; sourceTree = "<group>"; };
+		E8D6D0DDEE0491F580DBCAA9 /* BleRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleRing.swift; sourceTree = "<group>"; };
+		E9A9E7F2CAC9F173A57A0D67 /* DeviceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailView.swift; sourceTree = "<group>"; };
+		EA188EED06FE2639A1BC58F7 /* DeviceProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProtection.swift; sourceTree = "<group>"; };
+		EBF5099407BF6B115AD3D862 /* platform-specific.inc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.pascal; path = "platform-specific.inc"; sourceTree = "<group>"; };
+		F144B97B52DCCDC5E3CEACB0 /* PlacesHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesHomeView.swift; sourceTree = "<group>"; };
+		F2C42EB860A8CDA46776FF6E /* GuardianBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardianBackground.swift; sourceTree = "<group>"; };
+		F66BD62EDCFEE2EA6C33AA74 /* FcmRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmRegister.swift; sourceTree = "<group>"; };
+		F6DE137E28991645E8A4E516 /* FindHub Android.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "FindHub Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD468995F5899A9839761025 /* LoginWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		73ADD39FB5B7DBB83F1E4740 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58CF647B8BB2D76FE45CAC6F /* SwiftProtobuf in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D1D4A584D5EBAB792802A6E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				A97F5AA3B44235C4CEC3099A /* Base.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		30CEB46D849E73728A1BBFD9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				946347D71E13B61637055DC1 /* AppearanceTests.swift */,
+				160F2256369ABDCC22144291 /* JournalViewTests.swift */,
+				BA4006F45A24F768F8F07013 /* PlacesViewTests.swift */,
+				6611054FE898F1E01C6B16F9 /* TabBarTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		350087D0BCE9EC70EC4C1BFB /* Licenses */ = {
+			isa = PBXGroup;
+			children = (
+				02EB8E4CA6BD01298388B8FD /* ACKNOWLEDGEMENTS.txt */,
+				C6FE0A9AB07F63136DC57B01 /* GPL-3.0.txt */,
+			);
+			path = Licenses;
+			sourceTree = "<group>";
+		};
+		3F049C648F1A1F687D4E10B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F6DE137E28991645E8A4E516 /* FindHub Android.app */,
+				D3ADCEBD2984E3C848CA9507 /* FindHubAndroidAppearanceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6429B0BD6E4AF83A2EAF8128 = {
+			isa = PBXGroup;
+			children = (
+				0D1D4A584D5EBAB792802A6E /* Config */,
+				878C1FBCF22177F52559542A /* Resources */,
+				FB77AB3AB4B8CE25997B68E9 /* Sources */,
+				30CEB46D849E73728A1BBFD9 /* Tests */,
+				3F049C648F1A1F687D4E10B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		680021F3239024E3A44FE4DA /* uECC */ = {
+			isa = PBXGroup;
+			children = (
+				6A2E532D612F63CAA966B74C /* asm_arm.inc */,
+				613CDF91CA756F596298E557 /* asm_avr.inc */,
+				C8DDE4FEC3196AF3A76CD014 /* Bridging.h */,
+				E062BF7F4610BF95AA8431F8 /* curve-specific.inc */,
+				EBF5099407BF6B115AD3D862 /* platform-specific.inc */,
+				A54FCEC04A23C06F735D5B26 /* types.h */,
+				04C3363AA6F21CEA6A1317EB /* uECC_vli.h */,
+				14F76869B99AC059EBFA8FF1 /* uECC.c */,
+				CF6B3CE2FC1C0120DD908930 /* uECC.h */,
+			);
+			path = uECC;
+			sourceTree = "<group>";
+		};
+		878C1FBCF22177F52559542A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2EE64CB86BAE1289DB2AAFC5 /* Assets.xcassets */,
+				56216499561EB8361419CF4F /* Info.plist */,
+				23CE03D88D3B984633D11937 /* PrivacyInfo.xcprivacy */,
+				350087D0BCE9EC70EC4C1BFB /* Licenses */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CC0DB26D075686A465034C30 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				062513F777E20755090D2D3C /* android_checkin.pb.swift */,
+				3CDDF64F2698B67CD07B43AB /* checkin.pb.swift */,
+				3A3F7F350652E52B701BDE35 /* mcs.pb.swift */,
+				DD44745D213943B5675BE783 /* ProtoDecoders */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		DD44745D213943B5675BE783 /* ProtoDecoders */ = {
+			isa = PBXGroup;
+			children = (
+				5B83DD16783B474ABF108058 /* Common.pb.swift */,
+				C17F68258F7BBEF0ACCAE0D0 /* DeviceUpdate.pb.swift */,
+				DFFCB6D4EA99ECA7662721A5 /* LocationReportsUpload.pb.swift */,
+			);
+			path = ProtoDecoders;
+			sourceTree = "<group>";
+		};
+		FB77AB3AB4B8CE25997B68E9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0EA0CEF7D1D5195B2C16ABE2 /* AccountProfile.swift */,
+				8E21E0F9C766C8EF37705E64 /* AccountUI.swift */,
+				C04676B276A797EE7E10D47D /* AesEax.swift */,
+				7C3CE24E323142BC245BDABF /* AppModel.swift */,
+				D8189DDD6CA90804C99B384B /* AppSettings.swift */,
+				68843825C11808DCB5E08225 /* BleFinder.swift */,
+				E8D6D0DDEE0491F580DBCAA9 /* BleRing.swift */,
+				4D4205C192FA275CADAD7986 /* CallbackWaiter.swift */,
+				7DA903445C9A31A509699697 /* ContentView.swift */,
+				2AA40DFDA936ECDD04AF7D5B /* Crypto.swift */,
+				E9A9E7F2CAC9F173A57A0D67 /* DeviceDetailView.swift */,
+				21BDBC26563AC17E195076D2 /* DeviceImageStore.swift */,
+				7F36E1BB2A0A4DBB647FDC98 /* DeviceJournalViews.swift */,
+				EA188EED06FE2639A1BC58F7 /* DeviceProtection.swift */,
+				958D72EB51A70AFA2F4A2ED2 /* DeviceThumbnail.swift */,
+				F66BD62EDCFEE2EA6C33AA74 /* FcmRegister.swift */,
+				4BADE0D59623FA2359EA64C6 /* FinderView.swift */,
+				A9FBEDFBE0E33FC5B318466E /* FindHubAndroidApp.swift */,
+				01AA682E23990C589656FC6B /* ForeignTrackerCryptor.swift */,
+				D03A9BBEEF4352B56433C201 /* GoogleAuth.swift */,
+				F2C42EB860A8CDA46776FF6E /* GuardianBackground.swift */,
+				044361B34029B1D0B702CE3A /* HttpEce.swift */,
+				2BEDF0928ECFB96D0C97CEC0 /* IconStore.swift */,
+				44FE743139DBF4271A19CFDE /* Keychain.swift */,
+				4A5D6A7CCAE95267BF5DF48D /* LicensesView.swift */,
+				61B6A6CB41C2208F46FF1C66 /* LocationDecrypt.swift */,
+				9E4A0C2AE85B729F9F8DEC69 /* LocationManager.swift */,
+				16BF145D0A3DFCE08E3E2303 /* LocationPresentation.swift */,
+				9028434C5CB586D97CBF9CE9 /* LocationReportDecoder.swift */,
+				ADC9EAB050934EDCADD42D2B /* LocationResponse.swift */,
+				FD468995F5899A9839761025 /* LoginWebView.swift */,
+				35A48F8D37086112BAC8C147 /* M3BottomDrawer.swift */,
+				6186CA38EA47FA9BD14BF216 /* M3TabBar.swift */,
+				138CE4B79DC08EFFE2CD9AD8 /* MapClusterMarker.swift */,
+				0EEE787C97DA9E9BA4F8AC09 /* MapClusters.swift */,
+				6E9DFE012AB44C6D1830F181 /* MapHomeView.swift */,
+				935C7DB4A2AFF699FC7218AA /* MapViewport.swift */,
+				880F6571E0067FFFF16C248B /* McsClient.swift */,
+				981F94DB0C05A181E15083EE /* NameStore.swift */,
+				7799A603D74A7736193E3849 /* Nova.swift */,
+				A393C292607A68058A424039 /* PlaceDetailView.swift */,
+				F144B97B52DCCDC5E3CEACB0 /* PlacesHomeView.swift */,
+				85B3BB806E5ED76A8DEBEE95 /* Session.swift */,
+				83AA460D2675EC9268C498FD /* SpotClient.swift */,
+				11D3B9D3524BE6BE20C303BE /* Theme.swift */,
+				BD8BB68C94E53222C315ED00 /* TrackerJournal.swift */,
+				CF8E97AE74F9FD219DEB93E0 /* TrackerJournalData.swift */,
+				BADB9C5195BDAF88A94A9297 /* VaultUnlock.swift */,
+				CC0DB26D075686A465034C30 /* Generated */,
+				680021F3239024E3A44FE4DA /* uECC */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06B8836720A0349795B75FB6 /* FindHub Android */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33B786BFAF2B82F13E77A9B0 /* Build configuration list for PBXNativeTarget "FindHub Android" */;
+			buildPhases = (
+				F101027F6C3993283EDEB942 /* Sources */,
+				1EDAB271350C956507F9F0DD /* Resources */,
+				73ADD39FB5B7DBB83F1E4740 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FindHub Android";
+			packageProductDependencies = (
+				256B468EBE1D6C020141773D /* SwiftProtobuf */,
+			);
+			productName = "FindHub Android";
+			productReference = F6DE137E28991645E8A4E516 /* FindHub Android.app */;
+			productType = "com.apple.product-type.application";
+		};
+		40A34E56AB79F2ACC7515B27 /* FindHubAndroidAppearanceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAEEC144BE5617F167E1D6DB /* Build configuration list for PBXNativeTarget "FindHubAndroidAppearanceTests" */;
+			buildPhases = (
+				6C118507174EA993709A39CE /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3133B4C2B7D5FD8D8C1F36F4 /* PBXTargetDependency */,
+			);
+			name = FindHubAndroidAppearanceTests;
+			packageProductDependencies = (
+			);
+			productName = FindHubAndroidAppearanceTests;
+			productReference = D3ADCEBD2984E3C848CA9507 /* FindHubAndroidAppearanceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5173764084032D72FC27CA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					06B8836720A0349795B75FB6 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 323DCACED7256754F884AB06 /* Build configuration list for PBXProject "FindHub Android" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 6429B0BD6E4AF83A2EAF8128;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E589561F73237EBE5C9CF744 /* XCRemoteSwiftPackageReference "swift-protobuf" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3F049C648F1A1F687D4E10B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40A34E56AB79F2ACC7515B27 /* FindHubAndroidAppearanceTests */,
+				06B8836720A0349795B75FB6 /* FindHub Android */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1EDAB271350C956507F9F0DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90BBCE95316E3E508294AF36 /* ACKNOWLEDGEMENTS.txt in Resources */,
+				A64DD45D04B3BB9307851798 /* Assets.xcassets in Resources */,
+				D46EBFCFC05656A1A3D954D9 /* GPL-3.0.txt in Resources */,
+				23F7ECFB677C02D1219A03E0 /* PrivacyInfo.xcprivacy in Resources */,
+				8A8D3E360B7B050886F9AB61 /* asm_arm.inc in Resources */,
+				F6931BE54EAF5D63DC10A87C /* asm_avr.inc in Resources */,
+				5CEF8B92E45AD980F40C678D /* curve-specific.inc in Resources */,
+				8387312DAB776AC27D92C34F /* platform-specific.inc in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C118507174EA993709A39CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17119C30F1952F7513C496C3 /* AppearanceTests.swift in Sources */,
+				B5F77C718A632ED749DA69A5 /* JournalViewTests.swift in Sources */,
+				D9F22172B33E08C9C0393869 /* PlacesViewTests.swift in Sources */,
+				0AD91D50DE0E06BF39FF2579 /* TabBarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F101027F6C3993283EDEB942 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				759E37D917039F9064D738E5 /* AccountProfile.swift in Sources */,
+				619A231CAD55704CB74522A5 /* AccountUI.swift in Sources */,
+				8CF1FAF56EA9050B94730B9F /* AesEax.swift in Sources */,
+				DC74DCE5ABE0C8DDD21152AF /* AppModel.swift in Sources */,
+				641F5DAA045D113580606743 /* AppSettings.swift in Sources */,
+				FBF6D936E80E27A05B1016D9 /* BleFinder.swift in Sources */,
+				9EF0C5C1089C11EC4A0D7E88 /* BleRing.swift in Sources */,
+				671FC6263941650E80392500 /* CallbackWaiter.swift in Sources */,
+				4E07E6EB810F93FF7B87BBFD /* Common.pb.swift in Sources */,
+				7459150735262827D2D8460D /* ContentView.swift in Sources */,
+				F5B53DA25904EAFF3935BDB3 /* Crypto.swift in Sources */,
+				F61941AA9C6F8935E44F8A03 /* DeviceDetailView.swift in Sources */,
+				F81C3029C354CE8464F616B3 /* DeviceImageStore.swift in Sources */,
+				41AC523D833BBE3CB755EF9E /* DeviceJournalViews.swift in Sources */,
+				FE36FDB9DE94F7065F22E1EF /* DeviceProtection.swift in Sources */,
+				8B4BE0F33FA5CAB5D7E652C7 /* DeviceThumbnail.swift in Sources */,
+				F0675F2D32E840A1443D69E4 /* DeviceUpdate.pb.swift in Sources */,
+				27DA3AC867D0B1941A684918 /* FcmRegister.swift in Sources */,
+				A75889BA9E0518A9220D3592 /* FindHubAndroidApp.swift in Sources */,
+				8D11E7952BB0ABA10C13F059 /* FinderView.swift in Sources */,
+				D39A0F932CC42821E9FAA703 /* ForeignTrackerCryptor.swift in Sources */,
+				F8EC1CB886B5FFEA5286BA4E /* GoogleAuth.swift in Sources */,
+				865955DFD66A0563DBAA3076 /* GuardianBackground.swift in Sources */,
+				404B2E1E2181213B850E014F /* HttpEce.swift in Sources */,
+				28F73E4C47FB04D08F0E0974 /* IconStore.swift in Sources */,
+				3C9EB615A5282D4F9DE4E149 /* Keychain.swift in Sources */,
+				12AE700A88A8BE2521B284FB /* LicensesView.swift in Sources */,
+				948D7ACD83CB04A08D08C5A8 /* LocationDecrypt.swift in Sources */,
+				69DD4B4D052A065919E075FF /* LocationManager.swift in Sources */,
+				EF24FDA0290FCD601B1A6BC1 /* LocationPresentation.swift in Sources */,
+				F9E64653FC0BF049BB2A2A28 /* LocationReportDecoder.swift in Sources */,
+				B4527812110DDB4CAD32E8DC /* LocationReportsUpload.pb.swift in Sources */,
+				412E32696CC0D33DC16A927E /* LocationResponse.swift in Sources */,
+				32672D73FAAD02745D02579E /* LoginWebView.swift in Sources */,
+				64CA349CA708DB977E7D10D2 /* M3BottomDrawer.swift in Sources */,
+				8F382AB2301435969B729528 /* M3TabBar.swift in Sources */,
+				13856DE5C8D3FAF4B6C270E2 /* MapClusterMarker.swift in Sources */,
+				AFCCCC289309224B1A27081C /* MapClusters.swift in Sources */,
+				A3507AF6D12F34BF9F86D661 /* MapHomeView.swift in Sources */,
+				74E14A1980901D44AA86EBED /* MapViewport.swift in Sources */,
+				4F6DC69C58F8B30574B5D5A9 /* McsClient.swift in Sources */,
+				06CFEFA89FC986DF186BB9EA /* NameStore.swift in Sources */,
+				CEFCEE7E2867C0779FE6C2C7 /* Nova.swift in Sources */,
+				641387C749F5B5EFA24F1FA3 /* PlaceDetailView.swift in Sources */,
+				945B80E77605955EF6909B77 /* PlacesHomeView.swift in Sources */,
+				0A7EA960653828701AFF6E4B /* Session.swift in Sources */,
+				7401E01CBD5073869F1B8A9D /* SpotClient.swift in Sources */,
+				F03AAE64C4C1B68555FB1649 /* Theme.swift in Sources */,
+				171D515EFF2CDACB4911CC83 /* TrackerJournal.swift in Sources */,
+				A1F8AA9140B6F4759191017C /* TrackerJournalData.swift in Sources */,
+				B3EF5B453A14A29AAB4A211B /* VaultUnlock.swift in Sources */,
+				D004EC07CF565A569A3EF27E /* android_checkin.pb.swift in Sources */,
+				82D56FE977AD7C51C0E094A1 /* checkin.pb.swift in Sources */,
+				52A0CC0189FC2D7A06F1FAFB /* mcs.pb.swift in Sources */,
+				883BEFD5F72E1B3588D9682D /* uECC.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3133B4C2B7D5FD8D8C1F36F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06B8836720A0349795B75FB6 /* FindHub Android */;
+			targetProxy = DD7257270C813C76CD82DF20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		416757F213045929D6E9DE00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A97F5AA3B44235C4CEC3099A /* Base.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Sources/uECC";
+				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "FindHub Android";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "FindHub Android używa Bluetooth do namierzania i powiadamiania o utracie kontaktu z Twoimi tagami.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "FindHub Android pokazuje Twoją pozycję i pozwala zaznaczyć obszar domu lub pracy.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.mintstudio.findhubandroid;
+				PRODUCT_MODULE_NAME = FindHubAndroid;
+				PRODUCT_NAME = "FindHub Android";
+				PUBLISHER_CONTACT = "kontakt@mintstudio.pl";
+				PUBLISHER_NAME = mintstudio;
+				SDKROOT = iphoneos;
+				SOURCE_CODE_URL = "https://github.com/darthkubox/FindHub-Android";
+				SWIFT_OBJC_BRIDGING_HEADER = Sources/uECC/Bridging.h;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7F84505489FFD711AC57B7FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		874B8D81DFEFC84EEE14E3A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.mintstudio.findhubandroid.FindHubAndroidAppearanceTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindHub Android.app/FindHub Android";
+			};
+			name = Debug;
+		};
+		CE7E66ED14F0DDFA06179398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CF95FBF952B656E1401E0FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.mintstudio.findhubandroid.FindHubAndroidAppearanceTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindHub Android.app/FindHub Android";
+			};
+			name = Release;
+		};
+		E4C49971E97D1F1326C5A546 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A97F5AA3B44235C4CEC3099A /* Base.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Sources/uECC";
+				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "FindHub Android";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "FindHub Android używa Bluetooth do namierzania i powiadamiania o utracie kontaktu z Twoimi tagami.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "FindHub Android pokazuje Twoją pozycję i pozwala zaznaczyć obszar domu lub pracy.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.mintstudio.findhubandroid;
+				PRODUCT_MODULE_NAME = FindHubAndroid;
+				PRODUCT_NAME = "FindHub Android";
+				PUBLISHER_CONTACT = "kontakt@mintstudio.pl";
+				PUBLISHER_NAME = mintstudio;
+				SDKROOT = iphoneos;
+				SOURCE_CODE_URL = "https://github.com/darthkubox/FindHub-Android";
+				SWIFT_OBJC_BRIDGING_HEADER = Sources/uECC/Bridging.h;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		323DCACED7256754F884AB06 /* Build configuration list for PBXProject "FindHub Android" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F84505489FFD711AC57B7FF /* Debug */,
+				CE7E66ED14F0DDFA06179398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		33B786BFAF2B82F13E77A9B0 /* Build configuration list for PBXNativeTarget "FindHub Android" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				416757F213045929D6E9DE00 /* Debug */,
+				E4C49971E97D1F1326C5A546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FAEEC144BE5617F167E1D6DB /* Build configuration list for PBXNativeTarget "FindHubAndroidAppearanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				874B8D81DFEFC84EEE14E3A1 /* Debug */,
+				CF95FBF952B656E1401E0FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E589561F73237EBE5C9CF744 /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-protobuf.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.28.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		256B468EBE1D6C020141773D /* SwiftProtobuf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E589561F73237EBE5C9CF744 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobuf;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F5173764084032D72FC27CA8 /* Project object */;
+}

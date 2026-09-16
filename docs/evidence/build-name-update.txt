@@ -1,0 +1,12 @@
+Date: 2026-09-16
+Project and scheme: FindHub Android
+Swift module: FindHubAndroid
+Release device build, CODE_SIGNING_ALLOWED=NO: PASS
+Build-for-testing, Release, CODE_SIGNING_ALLOWED=NO ENABLE_TESTABILITY=YES (command-only override): PASS
+XCTest execution: NOT PERFORMED
+Built CFBundleName and CFBundleDisplayName: FindHub Android
+Bluetooth and location permission descriptions: FindHub Android
+Icon: byte-identical to the accepted original
+Bundle ID and Keychain namespace: unchanged
+Installation, signing and publishing: NOT PERFORMED
+Initial validation found a test-host path mismatch, corrected through the XcodeGen target name. Test compilation then required the explicit testability override because Release disables @testable access by default; production settings were not changed.

@@ -1,0 +1,4 @@
+CHANGED: MotoHub/Sources/M3BottomDrawer.swift
+CHANGED: MotoHub/Sources/DeviceDetailView.swift
+CHANGED: CLAUDE.md
+Source differs from the copy-time snapshot. No files were modified by this check.
