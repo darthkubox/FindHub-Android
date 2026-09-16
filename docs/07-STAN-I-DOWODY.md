@@ -118,3 +118,9 @@ Polecenie użytkownika: dokumenty i licencje po polsku i angielsku, aplikacja w 
 - Ekran startowy: ikona aplikacji (`AppLogo`, kształt ikony iOS) zamiast symbolu; podtytuł „Sprawdź swoje androidowe lokalizatory na iOS” we wszystkich 6 językach.
 - Odblokowanie kluczy E2EE i logowanie Google: zamiast arkusza okno pełnoekranowe, bez gestu ściągania; WebView bez efektu sprężynowania. Otwieranie logowania z menu konta i ustawień czeka na zamknięcie poprzedniego arkusza.
 - Weryfikacja: zrzut ekranu logowania z testu (`LegalScreensTests`), XCTest 8/8, regresje 45, historia 50, build Release PASS. Rysowania wzoru na telefonie po zmianie nie sprawdzano — do potwierdzenia przez użytkownika.
+
+## Dół ekranów pod paskiem nawigacji — 2026-09-17 (zgłoszenie z telefonu)
+
+- Objaw: w szczegółach urządzenia ostatnia karta („Diagnostyka odczytu”) była ucięta przez dolny pasek nawigacji. Test `ScrollInsetTests` odtworzył to: po przewinięciu do końca treść kończyła się 80 pt pod paskiem, bo ekrany wypchnięte w `NavigationStack` nie dziedziczą rezerwy powłoki.
+- Poprawka: `EnvironmentValues.tabBarReserve` ustawiane w `MainTabsView` i modyfikator `.clearsTabBar()` na ekranach szczegółów urządzenia, historii, pilnowania, listy miejsc i szczegółów miejsca.
+- Weryfikacja: `ScrollInsetTests` PASS (treść kończy się nad paskiem, bez nadmiernej przerwy; zrzut obejrzany), XCTest 9/9, regresje 45, historia 50, build Release PASS.

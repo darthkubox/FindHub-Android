@@ -61,6 +61,7 @@
 		A4DD3ED19FAC6474099C4F55 /* LegalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F0E8C18BE7686C088A5F5 /* LegalTests.swift */; };
 		A64DD45D04B3BB9307851798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EE64CB86BAE1289DB2AAFC5 /* Assets.xcassets */; };
 		A75889BA9E0518A9220D3592 /* FindHubAndroidApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBEDFBE0E33FC5B318466E /* FindHubAndroidApp.swift */; };
+		ACFF83FAD6E19EBD17996AA0 /* ScrollInsetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B107B5F9A4C6CDA09A24C7 /* ScrollInsetTests.swift */; };
 		AFCCCC289309224B1A27081C /* MapClusters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE787C97DA9E9BA4F8AC09 /* MapClusters.swift */; };
 		B3EF5B453A14A29AAB4A211B /* VaultUnlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB9C5195BDAF88A94A9297 /* VaultUnlock.swift */; };
 		B4527812110DDB4CAD32E8DC /* LocationReportsUpload.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFCB6D4EA99ECA7662721A5 /* LocationReportsUpload.pb.swift */; };
@@ -113,6 +114,7 @@
 		2118905FD25A4C216D5FA4CE /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		21BDBC26563AC17E195076D2 /* DeviceImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceImageStore.swift; sourceTree = "<group>"; };
 		23CE03D88D3B984633D11937 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		25B107B5F9A4C6CDA09A24C7 /* ScrollInsetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollInsetTests.swift; sourceTree = "<group>"; };
 		2AA40DFDA936ECDD04AF7D5B /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		2BEDF0928ECFB96D0C97CEC0 /* IconStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconStore.swift; sourceTree = "<group>"; };
 		2EE64CB86BAE1289DB2AAFC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				160F2256369ABDCC22144291 /* JournalViewTests.swift */,
 				F71F0E8C18BE7686C088A5F5 /* LegalTests.swift */,
 				BA4006F45A24F768F8F07013 /* PlacesViewTests.swift */,
+				25B107B5F9A4C6CDA09A24C7 /* ScrollInsetTests.swift */,
 				6611054FE898F1E01C6B16F9 /* TabBarTests.swift */,
 			);
 			path = Tests;
@@ -482,6 +485,7 @@
 				B5F77C718A632ED749DA69A5 /* JournalViewTests.swift in Sources */,
 				A4DD3ED19FAC6474099C4F55 /* LegalTests.swift in Sources */,
 				D9F22172B33E08C9C0393869 /* PlacesViewTests.swift in Sources */,
+				ACFF83FAD6E19EBD17996AA0 /* ScrollInsetTests.swift in Sources */,
 				0AD91D50DE0E06BF39FF2579 /* TabBarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

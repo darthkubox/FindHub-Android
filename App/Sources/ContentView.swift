@@ -216,6 +216,7 @@ struct MainTabsView<Account: ToolbarContent>: View {
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 Color.clear.frame(height: M3TabBar.totalHeight(safeBottom: safeBottom))
             }
+            .environment(\.tabBarReserve, M3TabBar.totalHeight(safeBottom: safeBottom))
 
             M3TabBar(selection: $selection, safeBottom: safeBottom)
         }

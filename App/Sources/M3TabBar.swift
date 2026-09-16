@@ -132,3 +132,32 @@ struct M3TabBar: View {
         .accessibilityAddTraits(active ? [.isSelected, .isButton] : .isButton)
     }
 }
+
+private struct TabBarReserveKey: EnvironmentKey {
+    static let defaultValue: CGFloat = 0
+}
+
+extension EnvironmentValues {
+    /// Height the navigation bar covers at the bottom of a tab page; zero outside
+    /// the tab shell (sheets, full-screen covers).
+    var tabBarReserve: CGFloat {
+        get { self[TabBarReserveKey.self] }
+        set { self[TabBarReserveKey.self] = newValue }
+    }
+}
+
+/// Screens pushed inside a tab's NavigationStack do not inherit the shell's
+/// `safeAreaInset`, so their last rows ended under the navigation bar. Each
+/// pushed screen reserves the bar's height itself.
+private struct ClearsTabBar: ViewModifier {
+    @Environment(\.tabBarReserve) private var reserve
+    func body(content: Content) -> some View {
+        content.safeAreaInset(edge: .bottom, spacing: 0) {
+            Color.clear.frame(height: reserve).allowsHitTesting(false)
+        }
+    }
+}
+
+extension View {
+    func clearsTabBar() -> some View { modifier(ClearsTabBar()) }
+}

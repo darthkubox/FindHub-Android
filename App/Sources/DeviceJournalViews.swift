@@ -109,6 +109,7 @@ struct DeviceHistoryView: View {
             }.padding().background(.background)
         }
         .navigationTitle("Historia i trasa")
+        .clearsTabBar()
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: range) { frameHistory() }
         .onChange(of: points) { frameHistory() }
@@ -200,6 +201,7 @@ struct DeviceProtectionView: View {
             }
         }
         .navigationTitle("Pilnowanie urządzenia")
+        .clearsTabBar()
         .navigationBarTitleDisplayMode(.inline)
         .task { await protection.refreshNotificationPermission() }
     }
@@ -266,6 +268,7 @@ struct SavedPlacesView: View {
             if let error = journal.storageError { Text(error).foregroundStyle(.red) }
         }
         .navigationTitle("Dom i inne miejsca")
+        .clearsTabBar()
         .sheet(item: $editor) { PlaceEditor(place: $0) }
         .sheet(isPresented: $adding) { PlaceEditor(place: nil) }
     }

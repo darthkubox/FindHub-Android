@@ -57,6 +57,7 @@ struct DeviceDetailView: View {
         }
         .background(M3.background(scheme).ignoresSafeArea())
         .navigationTitle(displayName)
+        .clearsTabBar()
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: photoItem, applyPickedPhoto)
         .alert("Zmień nazwę", isPresented: $showRename) {

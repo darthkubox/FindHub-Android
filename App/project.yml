@@ -26,6 +26,7 @@ targets:
       - Tests/PlacesViewTests.swift
       - Tests/TabBarTests.swift
       - Tests/LegalTests.swift
+      - Tests/ScrollInsetTests.swift
     dependencies:
       - target: FindHub Android
     settings:

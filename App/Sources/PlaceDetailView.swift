@@ -33,6 +33,7 @@ struct PlaceDetailView: View {
         }
         .background(M3.background(scheme).ignoresSafeArea())
         .navigationTitle(place?.name ?? String(localized: "Miejsce"))
+        .clearsTabBar()
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
