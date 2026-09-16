@@ -11,20 +11,20 @@ enum MapsProvider: String, CaseIterable, Identifiable {
     var name: String {
         switch self {
         case .google: return "Google Maps"
-        case .apple: return "Mapy Apple"
+        case .apple: return String(localized: "Mapy Apple")
         }
     }
 }
 
 enum LocationPresentation {
-    static let polish = Locale(identifier: "pl_PL")
+    /// The app's resolved UI language with the user's region, so dates match the
+    /// language the interface is shown in.
+    static var appLocale: Locale { Locale.autoupdatingCurrent }
 
-    /// Relative age in Polish full words (e.g. "2 godziny temu", "30 sekund temu").
-    /// SwiftUI's `.relative` style renders English abbreviations under a non-pl app
-    /// locale, so we format explicitly.
+    /// Relative age in full words (e.g. "2 hours ago", "2 godziny temu").
     private static let relativeFormatter: RelativeDateTimeFormatter = {
         let f = RelativeDateTimeFormatter()
-        f.locale = polish
+        f.locale = appLocale
         f.unitsStyle = .full
         return f
     }()
@@ -33,9 +33,9 @@ enum LocationPresentation {
         relativeFormatter.localizedString(for: date, relativeTo: now)
     }
 
-    /// Full date + time in Polish.
+    /// Full date + time in the app's language.
     static func fullDate(_ date: Date) -> String {
-        date.formatted(Date.FormatStyle(date: .abbreviated, time: .standard).locale(polish))
+        date.formatted(Date.FormatStyle(date: .abbreviated, time: .standard).locale(appLocale))
     }
 
     static func coordinates(_ coordinate: CLLocationCoordinate2D) -> String {
@@ -44,7 +44,7 @@ enum LocationPresentation {
     }
 
     static func distance(_ meters: Double) -> String {
-        guard meters.isFinite, meters >= 0 else { return "Brak danych" }
+        guard meters.isFinite, meters >= 0 else { return String(localized: "Brak danych") }
         if UserDefaults.standard.bool(forKey: "set_useImperial") {   // AppSettings.K.imperial
             let feet = meters * 3.28084
             if feet < 5280 { return "\(Int(feet.rounded())) ft" }

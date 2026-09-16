@@ -26,7 +26,7 @@ struct DeviceDetailView: View {
     private var position: DecryptedLocation? { model.locations[device.id] }
 
     private var displayName: String {
-        NameStore.name(for: device.id) ?? (currentDevice.name.isEmpty ? "(bez nazwy)" : currentDevice.name)
+        NameStore.name(for: device.id) ?? (currentDevice.name.isEmpty ? String(localized: "(bez nazwy)") : currentDevice.name)
     }
     private var hasCustom: Bool {
         DeviceImageStore.image(for: device.id) != nil || IconStore.symbol(for: device.id) != nil
@@ -107,7 +107,7 @@ struct DeviceDetailView: View {
                         }
                     }
                 } else {
-                    infoLine("Czas raportu", value: "Brak danych")
+                    infoLine("Czas raportu", value: String(localized: "Brak danych"))
                 }
                 ViewThatFits(in: .horizontal) {
                     HStack(spacing: 12) { mapsLinks(position) }
@@ -123,7 +123,7 @@ struct DeviceDetailView: View {
                             .font(.caption).foregroundStyle(M3.onSurfaceVariant(scheme))
                     }
                 }
-                Text(model.locationMessages[device.id] ?? "Nie odebrano jeszcze pozycji tego urządzenia.")
+                Text(model.locationMessages[device.id] ?? String(localized: "Nie odebrano jeszcze pozycji tego urządzenia."))
                     .font(.subheadline).foregroundStyle(M3.onSurfaceVariant(scheme))
                 Button("Pobierz lokalizację") { Task { await model.locate(currentDevice) } }
                     .buttonStyle(M3TonalButtonStyle())
@@ -164,14 +164,14 @@ struct DeviceDetailView: View {
             DisclosureGroup("Więcej szczegółów") {
                 VStack(alignment: .leading, spacing: 12) {
                     if settings.showAccuracy {
-                        infoLine("Dokładność", value: position.accuracyMeters.map { "około " + LocationPresentation.distance($0) } ?? "Brak danych")
+                        infoLine("Dokładność", value: position.accuracyMeters.map { String(localized: "około \(LocationPresentation.distance($0))") } ?? String(localized: "Brak danych"))
                     }
                     if settings.showDistance {
                         if let me = userLocation.location {
                             let target = CLLocation(latitude: position.coordinate.latitude, longitude: position.coordinate.longitude)
-                            infoLine("Od Ciebie w linii prostej", value: "około " + LocationPresentation.distance(me.distance(from: target)))
+                            infoLine("Od Ciebie w linii prostej", value: String(localized: "około \(LocationPresentation.distance(me.distance(from: target)))"))
                         } else {
-                            Text(userLocation.message ?? "Odległość pojawi się po ustaleniu Twojej pozycji.")
+                            Text(userLocation.message ?? String(localized: "Odległość pojawi się po ustaleniu Twojej pozycji."))
                                 .font(.footnote).foregroundStyle(M3.onSurfaceVariant(scheme))
                         }
                     }
@@ -216,13 +216,13 @@ struct DeviceDetailView: View {
         VStack(alignment: .leading, spacing: 0) {
             DisclosureGroup {
                 VStack(alignment: .leading, spacing: 12) {
-                    infoLine("Nazwa w Google", value: currentDevice.name.isEmpty ? "Brak danych" : currentDevice.name)
-                    infoLine("Producent", value: currentDevice.manufacturer ?? "Brak danych")
-                    infoLine("Model", value: currentDevice.modelName ?? "Brak danych")
+                    infoLine("Nazwa w Google", value: currentDevice.name.isEmpty ? String(localized: "Brak danych") : currentDevice.name)
+                    infoLine("Producent", value: currentDevice.manufacturer ?? String(localized: "Brak danych"))
+                    infoLine("Model", value: currentDevice.modelName ?? String(localized: "Brak danych"))
                     if let paired = currentDevice.pairedAt {
                         infoLine("Sparowano", value: paired.formatted(date: .abbreviated, time: .omitted))
                     }
-                    infoLine("Pozycja", value: model.locationMessages[device.id] ?? (position == nil ? "Brak danych" : "Dostępna na mapie"))
+                    infoLine("Pozycja", value: model.locationMessages[device.id] ?? (position == nil ? String(localized: "Brak danych") : String(localized: "Dostępna na mapie")))
                 }
                 .padding(.top, 12)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -238,7 +238,7 @@ struct DeviceDetailView: View {
         .overlay(RoundedRectangle(cornerRadius: 16).stroke(M3.outline(scheme).opacity(0.18), lineWidth: 1))
     }
 
-    private func detailCard<Content: View>(_ title: String, icon: String,
+    private func detailCard<Content: View>(_ title: LocalizedStringKey, icon: String,
                                             @ViewBuilder content: () -> Content) -> some View {
         VStack(alignment: .leading, spacing: 14) {
             Label(title, systemImage: icon)
@@ -251,7 +251,7 @@ struct DeviceDetailView: View {
         .overlay(RoundedRectangle(cornerRadius: 16).stroke(M3.outline(scheme).opacity(0.18), lineWidth: 1))
     }
 
-    private func infoLine(_ title: String, value: String) -> some View {
+    private func infoLine(_ title: LocalizedStringKey, value: String) -> some View {
         ViewThatFits(in: .horizontal) {
             HStack(alignment: .firstTextBaseline, spacing: 12) {
                 Text(title).foregroundStyle(M3.onSurfaceVariant(scheme))
@@ -331,7 +331,7 @@ struct DeviceDetailView: View {
         }
     }
 
-    private func actionButton(_ title: String, _ system: String, _ action: @escaping () -> Void) -> some View {
+    private func actionButton(_ title: LocalizedStringKey, _ system: String, _ action: @escaping () -> Void) -> some View {
         Button(action: action) {
             VStack(spacing: 8) {
                 Image(systemName: system).font(.system(size: 20, weight: .semibold))
@@ -349,11 +349,11 @@ struct DeviceDetailView: View {
         .buttonStyle(.plain)
     }
 
-    private func editRow(_ title: String, _ system: String, destructive: Bool = false, _ action: @escaping () -> Void) -> some View {
+    private func editRow(_ title: LocalizedStringKey, _ system: String, destructive: Bool = false, _ action: @escaping () -> Void) -> some View {
         Button(action: action) { rowLabel(title, system, destructive: destructive) }.buttonStyle(.plain)
     }
 
-    private func rowLabel(_ title: String, _ system: String, destructive: Bool = false) -> some View {
+    private func rowLabel(_ title: LocalizedStringKey, _ system: String, destructive: Bool = false) -> some View {
         HStack(spacing: 14) {
             Image(systemName: system).frame(width: 24)
                 .foregroundStyle(destructive ? Color.red : M3.primary(scheme))

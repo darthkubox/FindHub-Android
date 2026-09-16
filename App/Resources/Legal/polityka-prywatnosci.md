@@ -1,6 +1,6 @@
 # Polityka prywatności FindHub Android
 
-Wersja 1, obowiązuje od 17 września 2026 r.
+Wersja 1, obowiązuje od 17 września 2026 r. To wersja polska; dostępna jest też wersja angielska. W razie rozbieżności rozstrzyga wersja polska w zakresie dopuszczalnym przez prawo.
 
 ## 1. Kto odpowiada za aplikację
 
@@ -62,7 +62,7 @@ Dostęp do lokalizacji, Bluetooth, powiadomień i zdjęć wymaga Twojej zgody w 
 
 ## 7. Twoje prawa
 
-Dane zapisane w aplikacji są pod Twoją kontrolą na telefonie: możesz je przeglądać, zmieniać i usuwać. Ponieważ mintstudio ich nie otrzymuje, nie możemy ich udostępnić, poprawić ani usunąć za Ciebie. Prawa dotyczące danych w Google realizujesz u Google. Jeśli uważasz, że dane są przetwarzane niezgodnie z prawem, możesz złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (https://uodo.gov.pl).
+Dane zapisane w aplikacji są pod Twoją kontrolą na telefonie: możesz je przeglądać, zmieniać i usuwać. Ponieważ mintstudio ich nie otrzymuje, nie możemy ich udostępnić, poprawić ani usunąć za Ciebie. Prawa dotyczące danych w Google realizujesz u Google. Jeśli uważasz, że dane są przetwarzane niezgodnie z prawem, możesz złożyć skargę do organu ochrony danych — w Polsce do Prezesa Urzędu Ochrony Danych Osobowych (https://uodo.gov.pl) — lub do organu w kraju swojego zamieszkania.
 
 ## 8. Bezpieczeństwo
 

@@ -52,7 +52,7 @@ struct MapClusterMarker: View {
                     DeviceThumbnail(device: device, size: 32, iconOnly: true)
                         .overlay(RoundedRectangle(cornerRadius: 8)
                             .stroke(selectedDeviceID == id ? M3.primary(scheme) : .clear, lineWidth: 2))
-                    Text(name.isEmpty ? "Urządzenie" : name)
+                    Text(name.isEmpty ? String(localized: "Urządzenie") : name)
                         .font(.caption2).lineLimit(1)
                         .foregroundStyle(M3.onSurface(scheme))
                 }

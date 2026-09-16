@@ -156,7 +156,7 @@ struct DeviceProtectionView: View {
                         Text("3 minuty").tag(180.0)
                         Text("5 minut").tag(300.0)
                     }
-                    Text(protection.deviceStatus[device.id] ?? "Podejdź do urządzenia, aby rozpocząć pilnowanie.")
+                    Text(protection.deviceStatus[device.id] ?? String(localized: "Podejdź do urządzenia, aby rozpocząć pilnowanie."))
                         .font(.footnote)
                     Text(protection.bluetoothStatus).font(.caption).foregroundStyle(.secondary)
                 }
@@ -286,7 +286,7 @@ struct PlaceEditor: View {
     private let geocoder = CLGeocoder()
 
     init(place: SavedPlace?) {
-        let initial = place ?? SavedPlace(name: "Dom", latitude: 52.2297, longitude: 21.0122)
+        let initial = place ?? SavedPlace(name: String(localized: "Dom"), latitude: 52.2297, longitude: 21.0122)
         _draft = State(initialValue: initial)
         _camera = State(initialValue: .region(.init(center: initial.coordinate, latitudinalMeters: 1500, longitudinalMeters: 1500)))
         _pickedCenter = State(initialValue: place != nil)
@@ -335,7 +335,7 @@ struct PlaceEditor: View {
                 .clipShape(RoundedRectangle(cornerRadius: 12))
 
                 VStack(alignment: .leading, spacing: 10) {
-                    Label(resolvedAddress ?? "Przesuń mapę i ustaw środek obszaru pod krzyżykiem.",
+                    Label(resolvedAddress ?? String(localized: "Przesuń mapę i ustaw środek obszaru pod krzyżykiem."),
                           systemImage: "mappin.and.ellipse")
                         .font(.footnote).foregroundStyle(.secondary)
                     Text("Promień: \(Int(draft.radius)) m")
@@ -398,7 +398,7 @@ struct PlaceEditor: View {
         }
     }
 
-    private func fieldLabel(_ text: String) -> some View {
+    private func fieldLabel(_ text: LocalizedStringKey) -> some View {
         Text(text).font(.caption.weight(.semibold)).foregroundStyle(.secondary)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -420,7 +420,7 @@ struct PlaceEditor: View {
             Task { @MainActor in
                 searching = false
                 guard let placemark = placemarks?.first, let loc = placemark.location else {
-                    searchError = "Nie znaleziono adresu."; return
+                    searchError = String(localized: "Nie znaleziono adresu."); return
                 }
                 center(on: loc.coordinate)
                 resolvedAddress = Self.format(placemark)

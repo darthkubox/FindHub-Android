@@ -26,7 +26,7 @@ enum FcmError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .http(let step, let code): return "FCM \(step) HTTP \(code)"
-        case .parse(let step): return "FCM \(step): zła odpowiedź"
+        case .parse(let step): return String(localized: "FCM \(step): zła odpowiedź")
         }
     }
 }

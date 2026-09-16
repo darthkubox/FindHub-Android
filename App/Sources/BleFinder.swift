@@ -19,7 +19,7 @@ final class BleFinder: NSObject, ObservableObject {
     /// True when the tracked tag's advertised EID matches the requested device.
     @Published private(set) var locked = false
     @Published private(set) var nearbyCount = 0
-    @Published private(set) var status = "Włącz Bluetooth i trzymaj tag w pobliżu."
+    @Published private(set) var status = String(localized: "Włącz Bluetooth i trzymaj tag w pobliżu.")
     @Published private(set) var available = true
 
     private var central: CBCentralManager?
@@ -58,8 +58,8 @@ final class BleFinder: NSObject, ObservableObject {
         central?.scanForPeripherals(withServices: nil,
                                     options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
         status = expectedPrefixes.isEmpty
-            ? "Szukam najbliższego tagu…"
-            : "Szukam tego urządzenia w pobliżu…"
+            ? String(localized: "Szukam najbliższego tagu…")
+            : String(localized: "Szukam tego urządzenia w pobliżu…")
     }
 
     /// Drop stale peripherals and recompute the tracked target + level.
@@ -75,15 +75,15 @@ final class BleFinder: NSObject, ObservableObject {
             rssi = nil
             level = max(0, level - 0.15)   // decay toward cold when nothing is seen
             locked = false
-            status = expectedPrefixes.isEmpty ? "Brak tagów w pobliżu." : "Nie widzę tego tagu. Podejdź bliżej."
+            status = expectedPrefixes.isEmpty ? String(localized: "Brak tagów w pobliżu.") : String(localized: "Nie widzę tego tagu. Podejdź bliżej.")
             return
         }
         locked = best.value.matches
         rssi = Int(best.value.rssi.rounded())
         // Smooth toward the new reading so the UI moves gently.
         level += (Self.normalize(best.value.rssi) - level) * 0.35
-        status = locked ? "To urządzenie jest w pobliżu." :
-            (expectedPrefixes.isEmpty ? "Najbliższy tag." : "Widzę tag, ale nie potwierdzono, że to ten.")
+        status = locked ? String(localized: "To urządzenie jest w pobliżu.") :
+            (expectedPrefixes.isEmpty ? String(localized: "Najbliższy tag.") : String(localized: "Widzę tag, ale nie potwierdzono, że to ten."))
     }
 
     private func matchesTarget(_ serviceData: [CBUUID: Data]) -> Bool {
@@ -108,7 +108,7 @@ extension BleFinder: @preconcurrency CBCentralManagerDelegate {
         case .poweredOn: available = true; beginScan()
         case .poweredOff, .unauthorized, .unsupported:
             available = false
-            status = "Bluetooth jest wyłączony lub niedostępny."
+            status = String(localized: "Bluetooth jest wyłączony lub niedostępny.")
         default: break
         }
     }

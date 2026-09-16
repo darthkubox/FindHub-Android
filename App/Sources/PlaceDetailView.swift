@@ -32,7 +32,7 @@ struct PlaceDetailView: View {
             if let place { content(place) } else { removed }
         }
         .background(M3.background(scheme).ignoresSafeArea())
-        .navigationTitle(place?.name ?? "Miejsce")
+        .navigationTitle(place?.name ?? String(localized: "Miejsce"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -207,12 +207,12 @@ struct PlaceDetailView: View {
 
     /// Where the device's newest fix sits relative to this zone, when we have one.
     private func statusText(_ device: TrackerDevice) -> String {
-        guard let place, let location = model.locations[device.id] else { return "Brak odebranej pozycji" }
+        guard let place, let location = model.locations[device.id] else { return String(localized: "Brak odebranej pozycji") }
         let distance = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             .distance(from: CLLocation(latitude: place.latitude, longitude: place.longitude))
-        guard distance.isFinite else { return "Pozycja niedostępna" }
-        if distance <= place.radius { return "W obszarze" }
-        return "Poza obszarem · \(LocationPresentation.distance(distance))"
+        guard distance.isFinite else { return String(localized: "Pozycja niedostępna") }
+        if distance <= place.radius { return String(localized: "W obszarze") }
+        return String(localized: "Poza obszarem · \(LocationPresentation.distance(distance))")
     }
 
     private var removed: some View {

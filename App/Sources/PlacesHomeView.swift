@@ -9,7 +9,7 @@ import MapKit
 @MainActor
 enum PlaceAssignment {
     static func name(of device: TrackerDevice) -> String {
-        NameStore.name(for: device.id) ?? (device.name.isEmpty ? "(bez nazwy)" : device.name)
+        NameStore.name(for: device.id) ?? (device.name.isEmpty ? String(localized: "(bez nazwy)") : device.name)
     }
 
     static func set(_ assigned: Bool, device: TrackerDevice, place: UUID) {
@@ -35,11 +35,16 @@ enum PlaceAssignment {
 
     static func suggestedSymbol(named name: String) -> String {
         let n = name.lowercased()
-        if n.contains("dom") || n.contains("home") || n.contains("chata") { return "house.fill" }
-        if n.contains("prac") || n.contains("biur") || n.contains("work") || n.contains("office") { return "briefcase.fill" }
-        if n.contains("szkoł") || n.contains("uczel") || n.contains("school") { return "graduationcap.fill" }
-        if n.contains("garaż") || n.contains("parking") || n.contains("auto") { return "car.fill" }
-        if n.contains("dzia") || n.contains("ogró") || n.contains("las") { return "tree.fill" }
+        // Keywords cover every app language, since names are typed in the user's own.
+        func has(_ words: [String]) -> Bool { words.contains { n.contains($0) } }
+        if has(["dom", "home", "chata", "haus", "zuhause", "maison", "casa", "hogar"]) { return "house.fill" }
+        if has(["prac", "biur", "work", "office", "arbeit", "büro", "buero", "travail", "bureau",
+                "trabajo", "oficina", "lavoro", "ufficio"]) { return "briefcase.fill" }
+        if has(["szkoł", "szkol", "uczel", "school", "schule", "universit", "école", "ecole", "lycée",
+                "escuela", "colegio", "scuola"]) { return "graduationcap.fill" }
+        if has(["garaż", "garaz", "garage", "parking", "auto", "coche", "parcheggio"]) { return "car.fill" }
+        if has(["dzia", "ogró", "ogrod", "las", "garden", "garten", "wald", "jardin", "jardín", "forêt",
+                "bosque", "giardino", "bosco", "park", "parc", "parque", "parco"]) { return "tree.fill" }
         return "mappin.and.ellipse"
     }
 }
@@ -235,8 +240,8 @@ struct PlacesHomeView: View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
                 Text("Moje miejsca").font(.title3.bold()).foregroundStyle(M3.onSurface(scheme))
-                Text(places.isEmpty ? "Brak zapisanych obszarów"
-                                    : "\(places.count) \(Self.placeWord(places.count))")
+                Text(places.isEmpty ? String(localized: "Brak zapisanych obszarów")
+                                    : String(localized: "\(places.count) miejsc"))
                     .font(.caption).foregroundStyle(M3.onSurfaceVariant(scheme))
             }
             Spacer()
@@ -258,7 +263,7 @@ struct PlacesHomeView: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(place.name)
                             .font(.body.weight(.medium)).foregroundStyle(M3.onSurface(scheme))
-                        Text("Promień \(Int(place.radius)) m · \(assigned.count) \(Self.deviceWord(assigned.count))")
+                        (Text("Promień \(Int(place.radius)) m") + Text(verbatim: " · ") + Text("\(assigned.count) urządzeń"))
                             .font(.caption).foregroundStyle(M3.onSurfaceVariant(scheme))
                         if !assigned.isEmpty {
                             HStack(spacing: -6) {
@@ -315,15 +320,4 @@ struct PlacesHomeView: View {
         .padding(.bottom, 8)
     }
 
-    private static func placeWord(_ n: Int) -> String {
-        n == 1 ? "miejsce" : (Self.isFewForm(n) ? "miejsca" : "miejsc")
-    }
-    private static func deviceWord(_ n: Int) -> String {
-        n == 1 ? "urządzenie" : (Self.isFewForm(n) ? "urządzenia" : "urządzeń")
-    }
-    /// Polish "few" plural: 2–4, except the teens.
-    private static func isFewForm(_ n: Int) -> Bool {
-        let last = n % 10, teens = n % 100
-        return (2...4).contains(last) && !(12...14).contains(teens)
-    }
 }

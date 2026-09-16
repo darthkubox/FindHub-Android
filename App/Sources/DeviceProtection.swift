@@ -12,7 +12,7 @@ import UIKit
 @MainActor
 final class DeviceProtection: NSObject, ObservableObject {
     static let shared = DeviceProtection()
-    @Published private(set) var bluetoothStatus = "Pilnowanie Bluetooth wyłączone"
+    @Published private(set) var bluetoothStatus = String(localized: "Pilnowanie Bluetooth wyłączone")
     @Published private(set) var deviceStatus: [String: String] = [:]
     @Published private(set) var notificationsAllowed = false
     @Published private(set) var notificationMessage: String?
@@ -39,7 +39,7 @@ final class DeviceProtection: NSObject, ObservableObject {
     func refreshNotificationPermission() async {
         let settings = await notifications.notificationSettings()
         notificationsAllowed = [.authorized, .provisional, .ephemeral].contains(settings.authorizationStatus)
-        notificationMessage = notificationsAllowed ? nil : "Włącz powiadomienia, aby otrzymywać alerty."
+        notificationMessage = notificationsAllowed ? nil : String(localized: "Włącz powiadomienia, aby otrzymywać alerty.")
     }
 
     func requestNotifications() async -> Bool {
@@ -48,7 +48,7 @@ final class DeviceProtection: NSObject, ObservableObject {
             await refreshNotificationPermission()
             return granted
         } catch {
-            notificationMessage = "Nie udało się włączyć powiadomień. Spróbuj ponownie."
+            notificationMessage = String(localized: "Nie udało się włączyć powiadomień. Spróbuj ponownie.")
             return false
         }
     }
@@ -89,7 +89,7 @@ final class DeviceProtection: NSObject, ObservableObject {
         }
         eidCache = [:]
         guard journal.account != nil, !enabled.isEmpty else {
-            central?.stopScan(); bluetoothStatus = "Pilnowanie Bluetooth wyłączone"; return
+            central?.stopScan(); bluetoothStatus = String(localized: "Pilnowanie Bluetooth wyłączone"); return
         }
         if central == nil {
             central = CBCentralManager(delegate: self, queue: .main, options: [
@@ -101,14 +101,14 @@ final class DeviceProtection: NSObject, ObservableObject {
 
     private func scanAndReconnect() {
         guard let central, central.state == .poweredOn else { return }
-        bluetoothStatus = "Bluetooth włączony"
+        bluetoothStatus = String(localized: "Bluetooth włączony")
         for (id, record) in journal.document.devices where record.closeDevice {
             if let existing = peripherals[id], existing.state == .connected || existing.state == .connecting { continue }
             if let uuid = record.peripheralID, let peripheral = central.retrievePeripherals(withIdentifiers: [uuid]).first {
                 peripherals[id] = peripheral
                 if peripheral.state == .connected { didConnect(id) }
-                else { deviceStatus[id] = "Łączę z zapamiętanym tagiem…"; central.connect(peripheral) }
-            } else { deviceStatus[id] = "Podejdź do taga — oczekiwanie na potwierdzenie tożsamości" }
+                else { deviceStatus[id] = String(localized: "Łączę z zapamiętanym tagiem…"); central.connect(peripheral) }
+            } else { deviceStatus[id] = String(localized: "Podejdź do taga — oczekiwanie na potwierdzenie tożsamości") }
         }
         central.scanForPeripherals(withServices: [BleRing.fmdnService], options: nil)
     }
@@ -141,7 +141,7 @@ final class DeviceProtection: NSObject, ObservableObject {
     private func didConnect(_ id: String) {
         guard journal.device(id).closeDevice else { return }
         watches[id, default: SeparationWatch()].connected(); cancelAlert(id)
-        deviceStatus[id] = "Połączono — pilnuję utraty kontaktu"
+        deviceStatus[id] = String(localized: "Połączono — pilnuję utraty kontaktu")
         let record = journal.device(id)
         if record.connectionArmed != true {
             _ = journal.updateDevice(id, name: record.name) { $0.connectionArmed = true }
@@ -173,10 +173,10 @@ final class DeviceProtection: NSObject, ObservableObject {
         let record = journal.device(id)
         let requestID = "guardian.separation." + UUID().uuidString
         pendingAlerts[id] = requestID
-        deviceStatus[id] = "Utracono kontakt — czekam \(Int(record.disconnectDelay)) s na ponowne połączenie"
+        deviceStatus[id] = String(localized: "Utracono kontakt — czekam \(Int(record.disconnectDelay)) s na ponowne połączenie")
         let content = UNMutableNotificationContent()
-        content.title = "Czy masz przy sobie \(record.name)?"
-        content.body = "Utracono połączenie Bluetooth. Przedmiot może być poza zasięgiem."
+        content.title = String(localized: "Czy masz przy sobie \(record.name)?")
+        content.body = String(localized: "Utracono połączenie Bluetooth. Przedmiot może być poza zasięgiem.")
         content.sound = .default
         content.userInfo = ["account": account, "device": id, "kind": "separation", "scheduledAt": Date().timeIntervalSince1970]
         let request = UNNotificationRequest(identifier: requestID, content: content,
@@ -187,7 +187,7 @@ final class DeviceProtection: NSObject, ObservableObject {
                 if journal.account != account || pendingAlerts[id] != requestID || !journal.device(id).closeDevice {
                     notifications.removePendingNotificationRequests(withIdentifiers: [requestID])
                 }
-            } catch { notificationMessage = "Nie udało się zaplanować alertu utraty kontaktu." }
+            } catch { notificationMessage = String(localized: "Nie udało się zaplanować alertu utraty kontaktu.") }
         }
     }
 
@@ -195,8 +195,8 @@ final class DeviceProtection: NSObject, ObservableObject {
         guard let account = journal.account else { return }
         for event in events {
             let content = UNMutableNotificationContent()
-            content.title = "\(event.deviceName) poza miejscem: \(event.placeName)"
-            content.body = "Dwa raporty potwierdziły pozycję poza obszarem. Ostatni: \(LocationPresentation.fullDate(event.reportedAt))."
+            content.title = String(localized: "\(event.deviceName) poza miejscem: \(event.placeName)")
+            content.body = String(localized: "Dwa raporty potwierdziły pozycję poza obszarem. Ostatni: \(LocationPresentation.fullDate(event.reportedAt)).")
             content.sound = .default
             content.userInfo = ["account": account, "device": event.deviceID, "kind": "place"]
             let requestID = "guardian.place." + UUID().uuidString
@@ -209,7 +209,7 @@ final class DeviceProtection: NSObject, ObservableObject {
                         notifications.removePendingNotificationRequests(withIdentifiers: [requestID])
                         notifications.removeDeliveredNotifications(withIdentifiers: [requestID])
                     }
-                } catch { notificationMessage = "Nie udało się wysłać powiadomienia o opuszczeniu miejsca." }
+                } catch { notificationMessage = String(localized: "Nie udało się wysłać powiadomienia o opuszczeniu miejsca.") }
             }
         }
     }
@@ -246,8 +246,8 @@ extension DeviceProtection: @preconcurrency CBCentralManagerDelegate {
             for (id, record) in journal.document.devices where record.connectionArmed == true {
                 _ = journal.updateDevice(id, name: record.name) { $0.connectionArmed = false }
             }
-            bluetoothStatus = central.state == .unauthorized ? "Brak dostępu do Bluetooth — pilnowanie wstrzymane" : "Bluetooth niedostępny — pilnowanie wstrzymane"
-            for id in peripherals.keys { deviceStatus[id] = "Pilnowanie wstrzymane" }
+            bluetoothStatus = central.state == .unauthorized ? String(localized: "Brak dostępu do Bluetooth — pilnowanie wstrzymane") : String(localized: "Bluetooth niedostępny — pilnowanie wstrzymane")
+            for id in peripherals.keys { deviceStatus[id] = String(localized: "Pilnowanie wstrzymane") }
             return
         }
         let lost = restoredLosses; restoredLosses = []
@@ -272,7 +272,7 @@ extension DeviceProtection: @preconcurrency CBCentralManagerDelegate {
         if record.peripheralID != peripheral.identifier {
             _ = journal.updateDevice(id, name: record.name) { $0.peripheralID = peripheral.identifier }
         }
-        deviceStatus[id] = "Tag potwierdzony — nawiązuję połączenie…"
+        deviceStatus[id] = String(localized: "Tag potwierdzony — nawiązuję połączenie…")
         central.connect(peripheral)
     }
 
@@ -283,7 +283,7 @@ extension DeviceProtection: @preconcurrency CBCentralManagerDelegate {
 
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
         guard let id = deviceID(for: peripheral) else { return }
-        deviceStatus[id] = "Nie udało się połączyć. Ten tag może nie obsługiwać pilnowania w tle."
+        deviceStatus[id] = String(localized: "Nie udało się połączyć. Ten tag może nie obsługiwać pilnowania w tle.")
         // No alarm: a first successful connection is required to arm protection.
     }
 

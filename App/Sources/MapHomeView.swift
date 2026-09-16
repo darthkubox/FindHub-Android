@@ -328,7 +328,7 @@ struct MapHomeView: View {
     }
 
     private func row(_ device: TrackerDevice) -> some View {
-        let display = NameStore.name(for: device.id) ?? (device.name.isEmpty ? "(bez nazwy)" : device.name)
+        let display = NameStore.name(for: device.id) ?? (device.name.isEmpty ? String(localized: "(bez nazwy)") : device.name)
         return HStack(spacing: 14) {
             Button { selectedDevice = device } label: {
                 HStack(spacing: 14) {
@@ -355,7 +355,7 @@ struct MapHomeView: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 
-    private func sectionHeader(_ title: String) -> some View {
+    private func sectionHeader(_ title: LocalizedStringKey) -> some View {
         HStack {
             Text(title).font(.subheadline.weight(.semibold)).foregroundStyle(M3.onSurfaceVariant(scheme))
             Spacer()
@@ -369,10 +369,10 @@ struct MapHomeView: View {
             Text("Udostępnione przez \(owner)")
         } else if settings.showSeenTime, let location = model.locations[device.id], let seen = location.reportedAt {
             TimelineView(.periodic(from: .now, by: 60)) { _ in
-                Text("Widziano " + LocationPresentation.relativeAge(seen))
+                Text("Widziano \(LocationPresentation.relativeAge(seen))")
             }
         } else {
-            Text(model.locationMessages[device.id] ?? (model.locations[device.id] == nil ? "Brak odebranej pozycji" : "Pozycja na mapie"))
+            Text(model.locationMessages[device.id] ?? (model.locations[device.id] == nil ? String(localized: "Brak odebranej pozycji") : String(localized: "Pozycja na mapie")))
         }
     }
 }

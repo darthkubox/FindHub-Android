@@ -47,7 +47,9 @@ struct LicensesView: View {
                     .font(.footnote).foregroundStyle(M3.onSurfaceVariant(scheme))
             }
             Section("Licencje") {
-                NavigationLink("Komponenty, źródła i podziękowania") { LicenseTextView(title: "Komponenty", resource: "ACKNOWLEDGEMENTS") }
+                NavigationLink("Komponenty, źródła i podziękowania") {
+                    LicenseTextView(title: "Komponenty", resource: "ACKNOWLEDGEMENTS-\(LegalDocument.language)")
+                }
                 NavigationLink("GNU General Public License v3.0") { LicenseTextView(title: "GPL v3.0", resource: "GPL-3.0") }
             }
         }
@@ -57,13 +59,13 @@ struct LicensesView: View {
 }
 
 private struct LicenseTextView: View {
-    let title: String
+    let title: LocalizedStringKey
     let resource: String
 
     private var text: String {
         guard let url = Bundle.main.url(forResource: resource, withExtension: "txt"),
               let text = try? String(contentsOf: url, encoding: .utf8) else {
-            return "Nie znaleziono tekstu licencji w aplikacji."
+            return String(localized: "Nie znaleziono tekstu licencji w aplikacji.")
         }
         return text
     }

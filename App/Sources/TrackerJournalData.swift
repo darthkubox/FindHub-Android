@@ -7,7 +7,7 @@ import CoreLocation
 enum HistoryRange: Int, CaseIterable, Identifiable {
     case day = 24, twoDays = 48, week = 168
     var id: Int { rawValue }
-    var label: String { self == .week ? "7 dni" : "\(rawValue) h" }
+    var label: String { self == .week ? String(localized: "7 dni") : String(localized: "\(rawValue) h") }
     var seconds: TimeInterval { Double(rawValue) * 3600 }
 }
 
@@ -45,7 +45,7 @@ struct SavedPlace: Codable, Identifiable, Equatable {
 }
 
 struct DeviceJournal: Codable, Equatable {
-    var name = "Urządzenie"
+    var name = String(localized: "Urządzenie")
     var note = ""
     var history: [HistoryPoint] = []
     var closeDevice = false

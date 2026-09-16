@@ -11,8 +11,8 @@ enum EceError: LocalizedError {
     case badKey, decrypt
     var errorDescription: String? {
         switch self {
-        case .badKey: return "ECE: zły klucz"
-        case .decrypt: return "ECE: odszyfrowanie nie powiodło się"
+        case .badKey: return String(localized: "ECE: zły klucz")
+        case .decrypt: return String(localized: "ECE: odszyfrowanie nie powiodło się")
         }
     }
 }

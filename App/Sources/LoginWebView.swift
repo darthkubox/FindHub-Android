@@ -100,7 +100,7 @@ struct LoginWebView: UIViewRepresentable {
             guard !finished, error.code != NSURLErrorCancelled else { return }
             finished = true
             pollTimer?.invalidate()
-            onError("Logowanie nie powiodło się (\(error.code)).")
+            onError(String(localized: "Logowanie nie powiodło się (\(error.code))."))
         }
     }
 }

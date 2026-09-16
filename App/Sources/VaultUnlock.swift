@@ -121,7 +121,7 @@ struct VaultUnlockWebView: UIViewRepresentable {
             guard !finished, error.code != NSURLErrorCancelled else { return }
             finished = true
             pollTimer?.invalidate()
-            onError("Odblokowanie skarbca nie powiodło się (\(error.code)).")
+            onError(String(localized: "Odblokowanie skarbca nie powiodło się (\(error.code))."))
         }
     }
 }

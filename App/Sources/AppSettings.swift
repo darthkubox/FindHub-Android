@@ -10,9 +10,9 @@ enum AppTheme: String, CaseIterable, Identifiable {
     var id: String { rawValue }
     var label: String {
         switch self {
-        case .system: return "Systemowy"
-        case .light: return "Jasny"
-        case .dark: return "Ciemny"
+        case .system: return String(localized: "Systemowy")
+        case .light: return String(localized: "Jasny")
+        case .dark: return String(localized: "Ciemny")
         }
     }
 }

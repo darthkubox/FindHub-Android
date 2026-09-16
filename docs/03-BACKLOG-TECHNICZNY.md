@@ -7,7 +7,7 @@ Wszystkie ścieżki odnoszą się do `App/` w tym nowym projekcie. Priorytet P0 
 | ID | Priorytet | Zadanie / obszar | Definicja ukończenia | Stan |
 |---|---|---|---|---|
 | OSS-01 | P0 | Publikacja kodu na GPLv3 | `LICENSE`, licencje komponentów w aplikacji, publiczne repozytorium i `SOURCE_CODE_URL`, tag każdej wersji | CZĘŚCIOWO — pliki i ekran gotowe (2026-09-16); brak repozytorium |
-| LIC-02 | P0 | Notices i licencje w aplikacji | `Resources/Licenses/ACKNOWLEDGEMENTS.txt`, `GPL-3.0.txt`, ekran „Licencje i kod źródłowy” | ZROBIONE 2026-09-16 |
+| LIC-02 | P0 | Notices i licencje w aplikacji | `Resources/Licenses/ACKNOWLEDGEMENTS-{pl,en}.txt`, `GPL-3.0.txt`, ekran „Licencje i kod źródłowy” | ZROBIONE 2026-09-16 |
 | PRIV-01 | P1 | Privacy manifest | `Resources/PrivacyInfo.xcprivacy` w bundle, prawdziwe powody | ZROBIONE 2026-09-16 (UserDefaults CA92.1) |
 | PRIV-02 | P1 | Polityka prywatności i warunki korzystania | Dokumenty w aplikacji (Ustawienia → Informacje prawne), akceptacja przed logowaniem, publiczne URL w repozytorium | ZROBIONE 2026-09-17 |
 | PRIV-03 | P1 | Pełne usunięcie lokalnych danych konta | Historia, miejsca, notatki, nazwy, ikony, zdjęcia, alerty, Keychain; konto B nienaruszone | ZROBIONE 2026-09-16; brak testu na urządzeniu |
@@ -25,7 +25,7 @@ Wszystkie ścieżki odnoszą się do `App/` w tym nowym projekcie. Priorytet P0 
 | TEST-01 | P1 | Macierz testów | Obowiązkowe przypadki z `05` dla finalnego builda | OTWARTE |
 | ACCESS-01 | P2 | Dostępność | VoiceOver/Dynamic Type na kluczowych ścieżkach | OTWARTE |
 | CRYPTO-01 | P2 | Przegląd kryptografii | Wektory pozytywne/negatywne, obsługa błędnych danych | OTWARTE |
-| LOCAL-01 | P2 | Wersje językowe | Każdy zadeklarowany język kompletny | OTWARTE |
+| LOCAL-01 | P1 | Wersje językowe | UI w PL/EN/DE/FR/ES/IT, dokumenty prawne i licencje PL+EN, test kompletności | ZROBIONE 2026-09-17; tłumaczenia DE/FR/ES/IT do przejrzenia przez native speakerów |
 
 Zadania AUTH-01..03 (zatwierdzony dostęp Google) i REVIEW-01 (App Review) wycofano 2026-09-16 wraz ze zmianą kanału na AltStore PAL. Ryzyko opisuje [09-RYZYKA.md](09-RYZYKA.md).
 

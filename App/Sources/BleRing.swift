@@ -13,9 +13,9 @@ enum BleError: LocalizedError {
     case notFound
     var errorDescription: String? {
         switch self {
-        case .unavailable: return "Bluetooth niedostępny/wyłączony"
-        case .timeout: return "Nie znaleziono taga w pobliżu (limit czasu)"
-        case .notFound: return "Tag nie udostępnia usługi dzwonienia"
+        case .unavailable: return String(localized: "Bluetooth niedostępny/wyłączony")
+        case .timeout: return String(localized: "Nie znaleziono taga w pobliżu (limit czasu)")
+        case .notFound: return String(localized: "Tag nie udostępnia usługi dzwonienia")
         }
     }
 }
@@ -104,7 +104,7 @@ extension BleRing: @preconcurrency CBCentralManagerDelegate, @preconcurrency CBP
         bleLog.notice("central state = \(central.state.rawValue, privacy: .public)")
         switch central.state {
         case .poweredOn:
-            p("BLE: skanuję w poszukiwaniu tagu…")
+            p(String(localized: "BLE: skanuję w poszukiwaniu tagu…"))
             central.scanForPeripherals(withServices: nil,
                                        options: [CBCentralManagerScanOptionAllowDuplicatesKey: false])
         case .poweredOff, .unauthorized, .unsupported:
@@ -120,7 +120,7 @@ extension BleRing: @preconcurrency CBCentralManagerDelegate, @preconcurrency CBP
         guard active?.identifier != peripheral.identifier,
               !candidates.contains(where: { $0.peripheral.identifier == peripheral.identifier }) else { return }
         candidates.append((peripheral, RSSI.intValue))
-        p("BLE: znaleziono \(candidates.count) tag(ów) w pobliżu…")
+        p(String(localized: "BLE: znaleziono \(candidates.count) tag(ów) w pobliżu…"))
         if !startedConnecting {
             startedConnecting = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
@@ -139,13 +139,13 @@ extension BleRing: @preconcurrency CBCentralManagerDelegate, @preconcurrency CBP
         wroteCommand = false
         active = c.peripheral
         c.peripheral.delegate = self
-        p("BLE: łączę z najbliższym tagiem…")
+        p(String(localized: "BLE: łączę z najbliższym tagiem…"))
         central.connect(c.peripheral, options: nil)
     }
 
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         guard !finished, peripheral == active else { return }
-        p("BLE: połączono, szukam usługi dzwonienia…")
+        p(String(localized: "BLE: połączono, szukam usługi dzwonienia…"))
         peripheral.discoverServices([Self.anosService])
     }
 
@@ -188,7 +188,7 @@ extension BleRing: @preconcurrency CBCentralManagerDelegate, @preconcurrency CBP
         if let error { finish(.failure(error)); return }
         guard characteristic.isNotifying else { finish(.failure(BleError.notFound)); return }
         wroteCommand = true
-        p("BLE: wysyłam komendę dzwonienia (DULT)…")
+        p(String(localized: "BLE: wysyłam komendę dzwonienia (DULT)…"))
         peripheral.writeValue(Data(Self.soundStart), for: characteristic, type: .withResponse)
     }
 
@@ -196,7 +196,7 @@ extension BleRing: @preconcurrency CBCentralManagerDelegate, @preconcurrency CBP
         guard !finished, peripheral == active, characteristic.uuid == Self.controlPoint else { return }
         if let error {
             bleLog.error("DULT write failed: \(error.localizedDescription, privacy: .public)")
-            p("BLE: zapis odrzucony: \(error.localizedDescription)")
+            p(String(localized: "BLE: zapis odrzucony: \(error.localizedDescription)"))
             finish(.failure(error))
         } else {
             bleLog.notice("DULT sound command written")

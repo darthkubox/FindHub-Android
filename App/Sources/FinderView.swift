@@ -13,7 +13,7 @@ struct FinderView: View {
     @StateObject private var finder = BleFinder()
 
     private var displayName: String {
-        NameStore.name(for: device.id) ?? (device.name.isEmpty ? "(bez nazwy)" : device.name)
+        NameStore.name(for: device.id) ?? (device.name.isEmpty ? String(localized: "(bez nazwy)") : device.name)
     }
 
     private var ringColor: Color {

@@ -3,32 +3,47 @@
 
 import SwiftUI
 
-/// Bundled legal documents. The same Markdown files are published in the
-/// repository, so the app and the public links always show identical text.
+/// Bundled legal documents in Polish and English. Polish is shown when the app
+/// runs in Polish; every other language gets the English version. The same
+/// Markdown files are published in the repository, so the app and the public
+/// links always show identical text.
 enum LegalDocument: String, CaseIterable, Identifiable {
-    case privacy = "polityka-prywatnosci"
-    case terms = "warunki-korzystania"
+    case privacy, terms
 
     /// Bump when either document changes in a way that needs renewed acceptance.
     static let currentVersion = 1
 
     var id: String { rawValue }
 
+    /// Documents exist in Polish and English only.
+    static var language: String {
+        Bundle.main.preferredLocalizations.first?.hasPrefix("pl") == true ? "pl" : "en"
+    }
+
     var title: String {
         switch self {
-        case .privacy: return "Polityka prywatności"
-        case .terms: return "Warunki korzystania"
+        case .privacy: return String(localized: "Polityka prywatności")
+        case .terms: return String(localized: "Warunki korzystania")
         }
     }
 
-    var publicURL: URL {
-        URL(string: "https://github.com/darthkubox/FindHub-Android/blob/main/App/Resources/Legal/\(rawValue).md")!
+    func resource(language: String = LegalDocument.language) -> String {
+        switch (self, language) {
+        case (.privacy, "pl"): return "polityka-prywatnosci"
+        case (.privacy, _): return "privacy-policy"
+        case (.terms, "pl"): return "warunki-korzystania"
+        case (.terms, _): return "terms-of-use"
+        }
     }
 
-    var text: String {
-        guard let url = Bundle.main.url(forResource: rawValue, withExtension: "md"),
+    func publicURL(language: String = LegalDocument.language) -> URL {
+        URL(string: "https://github.com/darthkubox/FindHub-Android/blob/main/App/Resources/Legal/\(resource(language: language)).md")!
+    }
+
+    func text(language: String = LegalDocument.language) -> String {
+        guard let url = Bundle.main.url(forResource: resource(language: language), withExtension: "md"),
               let text = try? String(contentsOf: url, encoding: .utf8) else {
-            return "Nie znaleziono dokumentu w aplikacji. Aktualna wersja: \(publicURL.absoluteString)"
+            return String(localized: "Nie znaleziono dokumentu w aplikacji. Aktualna wersja: \(publicURL(language: language).absoluteString)")
         }
         return text
     }
@@ -58,7 +73,7 @@ struct LegalDocumentView: View {
     }
 
     private var blocks: [Block] {
-        document.text.components(separatedBy: "\n").compactMap { raw in
+        document.text().components(separatedBy: "\n").compactMap { raw in
             let line = raw.trimmingCharacters(in: .whitespaces)
             if line.isEmpty { return nil }
             if line.hasPrefix("## ") { return .heading(String(line.dropFirst(3))) }
@@ -95,7 +110,7 @@ struct LegalDocumentView: View {
                         inline(text).font(.subheadline).foregroundStyle(M3.onSurface(scheme))
                     }
                 }
-                Link("Wersja online", destination: document.publicURL)
+                Link("Wersja online", destination: document.publicURL())
                     .font(.footnote).padding(.top, 12)
             }
             .textSelection(.enabled)

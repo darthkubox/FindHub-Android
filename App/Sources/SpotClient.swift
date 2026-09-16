@@ -61,12 +61,12 @@ struct SpotClient {
     }
 
     private static func unframe(_ grpc: Data) throws -> Data {
-        guard grpc.count >= 5 else { throw SpotError.grpc("krótka ramka") }
+        guard grpc.count >= 5 else { throw SpotError.grpc(String(localized: "krótka ramka")) }
         let lengthBytes = grpc.subdata(in: 1..<5)
         let length = lengthBytes.reduce(UInt32(0)) { ($0 << 8) | UInt32($1) }
         let start = 5
         let end = start + Int(length)
-        guard grpc.count >= end else { throw SpotError.grpc("zła długość") }
+        guard grpc.count >= end else { throw SpotError.grpc(String(localized: "zła długość")) }
         return grpc.subdata(in: start..<end)
     }
 }

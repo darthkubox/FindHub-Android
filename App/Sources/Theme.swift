@@ -132,7 +132,7 @@ struct M3IconButton: View {
 struct M3MapButton: View {
     @Environment(\.colorScheme) private var scheme
     let system: String
-    let label: String
+    let label: LocalizedStringKey
     let action: () -> Void
     var body: some View {
         Button(action: action) {

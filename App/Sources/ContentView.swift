@@ -256,7 +256,7 @@ private struct HomeChrome: ViewModifier {
 
 /// Reusable sheet wrapper for the Google WKWebView flows.
 struct GoogleWebSheet<Content: View>: View {
-    let title: String
+    let title: LocalizedStringKey
     @ViewBuilder var content: Content
     @Environment(\.dismiss) private var dismiss
     var body: some View {

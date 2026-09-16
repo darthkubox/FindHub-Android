@@ -10,7 +10,7 @@ Nazwa jest ustalona: **FindHub Android**. Pozostałe metadane wymagają zamknię
 |---|---|
 | Nazwa publiczna | FindHub Android |
 | Podtytuł | [KRÓTKI, PRAWDZIWY OPIS] |
-| Język podstawowy / lokalizacje | [ ] |
+| Język podstawowy / lokalizacje | Angielski (podstawowy); lokalizacje: polski, niemiecki, francuski, hiszpański, włoski — opis i słowa kluczowe dla każdej |
 | Kategoria | [WYBRAĆ WEDŁUG GŁÓWNEJ FUNKCJI] |
 | Bundle ID / SKU | `pl.mintstudio.findhubandroid` / [SKU] |
 | Wersja i build | [DOKŁADNY KANDYDAT] |
@@ -59,3 +59,7 @@ Dowód praw do usługi i kodu: [IDENTYFIKATOR DOKUMENTU]
 ## Uznanie autorów w opisie
 
 Każdy publiczny opis (App Store Connect, źródło AltStore, strona) zawiera: informację o braku powiązania z Google/Motorola/Apple, licencję GPLv3 z linkiem do kodu i listę projektów, z których korzysta aplikacja (GoogleFindMyTools — Leon Böttger, firebase-messaging, gpsoauth, http_ece, micro-ecc, Chromium, SwiftProtobuf), z odesłaniem do pełnych licencji.
+
+## Opis (EN, podstawowy)
+
+FindHub Android lets you view the latest known locations of compatible devices linked to your Google Find Hub account — on your iPhone. It is an independent, unofficial app published by mintstudio and is not affiliated with Google. Requires a Google account and trackers already paired on Android. Reports can be delayed; background alerts depend on iOS. Open source under GPLv3.

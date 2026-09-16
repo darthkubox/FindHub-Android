@@ -12,10 +12,10 @@ enum LocationDecryptError: LocalizedError {
     case headers, payload, noLocation, networkDecryption
     var errorDescription: String? {
         switch self {
-        case .headers: return "Brak nagłówków szyfrowania w raporcie"
-        case .payload: return "Nie udało się odczytać payloadu raportu"
-        case .noLocation: return "Raport nie zawiera odczytywalnej pozycji"
-        case .networkDecryption: return "Nie udało się odszyfrować raportów sieciowych"
+        case .headers: return String(localized: "Brak nagłówków szyfrowania w raporcie")
+        case .payload: return String(localized: "Nie udało się odczytać payloadu raportu")
+        case .noLocation: return String(localized: "Raport nie zawiera odczytywalnej pozycji")
+        case .networkDecryption: return String(localized: "Nie udało się odszyfrować raportów sieciowych")
         }
     }
 }

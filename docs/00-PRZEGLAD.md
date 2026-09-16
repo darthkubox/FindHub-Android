@@ -26,7 +26,7 @@ W tym folderze jest kopia natywnej aplikacji iOS przygotowywana do publicznej dy
 | `App/project.yml` | Źródło konfiguracji XcodeGen; projekt `App/FindHub Android.xcodeproj` jest generowany |
 | `App/Sources`, `App/Resources`, `App/Tests`, `App/Proto` | Kod, zasoby (w tym `PrivacyInfo.xcprivacy` i `Licenses/`), testy, definicje protokołu |
 | `App/Config` | `Base.xcconfig` w repozytorium; lokalny `Local.xcconfig` z zespołem podpisującym jest pomijany przez Git |
-| `LICENSE`, `NOTICE`, `Legal/` | GPLv3 projektu, podsumowanie autorów i licencje komponentów |
+| `LICENSE`, `NOTICE`/`NOTICE.pl`, `Legal/` | GPLv3 projektu, podsumowanie autorów i licencje komponentów |
 | `Scripts/check_local.sh` | Testy offline i opcjonalny build Release bez podpisu |
 | `docs/` | Plan, instrukcje, szablony, dowody |
 

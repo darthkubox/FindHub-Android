@@ -10,8 +10,8 @@ enum MainTab: Hashable, CaseIterable {
 
     var title: String {
         switch self {
-        case .devices: return "Urządzenia"
-        case .places: return "Miejsca"
+        case .devices: return String(localized: "Urządzenia")
+        case .places: return String(localized: "Miejsca")
         }
     }
     /// Material navigation bars use an outlined glyph when idle and a filled one

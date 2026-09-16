@@ -9,6 +9,8 @@ private let locLog = Logger(subsystem: "pl.mintstudio.findhubandroid", category:
 
 @MainActor
 final class AppModel: ObservableObject {
+    /// Per-device placeholder while a location request is in flight; compared by value.
+    private static let waitingForPosition = String(localized: "Czekam na pozycję…")
     static let shared = AppModel()
     @Published var loggedIn: Bool
     @Published var email: String?
@@ -134,10 +136,10 @@ final class AppModel: ObservableObject {
         isBusy = true
         defer { isBusy = false }
         do {
-            status = "Rejestracja urządzenia (checkin)…"
+            status = String(localized: "Rejestracja urządzenia (checkin)…")
             let (aid, stok) = try await GoogleAuth.checkin()
 
-            status = "Wymiana tokenu konta…"
+            status = String(localized: "Wymiana tokenu konta…")
             let (master, mail) = try await GoogleAuth.exchangeToken(oauthToken: oauthToken, androidID: aid)
             Session.shared.store(masterToken: master, email: mail, androidID: aid, securityToken: stok)
 
@@ -146,26 +148,26 @@ final class AppModel: ObservableObject {
             await loadDevices()
             await locateAll()
         } catch {
-            status = "Błąd logowania: \(error.localizedDescription)"
+            status = String(localized: "Błąd logowania: \(error.localizedDescription)")
         }
     }
 
     func loadDevices() async {
-        guard Session.shared.masterToken != nil else { status = "Niezalogowano."; return }
+        guard Session.shared.masterToken != nil else { status = String(localized: "Niezalogowano."); return }
         let session = sessionID
         isBusy = true
         defer { if session == sessionID { isBusy = false } }
         do {
             let adm = try await currentAdmToken()
             guard session == sessionID else { return }
-            status = "Pobieranie listy urządzeń…"
+            status = String(localized: "Pobieranie listy urządzeń…")
             let list = try await Nova.listDevices(admToken: adm)
             guard session == sessionID else { return }
             devices = list
-            status = list.isEmpty ? "Brak urządzeń na koncie." : "Znaleziono \(list.count) urządzeń."
+            status = list.isEmpty ? String(localized: "Brak urządzeń na koncie.") : String(localized: "Znaleziono \(list.count) urządzeń.")
         } catch {
             guard session == sessionID else { return }
-            status = "Błąd listy: \(error.localizedDescription)"
+            status = String(localized: "Błąd listy: \(error.localizedDescription)")
         }
     }
 
@@ -185,18 +187,19 @@ final class AppModel: ObservableObject {
         ringingDeviceID = device.id
         defer { if session == sessionID { ringingDeviceID = nil } }
         do {
-            status = "Przygotowanie kanału powiadomień…"
+            status = String(localized: "Przygotowanie kanału powiadomień…")
             let creds = try await FcmRegister.ensureRegistered()
             guard session == sessionID else { return }
             let adm = try await currentAdmToken()
             guard session == sessionID else { return }
-            status = "Wysyłanie sygnału dźwiękowego…"
+            status = String(localized: "Wysyłanie sygnału dźwiękowego…")
             try await Nova.playSound(canonicId: device.id, fcmToken: creds.fcmToken, admToken: adm)
             guard session == sessionID else { return }
-            status = "Wysłano żądanie dzwonienia do: \(device.name.isEmpty ? "(bez nazwy)" : device.name)"
+            let ringName = device.name.isEmpty ? String(localized: "(bez nazwy)") : device.name
+            status = String(localized: "Wysłano żądanie dzwonienia do: \(ringName)")
         } catch {
             guard session == sessionID else { return }
-            status = "Błąd dzwonienia: \(error.localizedDescription)"
+            status = String(localized: "Błąd dzwonienia: \(error.localizedDescription)")
         }
     }
 
@@ -208,27 +211,27 @@ final class AppModel: ObservableObject {
         isBusy = true
         defer { if session == sessionID { isBusy = false } }
         do {
-            status = "Przetwarzanie kluczy skarbca…"
+            status = String(localized: "Przetwarzanie kluczy skarbca…")
             let shared = try FMDNCrypto.fmdnSharedKey(fromVaultKeysJSON: vaultKeysJSON)
             Session.shared.sharedKey = shared
 
             guard let master = Session.shared.masterToken else { throw NovaError.http(401) }
             let androidID = try await ensureAndroidID()
-            status = "Autoryzacja Spot…"
+            status = String(localized: "Autoryzacja Spot…")
             let spot = try await GoogleAuth.spotToken(
                 email: Session.shared.email ?? "", masterToken: master, androidID: androidID)
 
             guard session == sessionID else { return }
-            status = "Pobieranie owner key…"
+            status = String(localized: "Pobieranie owner key…")
             let encOwner = try await SpotClient.encryptedOwnerKey(spotToken: spot)
             guard session == sessionID else { return }
             let owner = try FMDNCrypto.decryptOwnerKey(sharedKey: shared, encryptedOwnerKey: encOwner)
             Session.shared.ownerKey = owner
             hasE2EE = true
-            status = "Klucze E2EE odblokowane ✅"
+            status = String(localized: "Klucze E2EE odblokowane ✅")
         } catch {
             guard session == sessionID else { return }
-            status = "Błąd odblokowania: \(error.localizedDescription)"
+            status = String(localized: "Błąd odblokowania: \(error.localizedDescription)")
         }
     }
 
@@ -249,21 +252,21 @@ final class AppModel: ObservableObject {
         }
         nearbyTask = task
         do {
-            status = "Szukam najbliższego tagu po Bluetooth…"
+            status = String(localized: "Szukam najbliższego tagu po Bluetooth…")
             _ = try await withTaskCancellationHandler { try await task.value } onCancel: { task.cancel() }
             guard session == sessionID else { return }
-            status = "Wysłano komendę dźwięku do najbliższego tagu."
+            status = String(localized: "Wysłano komendę dźwięku do najbliższego tagu.")
         } catch {
             guard session == sessionID else { return }
-            status = "BLE: \(error.localizedDescription)"
+            status = String(localized: "BLE: \(error.localizedDescription)")
         }
     }
 
     /// Manual requests replace the current batch, keeping one MCS connection active.
     func locate(_ device: TrackerDevice) async {
-        guard Session.shared.masterToken != nil else { status = "Niezalogowano."; return }
+        guard Session.shared.masterToken != nil else { status = String(localized: "Niezalogowano."); return }
         guard Session.shared.ownerKey != nil else {
-            status = "Najpierw odblokuj klucze E2EE."
+            status = String(localized: "Najpierw odblokuj klucze E2EE.")
             showingVaultUnlock = true
             return
         }
@@ -280,8 +283,8 @@ final class AppModel: ObservableObject {
     private func startLocationLookup(_ requested: [TrackerDevice], focusDeviceID: String?) async {
         let previous = locationTask
         previous?.cancel()
-        for device in devices where locationMessages[device.id] == "Czekam na pozycję…" {
-            locationMessages[device.id] = locations[device.id] == nil ? "Pobieranie przerwane" : "Ostatnia pozycja na mapie"
+        for device in devices where locationMessages[device.id] == Self.waitingForPosition {
+            locationMessages[device.id] = locations[device.id] == nil ? String(localized: "Pobieranie przerwane") : String(localized: "Ostatnia pozycja na mapie")
         }
         let id = UUID()
         lookupID = id
@@ -312,7 +315,7 @@ final class AppModel: ObservableObject {
         let account = Session.shared.activeAccountID
         let sharedKey = Session.shared.sharedKey
         let requests = Dictionary(requested.map { ($0.id, UUID().uuidString) }, uniquingKeysWith: { first, _ in first })
-        for device in requested { locationMessages[device.id] = "Czekam na pozycję…" }
+        for device in requested { locationMessages[device.id] = Self.waitingForPosition }
         var received = Set<String>()
         var sendFailures = Set<String>()
         var decodeFailures = 0
@@ -337,7 +340,7 @@ final class AppModel: ObservableObject {
                     do {
                         let report = try LocationDecrypt.decrypt(update: update, ownerKey: ownerKey, sharedKey: sharedKey)
                         guard report.matches(deviceID: deviceID, requestID: requests[deviceID]!) else { return }
-                        let name = NameStore.name(for: deviceID) ?? requested.first(where: { $0.id == deviceID })?.name ?? "Urządzenie"
+                        let name = NameStore.name(for: deviceID) ?? requested.first(where: { $0.id == deviceID })?.name ?? String(localized: "Urządzenie")
                         let events = TrackerJournal.shared.ingest(report.locations, deviceID: deviceID, name: name)
                         DeviceProtection.shared.deliver(events)
                         self.locationDiagnostics[deviceID] = report.diagnosticSummary
@@ -348,7 +351,7 @@ final class AppModel: ObservableObject {
                         }
                         guard let best = report.locations.first else {
                             if !received.contains(deviceID) {
-                                self.locationMessages[deviceID] = report.locationIssue ?? "Raport bez współrzędnych"
+                                self.locationMessages[deviceID] = report.locationIssue ?? String(localized: "Raport bez współrzędnych")
                             }
                             return // Metadata-only responses may be followed by an actual fix.
                         }
@@ -356,7 +359,7 @@ final class AppModel: ObservableObject {
                         if self.locations[deviceID].map({ $0.time <= best.time }) ?? true {
                             self.locations[deviceID] = best
                         }
-                        self.locationMessages[deviceID] = "Pozycja na mapie"
+                        self.locationMessages[deviceID] = String(localized: "Pozycja na mapie")
                         if focusDeviceID == deviceID || self.focus == nil {
                             self.focus = self.locations[deviceID]?.coordinate
                             self.focusToken += 1
@@ -364,7 +367,7 @@ final class AppModel: ObservableObject {
                         if received.union(sendFailures).count == requests.count { waiter.resolve(.success(())) }
                     } catch {
                         decodeFailures += 1
-                        self.locationMessages[deviceID] = "Błąd pozycji: \(error.localizedDescription)"
+                        self.locationMessages[deviceID] = String(localized: "Błąd pozycji: \(error.localizedDescription)")
                     }
                 } catch {
                     // Cannot attribute an undecodable push to any device.
@@ -375,11 +378,11 @@ final class AppModel: ObservableObject {
             try await waiter.wait(timeout: 45, timeoutError: McsError.timeout) {
                 sender = Task {
                     do {
-                        self.status = "Łączę z kanałem lokalizacji…"
+                        self.status = String(localized: "Łączę z kanałem lokalizacji…")
                         try await mcs.connectAndLogin()
                         try Task.checkCancellation()
                         guard self.lookupID == id, !waiter.isFinished else { return }
-                        self.status = "Pobieram lokalizacje urządzeń…"
+                        self.status = String(localized: "Pobieram lokalizacje urządzeń…")
                         for device in requested {
                             try Task.checkCancellation()
                             guard !waiter.isFinished else { return }
@@ -389,7 +392,7 @@ final class AppModel: ObservableObject {
                             } catch {
                                 try Task.checkCancellation()
                                 sendFailures.insert(device.id)
-                                self.locationMessages[device.id] = "Nie udało się wysłać żądania pozycji"
+                                self.locationMessages[device.id] = String(localized: "Nie udało się wysłać żądania pozycji")
                             }
                             if received.union(sendFailures).count == requests.count {
                                 waiter.resolve(.success(()))
@@ -403,21 +406,21 @@ final class AppModel: ObservableObject {
             try Task.checkCancellation()
             guard lookupID == id else { return }
             if focusDeviceID == nil { didAutoLocate = received.count == requests.count }
-            status = "Odebrano lokalizacje: \(received.count)/\(requests.count)."
-            if !sendFailures.isEmpty { status += " Nie wysłano żądań: \(sendFailures.count)." }
+            status = String(localized: "Odebrano lokalizacje: \(received.count)/\(requests.count).")
+            if !sendFailures.isEmpty { status += " " + String(localized: "Nie wysłano żądań: \(sendFailures.count).") }
         } catch is CancellationError {
             if lookupID == id {
-                for device in requested where locationMessages[device.id] == "Czekam na pozycję…" {
-                    locationMessages[device.id] = locations[device.id] == nil ? "Pobieranie przerwane" : "Ostatnia pozycja na mapie"
+                for device in requested where locationMessages[device.id] == Self.waitingForPosition {
+                    locationMessages[device.id] = locations[device.id] == nil ? String(localized: "Pobieranie przerwane") : String(localized: "Ostatnia pozycja na mapie")
                 }
             }
         } catch {
             guard lookupID == id, !Task.isCancelled else { return }
-            for device in requested where locationMessages[device.id] == "Czekam na pozycję…" {
-                locationMessages[device.id] = locations[device.id] == nil ? "Brak odpowiedzi z pozycją" : "Ostatnia pozycja na mapie"
+            for device in requested where locationMessages[device.id] == Self.waitingForPosition {
+                locationMessages[device.id] = locations[device.id] == nil ? String(localized: "Brak odpowiedzi z pozycją") : String(localized: "Ostatnia pozycja na mapie")
             }
-            status = "Odebrano lokalizacje: \(received.count)/\(requests.count). \(error.localizedDescription)"
-            if decodeFailures > 0 { status += " Część raportów nie dała się odczytać." }
+            status = String(localized: "Odebrano lokalizacje: \(received.count)/\(requests.count). \(error.localizedDescription)")
+            if decodeFailures > 0 { status += " " + String(localized: "Część raportów nie dała się odczytać.") }
         }
     }
 
@@ -457,7 +460,7 @@ final class AppModel: ObservableObject {
         cancelAccountWork()
         saveRedactedLocationDiagnostics()
         TrackerJournal.shared.stopProtectionForLogout()
-        finishSignOut(status: "Wylogowano.")
+        finishSignOut(status: String(localized: "Wylogowano."))
     }
 
     /// Signs out the active account and permanently removes what the app keeps
@@ -474,7 +477,7 @@ final class AppModel: ObservableObject {
         let recorded: Set<String>
         do { recorded = try journal.deleteActiveAccountData() }
         catch {
-            status = journal.storageError ?? "Nie udało się usunąć danych konta."
+            status = journal.storageError ?? String(localized: "Nie udało się usunąć danych konta.")
             return false
         }
         let owned = recorded.union(listed).subtracting(shared)
@@ -482,7 +485,7 @@ final class AppModel: ObservableObject {
         IconStore.remove(owned)
         for id in owned { DeviceImageStore.remove(id) }
         await DeviceProtection.shared.removeNotifications(for: account)
-        finishSignOut(status: "Usunięto dane konta z telefonu.")
+        finishSignOut(status: String(localized: "Usunięto dane konta z telefonu."))
         return true
     }
 
@@ -535,7 +538,7 @@ final class AppModel: ObservableObject {
         let session = sessionID
         let androidID = try await ensureAndroidID()
         guard session == sessionID else { throw CancellationError() }
-        status = "Autoryzacja Find Hub…"
+        status = String(localized: "Autoryzacja Find Hub…")
         let adm = try await GoogleAuth.admToken(
             email: Session.shared.email ?? "", masterToken: master, androidID: androidID)
         guard session == sessionID else { throw CancellationError() }

@@ -14,9 +14,9 @@ enum CryptoError: LocalizedError {
     case vaultParse
     var errorDescription: String? {
         switch self {
-        case .aesCBC: return "AES-CBC nie powiodło się"
-        case .badLength(let w): return "zła długość danych (\(w))"
-        case .vaultParse: return "nie udało się odczytać kluczy skarbca"
+        case .aesCBC: return String(localized: "AES-CBC nie powiodło się")
+        case .badLength(let w): return String(localized: "zła długość danych (\(w))")
+        case .vaultParse: return String(localized: "nie udało się odczytać kluczy skarbca")
         }
     }
 }

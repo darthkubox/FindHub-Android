@@ -95,3 +95,13 @@ Weryfikacja: [evidence/github-release-prep-2026-09-16.txt](evidence/github-relea
 - Publiczne URL: https://github.com/darthkubox/FindHub-Android/blob/main/App/Resources/Legal/polityka-prywatnosci.md oraz https://github.com/darthkubox/FindHub-Android/blob/main/App/Resources/Legal/warunki-korzystania.md.
 - Testy: `Tests/LegalTests.swift` (dokumenty i licencje w paczce, wydawca, renderowanie, wersjonowanie zgody). Wyniki: [evidence/legal-2026-09-17.txt](evidence/legal-2026-09-17.txt) — XCTest 6/6, regresje 45, historia 50, build Release PASS. Zrzut ekranu logowania z symulatora obejrzany. Ekranów dokumentów nie klikano ręcznie; na telefonie nie testowano.
 - Po podbiciu `LegalDocument.currentVersion` zalogowany użytkownik widzi pełnoekranową prośbę o ponowną akceptację (nie da się jej zamknąć bez akceptacji).
+
+## Wielojęzyczność — 2026-09-17
+
+Polecenie użytkownika: dokumenty i licencje po polsku i angielsku, aplikacja w wielu językach (wybór: PL, EN, DE, FR, ES, IT; dokumenty prawne PL+EN, pozostałe języki pokazują EN).
+
+- `App/Resources/Localizable.xcstrings` (329 tekstów, formy liczby mnogiej) i `InfoPlist.xcstrings` (opisy uprawnień). Klucze po polsku (`developmentLanguage: pl`), język zapasowy angielski (`DEVELOPMENT_LANGUAGE: en` → `CFBundleDevelopmentRegion = en`).
+- Kod: komunikaty modelu, powiadomień, błędów i BLE przez `String(localized:)`; parametry widoków pomocniczych jako `LocalizedStringKey`; ręczna polska liczba mnoga zastąpiona katalogiem; daty w języku aplikacji zamiast stałego `pl_PL`; zgadywanie ikony miejsca rozpoznaje słowa we wszystkich językach.
+- Dokumenty: `privacy-policy.md`, `terms-of-use.md`, `ACKNOWLEDGEMENTS-en.txt` obok wersji polskich; aplikacja wybiera PL dla polskiego interfejsu, EN dla pozostałych. `README.md` (EN) + `README.pl.md`, `NOTICE` + `NOTICE.pl`, `Legal/README.md` (EN) + `Legal/README.pl.md`. Szablon źródła AltStore i metadanych — opis EN z polskim.
+- Testy: `LocalizationTests` (6 lokalizacji w paczce, tłumaczenia kluczowych tekstów, polska liczba mnoga 1/3/5, zapasowy EN), rozszerzone `LegalTests` (obie wersje dokumentów, te same sekcje i wersja). Wyniki: [evidence/localization-2026-09-17.txt](evidence/localization-2026-09-17.txt) — XCTest 7/7, regresje 45, historia 50, build Release PASS. Zrzuty symulatora: interfejs po niemiecku oraz angielski przy języku czeskim.
+- Ograniczenia: tłumaczenia DE/FR/ES/IT przygotowane bez weryfikacji native speakera; dokumenty prawne EN to tłumaczenie wersji polskiej (rozstrzyga polska). Wewnętrzna dokumentacja `docs/` pozostaje po polsku.

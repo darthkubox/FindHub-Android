@@ -12,15 +12,21 @@ final class LegalTests: XCTestCase {
     @MainActor
     func testLegalDocumentsAndLicencesShipAndRender() async throws {
         for document in LegalDocument.allCases {
-            let text = document.text
-            XCTAssertFalse(text.hasPrefix("Nie znaleziono"), "\(document.rawValue) missing from bundle")
-            XCTAssertTrue(text.contains("mintstudio Jakub Koncewicz"), "\(document.rawValue) names the publisher")
-            XCTAssertTrue(text.contains("kontakt@mintstudio.pl"))
+            for language in ["pl", "en"] {
+                let text = document.text(language: language)
+                XCTAssertFalse(text.hasPrefix("Nie znaleziono"), "\(document.resource(language: language)) missing from bundle")
+                XCTAssertTrue(text.contains("mintstudio Jakub Koncewicz"), "\(document.resource(language: language)) names the publisher")
+                XCTAssertTrue(text.contains("kontakt@mintstudio.pl"))
+                XCTAssertTrue(text.contains("Version 1") || text.contains("Wersja 1"), "both languages carry the same version")
+            }
+            // Both language versions have the same numbered sections.
+            let sections = { (lang: String) in document.text(language: lang).components(separatedBy: "\n").filter { $0.hasPrefix("## ") }.count }
+            XCTAssertEqual(sections("pl"), sections("en"), "\(document.rawValue) sections differ between languages")
         }
-        XCTAssertTrue(LegalDocument.privacy.text.contains("policies.google.com/privacy"))
-        XCTAssertTrue(LegalDocument.terms.text.contains("GNU General Public License"))
+        XCTAssertTrue(LegalDocument.privacy.text(language: "en").contains("policies.google.com/privacy"))
+        XCTAssertTrue(LegalDocument.terms.text(language: "pl").contains("GNU General Public License"))
 
-        for resource in ["ACKNOWLEDGEMENTS", "GPL-3.0"] {
+        for resource in ["ACKNOWLEDGEMENTS-pl", "ACKNOWLEDGEMENTS-en", "GPL-3.0"] {
             XCTAssertNotNil(Bundle.main.url(forResource: resource, withExtension: "txt"), "\(resource).txt missing")
         }
         XCTAssertNotNil(Bundle.main.url(forResource: "PrivacyInfo", withExtension: "xcprivacy"))
@@ -49,5 +55,31 @@ final class LegalTests: XCTestCase {
         XCTAssertTrue(LegalConsent.isAccepted)
         UserDefaults.standard.set(LegalDocument.currentVersion - 1, forKey: key)
         XCTAssertFalse(LegalConsent.isAccepted, "an older acceptance must be renewed")
+    }
+}
+
+/// Every supported language ships with a complete interface translation.
+final class LocalizationTests: XCTestCase {
+    func testAllLanguagesAreBundledAndTranslated() throws {
+        let expected: Set<String> = ["pl", "en", "de", "fr", "es", "it"]
+        XCTAssertTrue(expected.isSubset(of: Set(Bundle.main.localizations)), "bundled: \(Bundle.main.localizations)")
+        for language in expected.subtracting(["pl"]) {
+            let path = try XCTUnwrap(Bundle.main.path(forResource: language, ofType: "lproj"))
+            let bundle = try XCTUnwrap(Bundle(path: path))
+            for key in ["Zaloguj się przez Google", "Usuń dane tego konta z telefonu", "Polityka prywatności"] {
+                let value = bundle.localizedString(forKey: key, value: "__missing__", table: nil)
+                XCTAssertNotEqual(value, "__missing__", "\(language): \(key)")
+                XCTAssertNotEqual(value, key, "\(language) not translated: \(key)")
+            }
+            let plural = String(format: bundle.localizedString(forKey: "%lld urządzeń", value: nil, table: nil), 2)
+            XCTAssertFalse(plural.contains("urządz"), "\(language) plural: \(plural)")
+        }
+        let polish = try XCTUnwrap(Bundle(path: try XCTUnwrap(Bundle.main.path(forResource: "pl", ofType: "lproj"))))
+        let format = polish.localizedString(forKey: "%lld urządzeń", value: nil, table: nil)
+        XCTAssertEqual(String.localizedStringWithFormat(format, 1), "1 urządzenie")
+        XCTAssertEqual(String.localizedStringWithFormat(format, 3), "3 urządzenia")
+        XCTAssertEqual(String.localizedStringWithFormat(format, 5), "5 urządzeń")
+        XCTAssertEqual(Bundle.main.infoDictionary?["CFBundleDevelopmentRegion"] as? String, "en",
+                       "untranslated languages must fall back to English")
     }
 }

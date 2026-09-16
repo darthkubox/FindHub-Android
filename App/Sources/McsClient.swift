@@ -147,7 +147,7 @@ final class McsClient {
                     self.drainBuffer()
                 }
                 if let error { self.failLogin(McsError.transport(error.localizedDescription)); return }
-                if isComplete { self.failLogin(McsError.transport("Połączenie zostało zamknięte")); return }
+                if isComplete { self.failLogin(McsError.transport(String(localized: "Połączenie zostało zamknięte"))); return }
                 self.receiveLoop()
             }
         }
@@ -183,7 +183,7 @@ final class McsClient {
         switch Tag(rawValue: tag) {
         case .loginResponse:
             guard let response = try? McsProto_LoginResponse(serializedBytes: payload), !response.hasError else {
-                failLogin(McsError.transport("Serwer odrzucił logowanie"))
+                failLogin(McsError.transport(String(localized: "Serwer odrzucił logowanie")))
                 return
             }
             mcsLog.notice("MCS login ok")
@@ -238,7 +238,7 @@ enum McsError: LocalizedError {
     case transport(String)
     var errorDescription: String? {
         switch self {
-        case .timeout: return "MCS: przekroczono czas połączenia"
+        case .timeout: return String(localized: "MCS: przekroczono czas połączenia")
         case .transport(let m): return "MCS: \(m)"
         }
     }

@@ -1,6 +1,6 @@
 # Warunki korzystania z FindHub Android
 
-Wersja 1, obowiązują od 17 września 2026 r.
+Wersja 1, obowiązują od 17 września 2026 r. To wersja polska; dostępna jest też wersja angielska. W razie rozbieżności rozstrzyga wersja polska w zakresie dopuszczalnym przez prawo.
 
 ## 1. Aplikacja i wydawca
 
@@ -20,7 +20,7 @@ Aplikacja jest wolnym oprogramowaniem na licencji **GNU General Public License v
 ## 4. Zasady korzystania
 
 - Korzystaj z aplikacji wyłącznie z **własnym kontem Google** i **urządzeniami, do których masz prawo**.
-- **Nie używaj aplikacji do śledzenia innych osób bez ich wiedzy i zgody.** Uporczywe nękanie i śledzenie innej osoby jest przestępstwem (art. 190a Kodeksu karnego).
+- **Nie używaj aplikacji do śledzenia innych osób bez ich wiedzy i zgody.** Uporczywe nękanie i śledzenie innej osoby jest w Polsce przestępstwem (art. 190a Kodeksu karnego), podobnie jak w wielu innych krajach.
 - Nie próbuj uzyskać dostępu do cudzych kont ani urządzeń.
 - Przestrzegaj prawa oraz zasad usług, z których korzystasz.
 

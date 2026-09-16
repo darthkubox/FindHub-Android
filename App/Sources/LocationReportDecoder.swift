@@ -77,19 +77,23 @@ enum LocationReportDecoder {
 
         var issue: String?
         if coordinates.isEmpty {
-            if !namedPlaces.isEmpty { issue = "Google zwrócił nazwę miejsca, bez współrzędnych na mapę." }
-            else if pairs.isEmpty { issue = "Google odpowiedział, ale nie dołączył raportu lokalizacji." }
-            else if !unsupportedKeySizes.isEmpty { issue = "Ten raport używa nieobsługiwanego jeszcze formatu szyfrowania." }
-            else if candidates?.isEmpty == true { issue = "Nie udało się odczytać klucza lokalizacji tego urządzenia." }
-            else if authFailures > 0 { issue = "Odebrano raport, ale nie udało się potwierdzić jego odszyfrowania. Spróbuj pobrać świeżą pozycję." }
-            else if invalidPayloads > 0 { issue = "Odszyfrowany raport nie zawiera prawidłowych współrzędnych." }
-            else { issue = "Raport Google nie zawiera współrzędnych urządzenia." }
+            if !namedPlaces.isEmpty { issue = String(localized: "Google zwrócił nazwę miejsca, bez współrzędnych na mapę.") }
+            else if pairs.isEmpty { issue = String(localized: "Google odpowiedział, ale nie dołączył raportu lokalizacji.") }
+            else if !unsupportedKeySizes.isEmpty { issue = String(localized: "Ten raport używa nieobsługiwanego jeszcze formatu szyfrowania.") }
+            else if candidates?.isEmpty == true { issue = String(localized: "Nie udało się odczytać klucza lokalizacji tego urządzenia.") }
+            else if authFailures > 0 { issue = String(localized: "Odebrano raport, ale nie udało się potwierdzić jego odszyfrowania. Spróbuj pobrać świeżą pozycję.") }
+            else if invalidPayloads > 0 { issue = String(localized: "Odszyfrowany raport nie zawiera prawidłowych współrzędnych.") }
+            else { issue = String(localized: "Raport Google nie zawiera współrzędnych urządzenia.") }
         }
         // Structural counts only. Never include keys, payloads, IDs or coordinates.
-        let diagnostic = "Raporty: \(pairs.count); własne: \(own); sieciowe: \(network); nazwane miejsca: \(namedPlaces.count).\n" +
-            "Pozycje: \(coordinates.count); niepotwierdzone odszyfrowanie: \(authFailures); nieprawidłowe pozycje: \(invalidPayloads); bez geolokalizacji: \(missingGeo).\n" +
-            "Klucz urządzenia: \(reg.encryptedUserSecrets.encryptedIdentityKey.count) B; warianty: \(candidates?.count ?? 0); wersja: \(reg.encryptedUserSecrets.ownerKeyVersion)." +
-            (unsupportedKeySizes.isEmpty ? "" : "\nNieobsługiwane klucze raportów: \(unsupportedKeySizes.sorted().map { String($0) }.joined(separator: ", ")) B.")
+        let keyBytes = reg.encryptedUserSecrets.encryptedIdentityKey.count
+        let variants = candidates?.count ?? 0
+        let keyVersion = reg.encryptedUserSecrets.ownerKeyVersion
+        let unsupported = unsupportedKeySizes.sorted().map { String($0) }.joined(separator: ", ")
+        let diagnostic = String(localized: "Raporty: \(pairs.count); własne: \(own); sieciowe: \(network); nazwane miejsca: \(namedPlaces.count).") + "\n" +
+            String(localized: "Pozycje: \(coordinates.count); niepotwierdzone odszyfrowanie: \(authFailures); nieprawidłowe pozycje: \(invalidPayloads); bez geolokalizacji: \(missingGeo).") + "\n" +
+            String(localized: "Klucz urządzenia: \(keyBytes) B; warianty: \(variants); wersja: \(keyVersion).") +
+            (unsupportedKeySizes.isEmpty ? "" : "\n" + String(localized: "Nieobsługiwane klucze raportów: \(unsupported) B."))
         return LocationResponse(canonicId: ids.first ?? "", requestID: update.fcmMetadata.requestUuid,
             locations: coordinates.sorted { $0.time > $1.time }, alternateDeviceIDs: ids,
             semanticLocations: namedPlaces.sorted { $0.time > $1.time }, locationIssue: issue,

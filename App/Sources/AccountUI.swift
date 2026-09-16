@@ -111,7 +111,7 @@ struct AccountSheet: View {
         .presentationDetents([.medium, .large])
     }
 
-    private func actionRow(_ title: String, _ icon: String, destructive: Bool = false, _ action: @escaping () -> Void) -> some View {
+    private func actionRow(_ title: LocalizedStringKey, _ icon: String, destructive: Bool = false, _ action: @escaping () -> Void) -> some View {
         Button(action: action) {
             HStack(spacing: 14) {
                 Image(systemName: icon).frame(width: 24)

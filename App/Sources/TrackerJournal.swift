@@ -37,7 +37,7 @@ final class TrackerJournal: ObservableObject {
                 _ = commit(trimmed)
             } catch {
                 readable = false
-                storageError = "Nie udało się odczytać zapisanych notatek i historii. Dane nie zostały nadpisane."
+                storageError = String(localized: "Nie udało się odczytać zapisanych notatek i historii. Dane nie zostały nadpisane.")
             }
         }
         configurationChanged?()
@@ -60,7 +60,7 @@ final class TrackerJournal: ObservableObject {
             document = next; storageError = nil
             return true
         } catch {
-            storageError = "Nie udało się zapisać zmian na telefonie. Spróbuj ponownie."
+            storageError = String(localized: "Nie udało się zapisać zmian na telefonie. Spróbuj ponownie.")
             return false
         }
     }
@@ -160,7 +160,7 @@ final class TrackerJournal: ObservableObject {
         if FileManager.default.fileExists(atPath: file.path) {
             do { try FileManager.default.removeItem(at: file) }
             catch {
-                storageError = "Nie udało się usunąć danych konta z telefonu. Spróbuj ponownie."
+                storageError = String(localized: "Nie udało się usunąć danych konta z telefonu. Spróbuj ponownie.")
                 throw error
             }
         }

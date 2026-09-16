@@ -33,12 +33,12 @@ final class LocationManager: NSObject, ObservableObject {
         authorized = (s == .authorizedWhenInUse || s == .authorizedAlways)
         permissionDenied = (s == .denied || s == .restricted)
         if authorized && active {
-            message = location == nil ? "Ustalam Twoją lokalizację…" : nil
+            message = location == nil ? String(localized: "Ustalam Twoją lokalizację…") : nil
             manager.startUpdatingLocation()
         } else {
             manager.stopUpdatingLocation()
             location = nil
-            message = permissionDenied ? "Włącz dostęp do lokalizacji, aby zobaczyć siebie na mapie." : nil
+            message = permissionDenied ? String(localized: "Włącz dostęp do lokalizacji, aby zobaczyć siebie na mapie.") : nil
         }
     }
 
@@ -65,7 +65,7 @@ extension LocationManager: @preconcurrency CLLocationManagerDelegate {
         if let error = error as? CLError, error.code == .denied {
             updateAuth()
         } else {
-            message = "Nie udało się ustalić Twojej pozycji. Spróbuj ponownie."
+            message = String(localized: "Nie udało się ustalić Twojej pozycji. Spróbuj ponownie.")
         }
     }
 }

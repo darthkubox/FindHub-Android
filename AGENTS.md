@@ -13,7 +13,8 @@ Ten katalog jest oddzielnym projektem. Użytkownik wyraźnie polecił nie zmieni
 - Polityka prywatności i warunki korzystania: `App/Resources/Legal/*.md` (te same pliki w aplikacji i pod publicznym URL). Każda zmiana przepływu danych, uprawnień lub funkcji wymaga aktualizacji polityki; istotna zmiana dokumentów wymaga podbicia `LegalDocument.currentVersion` i daty/wersji w nagłówku.
 - Zachowaj architekturę bez własnego backendu.
 - Kod jest publikowany: nie umieszczaj w repozytorium tokenów, kluczy E2EE, haseł, certyfikatów, UDID, e-maili, ścieżek domowych ani danych lokalizacji. Nie loguj nazw urządzeń ani współrzędnych jako `.public`.
-- Zachowaj nagłówki autorów i aktualizuj `App/Resources/Licenses/ACKNOWLEDGEMENTS.txt` przy dodaniu komponentu.
+- Zachowaj nagłówki autorów i aktualizuj `App/Resources/Licenses/ACKNOWLEDGEMENTS-pl.txt` oraz `ACKNOWLEDGEMENTS-en.txt` przy dodaniu komponentu.
+- **Języki (polecenie użytkownika 2026-09-17):** interfejs PL, EN, DE, FR, ES, IT w `App/Resources/Localizable.xcstrings` (klucze po polsku, język zapasowy EN przez `DEVELOPMENT_LANGUAGE: en`). Każdy nowy tekst UI dodaj z tłumaczeniami wszystkich języków; komunikaty spoza widoków SwiftUI twórz przez `String(localized:)`, a parametry pomocniczych widoków typuj jako `LocalizedStringKey`. Dokumenty prawne, licencje, README, NOTICE i opisy sklepu utrzymuj zawsze po polsku i po angielsku, w tej samej wersji. `LocalizationTests` i `LegalTests` pilnują kompletności.
 - Nie uznawaj sukcesu kompilacji za dowód notaryzacji, fizycznego działania taga ani zgodności prawnej. Dokumentuj pracę i dowody w `docs/07-STAN-I-DOWODY.md`.
 - Zmiany funkcjonalne waliduj testami z `App/Scripts` i XCTest; pełna macierz jest w `docs/05-TESTY-I-KRYTERIA.md`.
 - Nie tworzysz zdalnych repozytoriów, kont, umów ani wysyłek do Apple/AltStore bez wyraźnego polecenia użytkownika.

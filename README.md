@@ -4,6 +4,8 @@
 
 <h1 align="center">FindHub Android</h1>
 
+<p align="center"><b>English</b> · <a href="README.pl.md">Polski</a></p>
+
 <p align="center">
   Unofficial native iOS client for Google Find Hub trackers — map, history, places and Bluetooth ringing, fully on-device.<br>
   <b>Not affiliated with Google.</b> Licensed under GPLv3.
@@ -39,10 +41,18 @@ There is **no server** operated by this project. Tokens and encryption keys stay
 
 ## Legal
 
-- **Privacy policy** (Polish, binding): [App/Resources/Legal/polityka-prywatnosci.md](App/Resources/Legal/polityka-prywatnosci.md)
-- **Terms of use** (Polish, binding): [App/Resources/Legal/warunki-korzystania.md](App/Resources/Legal/warunki-korzystania.md)
-- Both documents ship inside the app (**Ustawienia → Informacje prawne**) and must be accepted before signing in. In short: the app is free GPLv3 software provided without warranty; use it only with your own Google account and devices, never to track other people; mintstudio receives no personal data.
-- Data-flow analysis (Polish): [docs/04-PRYWATNOSC-I-BEZPIECZENSTWO.md](docs/04-PRYWATNOSC-I-BEZPIECZENSTWO.md)
+| Document | English | Polski |
+|---|---|---|
+| Privacy policy | [privacy-policy.md](App/Resources/Legal/privacy-policy.md) | [polityka-prywatnosci.md](App/Resources/Legal/polityka-prywatnosci.md) |
+| Terms of use | [terms-of-use.md](App/Resources/Legal/terms-of-use.md) | [warunki-korzystania.md](App/Resources/Legal/warunki-korzystania.md) |
+| Licences and acknowledgements | [ACKNOWLEDGEMENTS-en.txt](App/Resources/Licenses/ACKNOWLEDGEMENTS-en.txt) | [ACKNOWLEDGEMENTS-pl.txt](App/Resources/Licenses/ACKNOWLEDGEMENTS-pl.txt) |
+| Licence overview | [Legal/README.md](Legal/README.md) | [Legal/README.pl.md](Legal/README.pl.md) |
+
+All documents ship inside the app (**Settings → Legal information**) and must be accepted before signing in. The app shows the Polish versions when it runs in Polish and the English versions in every other language; if versions differ, the Polish one prevails to the extent permitted by law. In short: the app is free GPLv3 software provided without warranty; use it only with your own Google account and devices, never to track other people; mintstudio receives no personal data.
+
+## Languages
+
+The interface is available in **English, Polish, German, French, Spanish and Italian** and follows the iPhone’s language settings. Other languages fall back to English. Translations live in [`App/Resources/Localizable.xcstrings`](App/Resources/Localizable.xcstrings); corrections by native speakers are welcome.
 
 ## Install
 
@@ -62,7 +72,7 @@ bash Scripts/check_local.sh          # offline regression tests, no account or n
 
 ## Credits and licenses
 
-FindHub Android stands on the work of these projects. Full license texts are in [`App/Resources/Licenses/ACKNOWLEDGEMENTS.txt`](App/Resources/Licenses/ACKNOWLEDGEMENTS.txt) and are shown in the app under **Ustawienia → Licencje i kod źródłowy** (Settings → Licenses and source code).
+FindHub Android stands on the work of these projects. Full licence texts are in [`ACKNOWLEDGEMENTS-en.txt`](App/Resources/Licenses/ACKNOWLEDGEMENTS-en.txt) ([Polish](App/Resources/Licenses/ACKNOWLEDGEMENTS-pl.txt)) and are shown in the app under **Settings → Licences and source code**.
 
 | Project | Authors | License | Used for |
 |---|---|---|---|
@@ -82,13 +92,9 @@ If you use this work academically, please also cite GoogleFindMyTools as describ
 
 Copyright © 2026 mintstudio Jakub Koncewicz.
 
-This program is free software: you can redistribute it and/or modify it under the terms of the **GNU General Public License v3.0** or (at your option) any later version. See [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).
+This program is free software: you can redistribute it and/or modify it under the terms of the **GNU General Public License v3.0** or (at your option) any later version. See [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE). Project planning documents in `docs/` are written in Polish.
 
 **Trademarks.** Google, Find Hub and Android are trademarks of Google LLC. Motorola and moto tag are trademarks of Motorola Trademark Holdings, LLC. Apple and iPhone are trademarks of Apple Inc. They are used here only to describe compatibility. The mintstudio name and logo are not covered by the GPL; all rights reserved.
-
-## Po polsku
-
-FindHub Android to nieoficjalna, otwartoźródłowa aplikacja na iPhone’a do przeglądania tagów Google Find Hub sparowanych wcześniej na Androidzie. Wszystko działa na telefonie, bez serwera. Aplikacja nie jest powiązana z Google. Dokumentacja projektu i planu wydania jest po polsku: [docs/00-PRZEGLAD.md](docs/00-PRZEGLAD.md).
 
 ## Contact
 

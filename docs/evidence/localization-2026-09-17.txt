@@ -1,0 +1,17 @@
+Data: 2026-09-17. FindHub Android 1.0.0 (1), pl.mintstudio.findhubandroid. Xcode 26.6.
+  45 checks passed
+  50 journal checks passed
+  App/Resources/Info.plist: OK
+  ** BUILD SUCCEEDED **
+  ** TEST SUCCEEDED **
+  Test Case '-[FindHubAndroidAppearanceTests.AppearanceTests testThemeChangesReachRootAndOpenSettingsAndRestoreSystem]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.JournalViewTests testJournalScreensInBothAppearances]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.LegalTests testConsentIsVersioned]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.LegalTests testLegalDocumentsAndLicencesShipAndRender]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.LocalizationTests testAllLanguagesAreBundledAndTranslated]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.PlacesViewTests testPlacesTabInBothAppearances]' passed.
+  Test Case '-[FindHubAndroidAppearanceTests.TabBarTests testSwitchingTabsChangesThePageAndKeepsTheHandleOnTheBottomEdge]' passed.
+  Paczka .app: de/en/es/fr/it/pl.lproj; CFBundleDevelopmentRegion = en.
+  Katalog: 329 tekstów + 4 klucze Info.plist, każdy w 6 językach; skrypt walidacji: 0 brakujących tekstów, 0 niezgodnych symboli formatu.
+  Symulator iPhone 17 Pro: -AppleLanguages (de) → ekran logowania po niemiecku; (cs) → po angielsku.
+Nie wykonano: weryfikacji tłumaczeń przez native speakerów, przejścia wszystkich ekranów w każdym języku, testu na telefonie.

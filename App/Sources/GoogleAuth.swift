@@ -16,8 +16,8 @@ enum GoogleAuthError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .http(let code): return "HTTP \(code)"
-        case .missingField(let f): return "brak pola '\(f)' w odpowiedzi Google"
-        case .badResponse: return "nieczytelna odpowiedź serwera"
+        case .missingField(let f): return String(localized: "brak pola '\(f)' w odpowiedzi Google")
+        case .badResponse: return String(localized: "nieczytelna odpowiedź serwera")
         }
     }
 }
