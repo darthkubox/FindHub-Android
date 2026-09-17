@@ -145,3 +145,9 @@ Polecenie użytkownika: dokumenty i licencje po polsku i angielsku, aplikacja w 
 - Motyw i jednostki: zamiast kontrolek segmentowych wiersze z menu (etykieta po lewej, wartość po prawej), jak w Ustawieniach iOS. Kontrolka segmentowa według HIG służy do przełączania widoków, z krótkimi etykietami; w liście ustawień była bez etykiety i z długimi opisami. Obie opcje w jednej sekcji „Wygląd”.
 - Ikony „Wyloguj bieżące konto” i „Usuń dane tego konta z telefonu” czerwone, jak tekst.
 - Weryfikacja: zrzuty dołu ustawień i sekcji „Wygląd” obejrzane; XCTest 10/10, regresje 45, historia 50, build Release PASS.
+
+## Przegląd odstępów — 2026-09-17 (zgłoszenie: „wszystko zbite do kupy”)
+
+- Przegląd zrzutów: szuflada urządzeń, szuflada miejsc, szczegóły miejsca, szczegóły urządzenia (góra i dół), ustawienia, menu konta, licencje, edytor miejsca.
+- Poprawki: szuflady — marginesy treści 12→16 pt (zgodne z krawędziami przycisku dzwonienia), odstęp między kartami 8→10 pt, padding wierszy 10→12 pt, przerwa pod nagłówkiem 8→12 pt, nagłówki sekcji 12 pt od góry; ostrzeżenie o powiadomieniach w szufladzie miejsc we własnej karcie; nagłówek arkusza 12 pt pod tytułem; listy w arkuszach — wiersze min. 52 pt, 24 pt między sekcjami, 8 pt marginesu pod nagłówkiem; karta zgody na powiadomienia z większymi odstępami; wiersze projektów w licencjach luźniejsze; menu konta wyższe (72% ekranu), by „Wyloguj się” mieściło się bez przewijania.
+- Weryfikacja: zrzuty po zmianach obejrzane; XCTest 10/10, regresje 45, historia 50, build Release PASS.

@@ -225,7 +225,7 @@ struct PlacesHomeView: View {
                        availableHeight: available, bottomInset: bottomInset) {
             drawerHeader
         } content: {
-            VStack(spacing: 8) {
+            VStack(spacing: 10) {
                 if places.isEmpty {
                     emptyState
                 } else {
@@ -298,16 +298,14 @@ struct PlacesHomeView: View {
             M3IconButton(system: "location.fill") { focus(on: place) }
                 .accessibilityLabel("Pokaż \(place.name) na mapie")
         }
-        .padding(10)
+        .padding(12)
         .background(M3.background(scheme))
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 
     /// Only when alerts cannot reach the user; nothing is shown once allowed.
     private var notificationStatus: some View {
-        NotificationPermissionCard()
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 10).padding(.bottom, 4)
+        NotificationPermissionCard(inCard: true)
     }
 
     private var addButton: some View {

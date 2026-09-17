@@ -46,7 +46,7 @@ struct M3BottomDrawer<Header: View, Content: View>: View {
             header
             ScrollView {
                 content
-                    .padding(.horizontal, 12)
+                    .padding(.horizontal, 16)
                     .padding(.bottom, bottomInset + 24)
             }
         }
@@ -116,7 +116,7 @@ struct M3SheetHeader<Trailing: View>: View {
                 .buttonStyle(.plain)
                 .accessibilityLabel(Text(closeIcon == "checkmark" ? "Gotowe" : "Zamknij"))
             }
-            .padding(.horizontal, 20).padding(.bottom, 8)
+            .padding(.horizontal, 20).padding(.bottom, 12)
         }
         .frame(maxWidth: .infinity)
         .background(M3.surface(scheme))
@@ -166,5 +166,9 @@ extension View {
     /// Lists inside drawers: drawer surface behind, darker cards like the home rows.
     func m3SheetList(_ scheme: ColorScheme) -> some View {
         scrollContentBackground(.hidden).background(M3.surface(scheme))
+            // Material list items are 56 pt; 52 keeps iOS proportions without cramping.
+            .environment(\.defaultMinListRowHeight, 52)
+            .listSectionSpacing(24)
+            .contentMargins(.top, 8, for: .scrollContent)
     }
 }

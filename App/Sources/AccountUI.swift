@@ -110,7 +110,8 @@ struct AccountSheet: View {
             }
             .m3SheetRoot("Konto Google") { dismiss() }
         }
-        .presentationDetents([.medium, .large])
+        // Tall enough for every menu row, including sign-out, without scrolling.
+        .presentationDetents([.fraction(0.72), .large])
         .alert("Czy na pewno chcesz się wylogować?", isPresented: $confirmingLogout) {
             Button("Wyloguj się", role: .destructive) { model.logout(); dismiss() }
             Button("Anuluj", role: .cancel) {}

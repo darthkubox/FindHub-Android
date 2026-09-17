@@ -469,6 +469,9 @@ struct NotificationPermissionCard: View {
     @ObservedObject private var protection = DeviceProtection.shared
     /// Also show a short confirmation when notifications are allowed.
     var showWhenAllowed = false
+    /// Draw its own card (drawers); inside lists and cards it stays plain.
+    var inCard = false
+    @Environment(\.colorScheme) private var scheme
 
     var body: some View {
         Group {
@@ -478,20 +481,35 @@ struct NotificationPermissionCard: View {
                     Label("Powiadomienia włączone", systemImage: "bell.badge.fill").foregroundStyle(.green)
                 }
             case .denied:
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: 10) {
                     Label("Powiadomienia są wyłączone w ustawieniach iPhone’a — alerty nie przyjdą.",
                           systemImage: "bell.slash.fill").foregroundStyle(.orange)
                     Button("Otwórz ustawienia powiadomień") { Self.openSettings() }
                 }
             default:
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: 10) {
                     Label("Aby dostawać alerty, włącz powiadomienia.", systemImage: "bell.fill")
                     Button("Włącz powiadomienia") { Task { _ = await protection.requestNotifications() } }
                 }
             }
         }
         .font(.footnote)
+        .padding(.vertical, inCard ? 0 : 4)
+        .modifier(CardIf(enabled: inCard && !allowed, scheme: scheme))
         .task { await protection.refreshNotificationPermission() }
+    }
+
+    private var allowed: Bool { [.authorized, .provisional, .ephemeral].contains(protection.authorizationStatus) }
+
+    private struct CardIf: ViewModifier {
+        let enabled: Bool
+        let scheme: ColorScheme
+        func body(content: Content) -> some View {
+            if enabled {
+                content.padding(14).frame(maxWidth: .infinity, alignment: .leading)
+                    .background(M3.background(scheme), in: RoundedRectangle(cornerRadius: 16))
+            } else { content }
+        }
     }
 
     static func openSettings() {

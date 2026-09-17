@@ -98,7 +98,7 @@ struct LicensesView: View {
             Section {
                 ForEach(UpstreamProject.all) { project in
                     Link(destination: project.url) {
-                        VStack(alignment: .leading, spacing: 3) {
+                        VStack(alignment: .leading, spacing: 4) {
                             HStack {
                                 Text(verbatim: project.name).font(.subheadline.weight(.semibold))
                                     .foregroundStyle(M3.onSurface(scheme))
@@ -109,6 +109,7 @@ struct LicensesView: View {
                             Text(verbatim: "\(project.authors) · \(project.license) · \(project.version)")
                                 .font(.caption2).foregroundStyle(M3.onSurfaceVariant(scheme))
                         }
+                        .padding(.vertical, 6)
                     }
                     .accessibilityHint(Text(verbatim: project.url.absoluteString))
                 }

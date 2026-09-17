@@ -244,13 +244,13 @@ struct MapHomeView: View {
                         .frame(width: 36, height: 36).background(M3.primaryContainer(scheme)).clipShape(Circle())
                 }
             }
-            .padding(.horizontal, 20).padding(.bottom, 8)
+            .padding(.horizontal, 20).padding(.bottom, 12)
 
             nearbyRingButton
-                .padding(.horizontal, 12).padding(.bottom, 12)
+                .padding(.horizontal, 16).padding(.bottom, 16)
 
             ScrollView {
-                VStack(spacing: 8) {
+                VStack(spacing: 10) {
                     if let message = locationManager.message {
                         VStack(alignment: .leading, spacing: 8) {
                             Label(message, systemImage: "location.circle")
@@ -283,7 +283,7 @@ struct MapHomeView: View {
                         ForEach(shared) { device in row(device) }
                     }
                 }
-                .padding(.horizontal, 12).padding(.bottom, bottomInset + 24)
+                .padding(.horizontal, 16).padding(.bottom, bottomInset + 24)
             }
         }
         .frame(height: height, alignment: .top)
@@ -350,7 +350,7 @@ struct MapHomeView: View {
             }
             .accessibilityLabel("Pokaż \(display) na mapie")
         }
-        .padding(10)
+        .padding(12)
         .background(M3.background(scheme))
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
@@ -360,7 +360,7 @@ struct MapHomeView: View {
             Text(title).font(.subheadline.weight(.semibold)).foregroundStyle(M3.onSurfaceVariant(scheme))
             Spacer()
         }
-        .padding(.horizontal, 6).padding(.top, 10).padding(.bottom, 2)
+        .padding(.horizontal, 4).padding(.top, 12).padding(.bottom, 2)
     }
 
     /// Row subtitle: relative "seen" time when a fix exists, else the status message.

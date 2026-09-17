@@ -42,6 +42,11 @@ final class ScrollInsetTests: XCTestCase {
         window.makeKeyAndVisible()
         try await Task.sleep(for: .milliseconds(900))
 
+        if let dir = ProcessInfo.processInfo.environment["MOTOHUB_SNAPSHOT_DIR"],
+           let png = UIGraphicsImageRenderer(bounds: window.bounds).image(actions: { _ in
+               window.drawHierarchy(in: window.bounds, afterScreenUpdates: true) }).pngData() {
+            try? png.write(to: URL(fileURLWithPath: dir).appendingPathComponent("device-detail-top.png"))
+        }
         let scroll = try XCTUnwrap(Self.scrollViews(in: window).max { $0.contentSize.height < $1.contentSize.height })
         let maxOffset = scroll.contentSize.height - scroll.bounds.height + scroll.adjustedContentInset.bottom
         scroll.setContentOffset(CGPoint(x: 0, y: max(maxOffset, -scroll.adjustedContentInset.top)), animated: false)
