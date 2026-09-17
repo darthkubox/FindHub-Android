@@ -1737,6 +1737,40 @@
         }
       }
     },
+    "Bluetooth jest wyłączony": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bluetooth is off"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bluetooth ist deaktiviert"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le Bluetooth est désactivé"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El Bluetooth está desactivado"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il Bluetooth è disattivato"
+          }
+        }
+      }
+    },
     "Bluetooth jest wyłączony lub niedostępny.": {
       "localizations": {
         "en": {
@@ -1975,6 +2009,40 @@
         }
       }
     },
+    "Brak dostępu do Bluetooth": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Bluetooth access"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein Bluetooth-Zugriff"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas d’accès au Bluetooth"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin acceso a Bluetooth"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun accesso al Bluetooth"
+          }
+        }
+      }
+    },
     "Brak dostępu do Bluetooth — pilnowanie wstrzymane": {
       "localizations": {
         "en": {
@@ -2077,6 +2145,40 @@
         }
       }
     },
+    "Brak nowych raportów lokalizacji": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No new location reports"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine neuen Standortberichte"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun nouveau rapport de position"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay nuevos informes de ubicación"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun nuovo rapporto di posizione"
+          }
+        }
+      }
+    },
     "Brak odebranej pozycji": {
       "localizations": {
         "en": {
@@ -2145,6 +2247,40 @@
         }
       }
     },
+    "Brak połączenia z internetem": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No internet connection"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Internetverbindung"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas de connexion Internet"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin conexión a internet"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessuna connessione a Internet"
+          }
+        }
+      }
+    },
     "Brak tagów w pobliżu.": {
       "localizations": {
         "en": {
@@ -2209,6 +2345,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nessun dispositivo su questo account."
+          }
+        }
+      }
+    },
+    "Brak urządzeń na tym koncie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No devices on this account"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Geräte in diesem Konto"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun appareil sur ce compte"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay dispositivos en esta cuenta"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun dispositivo su questo account"
           }
         }
       }
@@ -3573,6 +3743,74 @@
         }
       }
     },
+    "Google nie odpowiada": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google isn’t responding"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google antwortet nicht"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google ne répond pas"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google no responde"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google non risponde"
+          }
+        }
+      }
+    },
+    "Google nie przesłał pozycji na czas. Tag mógł nie być ostatnio w pobliżu innych urządzeń — pokazuję ostatnie znane pozycje.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google didn’t send a location in time. The tracker may not have been near other devices recently — showing the last known locations."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google hat die Position nicht rechtzeitig gesendet. Der Tracker war möglicherweise zuletzt nicht in der Nähe anderer Geräte – es werden die letzten bekannten Positionen angezeigt."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google n’a pas envoyé de position à temps. Le traceur n’a peut-être pas été récemment à proximité d’autres appareils — affichage des dernières positions connues."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google no envió la ubicación a tiempo. Puede que el localizador no haya estado cerca de otros dispositivos últimamente; se muestran las últimas ubicaciones conocidas."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google non ha inviato la posizione in tempo. Il localizzatore potrebbe non essere stato vicino ad altri dispositivi di recente: vengono mostrate le ultime posizioni note."
+          }
+        }
+      }
+    },
     "Google odpowiedział, ale nie dołączył raportu lokalizacji.": {
       "localizations": {
         "en": {
@@ -3603,6 +3841,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Google ha risposto senza includere un rapporto di posizione."
+          }
+        }
+      }
+    },
+    "Google ogranicza liczbę zapytań": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google is limiting requests"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google begrenzt die Anfragen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google limite les requêtes"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google está limitando las solicitudes"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google sta limitando le richieste"
           }
         }
       }
@@ -4045,6 +4317,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Unità"
+          }
+        }
+      }
+    },
+    "Jeśli nic nie słychać, podejdź bliżej i spróbuj ponownie.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If you can’t hear anything, move closer and try again."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wenn nichts zu hören ist, geh näher heran und versuche es erneut."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si vous n’entendez rien, rapprochez-vous et réessayez."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si no oyes nada, acércate e inténtalo de nuevo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se non senti nulla, avvicinati e riprova."
           }
         }
       }
@@ -4769,6 +5075,40 @@
         }
       }
     },
+    "Masz włączoną przybliżoną lokalizację — Twoja pozycja i odległości do urządzeń mogą być niedokładne.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Approximate location is on — your position and distances to devices may be inaccurate."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ungefährer Standort ist aktiviert – deine Position und Entfernungen zu Geräten können ungenau sein."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La position approximative est activée — votre position et les distances aux appareils peuvent être imprécises."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La ubicación aproximada está activada: tu posición y las distancias a los dispositivos pueden ser imprecisas."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La posizione approssimativa è attiva: la tua posizione e le distanze dai dispositivi potrebbero essere imprecise."
+          }
+        }
+      }
+    },
     "Material Design 3": {
       "localizations": {
         "en": {
@@ -5105,6 +5445,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tema"
+          }
+        }
+      }
+    },
+    "Najbliższy tag nie udostępnia dźwięku przez Bluetooth.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The nearest tracker doesn’t offer a sound over Bluetooth."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der nächste Tracker bietet keinen Ton über Bluetooth an."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le traceur le plus proche ne propose pas de son par Bluetooth."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El localizador más cercano no ofrece sonido por Bluetooth."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il localizzatore più vicino non offre un suono via Bluetooth."
           }
         }
       }
@@ -5517,6 +5891,40 @@
         }
       }
     },
+    "Nie udało się odblokować kluczy": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn’t unlock the keys"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schlüssel konnten nicht entsperrt werden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de déverrouiller les clés"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudieron desbloquear las claves"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile sbloccare le chiavi"
+          }
+        }
+      }
+    },
     "Nie udało się odczytać klucza lokalizacji tego urządzenia.": {
       "localizations": {
         "en": {
@@ -5649,6 +6057,108 @@
           "stringUnit": {
             "state": "translated",
             "value": "Impossibile decrittografare i rapporti di rete"
+          }
+        }
+      }
+    },
+    "Nie udało się pobrać lokalizacji": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn’t get locations"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Positionen konnten nicht abgerufen werden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible d’obtenir les positions"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudieron obtener las ubicaciones"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile ottenere le posizioni"
+          }
+        }
+      }
+    },
+    "Nie udało się pobrać urządzeń": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn’t load devices"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geräte konnten nicht geladen werden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de charger les appareils"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudieron cargar los dispositivos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile caricare i dispositivi"
+          }
+        }
+      }
+    },
+    "Nie udało się połączyć z usługą Find Hub. Spróbuj ponownie za chwilę.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn’t connect to the Find Hub service. Try again in a moment."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbindung zum Find-Hub-Dienst fehlgeschlagen. Versuche es gleich noch einmal."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de se connecter au service Find Hub. Réessayez dans un instant."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo conectar con el servicio Find Hub. Inténtalo de nuevo en un momento."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile connettersi al servizio Find Hub. Riprova tra poco."
           }
         }
       }
@@ -5891,6 +6401,40 @@
         }
       }
     },
+    "Nie udało się zadzwonić": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn’t ring"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klingeln fehlgeschlagen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de faire sonner"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo hacer sonar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile far suonare"
+          }
+        }
+      }
+    },
     "Nie udało się zapisać zmian na telefonie. Spróbuj ponownie.": {
       "localizations": {
         "en": {
@@ -6125,6 +6669,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Documento non trovato nell’app. Versione attuale: %@"
+          }
+        }
+      }
+    },
+    "Nie znaleziono taga w pobliżu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No tracker found nearby"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein Tracker in der Nähe gefunden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun traceur trouvé à proximité"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se encontró ningún localizador cerca"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun localizzatore trovato nelle vicinanze"
           }
         }
       }
@@ -6669,6 +7247,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sblocca una volta per vedere la posizione dei dispositivi."
+          }
+        }
+      }
+    },
+    "Odczekaj kilka minut i spróbuj ponownie.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wait a few minutes and try again."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warte ein paar Minuten und versuche es erneut."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Patientez quelques minutes et réessayez."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Espera unos minutos e inténtalo de nuevo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Attendi qualche minuto e riprova."
           }
         }
       }
@@ -7229,6 +7841,40 @@
         }
       }
     },
+    "Otwórz ustawienia": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Settings"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen öffnen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvrir les réglages"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir Ajustes"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apri Impostazioni"
+          }
+        }
+      }
+    },
     "Otwórz ustawienia powiadomień": {
       "localizations": {
         "en": {
@@ -7705,6 +8351,40 @@
         }
       }
     },
+    "Podejdź bliżej i upewnij się, że tag jest włączony.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Move closer and make sure the tracker is switched on."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geh näher heran und prüfe, ob der Tracker eingeschaltet ist."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rapprochez-vous et vérifiez que le traceur est allumé."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acércate y asegúrate de que el localizador esté encendido."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avvicinati e assicurati che il localizzatore sia acceso."
+          }
+        }
+      }
+    },
     "Podejdź do taga — oczekiwanie na potwierdzenie tożsamości": {
       "localizations": {
         "en": {
@@ -7769,6 +8449,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Avvicinati al dispositivo per avviare il monitoraggio."
+          }
+        }
+      }
+    },
+    "Pokazuję ostatnie znane pozycje. Odświeżę je, gdy połączenie wróci.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Showing the last known locations. They’ll refresh when the connection is back."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es werden die letzten bekannten Positionen angezeigt. Sie werden aktualisiert, sobald die Verbindung zurück ist."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Affichage des dernières positions connues. Elles seront actualisées au retour de la connexion."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se muestran las últimas ubicaciones conocidas. Se actualizarán cuando vuelva la conexión."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vengono mostrate le ultime posizioni note. Si aggiorneranno quando la connessione tornerà."
           }
         }
       }
@@ -9111,6 +9825,40 @@
         }
       }
     },
+    "Sesja Google wygasła": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your Google session has expired"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Google-Sitzung ist abgelaufen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Votre session Google a expiré"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu sesión de Google ha caducado"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La sessione Google è scaduta"
+          }
+        }
+      }
+    },
     "Skopiowano współrzędne": {
       "localizations": {
         "en": {
@@ -9311,6 +10059,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Controlla i tuoi localizzatori Android su iOS"
+          }
+        }
+      }
+    },
+    "Spróbuj ponownie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try again"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erneut versuchen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réessayer"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reintentar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Riprova"
           }
         }
       }
@@ -9621,6 +10403,40 @@
         }
       }
     },
+    "Tagi i inne urządzenia dodaje się w aplikacji Find Hub na telefonie z Androidem, na tym samym koncie Google. Gdy je dodasz, odśwież listę.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trackers and other devices are added in the Find Hub app on an Android phone, using the same Google account. Refresh the list once you’ve added them."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tracker und andere Geräte fügst du in der Find-Hub-App auf einem Android-Telefon mit demselben Google-Konto hinzu. Aktualisiere danach die Liste."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les traceurs et autres appareils s’ajoutent dans l’app Find Hub sur un téléphone Android, avec le même compte Google. Actualisez ensuite la liste."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los localizadores y otros dispositivos se añaden en la app Find Hub de un teléfono Android con la misma cuenta de Google. Después, actualiza la lista."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Localizzatori e altri dispositivi si aggiungono nell’app Find Hub su un telefono Android con lo stesso account Google. Poi aggiorna l’elenco."
+          }
+        }
+      }
+    },
     "Tagów w pobliżu: %lld": {
       "localizations": {
         "en": {
@@ -9685,6 +10501,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Questo rapporto usa un formato di crittografia non ancora supportato."
+          }
+        }
+      }
+    },
+    "Ten tag nie obsługuje dzwonienia": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This tracker can’t ring"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieser Tracker kann nicht klingeln"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ce traceur ne peut pas sonner"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este localizador no puede sonar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Questo localizzatore non può suonare"
           }
         }
       }
@@ -11491,6 +12341,40 @@
         }
       }
     },
+    "Wysłano dźwięk do najbliższego taga": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sound sent to the nearest tracker"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ton an den nächsten Tracker gesendet"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son envoyé au traceur le plus proche"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonido enviado al localizador más cercano"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suono inviato al localizzatore più vicino"
+          }
+        }
+      }
+    },
     "Wysłano komendę dźwięku do najbliższego tagu.": {
       "localizations": {
         "en": {
@@ -11623,6 +12507,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Attiva il Bluetooth e tieni vicino il localizzatore."
+          }
+        }
+      }
+    },
+    "Włącz Bluetooth w Centrum sterowania i spróbuj ponownie.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on Bluetooth in Control Centre and try again."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktiviere Bluetooth im Kontrollzentrum und versuche es erneut."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activez le Bluetooth dans le Centre de contrôle et réessayez."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa el Bluetooth en el Centro de control e inténtalo de nuevo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Attiva il Bluetooth dal Centro di Controllo e riprova."
           }
         }
       }
@@ -11933,6 +12851,74 @@
         }
       }
     },
+    "Zaloguj się ponownie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign in again"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erneut anmelden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se reconnecter"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volver a iniciar sesión"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accedi di nuovo"
+          }
+        }
+      }
+    },
+    "Zaloguj się ponownie, aby odświeżyć dostęp do urządzeń.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign in again to restore access to your devices."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Melde dich erneut an, um wieder auf deine Geräte zuzugreifen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reconnectez-vous pour rétablir l’accès à vos appareils."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuelve a iniciar sesión para recuperar el acceso a tus dispositivos."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accedi di nuovo per ripristinare l’accesso ai dispositivi."
+          }
+        }
+      }
+    },
     "Zaloguj się przez Google": {
       "localizations": {
         "en": {
@@ -12133,6 +13119,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Segna un’area per casa, lavoro o un altro luogo. Assegna i dispositivi nelle loro impostazioni di monitoraggio."
+          }
+        }
+      }
+    },
+    "Zezwól aplikacji na korzystanie z Bluetooth w Ustawieniach iPhone’a.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allow the app to use Bluetooth in iPhone Settings."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erlaube der App in den iPhone-Einstellungen, Bluetooth zu verwenden."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Autorisez l’app à utiliser le Bluetooth dans les réglages de l’iPhone."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permite que la app use Bluetooth en los ajustes del iPhone."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consenti all’app di usare il Bluetooth nelle impostazioni dell’iPhone."
           }
         }
       }

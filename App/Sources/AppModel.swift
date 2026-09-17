@@ -4,6 +4,7 @@
 import SwiftUI
 import OSLog
 import CoreLocation
+import Network
 
 private let locLog = Logger(subsystem: "pl.mintstudio.findhubandroid", category: "locate")
 
@@ -23,6 +24,13 @@ final class AppModel: ObservableObject {
     @Published var isRingingNearby = false
     @Published var hasE2EE: Bool
     @Published var showingVaultUnlock = false
+    /// Problem or confirmation shown on the signed-in screens.
+    @Published var issue: AppIssue?
+    /// True once the device list was fetched for the active account.
+    @Published private(set) var devicesLoaded = false
+    /// Incremented to ask the shell to present Google sign-in again.
+    @Published private(set) var signInRequest = 0
+    @Published private(set) var isOnline = true
     /// Decrypted positions by device id, and the coordinate to center the map on.
     @Published var locations: [String: DecryptedLocation] = [:]
     @Published private(set) var locationMessages: [String: String] = [:]
@@ -45,6 +53,8 @@ final class AppModel: ObservableObject {
     private var lookupID = UUID()
     private var sessionID = UUID()
     private var didAutoLocate = false
+    private let pathMonitor = NWPathMonitor()
+    private var issueDismissal: Task<Void, Never>?
 
     init() {
         loggedIn = Session.shared.isLoggedIn
@@ -53,6 +63,65 @@ final class AppModel: ObservableObject {
         accounts = Session.shared.accounts
         reloadAccountPhotos()
         TrackerJournal.shared.activate(Session.shared.activeAccountID)
+        pathMonitor.pathUpdateHandler = { [weak self] path in
+            let online = path.status == .satisfied
+            Task { @MainActor in self?.networkChanged(online: online) }
+        }
+        pathMonitor.start(queue: DispatchQueue(label: "pl.mintstudio.findhubandroid.network"))
+    }
+
+    // MARK: - Issues
+
+    func show(_ newIssue: AppIssue) {
+        issueDismissal?.cancel()
+        issue = newIssue
+        if newIssue.isConfirmation {
+            issueDismissal = Task { [weak self] in
+                try? await Task.sleep(for: .seconds(5))
+                guard !Task.isCancelled, self?.issue == newIssue else { return }
+                self?.issue = nil
+            }
+        }
+    }
+
+    func dismissIssue() { issueDismissal?.cancel(); issue = nil }
+
+    /// Runs the action offered with the current issue.
+    func resolveIssue() {
+        guard let current = issue else { return }
+        dismissIssue()
+        switch current.action {
+        case .signInAgain: signInRequest += 1
+        case .unlockKeys: showingVaultUnlock = true
+        case .openSettings:
+            if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
+        case .retry:
+            Task {
+                switch current.context {
+                case .devices: await loadDevices(); await locateAll(force: true)
+                case .locations: await locateAll(force: true)
+                case .unlock: showingVaultUnlock = true
+                case .ring: await ringNearby()
+                }
+            }
+        case .none: break
+        }
+    }
+
+    private func clearIssue(for contexts: Set<AppIssue.Context>) {
+        if let current = issue, !current.isConfirmation, contexts.contains(current.context) { dismissIssue() }
+    }
+
+    private func networkChanged(online: Bool) {
+        guard online != isOnline else { return }
+        isOnline = online
+        guard loggedIn else { return }
+        if !online {
+            show(.offline())
+        } else if issue?.kind == .offline || issue?.kind == .googleUnreachable {
+            dismissIssue()
+            Task { await loadDevices(); await locateAll(force: true) }
+        }
     }
 
     private func reloadAccountPhotos() {
@@ -123,6 +192,8 @@ final class AppModel: ObservableObject {
         locationDiagnostics = [:]
         focus = nil; focusToken += 1
         didAutoLocate = false
+        devicesLoaded = false
+        dismissIssue()
         isRingingNearby = false
         isLocating = false
         isBusy = false
@@ -162,10 +233,13 @@ final class AppModel: ObservableObject {
             let list = try await Nova.listDevices(admToken: adm)
             guard session == sessionID else { return }
             devices = list
+            devicesLoaded = true
+            clearIssue(for: [.devices])
             status = list.isEmpty ? String(localized: "Brak urządzeń na koncie.") : String(localized: "Znaleziono \(list.count) urządzeń.")
         } catch {
             guard session == sessionID else { return }
             status = String(localized: "Błąd listy: \(error.localizedDescription)")
+            show(.from(error, context: .devices))
         }
     }
 
@@ -204,9 +278,11 @@ final class AppModel: ObservableObject {
             Session.shared.ownerKey = owner
             hasE2EE = true
             status = String(localized: "Klucze E2EE odblokowane ✅")
+            clearIssue(for: [.unlock])
         } catch {
             guard session == sessionID else { return }
             status = String(localized: "Błąd odblokowania: \(error.localizedDescription)")
+            show(.from(error, context: .unlock))
         }
     }
 
@@ -231,9 +307,12 @@ final class AppModel: ObservableObject {
             _ = try await withTaskCancellationHandler { try await task.value } onCancel: { task.cancel() }
             guard session == sessionID else { return }
             status = String(localized: "Wysłano komendę dźwięku do najbliższego tagu.")
+            show(.ringSent())
+        } catch is CancellationError {
         } catch {
             guard session == sessionID else { return }
             status = String(localized: "BLE: \(error.localizedDescription)")
+            show(.from(error, context: .ring))
         }
     }
 
@@ -293,6 +372,7 @@ final class AppModel: ObservableObject {
         for device in requested { locationMessages[device.id] = Self.waitingForPosition }
         var received = Set<String>()
         var sendFailures = Set<String>()
+        var lastSendError: Error?
         var decodeFailures = 0
         do {
             let creds = try await FcmRegister.ensureRegistered()
@@ -367,6 +447,7 @@ final class AppModel: ObservableObject {
                             } catch {
                                 try Task.checkCancellation()
                                 sendFailures.insert(device.id)
+                                lastSendError = error
                                 self.locationMessages[device.id] = String(localized: "Nie udało się wysłać żądania pozycji")
                             }
                             if received.union(sendFailures).count == requests.count {
@@ -383,6 +464,11 @@ final class AppModel: ObservableObject {
             if focusDeviceID == nil { didAutoLocate = received.count == requests.count }
             status = String(localized: "Odebrano lokalizacje: \(received.count)/\(requests.count).")
             if !sendFailures.isEmpty { status += " " + String(localized: "Nie wysłano żądań: \(sendFailures.count).") }
+            if received.isEmpty, let lastSendError {
+                show(.from(lastSendError, context: .locations))
+            } else {
+                clearIssue(for: [.locations, .devices])
+            }
         } catch is CancellationError {
             if lookupID == id {
                 for device in requested where locationMessages[device.id] == Self.waitingForPosition {
@@ -395,6 +481,17 @@ final class AppModel: ObservableObject {
                 locationMessages[device.id] = locations[device.id] == nil ? String(localized: "Brak odpowiedzi z pozycją") : String(localized: "Ostatnia pozycja na mapie")
             }
             status = String(localized: "Odebrano lokalizacje: \(received.count)/\(requests.count). \(error.localizedDescription)")
+            if received.isEmpty {
+                if case McsError.timeout = error {
+                    // Silence from Google usually means no fresh reports, not a broken link.
+                    show(AppIssue(kind: .failed(.locations), context: .locations,
+                                  title: String(localized: "Brak nowych raportów lokalizacji"),
+                                  message: String(localized: "Google nie przesłał pozycji na czas. Tag mógł nie być ostatnio w pobliżu innych urządzeń — pokazuję ostatnie znane pozycje."),
+                                  action: .retry))
+                } else {
+                    show(.from(error, context: .locations))
+                }
+            }
             if decodeFailures > 0 { status += " " + String(localized: "Część raportów nie dała się odczytać.") }
         }
     }

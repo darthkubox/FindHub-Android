@@ -93,6 +93,13 @@ final class LegalScreensTests: XCTestCase {
             ("legal-info", AnyView(NavigationStack { LegalInfoView() })),
             ("licences", AnyView(NavigationStack { LicensesView() })),
             ("settings", AnyView(SettingsView(model: model, onAddAccount: {}))),
+            ("issues", AnyView(ScrollView { VStack(spacing: 10) {
+                ForEach([AppIssue.offline(), AppIssue.from(NovaError.http(401), context: .devices),
+                         AppIssue.from(BleError.unavailable, context: .ring, bluetoothAuthorization: .allowedAlways),
+                         AppIssue.ringSent()]) { issue in
+                    IssueBanner(issue: issue, onAction: {}, onDismiss: {})
+                }
+            }.padding(16) }.background(Color(white: 0.12)))),
             ("settings-bottom", AnyView(SettingsBottomHarness(model: model, gap: -60))),
             ("settings-appearance", AnyView(SettingsBottomHarness(model: model, gap: 1150))),
         ]
@@ -177,5 +184,23 @@ private struct SettingsBottomHarness: View {
             scroll.setContentOffset(CGPoint(x: 0, y: max(0, y - gap)), animated: false)
         }
         view.subviews.forEach { scroll($0, gap: gap) }
+    }
+}
+
+/// Low-level errors become messages with the action that actually helps.
+final class AppIssueTests: XCTestCase {
+    func testErrorsMapToUsefulActions() {
+        XCTAssertEqual(AppIssue.from(URLError(.notConnectedToInternet), context: .devices).kind, .offline)
+        XCTAssertEqual(AppIssue.from(URLError(.timedOut), context: .locations).kind, .googleUnreachable)
+        let expired = AppIssue.from(NovaError.http(401), context: .devices)
+        XCTAssertEqual(expired.kind, .sessionExpired)
+        XCTAssertEqual(expired.action, .signInAgain)
+        XCTAssertEqual(AppIssue.from(NovaError.http(429), context: .locations).kind, .rateLimited)
+        XCTAssertEqual(AppIssue.from(BleError.unavailable, context: .ring, bluetoothAuthorization: .denied).action, .openSettings)
+        XCTAssertEqual(AppIssue.from(BleError.unavailable, context: .ring, bluetoothAuthorization: .allowedAlways).kind, .bluetoothOff)
+        XCTAssertEqual(AppIssue.from(BleError.timeout, context: .ring).kind, .noNearbyTracker)
+        XCTAssertEqual(AppIssue.from(CryptoError.vaultParse, context: .unlock).action, .unlockKeys)
+        XCTAssertTrue(AppIssue.ringSent().isConfirmation)
+        XCTAssertFalse(AppIssue.offline().isConfirmation)
     }
 }

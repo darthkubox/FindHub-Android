@@ -70,6 +70,7 @@ struct ContentView: View {
             }
             .interactiveDismissDisabled()
         }
+        .onChange(of: model.signInRequest) { showingLogin = true }
         .task(id: model.activeAccount) { await model.refreshAccountPhotos() }
         .task(id: scenePhase) {
             guard scenePhase == .active else { return }

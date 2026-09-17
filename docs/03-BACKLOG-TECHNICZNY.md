@@ -14,7 +14,7 @@ Wszystkie ścieżki odnoszą się do `App/` w tym nowym projekcie. Priorytet P0 
 | PRIV-04 | P2 | Informacja o cofnięciu dostępu | Instrukcja: myaccount.google.com → Bezpieczeństwo → urządzenia/aplikacje; bez twierdzenia, że aplikacja odwołuje tokeny | OTWARTE |
 | SEC-01 | P1 | Logi i sekrety | Brak nazw urządzeń, współrzędnych i tokenów w logach `.public` | ZROBIONE 2026-09-16 (Nova) |
 | SEC-02 | P1 | Obsługa błędów zapisu Keychain | Brak fałszywego sukcesu po błędzie; cofnięcie częściowego stanu | OTWARTE |
-| UX-01 | P1 | Stany uprawnień i błędów | Lokalizacja odmówiona/przybliżona, BLE wyłączone, offline, brak tagów, błąd konta/Google | OTWARTE |
+| UX-01 | P1 | Stany uprawnień i błędów | Lokalizacja odmówiona/przybliżona, BLE wyłączone, offline, brak tagów, błąd konta/Google | ZROBIONE 2026-09-17 |
 | BLE-01 | P1 | Uczciwe dzwonienie lokalne | UI mówi „najbliższy zgodny tag”; wysłanie ≠ potwierdzony dźwięk | OTWARTE |
 | BG-01 | P1 | Realne możliwości tła | Brak obietnic stałego śledzenia; opis zgodny z testem | OTWARTE |
 | DISCL-01 | P1 | Informacja o nieoficjalnym kliencie | Ekran licencji, informacja i akceptacja na ekranie logowania | ZROBIONE 2026-09-17 |

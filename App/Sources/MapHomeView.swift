@@ -251,12 +251,16 @@ struct MapHomeView: View {
 
             ScrollView {
                 VStack(spacing: 10) {
+                    if let issue = model.issue {
+                        IssueBanner(issue: issue, onAction: { model.resolveIssue() }, onDismiss: { model.dismissIssue() })
+                    }
+                    if model.devicesLoaded && model.devices.isEmpty { emptyDevices }
                     if let message = locationManager.message {
                         VStack(alignment: .leading, spacing: 8) {
                             Label(message, systemImage: "location.circle")
                                 .font(.footnote)
                                 .foregroundStyle(M3.onSurfaceVariant(scheme))
-                            if locationManager.permissionDenied {
+                            if locationManager.permissionDenied || locationManager.reducedAccuracy {
                                 Button("Ustawienia lokalizacji") {
                                     if let url = URL(string: UIApplication.openSettingsURLString) {
                                         UIApplication.shared.open(url)
@@ -311,6 +315,25 @@ struct MapHomeView: View {
         .buttonStyle(M3TonalButtonStyle())
         .disabled(model.isRingingNearby)
         .accessibilityHint("Wysyła dźwięk do najbliższego lokalizatora przez Bluetooth.")
+    }
+
+    private var emptyDevices: some View {
+        VStack(spacing: 10) {
+            Image(systemName: "sensor.tag.radiowaves.forward")
+                .font(.system(size: 34)).foregroundStyle(M3.primary(scheme))
+            Text("Brak urządzeń na tym koncie").font(.headline).foregroundStyle(M3.onSurface(scheme))
+            Text("Tagi i inne urządzenia dodaje się w aplikacji Find Hub na telefonie z Androidem, na tym samym koncie Google. Gdy je dodasz, odśwież listę.")
+                .font(.footnote).foregroundStyle(M3.onSurfaceVariant(scheme))
+                .multilineTextAlignment(.center)
+            Button { Task { await model.loadDevices(); await model.locateAll(force: true) } } label: {
+                Label("Odśwież", systemImage: "arrow.clockwise")
+            }
+            .buttonStyle(M3TonalButtonStyle())
+            .padding(.top, 4)
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity)
+        .background(M3.background(scheme), in: RoundedRectangle(cornerRadius: 16))
     }
 
     private var unlockBanner: some View {

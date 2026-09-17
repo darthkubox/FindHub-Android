@@ -12,6 +12,8 @@ final class LocationManager: NSObject, ObservableObject {
     @Published private(set) var location: CLLocation?
     @Published private(set) var message: String?
     @Published private(set) var permissionDenied = false
+    /// Precise location is off, so distances and the user's marker are approximate.
+    @Published private(set) var reducedAccuracy = false
 
     override init() {
         super.init()
@@ -32,14 +34,19 @@ final class LocationManager: NSObject, ObservableObject {
         let s = manager.authorizationStatus
         authorized = (s == .authorizedWhenInUse || s == .authorizedAlways)
         permissionDenied = (s == .denied || s == .restricted)
+        reducedAccuracy = authorized && manager.accuracyAuthorization == .reducedAccuracy
         if authorized && active {
-            message = location == nil ? String(localized: "Ustalam Twoją lokalizację…") : nil
+            message = location == nil ? String(localized: "Ustalam Twoją lokalizację…") : accuracyNote
             manager.startUpdatingLocation()
         } else {
             manager.stopUpdatingLocation()
             location = nil
             message = permissionDenied ? String(localized: "Włącz dostęp do lokalizacji, aby zobaczyć siebie na mapie.") : nil
         }
+    }
+
+    private var accuracyNote: String? {
+        reducedAccuracy ? String(localized: "Masz włączoną przybliżoną lokalizację — Twoja pozycja i odległości do urządzeń mogą być niedokładne.") : nil
     }
 
     func stop() {
@@ -57,7 +64,7 @@ extension LocationManager: @preconcurrency CLLocationManagerDelegate {
               abs(fix.timestamp.timeIntervalSinceNow) < 120,
               CLLocationCoordinate2DIsValid(fix.coordinate) else { return }
         location = fix
-        message = nil
+        message = accuracyNote
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

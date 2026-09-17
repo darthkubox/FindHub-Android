@@ -151,3 +151,10 @@ Polecenie użytkownika: dokumenty i licencje po polsku i angielsku, aplikacja w 
 - Przegląd zrzutów: szuflada urządzeń, szuflada miejsc, szczegóły miejsca, szczegóły urządzenia (góra i dół), ustawienia, menu konta, licencje, edytor miejsca.
 - Poprawki: szuflady — marginesy treści 12→16 pt (zgodne z krawędziami przycisku dzwonienia), odstęp między kartami 8→10 pt, padding wierszy 10→12 pt, przerwa pod nagłówkiem 8→12 pt, nagłówki sekcji 12 pt od góry; ostrzeżenie o powiadomieniach w szufladzie miejsc we własnej karcie; nagłówek arkusza 12 pt pod tytułem; listy w arkuszach — wiersze min. 52 pt, 24 pt między sekcjami, 8 pt marginesu pod nagłówkiem; karta zgody na powiadomienia z większymi odstępami; wiersze projektów w licencjach luźniejsze; menu konta wyższe (72% ekranu), by „Wyloguj się” mieściło się bez przewijania.
 - Weryfikacja: zrzuty po zmianach obejrzane; XCTest 10/10, regresje 45, historia 50, build Release PASS.
+
+## Komunikaty błędów (UX-01) i tag wersji — 2026-09-17
+
+- Przyczyna: po zalogowaniu błędy trafiały do `model.status`, widocznego tylko na ekranie logowania — błąd listy urządzeń, wygaśnięcie sesji, brak sieci i nieudane dzwonienie były niewidoczne.
+- `AppIssue` tłumaczy błędy (URLError, Nova/GoogleAuth HTTP 401/403/429/5xx, MCS, Bluetooth, kryptografia) na komunikat z akcją; `IssueBanner` w szufladach urządzeń i miejsc. `NWPathMonitor`: komunikat offline i automatyczne odświeżenie po powrocie sieci. Brak raportów w czasie (MCS timeout) opisany jako „Brak nowych raportów lokalizacji”, nie jako awaria. Potwierdzenie wysłania dźwięku Bluetooth (znika po 5 s). Pusta lista urządzeń z instrukcją. Informacja o przybliżonej lokalizacji z przyciskiem ustawień. „Zaloguj się ponownie” otwiera logowanie Google.
+- Weryfikacja: `AppIssueTests` (mapowanie błędów na akcje), zrzut kart komunikatów obejrzany; XCTest 11/11, regresje 45, historia 50, build Release PASS; 387 tekstów w 6 językach. Zachowania offline i wygasłej sesji nie wywołano na telefonie.
+- Tag `v1.0.0` (MARKETING_VERSION 1.0.0, build 1) wskazuje kod tej wersji dla wymogu GPL. Zmiany przed notaryzacją wydajemy jako 1.0.1 z nowym tagiem, bez przesuwania `v1.0.0`.

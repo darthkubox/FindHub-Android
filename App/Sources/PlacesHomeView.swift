@@ -226,6 +226,9 @@ struct PlacesHomeView: View {
             drawerHeader
         } content: {
             VStack(spacing: 10) {
+                if let issue = model.issue {
+                    IssueBanner(issue: issue, onAction: { model.resolveIssue() }, onDismiss: { model.dismissIssue() })
+                }
                 if places.isEmpty {
                     emptyState
                 } else {
