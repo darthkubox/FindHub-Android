@@ -349,27 +349,33 @@ struct PlaceEditor: View {
             }
             .padding(20)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            .background(M3.background(scheme).ignoresSafeArea())
-            .navigationTitle("Obszar miejsca")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) { Button("Anuluj") { dismiss() } }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Zapisz") {
+            .toolbar(.hidden, for: .navigationBar)
+            .safeAreaInset(edge: .top, spacing: 0) {
+                M3SheetHeader(title: "Obszar miejsca", onClose: { dismiss() }) {
+                    let canSave = draft.isValid && pickedCenter
+                    Button {
                         if journal.savePlace(draft) {
                             // Places exist to raise alerts; ask while the intent is fresh.
                             Task { _ = await DeviceProtection.shared.requestNotifications() }
                             dismiss()
                         }
+                    } label: {
+                        Text("Zapisz").font(.subheadline.weight(.semibold))
+                            .foregroundStyle(canSave ? M3.onPrimary(scheme) : M3.onSurfaceVariant(scheme))
+                            .padding(.horizontal, 18).frame(height: 36)
+                            .background(canSave ? M3.primary(scheme) : M3.surfaceVariant(scheme), in: Capsule())
                     }
-                        .fontWeight(.semibold).disabled(!draft.isValid || !pickedCenter)
+                    .buttonStyle(.plain)
+                    .disabled(!canSave)
                 }
             }
+            .background(M3.surface(scheme).ignoresSafeArea())
             .onChange(of: location.location) { if let fix = location.location { center(on: fix.coordinate) } }
             .onDisappear { location.stop(); geocoder.cancelGeocode() }
         }
         .presentationDetents([.large])
-        .presentationDragIndicator(.visible)
+        .m3Sheet()
+        .interactiveDismissDisabled()
         .tint(M3.primary(scheme))
     }
 

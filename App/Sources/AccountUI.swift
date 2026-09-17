@@ -45,6 +45,7 @@ struct AccountSheet: View {
     var onSettings: () -> Void
     @Environment(\.colorScheme) private var scheme
     @Environment(\.dismiss) private var dismiss
+    @State private var confirmingLogout = false
 
     private var active: String { model.activeAccount ?? model.email ?? "—" }
     private var others: [String] { model.accounts.filter { $0 != active } }
@@ -53,9 +54,6 @@ struct AccountSheet: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 18) {
-                    Text("FindHub Android").font(.footnote.weight(.semibold))
-                        .foregroundStyle(M3.onSurfaceVariant(scheme)).padding(.top, 6)
-
                     AccountAvatar(email: active, scheme: scheme, size: 76, photo: model.accountPhotos[active])
                     VStack(spacing: 2) {
                         Text(active).font(.headline).foregroundStyle(M3.onSurface(scheme))
@@ -85,7 +83,7 @@ struct AccountSheet: View {
                                 if acc != others.last { Divider().padding(.leading, 66) }
                             }
                         }
-                        .background(M3.surface(scheme), in: RoundedRectangle(cornerRadius: 16))
+                        .background(M3.background(scheme), in: RoundedRectangle(cornerRadius: 16))
                         .padding(.horizontal, 16)
                     }
 
@@ -100,20 +98,25 @@ struct AccountSheet: View {
                         .buttonStyle(.plain)
                         Divider().padding(.leading, 52)
                         actionRow("Wyloguj się", "rectangle.portrait.and.arrow.right", destructive: true) {
-                            model.logout(); dismiss()
+                            confirmingLogout = true
                         }
                     }
-                    .background(M3.surface(scheme), in: RoundedRectangle(cornerRadius: 16))
+                    .background(M3.background(scheme), in: RoundedRectangle(cornerRadius: 16))
                     .padding(.horizontal, 16)
 
                 }
                 .frame(maxWidth: .infinity)
+                .padding(.top, 8).padding(.bottom, 24)
             }
-            .background(M3.background(scheme).ignoresSafeArea())
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Gotowe") { dismiss() } } }
+            .m3SheetRoot("Konto Google") { dismiss() }
         }
         .presentationDetents([.medium, .large])
+        .alert("Czy na pewno chcesz się wylogować?", isPresented: $confirmingLogout) {
+            Button("Wyloguj się", role: .destructive) { model.logout(); dismiss() }
+            Button("Anuluj", role: .cancel) {}
+        } message: {
+            Text("Konto \(active) zostanie wylogowane z tego iPhone’a. Historia, notatki i miejsca zostaną zachowane.")
+        }
     }
 
     private func actionRow(_ title: LocalizedStringKey, _ icon: String, destructive: Bool = false, _ action: @escaping () -> Void) -> some View {
@@ -143,6 +146,7 @@ struct LegalInfoView: View {
 
     var body: some View {
         List {
+            Group {
             Section {
                 ForEach(LegalDocument.allCases) { document in
                     NavigationLink { LegalDocumentView(document: document) } label: {
@@ -168,7 +172,10 @@ struct LegalInfoView: View {
                     }
                 }
             }
+            }
+            .listRowBackground(M3.background(scheme))
         }
+        .m3SheetList(scheme)
         .navigationTitle("Informacje prawne i licencje")
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -184,6 +191,7 @@ struct SettingsView: View {
     @State private var confirmingDeletion = false
     @State private var deleting = false
     @State private var testScheduled = false
+    @State private var confirmingLogout = false
 
     private var appVersion: String {
         let v = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?"
@@ -194,6 +202,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             List {
+                Group {
                 Section("Konta") {
                     ForEach(model.accounts, id: \.self) { acc in
                         Button {
@@ -312,7 +321,7 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    Button(role: .destructive) { model.logout(); dismiss() } label: {
+                    Button(role: .destructive) { confirmingLogout = true } label: {
                         Label("Wyloguj bieżące konto", systemImage: "rectangle.portrait.and.arrow.right")
                     }
                     Button(role: .destructive) { confirmingDeletion = true } label: {
@@ -322,11 +331,18 @@ struct SettingsView: View {
                 } footer: {
                     Text("Wylogowanie zachowuje historię, notatki i miejsca na wypadek ponownego logowania. Usunięcie kasuje je trwale razem z nazwami, ikonami, zdjęciami, alertami i kluczami tego konta. Konto Google i dane na serwerach Google pozostają bez zmian.")
                 }
+                }
+                .listRowBackground(M3.background(scheme))
             }
-            .navigationTitle("Ustawienia")
-            .navigationBarTitleDisplayMode(.inline)
-            .confirmationDialog("Usunąć dane konta \(model.activeAccount ?? "")?",
-                                isPresented: $confirmingDeletion, titleVisibility: .visible) {
+            .m3SheetList(scheme)
+            .m3SheetRoot("Ustawienia") { dismiss() }
+            .alert("Czy na pewno chcesz się wylogować?", isPresented: $confirmingLogout) {
+                Button("Wyloguj się", role: .destructive) { model.logout(); dismiss() }
+                Button("Anuluj", role: .cancel) {}
+            } message: {
+                Text("Konto \(model.activeAccount ?? "") zostanie wylogowane z tego iPhone’a. Historia, notatki i miejsca zostaną zachowane.")
+            }
+            .alert("Czy na pewno chcesz usunąć dane tego konta?", isPresented: $confirmingDeletion) {
                 Button("Usuń trwale", role: .destructive) {
                     deleting = true
                     Task {
@@ -337,9 +353,8 @@ struct SettingsView: View {
                 }
                 Button("Anuluj", role: .cancel) {}
             } message: {
-                Text("Historia, notatki, miejsca, własne nazwy, ikony i zdjęcia urządzeń oraz klucze tego konta zostaną usunięte z iPhone’a. Tej operacji nie można cofnąć.")
+                Text("Z iPhone’a zostaną usunięte historia, notatki, miejsca, własne nazwy, ikony i zdjęcia urządzeń oraz klucze konta \(model.activeAccount ?? ""). Tej operacji nie można cofnąć.")
             }
-            .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Gotowe") { dismiss() } } }
         }
     }
 }

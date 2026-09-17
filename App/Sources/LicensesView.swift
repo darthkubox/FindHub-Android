@@ -78,6 +78,7 @@ struct LicensesView: View {
 
     var body: some View {
         List {
+            Group {
             Section {
                 Text("FindHub Android to niezależna, nieoficjalna aplikacja wydawana przez mintstudio. Nie jest powiązana z Google, Motorola ani Apple. Find Hub i Android są znakami towarowymi Google LLC; nazwy służą wyłącznie opisaniu zgodności.")
                     .font(.footnote).foregroundStyle(M3.onSurfaceVariant(scheme))
@@ -130,7 +131,10 @@ struct LicensesView: View {
                 }
                 NavigationLink("GNU General Public License v3.0") { LicenseTextView(title: "GPL v3.0", resource: "GPL-3.0") }
             }
+            }
+            .listRowBackground(M3.background(scheme))
         }
+        .m3SheetList(scheme)
         .navigationTitle("Licencje i kod źródłowy")
         .navigationBarTitleDisplayMode(.inline)
     }

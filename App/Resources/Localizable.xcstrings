@@ -2587,6 +2587,74 @@
         }
       }
     },
+    "Czy na pewno chcesz się wylogować?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are you sure you want to sign out?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Möchtest du dich wirklich abmelden?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voulez-vous vraiment vous déconnecter ?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Seguro que quieres cerrar sesión?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuoi davvero uscire?"
+          }
+        }
+      }
+    },
+    "Czy na pewno chcesz usunąć dane tego konta?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are you sure you want to delete this account’s data?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Möchtest du die Daten dieses Kontos wirklich löschen?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voulez-vous vraiment supprimer les données de ce compte ?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Seguro que quieres eliminar los datos de esta cuenta?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuoi davvero eliminare i dati di questo account?"
+          }
+        }
+      }
+    },
     "Część raportów nie dała się odczytać.": {
       "localizations": {
         "en": {
@@ -3709,40 +3777,6 @@
         }
       }
     },
-    "Historia, notatki, miejsca, własne nazwy, ikony i zdjęcia urządzeń oraz klucze tego konta zostaną usunięte z iPhone’a. Tej operacji nie można cofnąć.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "History, notes, places, custom device names, icons and photos, and this account’s keys will be removed from this iPhone. This cannot be undone."
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verlauf, Notizen, Orte, eigene Gerätenamen, Symbole und Fotos sowie die Schlüssel dieses Kontos werden von diesem iPhone entfernt. Dies kann nicht rückgängig gemacht werden."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "L’historique, les notes, les lieux, les noms, icônes et photos personnalisés des appareils ainsi que les clés de ce compte seront supprimés de cet iPhone. Cette action est irréversible."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Se eliminarán de este iPhone el historial, las notas, los lugares, los nombres, iconos y fotos personalizados de los dispositivos y las claves de esta cuenta. No se puede deshacer."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cronologia, note, luoghi, nomi, icone e foto personalizzati dei dispositivi e le chiavi di questo account verranno rimossi da questo iPhone. L’operazione non può essere annullata."
-          }
-        }
-      }
-    },
     "IETF DULT — wykrywanie niechcianych lokalizatorów": {
       "localizations": {
         "en": {
@@ -4357,6 +4391,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Account"
+          }
+        }
+      }
+    },
+    "Konto %@ zostanie wylogowane z tego iPhone’a. Historia, notatki i miejsca zostaną zachowane.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ will be signed out on this iPhone. History, notes and places will be kept."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ wird auf diesem iPhone abgemeldet. Verlauf, Notizen und Orte bleiben erhalten."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ sera déconnecté de cet iPhone. L’historique, les notes et les lieux seront conservés."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se cerrará la sesión de %@ en este iPhone. El historial, las notas y los lugares se conservarán."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’account %@ verrà disconnesso da questo iPhone. Cronologia, note e luoghi verranno conservati."
           }
         }
       }
@@ -10267,40 +10335,6 @@
         }
       }
     },
-    "Usunąć dane konta %@?": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete data for %@?"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Daten von %@ löschen?"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Supprimer les données de %@ ?"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "¿Eliminar los datos de %@?"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eliminare i dati di %@?"
-          }
-        }
-      }
-    },
     "Usunąć miejsce?": {
       "localizations": {
         "en": {
@@ -11729,6 +11763,40 @@
         }
       }
     },
+    "Z iPhone’a zostaną usunięte historia, notatki, miejsca, własne nazwy, ikony i zdjęcia urządzeń oraz klucze konta %@. Tej operacji nie można cofnąć.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "History, notes, places, custom device names, icons and photos, and the keys of %@ will be removed from this iPhone. This cannot be undone."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verlauf, Notizen, Orte, eigene Gerätenamen, Symbole und Fotos sowie die Schlüssel von %@ werden von diesem iPhone entfernt. Dies kann nicht rückgängig gemacht werden."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’historique, les notes, les lieux, les noms, icônes et photos personnalisés des appareils ainsi que les clés de %@ seront supprimés de cet iPhone. Cette action est irréversible."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se eliminarán de este iPhone el historial, las notas, los lugares, los nombres, iconos y fotos personalizados de los dispositivos y las claves de %@. No se puede deshacer."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cronologia, note, luoghi, nomi, icone e foto personalizzati dei dispositivi e le chiavi di %@ verranno rimossi da questo iPhone. L’operazione non può essere annullata."
+          }
+        }
+      }
+    },
     "Zablokowane": {
       "localizations": {
         "en": {
@@ -11929,6 +11997,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Accedi con Google"
+          }
+        }
+      }
+    },
+    "Zamknij": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schließen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fermer"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerrar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiudi"
           }
         }
       }

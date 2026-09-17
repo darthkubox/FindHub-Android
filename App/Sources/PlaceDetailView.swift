@@ -259,7 +259,7 @@ struct PlaceDetailView: View {
                                     .font(.system(size: 22)).foregroundStyle(M3.primary(scheme))
                             }
                             .padding(10)
-                            .background(M3.surface(scheme))
+                            .background(M3.background(scheme))
                             .clipShape(RoundedRectangle(cornerRadius: 14))
                             .contentShape(Rectangle())
                         }
@@ -268,15 +268,10 @@ struct PlaceDetailView: View {
                 }
                 .padding(16)
             }
-            .background(M3.background(scheme).ignoresSafeArea())
-            .navigationTitle("Dodaj urządzenie")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) { Button("Gotowe") { picking = false } }
-            }
+            .m3SheetRoot("Dodaj urządzenie", closeIcon: "checkmark") { picking = false }
         }
         .presentationDetents([.medium, .large])
-        .presentationDragIndicator(.visible)
+        .m3Sheet()
         .tint(M3.primary(scheme))
     }
 }

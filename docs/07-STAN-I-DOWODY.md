@@ -132,3 +132,10 @@ Polecenie użytkownika: dokumenty i licencje po polsku i angielsku, aplikacja w 
 - Ustawienia → Powiadomienia: przełączniki „Opuszczenie miejsca”, „Utrata kontaktu Bluetooth”, „Nazwy urządzeń i miejsc w treści” (tekst bez nazw na ekranie blokady), „Wyślij powiadomienie testowe” (za 5 s).
 - Usunięto dzwonienie przez sieć (`AppModel.ring`, `Nova.playSound`, przycisk w szczegółach) — nie zostało potwierdzone na urządzeniu. Dzwonienie przez Bluetooth zostaje. Polityka prywatności PL/EN 1.1: bez zapytań o dzwonienie, opis przełącznika nazw w powiadomieniach (zawężenie przetwarzania, bez ponownej akceptacji).
 - Weryfikacja: XCTest 10/10 (nowy `NotificationSettingsTests`, zrzut Ustawień obejrzany), regresje 45, historia 50, build Release PASS, 355 tekstów w 6 językach. Dostarczenia alertu miejsca w tle na telefonie nie potwierdzono — do sprawdzenia przyciskiem testowym i w terenie.
+
+## Jednolite szuflady i potwierdzenia — 2026-09-17 (zgłoszenie z telefonu)
+
+- Arkusze menu konta, ustawień, wyboru ikony, namierzania w pobliżu, edytora miejsca i wyboru urządzeń mają wygląd szuflady z mapy: `M3SheetHeader` (uchwyt, pogrubiony tytuł, okrągły przycisk zamknięcia), tło surface, rogi 28 pt, ciemniejsze karty; bez systemowego paska z „Gotowe”. Ekrany wypychane w arkuszach (informacje prawne, licencje) mają te same kolory list.
+- Edytor miejsca: „Zapisz” jako kapsuła w nagłówku; zamknięcie gestem wyłączone, by nie tracić zmian.
+- Potwierdzenia: „Czy na pewno chcesz się wylogować?” (menu konta i ustawienia) oraz „Czy na pewno chcesz usunąć dane tego konta?” (ustawienia).
+- Weryfikacja: zrzuty arkusza konta, edytora miejsca i ustawień z testów obejrzane; XCTest 10/10, regresje 45, historia 50, build Release PASS; 358 tekstów w 6 językach.

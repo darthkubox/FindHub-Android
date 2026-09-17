@@ -12,6 +12,8 @@ Ten katalog jest oddzielnym projektem. Użytkownik wyraźnie polecił nie zmieni
 - Logo mintstudio nie jest objęte GPL.
 - `Resources/Assets.xcassets/AppLogo.imageset/app_logo.png` to pomniejszona (512 px) kopia `AppIcon.appiconset/icon_1024.png` dla ekranu logowania; po regeneracji ikony odtwórz ją: `sips -Z 512 …/icon_1024.png --out …/app_logo.png`.
 - Ekrany wypychane w `NavigationStack` zakładek nie dziedziczą `safeAreaInset` powłoki, więc ich dół chował się pod paskiem nawigacji. Każdy taki ekran kończy łańcuch modyfikatorów `.clearsTabBar()` (rezerwa z `EnvironmentValues.tabBarReserve`); pilnuje tego `ScrollInsetTests`. Dodając nowy ekran wypychany z zakładki, dodaj też `.clearsTabBar()`.
+- Wszystkie wysuwane okna (arkusze) wyglądają jak szuflada na mapie: prezentacja `.m3Sheet()` (tło surface, rogi 28 pt, bez systemowego uchwytu), nagłówek `M3SheetHeader` przez `.m3SheetRoot(tytuł) { zamknij }` zamiast paska nawigacji i „Gotowe”, listy `.m3SheetList(scheme)` z wierszami `M3.background`. Nowy arkusz buduj tak samo.
+- Wylogowanie i usunięcie danych konta wymagają potwierdzenia alertem „Czy na pewno…”.
 - Okna Google (logowanie, odblokowanie kluczy) są pełnoekranowe (`fullScreenCover`), bo w arkuszu rysowanie wzoru odblokowania ściągało okno w dół. Nie wracaj do `.sheet`.
 - Polityka prywatności i warunki korzystania: `App/Resources/Legal/*.md` (te same pliki w aplikacji i pod publicznym URL). Każda zmiana przepływu danych, uprawnień lub funkcji wymaga aktualizacji polityki; istotna zmiana dokumentów wymaga podbicia `LegalDocument.currentVersion` i daty/wersji w nagłówku.
 - Zachowaj architekturę bez własnego backendu.

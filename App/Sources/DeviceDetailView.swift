@@ -66,7 +66,7 @@ struct DeviceDetailView: View {
             Button("Anuluj", role: .cancel) {}
         } message: { Text("Nazwa lokalna w aplikacji (nie zmienia nazwy na koncie Google).") }
         .sheet(isPresented: $showIconPicker) { iconPickerSheet }
-        .sheet(isPresented: $showFinder) { FinderView(model: model, device: currentDevice) }
+        .sheet(isPresented: $showFinder) { FinderView(model: model, device: currentDevice).m3Sheet() }
         .onAppear { userLocation.request() }
         .onDisappear { userLocation.stop() }
         .onChange(of: position?.time) { copiedCoordinates = false }
@@ -310,11 +310,10 @@ struct DeviceDetailView: View {
                 }
                 .padding(20)
             }
-            .navigationTitle("Wybierz ikonę")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Anuluj") { showIconPicker = false } } }
-            .presentationDetents([.medium, .large])
+            .m3SheetRoot("Wybierz ikonę") { showIconPicker = false }
         }
+        .presentationDetents([.medium, .large])
+        .m3Sheet()
     }
 
     // MARK: - Helpers

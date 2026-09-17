@@ -83,6 +83,12 @@ final class LegalScreensTests: XCTestCase {
         let outputDirectory = ProcessInfo.processInfo.environment["MOTOHUB_SNAPSHOT_DIR"]
         let screens: [(String, AnyView)] = [
             ("login", AnyView(ContentView())),
+            ("account-sheet", AnyView(Color.black.ignoresSafeArea().sheet(isPresented: .constant(true)) {
+                AccountSheet(model: model, onAddAccount: {}, onSettings: {}).m3Sheet()
+            })),
+            ("place-editor-sheet", AnyView(Color.black.ignoresSafeArea().sheet(isPresented: .constant(true)) {
+                PlaceEditor(place: nil)
+            })),
             ("account-menu", AnyView(AccountSheet(model: model, onAddAccount: {}, onSettings: {}))),
             ("legal-info", AnyView(NavigationStack { LegalInfoView() })),
             ("licences", AnyView(NavigationStack { LicensesView() })),

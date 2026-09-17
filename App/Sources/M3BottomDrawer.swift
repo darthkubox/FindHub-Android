@@ -87,3 +87,84 @@ struct M3BottomDrawer<Header: View, Content: View>: View {
                     })
     }
 }
+
+/// Header for every modal drawer, copied from the home drawer: grab handle,
+/// bold title on the left and a round action on the right. Sheets use it in
+/// place of a navigation bar so they look like the drawer on the map.
+struct M3SheetHeader<Trailing: View>: View {
+    let title: LocalizedStringKey
+    var closeIcon = "xmark"
+    let onClose: () -> Void
+    @ViewBuilder var trailing: Trailing
+    @Environment(\.colorScheme) private var scheme
+
+    var body: some View {
+        VStack(spacing: 0) {
+            Capsule().fill(M3.outline(scheme).opacity(0.5))
+                .frame(width: 40, height: 5).padding(.top, 10).padding(.bottom, 8)
+                .frame(maxWidth: .infinity)
+            HStack(spacing: 10) {
+                Text(title).font(.title3.bold()).foregroundStyle(M3.onSurface(scheme))
+                    .lineLimit(1).minimumScaleFactor(0.8)
+                Spacer(minLength: 8)
+                trailing
+                Button(action: onClose) {
+                    Image(systemName: closeIcon).font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(M3.onPrimaryContainer(scheme))
+                        .frame(width: 36, height: 36).background(M3.primaryContainer(scheme)).clipShape(Circle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(Text(closeIcon == "checkmark" ? "Gotowe" : "Zamknij"))
+            }
+            .padding(.horizontal, 20).padding(.bottom, 8)
+        }
+        .frame(maxWidth: .infinity)
+        .background(M3.surface(scheme))
+    }
+}
+
+extension M3SheetHeader where Trailing == EmptyView {
+    init(title: LocalizedStringKey, closeIcon: String = "xmark", onClose: @escaping () -> Void) {
+        self.init(title: title, closeIcon: closeIcon, onClose: onClose) { EmptyView() }
+    }
+}
+
+/// Presentation of a modal drawer: the home drawer's surface colour and 28 pt
+/// corners, with the grab handle drawn by `M3SheetHeader` instead of the system.
+private struct M3SheetStyle: ViewModifier {
+    @Environment(\.colorScheme) private var scheme
+    func body(content: Content) -> some View {
+        content
+            .presentationBackground(M3.surface(scheme))
+            .presentationCornerRadius(28)
+            .presentationDragIndicator(.hidden)
+    }
+}
+
+/// Root of a sheet's NavigationStack: hides the system bar and pins the drawer
+/// header on top. Pushed screens keep their own navigation bar with a back button.
+private struct M3SheetRoot: ViewModifier {
+    let title: LocalizedStringKey
+    let closeIcon: String
+    let onClose: () -> Void
+    @Environment(\.colorScheme) private var scheme
+    func body(content: Content) -> some View {
+        content
+            .toolbar(.hidden, for: .navigationBar)
+            .safeAreaInset(edge: .top, spacing: 0) {
+                M3SheetHeader(title: title, closeIcon: closeIcon, onClose: onClose)
+            }
+            .background(M3.surface(scheme).ignoresSafeArea())
+    }
+}
+
+extension View {
+    func m3Sheet() -> some View { modifier(M3SheetStyle()) }
+    func m3SheetRoot(_ title: LocalizedStringKey, closeIcon: String = "xmark", onClose: @escaping () -> Void) -> some View {
+        modifier(M3SheetRoot(title: title, closeIcon: closeIcon, onClose: onClose))
+    }
+    /// Lists inside drawers: drawer surface behind, darker cards like the home rows.
+    func m3SheetList(_ scheme: ColorScheme) -> some View {
+        scrollContentBackground(.hidden).background(M3.surface(scheme))
+    }
+}

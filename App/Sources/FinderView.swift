@@ -84,10 +84,7 @@ struct FinderView: View {
                     .multilineTextAlignment(.center).padding(.horizontal, 32).padding(.bottom, 8)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(M3.background(scheme).ignoresSafeArea())
-            .navigationTitle("Namierz w pobliżu")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Gotowe") { dismiss() } } }
+            .m3SheetRoot("Namierz w pobliżu") { dismiss() }
         }
         .onAppear { finder.start(expectedEIDPrefixes: model.expectedEIDPrefixes(for: device)) }
         .onDisappear { finder.stop() }

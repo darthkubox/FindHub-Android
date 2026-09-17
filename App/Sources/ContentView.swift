@@ -23,9 +23,11 @@ struct ContentView: View {
             AccountSheet(model: model,
                          onAddAccount: { showingAccounts = false; presentLoginAfterDismissal() },
                          onSettings: { showingAccounts = false; showingSettings = true })
+                .m3Sheet()
         }
         .sheet(isPresented: $showingSettings) {
             SettingsView(model: model, onAddAccount: { showingSettings = false; presentLoginAfterDismissal() })
+                .m3Sheet()
         }
         // Full screen, not a sheet: drawing an unlock pattern downwards used to drag
         // the sheet with it. A full-screen cover has no swipe-to-dismiss gesture.
