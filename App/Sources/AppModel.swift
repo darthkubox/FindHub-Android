@@ -31,6 +31,8 @@ final class AppModel: ObservableObject {
     /// Incremented to ask the shell to present Google sign-in again.
     @Published private(set) var signInRequest = 0
     @Published private(set) var isOnline = true
+    /// Sample data from `DemoData`; nothing reaches Google or a tracker.
+    @Published private(set) var isDemo = false
     /// Decrypted positions by device id, and the coordinate to center the map on.
     @Published var locations: [String: DecryptedLocation] = [:]
     @Published private(set) var locationMessages: [String: String] = [:]
@@ -62,6 +64,9 @@ final class AppModel: ObservableObject {
         hasE2EE = Session.shared.hasE2EE
         accounts = Session.shared.accounts
         reloadAccountPhotos()
+        // A demo interrupted by quitting the app leaves its sample file behind.
+        TrackerJournal.shared.activate(DemoData.account)
+        _ = try? TrackerJournal.shared.deleteActiveAccountData()
         TrackerJournal.shared.activate(Session.shared.activeAccountID)
         pathMonitor.pathUpdateHandler = { [weak self] path in
             let online = path.status == .satisfied
@@ -112,10 +117,67 @@ final class AppModel: ObservableObject {
         if let current = issue, !current.isConfirmation, contexts.contains(current.context) { dismissIssue() }
     }
 
+    /// The journal account the app should use right now (demo or signed-in).
+    var journalAccount: String? { isDemo ? DemoData.account : Session.shared.activeAccountID }
+
+    // MARK: - Demo mode
+
+    func startDemo() {
+        cancelAccountWork()
+        isDemo = true
+        let journal = TrackerJournal.shared
+        journal.activate(DemoData.account)
+        _ = try? journal.deleteActiveAccountData()          // start from a clean sample
+        journal.activate(DemoData.account)
+        DemoData.seed(journal)
+        email = String(localized: "Konto demonstracyjne")
+        accounts = []
+        hasE2EE = true
+        devices = DemoData.devices()
+        devicesLoaded = true
+        locations = DemoData.locations()
+        locationMessages = [:]; namedLocations = [:]; locationDiagnostics = [:]
+        dismissIssue()
+        status = ""
+        loggedIn = true
+        focus = nil; focusToken += 1
+    }
+
+    /// Leaves the demo and removes everything it stored on the phone.
+    func exitDemo() {
+        guard isDemo else { return }
+        cancelAccountWork()
+        let ids = Set(DemoData.devices().map(\.id))
+        let journal = TrackerJournal.shared
+        journal.activate(DemoData.account)
+        _ = try? journal.deleteActiveAccountData()
+        NameStore.remove(ids); IconStore.remove(ids); ids.forEach(DeviceImageStore.remove)
+        Task { await DeviceProtection.shared.removeNotifications(for: DemoData.account) }
+        isDemo = false
+        resetAccountState()
+        loggedIn = Session.shared.isLoggedIn
+        hasE2EE = Session.shared.hasE2EE
+    }
+
+    /// A pretend refresh: fresh timestamps after a short wait, no network.
+    private func refreshDemo(_ requested: [TrackerDevice]) async {
+        isLocating = true
+        for device in requested { locationMessages[device.id] = Self.waitingForPosition }
+        try? await Task.sleep(for: .milliseconds(1200))
+        guard isDemo else { return }
+        let fresh = DemoData.locations()
+        for device in requested {
+            locations[device.id] = fresh[device.id]
+            locationMessages[device.id] = String(localized: "Pozycja na mapie")
+        }
+        isLocating = false
+        focusToken += 1
+    }
+
     private func networkChanged(online: Bool) {
         guard online != isOnline else { return }
         isOnline = online
-        guard loggedIn else { return }
+        guard loggedIn, !isDemo else { return }
         if !online {
             show(.offline())
         } else if issue?.kind == .offline || issue?.kind == .googleUnreachable {
@@ -133,6 +195,7 @@ final class AppModel: ObservableObject {
 
     /// Independent of device loading; existing accounts need no new web login.
     func refreshAccountPhotos() async {
+        guard !isDemo else { return }
         let session = sessionID
         let ordered = accounts.sorted { $0 == activeAccount && $1 != activeAccount }
         for account in ordered {
@@ -183,7 +246,7 @@ final class AppModel: ObservableObject {
         email = Session.shared.email
         accounts = Session.shared.accounts
         reloadAccountPhotos()
-        TrackerJournal.shared.activate(Session.shared.activeAccountID)
+        TrackerJournal.shared.activate(journalAccount)
         hasE2EE = Session.shared.hasE2EE
         devices = []
         locations = [:]
@@ -222,6 +285,7 @@ final class AppModel: ObservableObject {
     }
 
     func loadDevices() async {
+        if isDemo { devicesLoaded = true; return }
         guard Session.shared.masterToken != nil else { status = String(localized: "Niezalogowano."); return }
         let session = sessionID
         isBusy = true
@@ -245,6 +309,7 @@ final class AppModel: ObservableObject {
 
     /// Periodic history collection yields to explicit user operations.
     func refreshJournalLocations() async {
+        guard !isDemo else { return }
         guard loggedIn, hasE2EE, !isBusy, !isLocating else { return }
         let session = sessionID
         if devices.isEmpty { await loadDevices() }
@@ -289,6 +354,7 @@ final class AppModel: ObservableObject {
     /// Ring the nearest tracker over Bluetooth via the unauthenticated DULT sound
     /// command (no owner keys, no E2EE needed). Hold the tag you want near the phone.
     func ringNearby() async {
+        if isDemo { show(.demoRing()); return }
         guard !isRingingNearby else { return }
         let session = sessionID
         isRingingNearby = true
@@ -318,6 +384,7 @@ final class AppModel: ObservableObject {
 
     /// Manual requests replace the current batch, keeping one MCS connection active.
     func locate(_ device: TrackerDevice) async {
+        if isDemo { await refreshDemo([device]); return }
         guard Session.shared.masterToken != nil else { status = String(localized: "Niezalogowano."); return }
         guard Session.shared.ownerKey != nil else {
             status = String(localized: "Najpierw odblokuj klucze E2EE.")
@@ -328,6 +395,7 @@ final class AppModel: ObservableObject {
     }
 
     func locateAll(force: Bool = false) async {
+        if isDemo { if force { await refreshDemo(devices) }; return }
         guard force || !didAutoLocate else { return }
         guard !isLocating || force, !devices.isEmpty,
               Session.shared.masterToken != nil, Session.shared.ownerKey != nil else { return }
@@ -529,6 +597,7 @@ final class AppModel: ObservableObject {
     /// Sign out the active account. If another account remains, switch to it and
     /// stay signed in; otherwise return to the login screen.
     func logout() {
+        if isDemo { exitDemo(); return }
         cancelAccountWork()
         saveRedactedLocationDiagnostics()
         TrackerJournal.shared.stopProtectionForLogout()
@@ -541,6 +610,7 @@ final class AppModel: ObservableObject {
     /// Returns false (and keeps the account signed in) when the data cannot be removed.
     @discardableResult
     func deleteActiveAccountLocalData() async -> Bool {
+        if isDemo { exitDemo(); return true }
         guard let account = Session.shared.activeAccountID else { return false }
         cancelAccountWork()
         let journal = TrackerJournal.shared

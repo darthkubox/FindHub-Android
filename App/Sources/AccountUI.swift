@@ -88,8 +88,10 @@ struct AccountSheet: View {
                     }
 
                     VStack(spacing: 0) {
-                        actionRow("Dodaj kolejne konto", "person.badge.plus") { onAddAccount() }
-                        Divider().padding(.leading, 52)
+                        if !model.isDemo {
+                            actionRow("Dodaj kolejne konto", "person.badge.plus") { onAddAccount() }
+                            Divider().padding(.leading, 52)
+                        }
                         actionRow("Ustawienia", "gearshape") { onSettings() }
                         Divider().padding(.leading, 52)
                         NavigationLink { LegalInfoView() } label: {
@@ -97,8 +99,14 @@ struct AccountSheet: View {
                         }
                         .buttonStyle(.plain)
                         Divider().padding(.leading, 52)
-                        actionRow("Wyloguj się", "rectangle.portrait.and.arrow.right", destructive: true) {
-                            confirmingLogout = true
+                        if model.isDemo {
+                            actionRow("Zakończ tryb demo", "xmark.rectangle", destructive: true) {
+                                model.exitDemo(); dismiss()
+                            }
+                        } else {
+                            actionRow("Wyloguj się", "rectangle.portrait.and.arrow.right", destructive: true) {
+                                confirmingLogout = true
+                            }
                         }
                     }
                     .background(M3.background(scheme), in: RoundedRectangle(cornerRadius: 16))
@@ -219,8 +227,12 @@ struct SettingsView: View {
                             }
                         }
                     }
-                    Button { onAddAccount() } label: {
-                        Label("Dodaj konto", systemImage: "person.badge.plus")
+                    if model.isDemo {
+                        Label("Tryb demonstracyjny — przykładowe dane", systemImage: "play.rectangle")
+                    } else {
+                        Button { onAddAccount() } label: {
+                            Label("Dodaj konto", systemImage: "person.badge.plus")
+                        }
                     }
                 }
 
@@ -325,15 +337,22 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    Button(role: .destructive) { confirmingLogout = true } label: {
-                        Label { Text("Wyloguj bieżące konto") } icon: { Image(systemName: "rectangle.portrait.and.arrow.right") }
-                            .foregroundStyle(.red)
+                    if model.isDemo {
+                        Button(role: .destructive) { model.exitDemo(); dismiss() } label: {
+                            Label { Text("Zakończ tryb demo") } icon: { Image(systemName: "xmark.rectangle") }
+                                .foregroundStyle(.red)
+                        }
+                    } else {
+                        Button(role: .destructive) { confirmingLogout = true } label: {
+                            Label { Text("Wyloguj bieżące konto") } icon: { Image(systemName: "rectangle.portrait.and.arrow.right") }
+                                .foregroundStyle(.red)
+                        }
+                        Button(role: .destructive) { confirmingDeletion = true } label: {
+                            Label { Text("Usuń dane tego konta z telefonu") } icon: { Image(systemName: "trash") }
+                                .foregroundStyle(.red)
+                        }
+                        .disabled(model.activeAccount == nil || deleting)
                     }
-                    Button(role: .destructive) { confirmingDeletion = true } label: {
-                        Label { Text("Usuń dane tego konta z telefonu") } icon: { Image(systemName: "trash") }
-                            .foregroundStyle(.red)
-                    }
-                    .disabled(model.activeAccount == nil || deleting)
                 } footer: {
                     Text("Wylogowanie zachowuje historię, notatki i miejsca na wypadek ponownego logowania. Usunięcie kasuje je trwale razem z nazwami, ikonami, zdjęciami, alertami i kluczami tego konta. Konto Google i dane na serwerach Google pozostają bez zmian.")
                 }

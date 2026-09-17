@@ -62,6 +62,7 @@
 		A4DD3ED19FAC6474099C4F55 /* LegalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F0E8C18BE7686C088A5F5 /* LegalTests.swift */; };
 		A64DD45D04B3BB9307851798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EE64CB86BAE1289DB2AAFC5 /* Assets.xcassets */; };
 		A75889BA9E0518A9220D3592 /* FindHubAndroidApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBEDFBE0E33FC5B318466E /* FindHubAndroidApp.swift */; };
+		A7C19C17B402C2FC65F8DE03 /* DemoModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC092384CA8BBD55EC2D84 /* DemoModeTests.swift */; };
 		ACFF83FAD6E19EBD17996AA0 /* ScrollInsetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B107B5F9A4C6CDA09A24C7 /* ScrollInsetTests.swift */; };
 		AFCCCC289309224B1A27081C /* MapClusters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE787C97DA9E9BA4F8AC09 /* MapClusters.swift */; };
 		B3EF5B453A14A29AAB4A211B /* VaultUnlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB9C5195BDAF88A94A9297 /* VaultUnlock.swift */; };
@@ -73,6 +74,7 @@
 		D004EC07CF565A569A3EF27E /* android_checkin.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062513F777E20755090D2D3C /* android_checkin.pb.swift */; };
 		D39A0F932CC42821E9FAA703 /* ForeignTrackerCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA682E23990C589656FC6B /* ForeignTrackerCryptor.swift */; };
 		D46EBFCFC05656A1A3D954D9 /* GPL-3.0.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6FE0A9AB07F63136DC57B01 /* GPL-3.0.txt */; };
+		D96D1C7FEC6219C97F737E18 /* DemoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE91F5F94B80B61F0A7D971 /* DemoMode.swift */; };
 		D9F22172B33E08C9C0393869 /* PlacesViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4006F45A24F768F8F07013 /* PlacesViewTests.swift */; };
 		DC74DCE5ABE0C8DDD21152AF /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CE24E323142BC245BDABF /* AppModel.swift */; };
 		EF24FDA0290FCD601B1A6BC1 /* LocationPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF145D0A3DFCE08E3E2303 /* LocationPresentation.swift */; };
@@ -122,6 +124,7 @@
 		2EE64CB86BAE1289DB2AAFC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35A48F8D37086112BAC8C147 /* M3BottomDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M3BottomDrawer.swift; sourceTree = "<group>"; };
 		3A3F7F350652E52B701BDE35 /* mcs.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mcs.pb.swift; sourceTree = "<group>"; };
+		3BE91F5F94B80B61F0A7D971 /* DemoMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMode.swift; sourceTree = "<group>"; };
 		3CDDF64F2698B67CD07B43AB /* checkin.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkin.pb.swift; sourceTree = "<group>"; };
 		44FE743139DBF4271A19CFDE /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		4A5D6A7CCAE95267BF5DF48D /* LicensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesView.swift; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 		6A2E532D612F63CAA966B74C /* asm_arm.inc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.pascal; path = asm_arm.inc; sourceTree = "<group>"; };
 		6E9DFE012AB44C6D1830F181 /* MapHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHomeView.swift; sourceTree = "<group>"; };
 		7799A603D74A7736193E3849 /* Nova.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nova.swift; sourceTree = "<group>"; };
+		7BCC092384CA8BBD55EC2D84 /* DemoModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoModeTests.swift; sourceTree = "<group>"; };
 		7C3CE24E323142BC245BDABF /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		7DA903445C9A31A509699697 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7F36E1BB2A0A4DBB647FDC98 /* DeviceJournalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceJournalViews.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				946347D71E13B61637055DC1 /* AppearanceTests.swift */,
+				7BCC092384CA8BBD55EC2D84 /* DemoModeTests.swift */,
 				160F2256369ABDCC22144291 /* JournalViewTests.swift */,
 				F71F0E8C18BE7686C088A5F5 /* LegalTests.swift */,
 				BA4006F45A24F768F8F07013 /* PlacesViewTests.swift */,
@@ -326,6 +331,7 @@
 				4D4205C192FA275CADAD7986 /* CallbackWaiter.swift */,
 				7DA903445C9A31A509699697 /* ContentView.swift */,
 				2AA40DFDA936ECDD04AF7D5B /* Crypto.swift */,
+				3BE91F5F94B80B61F0A7D971 /* DemoMode.swift */,
 				E9A9E7F2CAC9F173A57A0D67 /* DeviceDetailView.swift */,
 				21BDBC26563AC17E195076D2 /* DeviceImageStore.swift */,
 				7F36E1BB2A0A4DBB647FDC98 /* DeviceJournalViews.swift */,
@@ -485,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17119C30F1952F7513C496C3 /* AppearanceTests.swift in Sources */,
+				A7C19C17B402C2FC65F8DE03 /* DemoModeTests.swift in Sources */,
 				B5F77C718A632ED749DA69A5 /* JournalViewTests.swift in Sources */,
 				A4DD3ED19FAC6474099C4F55 /* LegalTests.swift in Sources */,
 				D9F22172B33E08C9C0393869 /* PlacesViewTests.swift in Sources */,
@@ -509,6 +516,7 @@
 				4E07E6EB810F93FF7B87BBFD /* Common.pb.swift in Sources */,
 				7459150735262827D2D8460D /* ContentView.swift in Sources */,
 				F5B53DA25904EAFF3935BDB3 /* Crypto.swift in Sources */,
+				D96D1C7FEC6219C97F737E18 /* DemoMode.swift in Sources */,
 				F61941AA9C6F8935E44F8A03 /* DeviceDetailView.swift in Sources */,
 				F81C3029C354CE8464F616B3 /* DeviceImageStore.swift in Sources */,
 				41AC523D833BBE3CB755EF9E /* DeviceJournalViews.swift in Sources */,
@@ -634,7 +642,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -654,7 +662,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -718,7 +726,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -732,7 +740,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

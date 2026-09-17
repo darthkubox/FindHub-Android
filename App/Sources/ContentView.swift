@@ -51,7 +51,7 @@ struct ContentView: View {
                     onError: { message in model.status = message; model.showingVaultUnlock = false })
             }
         }
-        .fullScreenCover(isPresented: Binding(get: { model.loggedIn && !legalAccepted }, set: { _ in })) {
+        .fullScreenCover(isPresented: Binding(get: { model.loggedIn && !model.isDemo && !legalAccepted }, set: { _ in })) {
             // Signed-in users see updated terms again after a document version bump.
             NavigationStack {
                 ZStack {
@@ -74,7 +74,7 @@ struct ContentView: View {
         .task(id: model.activeAccount) { await model.refreshAccountPhotos() }
         .task(id: scenePhase) {
             guard scenePhase == .active else { return }
-            TrackerJournal.shared.activate(Session.shared.activeAccountID)
+            TrackerJournal.shared.activate(model.journalAccount)
             await DeviceProtection.shared.refreshNotificationPermission()
             DeviceProtection.shared.configure()
             while !Task.isCancelled {
@@ -116,10 +116,16 @@ struct ContentView: View {
     @ToolbarContentBuilder private var avatarToolbar: some ToolbarContent {
         ToolbarItem(placement: .topBarTrailing) {
             Button { showingAccounts = true } label: {
-                AccountAvatar(email: model.activeAccount ?? model.email, scheme: scheme,
-                              photo: model.accountPhotos[model.activeAccount ?? ""])
+                if model.isDemo {
+                    Text("DEMO").font(.caption.weight(.bold)).foregroundStyle(M3.onPrimary(scheme))
+                        .padding(.horizontal, 10).frame(height: 28)
+                        .background(M3.primary(scheme), in: Capsule())
+                } else {
+                    AccountAvatar(email: model.activeAccount ?? model.email, scheme: scheme,
+                                  photo: model.accountPhotos[model.activeAccount ?? ""])
+                }
             }
-            .accessibilityLabel("Konto Google")
+            .accessibilityLabel(model.isDemo ? Text("Tryb demonstracyjny") : Text("Konto Google"))
         }
     }
 
@@ -155,6 +161,12 @@ struct ContentView: View {
             }
             .buttonStyle(M3FilledButtonStyle())
             .disabled(model.isBusy || !legalAccepted)
+            .padding(.horizontal, 24)
+            Button { model.startDemo() } label: {
+                Label("Wypróbuj demo bez logowania", systemImage: "play.rectangle")
+            }
+            .buttonStyle(M3TonalButtonStyle())
+            .disabled(model.isBusy)
             .padding(.horizontal, 24)
             .padding(.bottom, 24)
         }

@@ -196,7 +196,9 @@ struct MapHomeView: View {
         followsOverview = true
         let positions = locations ?? model.locations
         var coordinates = model.devices.compactMap { positions[$0.id]?.coordinate }
-        if let position = locationManager.location { coordinates.append(position.coordinate) }
+        // In the demo the sample tags sit in Warsaw; a reviewer's own position far
+        // away would zoom the overview out to half the globe.
+        if let position = locationManager.location, !model.isDemo { coordinates.append(position.coordinate) }
         // Reserve the top bar and the visible drawer so devices land in the band
         // between them — never clipped at the top nor hidden behind the drawer.
         let size = mapSize == .zero ? CGSize(width: 400, height: 800) : mapSize
@@ -251,6 +253,7 @@ struct MapHomeView: View {
 
             ScrollView {
                 VStack(spacing: 10) {
+                    if model.isDemo { DemoBanner { model.exitDemo() } }
                     if let issue = model.issue {
                         IssueBanner(issue: issue, onAction: { model.resolveIssue() }, onDismiss: { model.dismissIssue() })
                     }

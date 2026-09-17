@@ -29,6 +29,7 @@ FindHub Android pozwala użytkownikom iPhone’a zobaczyć tagi Find Hub (np. Mo
 - **Ustawienia powiadomień**: włączanie alertów miejsc i utraty kontaktu, ukrywanie nazw na ekranie blokady, powiadomienie testowe.
 - Własne nazwy, ikony, zdjęcia i notatki, wiele kont Google, jasny i ciemny motyw.
 - **Usuwanie danych konta z telefonu** w Ustawieniach.
+- **Tryb demonstracyjny** na ekranie logowania: wszystkie ekrany na przykładowych danych, bez konta Google i bez łączenia się z Google czy tagami.
 
 ### Ograniczenia
 

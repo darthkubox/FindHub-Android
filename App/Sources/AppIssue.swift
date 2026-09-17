@@ -11,7 +11,7 @@ struct AppIssue: Identifiable, Equatable {
         case offline, googleUnreachable, rateLimited, sessionExpired
         case bluetoothOff, bluetoothDenied, noNearbyTracker, ringUnsupported
         case failed(Context)
-        case ringSent
+        case ringSent, demoRing
     }
 
     /// What the user was doing when it happened; decides the retry.
@@ -27,12 +27,19 @@ struct AppIssue: Identifiable, Equatable {
 
     var id: String { "\(kind)-\(context)" }
     /// Confirmations disappear on their own and use a positive style.
-    var isConfirmation: Bool { kind == .ringSent }
+    var isConfirmation: Bool { kind == .ringSent || kind == .demoRing }
 
     static func ringSent() -> AppIssue {
         AppIssue(kind: .ringSent, context: .ring,
                  title: String(localized: "Wysłano dźwięk do najbliższego taga"),
                  message: String(localized: "Jeśli nic nie słychać, podejdź bliżej i spróbuj ponownie."),
+                 action: .none)
+    }
+
+    static func demoRing() -> AppIssue {
+        AppIssue(kind: .demoRing, context: .ring,
+                 title: String(localized: "Tryb demo: dźwięk nie został wysłany"),
+                 message: String(localized: "W trybie demonstracyjnym aplikacja nie łączy się z tagami. Zaloguj się, aby dzwonić do prawdziwych urządzeń."),
                  action: .none)
     }
 
@@ -146,6 +153,7 @@ struct IssueBanner: View {
         case .noNearbyTracker, .ringUnsupported: return "bell.slash"
         case .failed: return "exclamationmark.triangle"
         case .ringSent: return "checkmark.circle.fill"
+        case .demoRing: return "play.rectangle.fill"
         }
     }
 

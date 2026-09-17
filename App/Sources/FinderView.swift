@@ -56,7 +56,7 @@ struct FinderView: View {
                     } else {
                         Text(displayName).font(.title3.bold()).foregroundStyle(M3.onSurface(scheme))
                     }
-                    Text(finder.status)
+                    Text(model.isDemo ? String(localized: "W trybie demonstracyjnym wyszukiwanie tagów przez Bluetooth jest wyłączone.") : finder.status)
                         .font(.subheadline).foregroundStyle(M3.onSurfaceVariant(scheme))
                         .multilineTextAlignment(.center)
                     if !finder.locked && finder.nearbyCount > 0 {
@@ -86,7 +86,11 @@ struct FinderView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .m3SheetRoot("Namierz w pobliżu") { dismiss() }
         }
-        .onAppear { finder.start(expectedEIDPrefixes: model.expectedEIDPrefixes(for: device)) }
+        .onAppear {
+            // The demo never scans for or talks to real trackers.
+            guard !model.isDemo else { return }
+            finder.start(expectedEIDPrefixes: model.expectedEIDPrefixes(for: device))
+        }
         .onDisappear { finder.stop() }
     }
 }

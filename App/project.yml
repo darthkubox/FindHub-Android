@@ -7,8 +7,8 @@ options:
   developmentLanguage: pl
 settings:
   base:
-    MARKETING_VERSION: "1.0.0"
-    CURRENT_PROJECT_VERSION: "1"
+    MARKETING_VERSION: "1.0.1"
+    CURRENT_PROJECT_VERSION: "2"
     SWIFT_VERSION: "5.0"
     SWIFT_EMIT_LOC_STRINGS: YES
     LOCALIZATION_PREFERS_STRING_CATALOGS: YES
@@ -27,6 +27,7 @@ targets:
       - Tests/TabBarTests.swift
       - Tests/LegalTests.swift
       - Tests/ScrollInsetTests.swift
+      - Tests/DemoModeTests.swift
     dependencies:
       - target: FindHub Android
     settings:

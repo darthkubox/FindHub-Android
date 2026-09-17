@@ -29,6 +29,7 @@ FindHub Android lets iPhone users see the Find Hub tags (for example Motorola mo
 - **Notification settings**: turn place and separation alerts on or off, hide names on the lock screen, send a test notification.
 - Custom names, icons, photos and notes, multiple Google accounts, light and dark mode.
 - **Delete this account's data from the phone** in Settings.
+- **Demo mode** on the sign-in screen: every screen with sample data, without a Google account and without contacting Google or any tracker.
 
 ### Limitations
 

@@ -2859,6 +2859,40 @@
         }
       }
     },
+    "DEMO": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DEMO"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DEMO"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DEMO"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DEMO"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DEMO"
+          }
+        }
+      }
+    },
     "Definicje protokołu checkin i MCS": {
       "localizations": {
         "en": {
@@ -4395,6 +4429,40 @@
         }
       }
     },
+    "Klucze": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keys"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schlüssel"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clés"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Llaves"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiavi"
+          }
+        }
+      }
+    },
     "Klucze E2EE odblokowane ✅": {
       "localizations": {
         "en": {
@@ -4731,6 +4799,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Account Google"
+          }
+        }
+      }
+    },
+    "Konto demonstracyjne": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo account"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demokonto"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compte de démonstration"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuenta de demostración"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Account demo"
           }
         }
       }
@@ -8147,6 +8249,40 @@
         }
       }
     },
+    "Plecak": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Backpack"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rucksack"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sac à dos"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mochila"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zaino"
+          }
+        }
+      }
+    },
     "Pobieram lokalizacje urządzeń…": {
       "localizations": {
         "en": {
@@ -8687,6 +8823,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Informativa sulla privacy"
+          }
+        }
+      }
+    },
+    "Portfel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wallet"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geldbörse"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portefeuille"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cartera"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portafoglio"
           }
         }
       }
@@ -9241,6 +9411,40 @@
         }
       }
     },
+    "Praca": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Work"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeit"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Travail"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trabajo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lavoro"
+          }
+        }
+      }
+    },
     "Producent": {
       "localizations": {
         "en": {
@@ -9509,6 +9713,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elaborazione delle chiavi della cassaforte…"
+          }
+        }
+      }
+    },
+    "Przykładowe dane. Aplikacja nie łączy się z Google ani z tagami.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sample data. The app doesn’t connect to Google or to any trackers."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beispieldaten. Die App verbindet sich weder mit Google noch mit Trackern."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Données d’exemple. L’app ne se connecte ni à Google ni aux traceurs."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datos de ejemplo. La app no se conecta a Google ni a ningún localizador."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dati di esempio. L’app non si collega a Google né ai localizzatori."
           }
         }
       }
@@ -9787,6 +10025,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Registrazione del dispositivo (check-in)…"
+          }
+        }
+      }
+    },
+    "Rower": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bike"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fahrrad"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vélo"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bicicleta"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bici"
           }
         }
       }
@@ -10671,6 +10943,108 @@
           "stringUnit": {
             "state": "translated",
             "value": "Indicazioni"
+          }
+        }
+      }
+    },
+    "Tryb demo: dźwięk nie został wysłany": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo mode: no sound was sent"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demomodus: Es wurde kein Ton gesendet"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mode démo : aucun son n’a été envoyé"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modo demo: no se envió ningún sonido"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modalità demo: nessun suono inviato"
+          }
+        }
+      }
+    },
+    "Tryb demonstracyjny": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo mode"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demomodus"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mode démo"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modo de demostración"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modalità demo"
+          }
+        }
+      }
+    },
+    "Tryb demonstracyjny — przykładowe dane": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo mode — sample data"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demomodus – Beispieldaten"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mode démo — données d’exemple"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modo de demostración: datos de ejemplo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modalità demo: dati di esempio"
           }
         }
       }
@@ -11593,6 +11967,74 @@
         }
       }
     },
+    "W trybie demonstracyjnym aplikacja nie łączy się z tagami. Zaloguj się, aby dzwonić do prawdziwych urządzeń.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In demo mode the app doesn’t connect to trackers. Sign in to ring your real devices."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Im Demomodus verbindet sich die App nicht mit Trackern. Melde dich an, um echte Geräte klingeln zu lassen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En mode démo, l’app ne se connecte pas aux traceurs. Connectez-vous pour faire sonner vos vrais appareils."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En el modo demo, la app no se conecta a los localizadores. Inicia sesión para hacer sonar tus dispositivos reales."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In modalità demo l’app non si collega ai localizzatori. Accedi per far suonare i tuoi dispositivi reali."
+          }
+        }
+      }
+    },
+    "W trybie demonstracyjnym wyszukiwanie tagów przez Bluetooth jest wyłączone.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bluetooth tracker search is turned off in demo mode."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Im Demomodus ist die Bluetooth-Suche nach Trackern deaktiviert."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La recherche de traceurs par Bluetooth est désactivée en mode démo."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La búsqueda de localizadores por Bluetooth está desactivada en el modo demo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In modalità demo la ricerca dei localizzatori via Bluetooth è disattivata."
+          }
+        }
+      }
+    },
     "Warunki korzystania": {
       "localizations": {
         "en": {
@@ -12307,6 +12749,40 @@
         }
       }
     },
+    "Wypróbuj demo bez logowania": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try the demo without signing in"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo ohne Anmeldung ausprobieren"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Essayer la démo sans connexion"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Probar la demo sin iniciar sesión"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prova la demo senza accedere"
+          }
+        }
+      }
+    },
     "Wysyła dźwięk do najbliższego lokalizatora przez Bluetooth.": {
       "localizations": {
         "en": {
@@ -12779,6 +13255,74 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fai suonare il localizzatore più vicino"
+          }
+        }
+      }
+    },
+    "Zakończ demo i zaloguj się": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "End demo and sign in"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo beenden und anmelden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitter la démo et se connecter"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salir de la demo e iniciar sesión"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esci dalla demo e accedi"
+          }
+        }
+      }
+    },
+    "Zakończ tryb demo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "End demo mode"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demomodus beenden"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitter le mode démo"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salir del modo demo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esci dalla modalità demo"
           }
         }
       }
@@ -13329,6 +13873,40 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "Zwykle w wewnętrznej kieszeni kurtki.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usually in the inside pocket of my jacket."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meist in der Innentasche der Jacke."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Généralement dans la poche intérieure de la veste."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normalmente en el bolsillo interior de la chaqueta."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Di solito nella tasca interna della giacca."
           }
         }
       }

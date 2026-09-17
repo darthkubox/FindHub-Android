@@ -209,7 +209,7 @@ struct PlacesHomeView: View {
     private func showOverview() {
         followsOverview = true
         var coordinates = places.map(\.coordinate)
-        if let fix = locationManager.location { coordinates.append(fix.coordinate) }
+        if let fix = locationManager.location, !model.isDemo { coordinates.append(fix.coordinate) }
         let size = mapSize == .zero ? CGSize(width: 400, height: 800) : mapSize
         let drawerHeight = DrawerDetents.base(available: size.height, expanded: false, minimized: minimized)
         guard let rect = MapViewport.overviewRect(for: coordinates, viewSize: size,
@@ -226,6 +226,7 @@ struct PlacesHomeView: View {
             drawerHeader
         } content: {
             VStack(spacing: 10) {
+                if model.isDemo { DemoBanner { model.exitDemo() } }
                 if let issue = model.issue {
                     IssueBanner(issue: issue, onAction: { model.resolveIssue() }, onDismiss: { model.dismissIssue() })
                 }

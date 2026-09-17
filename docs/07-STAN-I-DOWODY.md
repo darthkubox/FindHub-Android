@@ -158,3 +158,12 @@ Polecenie użytkownika: dokumenty i licencje po polsku i angielsku, aplikacja w 
 - `AppIssue` tłumaczy błędy (URLError, Nova/GoogleAuth HTTP 401/403/429/5xx, MCS, Bluetooth, kryptografia) na komunikat z akcją; `IssueBanner` w szufladach urządzeń i miejsc. `NWPathMonitor`: komunikat offline i automatyczne odświeżenie po powrocie sieci. Brak raportów w czasie (MCS timeout) opisany jako „Brak nowych raportów lokalizacji”, nie jako awaria. Potwierdzenie wysłania dźwięku Bluetooth (znika po 5 s). Pusta lista urządzeń z instrukcją. Informacja o przybliżonej lokalizacji z przyciskiem ustawień. „Zaloguj się ponownie” otwiera logowanie Google.
 - Weryfikacja: `AppIssueTests` (mapowanie błędów na akcje), zrzut kart komunikatów obejrzany; XCTest 11/11, regresje 45, historia 50, build Release PASS; 387 tekstów w 6 językach. Zachowania offline i wygasłej sesji nie wywołano na telefonie.
 - Tag `v1.0.0` (MARKETING_VERSION 1.0.0, build 1) wskazuje kod tej wersji dla wymogu GPL. Zmiany przed notaryzacją wydajemy jako 1.0.1 z nowym tagiem, bez przesuwania `v1.0.0`.
+
+## Tryb demonstracyjny — 2026-09-17
+
+- Cel: notaryzacja bez podawania recenzentowi konta Google, hasła i PIN-u telefonu z Androidem (Apple 2.1 dopuszcza pełny tryb demo dla aplikacji wymagających zewnętrznego konta lub sprzętu).
+- Przycisk „Wypróbuj demo bez logowania” na ekranie logowania, widoczny dla wszystkich. Dane: 4 tagi w Warszawie (w tym udostępniony), miejsca Dom i Praca z przypisaniami, notatka, historia trasy z przerwą. Plakietka DEMO w pasku, karta „Tryb demonstracyjny” w szufladach, „Zakończ tryb demo” w menu konta i ustawieniach.
+- Bez sieci i Bluetooth: `loadDevices`, lokalizowanie (symulowane odświeżenie), odświeżanie w tle, zdjęcia konta, monitor sieci i dzwonienie mają strażnik `isDemo`; ekran „Namierz w pobliżu” nie skanuje. Widok ogólny mapy w demo pomija pozycję telefonu (recenzent poza Polską). Dziennik demo pod kontem `demo@findhub-android.invalid`, usuwany przy wyjściu i przy starcie aplikacji.
+- Notatka dla recenzenta po angielsku: `templates/NOTARIZATION-REVIEW-NOTES.md`.
+- Wersja podbita do 1.0.1 (build 2); tag `v1.0.1` przy wysłaniu do notaryzacji. `v1.0.0` zostaje bez zmian.
+- Weryfikacja: `DemoModeTests` (dane, brak sieci/BLE, sprzątanie), zrzuty mapy, miejsc, szczegółów i historii w demo obejrzane; 404 teksty w 6 językach.

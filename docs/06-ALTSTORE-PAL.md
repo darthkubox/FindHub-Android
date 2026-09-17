@@ -34,6 +34,7 @@ Stan źródeł: 2026-09-16. Żadnego z poniższych kroków jeszcze nie wykonano.
 - [ ] Przed wysyłką przejrzeć [wytyczne](https://developer.apple.com/app-store/review/guidelines/) z filtrem **Highlight Notarization Review Guidelines Only**; zapisać listę obowiązujących punktów w `docs/evidence/notarization-guidelines-<data>.txt`.
 - [ ] Xcode: `App/FindHub Android.xcodeproj`, schemat `FindHub Android`, urządzenie *Any iOS Device* → **Product → Archive** (automatyczny podpis na koncie z kroku 1; nie używać `CODE_SIGNING_ALLOWED=NO`).
 - [ ] Organizer → **Distribute App → App Store Connect** → upload.
+- [ ] W polu **App Review Information → Notes** wkleić [NOTARIZATION-REVIEW-NOTES.md](templates/NOTARIZATION-REVIEW-NOTES.md). Recenzent sprawdza aplikację w trybie demo; konto Google i PIN telefonu z Androidem nie są potrzebne.
 - [ ] Uzupełnić wymagane dane wersji (opis, kontakt, polityka prywatności, zrzuty, jeśli wymagane) według szablonu [METADANE-SKLEPU.md](templates/METADANE-SKLEPU.md).
 - [ ] Wysłać do notaryzacji. Zapisać wynik i ewentualne uwagi Apple.
 
