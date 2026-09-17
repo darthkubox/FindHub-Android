@@ -249,19 +249,22 @@ struct SettingsView: View {
                     }
                 }
 
+                // Settings lists use menu pickers (label left, value right), as iOS
+                // Settings does; segmented controls are for switching views.
                 Section("Wygląd") {
-                    Picker("Motyw", selection: $settings.theme) {
+                    Picker(selection: $settings.theme) {
                         ForEach(AppTheme.allCases) { Text($0.label).tag($0) }
+                    } label: {
+                        Label("Motyw", systemImage: "circle.lefthalf.filled")
                     }
-                    .pickerStyle(.segmented)
-                }
-
-                Section("Jednostki") {
-                    Picker("Jednostki odległości", selection: $settings.useImperial) {
+                    .pickerStyle(.menu)
+                    Picker(selection: $settings.useImperial) {
                         Text("Metryczne (km, m)").tag(false)
                         Text("Imperialne (mi, ft)").tag(true)
+                    } label: {
+                        Label("Jednostki", systemImage: "ruler")
                     }
-                    .pickerStyle(.segmented)
+                    .pickerStyle(.menu)
                 }
 
                 Section("Wyświetlanie") {
@@ -322,10 +325,12 @@ struct SettingsView: View {
 
                 Section {
                     Button(role: .destructive) { confirmingLogout = true } label: {
-                        Label("Wyloguj bieżące konto", systemImage: "rectangle.portrait.and.arrow.right")
+                        Label { Text("Wyloguj bieżące konto") } icon: { Image(systemName: "rectangle.portrait.and.arrow.right") }
+                            .foregroundStyle(.red)
                     }
                     Button(role: .destructive) { confirmingDeletion = true } label: {
-                        Label("Usuń dane tego konta z telefonu", systemImage: "trash")
+                        Label { Text("Usuń dane tego konta z telefonu") } icon: { Image(systemName: "trash") }
+                            .foregroundStyle(.red)
                     }
                     .disabled(model.activeAccount == nil || deleting)
                 } footer: {

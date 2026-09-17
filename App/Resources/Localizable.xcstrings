@@ -4049,40 +4049,6 @@
         }
       }
     },
-    "Jednostki odległości": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Distance units"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Entfernungseinheiten"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unités de distance"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unidades de distancia"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unità di distanza"
-          }
-        }
-      }
-    },
     "Klucz urządzenia: %lld B; warianty: %lld; wersja: %d.": {
       "localizations": {
         "pl": {

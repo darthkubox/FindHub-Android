@@ -139,3 +139,9 @@ Polecenie użytkownika: dokumenty i licencje po polsku i angielsku, aplikacja w 
 - Edytor miejsca: „Zapisz” jako kapsuła w nagłówku; zamknięcie gestem wyłączone, by nie tracić zmian.
 - Potwierdzenia: „Czy na pewno chcesz się wylogować?” (menu konta i ustawienia) oraz „Czy na pewno chcesz usunąć dane tego konta?” (ustawienia).
 - Weryfikacja: zrzuty arkusza konta, edytora miejsca i ustawień z testów obejrzane; XCTest 10/10, regresje 45, historia 50, build Release PASS; 358 tekstów w 6 językach.
+
+## Ustawienia: wybory i czerwone akcje — 2026-09-17
+
+- Motyw i jednostki: zamiast kontrolek segmentowych wiersze z menu (etykieta po lewej, wartość po prawej), jak w Ustawieniach iOS. Kontrolka segmentowa według HIG służy do przełączania widoków, z krótkimi etykietami; w liście ustawień była bez etykiety i z długimi opisami. Obie opcje w jednej sekcji „Wygląd”.
+- Ikony „Wyloguj bieżące konto” i „Usuń dane tego konta z telefonu” czerwone, jak tekst.
+- Weryfikacja: zrzuty dołu ustawień i sekcji „Wygląd” obejrzane; XCTest 10/10, regresje 45, historia 50, build Release PASS.

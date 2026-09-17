@@ -93,6 +93,8 @@ final class LegalScreensTests: XCTestCase {
             ("legal-info", AnyView(NavigationStack { LegalInfoView() })),
             ("licences", AnyView(NavigationStack { LicensesView() })),
             ("settings", AnyView(SettingsView(model: model, onAddAccount: {}))),
+            ("settings-bottom", AnyView(SettingsBottomHarness(model: model, gap: -60))),
+            ("settings-appearance", AnyView(SettingsBottomHarness(model: model, gap: 1150))),
         ]
         for (name, view) in screens {
             window.rootViewController = UIHostingController(rootView: view)
@@ -151,5 +153,29 @@ final class NotificationSettingsTests: XCTestCase {
         XCTAssertFalse(hidden.title.contains("Portfel") || hidden.title.contains("Dom") || hidden.body.contains("Portfel"))
         XCTAssertTrue(NotificationText.separation(deviceName: "Klucze", showDetails: true).title.contains("Klucze"))
         XCTAssertFalse(NotificationText.separation(deviceName: "Klucze", showDetails: false).title.contains("Klucze"))
+    }
+}
+
+/// Settings scrolled to the end, to review the appearance and account rows.
+private struct SettingsBottomHarness: View {
+    @ObservedObject var model: AppModel
+    let gap: CGFloat
+    var body: some View {
+        SettingsView(model: model, onAddAccount: {})
+            .environment(\.defaultMinListRowHeight, 44)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    for window in UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).flatMap(\.windows) {
+                        Self.scroll(window, gap: gap)
+                    }
+                }
+            }
+    }
+    private static func scroll(_ view: UIView, gap: CGFloat) {
+        if let scroll = view as? UICollectionView ?? (view as? UITableView) {
+            let y = scroll.contentSize.height - scroll.bounds.height + scroll.adjustedContentInset.bottom
+            scroll.setContentOffset(CGPoint(x: 0, y: max(0, y - gap)), animated: false)
+        }
+        view.subviews.forEach { scroll($0, gap: gap) }
     }
 }
