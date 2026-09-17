@@ -2,7 +2,7 @@
 
 **English** · [Polski](README.pl.md)
 
-FindHub Android (publisher: mintstudio Jakub Koncewicz) is distributed under the **GNU GPL v3.0 or later** (file `../LICENSE`, summary in `../NOTICE`), because it contains logic ported from [GoogleFindMyTools](https://github.com/leonboe1/GoogleFindMyTools) (GPLv3, Leon Böttger).
+Tagpin (publisher: mintstudio Jakub Koncewicz) is distributed under the **GNU GPL v3.0 or later** (file `../LICENSE`, summary in `../NOTICE`), because it contains logic ported from [GoogleFindMyTools](https://github.com/leonboe1/GoogleFindMyTools) (GPLv3, Leon Böttger).
 
 The full list of components, authors and licence texts, also shipped inside the app: [`ACKNOWLEDGEMENTS-en.txt`](../App/Resources/Licenses/ACKNOWLEDGEMENTS-en.txt) (Polish: [`ACKNOWLEDGEMENTS-pl.txt`](../App/Resources/Licenses/ACKNOWLEDGEMENTS-pl.txt)).
 

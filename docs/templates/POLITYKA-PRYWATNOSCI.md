@@ -6,7 +6,7 @@ Wypełnić pola, porównać z końcową implementacją i zatwierdzić dla rzeczy
 
 ## 1. Operator i kontakt
 
-Aplikacja: FindHub Android. Operator/administrator w odpowiednim zakresie: mintstudio Jakub Koncewicz, [ADRES], Polska. Kontakt dotyczący prywatności: kontakt@mintstudio.pl. Data wejścia w życie i wersja dokumentu: [DATA/WERSJA]. Zakres działalności i jurysdykcje: [UZUPEŁNIĆ].
+Aplikacja: Tagpin. Operator/administrator w odpowiednim zakresie: mintstudio Jakub Koncewicz, [ADRES], Polska. Kontakt dotyczący prywatności: kontakt@mintstudio.pl. Data wejścia w życie i wersja dokumentu: [DATA/WERSJA]. Zakres działalności i jurysdykcje: [UZUPEŁNIĆ].
 
 ## 2. Działanie usługi
 

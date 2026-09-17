@@ -1,12 +1,12 @@
-# FindHub Android Privacy Policy
+# Tagpin Privacy Policy
 
 Version 1.1, effective 17 September 2026. This is the English version; a Polish version is also available. If the versions differ, the Polish version prevails to the extent permitted by law.
 
 ## 1. Who is responsible for the app
 
-FindHub Android is published by **mintstudio Jakub Koncewicz** (“mintstudio”, “we”). Privacy contact: **kontakt@mintstudio.pl**.
+Tagpin is published by **mintstudio Jakub Koncewicz** (“mintstudio”, “we”). Privacy contact: **kontakt@mintstudio.pl**.
 
-FindHub Android is an independent, unofficial app. It is not affiliated with Google LLC, Motorola or Apple Inc.
+Tagpin is an independent, unofficial app. It is not affiliated with Google LLC, Motorola or Apple Inc.
 
 ## 2. The essentials
 
@@ -66,7 +66,7 @@ Data stored in the app is under your control on your phone: you can view, change
 
 ## 8. Security
 
-Connections to Google and Apple are encrypted. Tokens and keys are kept in a Keychain available only on this device after first unlock. Location reports are decrypted on the phone. The app’s system logs do not reveal device names, coordinates or tokens. The app’s source code is public: https://github.com/darthkubox/FindHub-Android
+Connections to Google and Apple are encrypted. Tokens and keys are kept in a Keychain available only on this device after first unlock. Location reports are decrypted on the phone. The app’s system logs do not reveal device names, coordinates or tokens. The app’s source code is public: https://github.com/darthkubox/Tagpin
 
 ## 9. Children
 

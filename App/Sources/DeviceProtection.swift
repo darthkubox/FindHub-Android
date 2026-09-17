@@ -1,4 +1,4 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import Foundation
@@ -95,7 +95,7 @@ final class DeviceProtection: NSObject, ObservableObject {
         }
         if central == nil {
             central = CBCentralManager(delegate: self, queue: .main, options: [
-                CBCentralManagerOptionRestoreIdentifierKey: "pl.mintstudio.findhubandroid.protection",
+                CBCentralManagerOptionRestoreIdentifierKey: "pl.mintstudio.tagpin.protection",
                 CBCentralManagerOptionShowPowerAlertKey: false
             ])
         } else if central?.state == .poweredOn { scanAndReconnect() }
@@ -224,11 +224,11 @@ final class DeviceProtection: NSObject, ObservableObject {
     func sendTestNotification(after seconds: TimeInterval = 5) async -> Bool {
         guard await requestNotifications() else { return false }
         let content = UNMutableNotificationContent()
-        content.title = String(localized: "FindHub Android — test")
+        content.title = String(localized: "Tagpin — test")
         content.body = String(localized: "Powiadomienia działają. Tak będą wyglądać alerty o miejscach i utracie kontaktu.")
         content.sound = .default
         content.userInfo = ["kind": "test"]
-        let request = UNNotificationRequest(identifier: "findhub.test." + UUID().uuidString, content: content,
+        let request = UNNotificationRequest(identifier: "tagpin.test." + UUID().uuidString, content: content,
                                             trigger: UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false))
         do { try await notifications.add(request); return true }
         catch { notificationMessage = String(localized: "Nie udało się zaplanować powiadomienia testowego."); return false }

@@ -1,4 +1,4 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import SwiftUI
@@ -10,7 +10,7 @@ import CoreLocation
 /// paired tracker.
 enum DemoData {
     /// Reserved `.invalid` domain: can never be a real Google account.
-    static let account = "demo@findhub-android.invalid"
+    static let account = "demo@tagpin.invalid"
 
     private static let home = CLLocationCoordinate2D(latitude: 52.1935, longitude: 21.0213)
     private static let work = CLLocationCoordinate2D(latitude: 52.2297, longitude: 21.0122)

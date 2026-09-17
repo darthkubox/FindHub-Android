@@ -1,14 +1,14 @@
-# Warunki korzystania z FindHub Android
+# Warunki korzystania z Tagpin
 
 Wersja 1, obowiązują od 17 września 2026 r. To wersja polska; dostępna jest też wersja angielska. W razie rozbieżności rozstrzyga wersja polska w zakresie dopuszczalnym przez prawo.
 
 ## 1. Aplikacja i wydawca
 
-FindHub Android („aplikacja”) wydaje **mintstudio Jakub Koncewicz** („mintstudio”), kontakt: kontakt@mintstudio.pl. Aplikacja jest bezpłatna i ma otwarty kod źródłowy: https://github.com/darthkubox/FindHub-Android
+Tagpin („aplikacja”) wydaje **mintstudio Jakub Koncewicz** („mintstudio”), kontakt: kontakt@mintstudio.pl. Aplikacja jest bezpłatna i ma otwarty kod źródłowy: https://github.com/darthkubox/Tagpin
 
 ## 2. Aplikacja nieoficjalna
 
-- FindHub Android jest **niezależnym, nieoficjalnym projektem**. Nie jest powiązana z Google LLC, Motorola ani Apple Inc., nie jest przez nie wspierana ani zatwierdzona.
+- Tagpin jest **niezależnym, nieoficjalnym projektem**. Nie jest powiązana z Google LLC, Motorola ani Apple Inc., nie jest przez nie wspierana ani zatwierdzona.
 - Google nie udostępnia publicznego interfejsu Find Hub. Aplikacja łączy się z usługami Google w sposób opracowany przez społeczność (projekt GoogleFindMyTools). **Google może w każdej chwili zmienić lub zablokować ten dostęp** i aplikacja może przestać działać.
 - Korzystanie z nieoficjalnego klienta może być niezgodne z warunkami Google. Google może ograniczyć lub zablokować konto, które go używa. Decyzję o korzystaniu z aplikacji podejmujesz świadomie i na własne ryzyko.
 - Google, Find Hub i Android są znakami towarowymi Google LLC. Motorola i moto tag są znakami towarowymi Motorola Trademark Holdings, LLC. Apple i iPhone są znakami towarowymi Apple Inc. Nazwy te służą wyłącznie opisaniu zgodności.

@@ -1,12 +1,12 @@
-# Polityka prywatności FindHub Android
+# Polityka prywatności Tagpin
 
 Wersja 1.1, obowiązuje od 17 września 2026 r. To wersja polska; dostępna jest też wersja angielska. W razie rozbieżności rozstrzyga wersja polska w zakresie dopuszczalnym przez prawo.
 
 ## 1. Kto odpowiada za aplikację
 
-Aplikację FindHub Android wydaje **mintstudio Jakub Koncewicz** („mintstudio”, „my”). Kontakt w sprawach prywatności: **kontakt@mintstudio.pl**.
+Aplikację Tagpin wydaje **mintstudio Jakub Koncewicz** („mintstudio”, „my”). Kontakt w sprawach prywatności: **kontakt@mintstudio.pl**.
 
-FindHub Android jest niezależną, nieoficjalną aplikacją. Nie jest powiązana z Google LLC, Motorola ani Apple Inc.
+Tagpin jest niezależną, nieoficjalną aplikacją. Nie jest powiązana z Google LLC, Motorola ani Apple Inc.
 
 ## 2. Najważniejsze w skrócie
 
@@ -66,7 +66,7 @@ Dane zapisane w aplikacji są pod Twoją kontrolą na telefonie: możesz je prze
 
 ## 8. Bezpieczeństwo
 
-Połączenia z Google i Apple są szyfrowane. Tokeny i klucze są w Keychain dostępnym tylko na tym urządzeniu po pierwszym odblokowaniu. Raporty lokalizacji są odszyfrowywane na telefonie. Logi systemowe aplikacji nie ujawniają nazw urządzeń, współrzędnych ani tokenów. Kod aplikacji jest publiczny: https://github.com/darthkubox/FindHub-Android
+Połączenia z Google i Apple są szyfrowane. Tokeny i klucze są w Keychain dostępnym tylko na tym urządzeniu po pierwszym odblokowaniu. Raporty lokalizacji są odszyfrowywane na telefonie. Logi systemowe aplikacji nie ujawniają nazw urządzeń, współrzędnych ani tokenów. Kod aplikacji jest publiczny: https://github.com/darthkubox/Tagpin
 
 ## 9. Dzieci
 

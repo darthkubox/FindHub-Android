@@ -4,7 +4,7 @@ Status: ready to paste. Fill in the contact fields in App Store Connect itself. 
 
 ---
 
-FindHub Android is an independent, unofficial iOS client that shows the locations of Google Find Hub trackers (for example Motorola moto tag) that the user has already paired on an Android phone with their own Google account. Location reports are end-to-end encrypted by Google and decrypted on the iPhone. The app has no server of its own.
+Tagpin is an independent, unofficial iOS client that shows the locations of Google Find Hub trackers (for example Motorola moto tag) that the user has already paired on an Android phone with their own Google account. Location reports are end-to-end encrypted by Google and decrypted on the iPhone. The app has no server of its own.
 
 HOW TO REVIEW WITHOUT AN ACCOUNT
 The app needs a Google account with a tracker paired on Android, and unlocking the location keys requires the screen lock of that Android phone. Instead of test credentials, the app offers a full demo mode that anyone can use:
@@ -31,7 +31,7 @@ PERMISSIONS
 Background modes "bluetooth-central" and "fetch" are used for lost-connection alerts and periodic location refresh; the app does not promise continuous background tracking.
 
 PRIVACY AND LEGAL
-Privacy policy: https://github.com/darthkubox/FindHub-Android/blob/main/App/Resources/Legal/privacy-policy.md
-Terms of use: https://github.com/darthkubox/FindHub-Android/blob/main/App/Resources/Legal/terms-of-use.md
-Source code (GPL-3.0-or-later): https://github.com/darthkubox/FindHub-Android
+Privacy policy: https://github.com/darthkubox/Tagpin/blob/main/App/Resources/Legal/privacy-policy.md
+Terms of use: https://github.com/darthkubox/Tagpin/blob/main/App/Resources/Legal/terms-of-use.md
+Source code (GPL-3.0-or-later): https://github.com/darthkubox/Tagpin
 The app is not affiliated with Google, Motorola or Apple; this is stated on the sign-in screen, in Settings and in the terms of use.

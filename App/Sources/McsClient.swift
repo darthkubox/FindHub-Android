@@ -1,4 +1,4 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 //
 // Portions ported from:
@@ -10,7 +10,7 @@ import Network
 import SwiftProtobuf
 import OSLog
 
-private let mcsLog = Logger(subsystem: "pl.mintstudio.findhubandroid", category: "mcs")
+private let mcsLog = Logger(subsystem: "pl.mintstudio.tagpin", category: "mcs")
 
 /// Minimal MCS (Mobile Connection Server) client — the persistent TLS channel
 /// over which Find Hub delivers encrypted location reports as push messages.

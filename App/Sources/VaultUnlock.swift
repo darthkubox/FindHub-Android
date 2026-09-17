@@ -1,4 +1,4 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 //
 // Portions ported from:
@@ -39,7 +39,7 @@ struct VaultUnlockWebView: UIViewRepresentable {
             },
             closeView: function() { if (result === null) result = {method: 'closeView'}; }
         };
-        window.__findhubTakeResult = function() { const v = result; result = null; return v; };
+        window.__tagpinTakeResult = function() { const v = result; result = null; return v; };
     }
     """
 
@@ -94,7 +94,7 @@ struct VaultUnlockWebView: UIViewRepresentable {
                 guard let self, let webView, !self.finished else { return }
                 guard webView.url?.host == "accounts.google.com" else { return }
                 webView.evaluateJavaScript(
-                    "window.__findhubTakeResult ? window.__findhubTakeResult() : null"
+                    "window.__tagpinTakeResult ? window.__tagpinTakeResult() : null"
                 ) { value, _ in
                     guard let dict = value as? [String: Any],
                           dict["method"] as? String == "setVaultSharedKeys",

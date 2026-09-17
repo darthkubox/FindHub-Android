@@ -23,7 +23,7 @@ Testy UI/XCTest wymagają działającego symulatora. Najpierw odczytać istniej�
 
 ```bash
 xcrun simctl list devices available
-xcodebuild -project "App/FindHub Android.xcodeproj" -scheme "FindHub Android"   -destination 'platform=iOS Simulator,id=SIMULATOR_UDID'   -derivedDataPath /tmp/findhub-android-appstore-ui-tests   test CODE_SIGNING_ALLOWED=NO
+xcodebuild -project "App/Tagpin.xcodeproj" -scheme "Tagpin"   -destination 'platform=iOS Simulator,id=SIMULATOR_UDID'   -derivedDataPath /tmp/tagpin-ui-tests   test CODE_SIGNING_ALLOWED=NO
 ```
 
 Zakres obecnych testów offline: korelacja odpowiedzi i kont, anulowanie, kryptografia, kadrowanie mapy, lokalna historia, reguły miejsc i pilnowania. Testy XCTest obejmują wygląd i interakcje oparte o syntetyczne fixtures. `AppModel()` przy inicjalizacji aktywuje konto sesji; fixture należy aktywować po utworzeniu modelu, by nie zapisać danych w złym kontekście.

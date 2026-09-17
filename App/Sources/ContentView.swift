@@ -1,4 +1,4 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import SwiftUI
@@ -106,7 +106,7 @@ struct ContentView: View {
                 M3.background(scheme).ignoresSafeArea()
                 loginScreen
             }
-            .navigationTitle("FindHub Android")
+            .navigationTitle("Tagpin")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(M3.surface(scheme), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
@@ -141,8 +141,8 @@ struct ContentView: View {
                 .shadow(color: .black.opacity(scheme == .dark ? 0.45 : 0.15), radius: 12, y: 4)
                 .accessibilityHidden(true)
             VStack(spacing: 6) {
-                Text("FindHub Android").font(.largeTitle.bold()).foregroundStyle(M3.onSurface(scheme))
-                Text("Sprawdź swoje androidowe lokalizatory na iOS")
+                Text("Tagpin").font(.largeTitle.bold()).foregroundStyle(M3.onSurface(scheme))
+                Text("Lokalizatory Android na iPhonie")
                     .multilineTextAlignment(.center)
                     .font(.subheadline).foregroundStyle(M3.onSurfaceVariant(scheme))
             }
@@ -258,7 +258,7 @@ struct MainTabsView<Account: ToolbarContent>: View {
         case .devices:
             NavigationStack {
                 MapHomeView(model: model)
-                    .navigationTitle("FindHub Android")
+                    .navigationTitle("Tagpin")
                     .modifier(HomeChrome(scheme: scheme))
                     .toolbar { account() }
             }

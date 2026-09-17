@@ -1,4 +1,4 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import SwiftUI
@@ -166,7 +166,7 @@ struct LegalInfoView: View {
                     Label("Licencje i kod źródłowy", systemImage: "doc.text")
                 }
             } footer: {
-                Text("FindHub Android to niezależna, nieoficjalna aplikacja wydawana przez mintstudio. Nie jest powiązana z Google, Motorola ani Apple. Find Hub i Android są znakami towarowymi Google LLC; nazwy służą wyłącznie opisaniu zgodności.")
+                Text("Tagpin to niezależna, nieoficjalna aplikacja wydawana przez mintstudio. Nie jest powiązana z Google, Motorola ani Apple. Find Hub i Android są znakami towarowymi Google LLC; nazwy służą wyłącznie opisaniu zgodności.")
             }
             Section("O aplikacji") {
                 LabeledContent("Wydawca", value: LicensesView.publisher)
@@ -321,7 +321,7 @@ struct SettingsView: View {
                 }
 
                 Section("O aplikacji") {
-                    LabeledContent("Nazwa", value: "FindHub Android")
+                    LabeledContent("Nazwa", value: "Tagpin")
                     LabeledContent("Wersja", value: appVersion)
                     LabeledContent("Wydawca", value: LicensesView.publisher)
                     if let contact = LicensesView.contactURL {

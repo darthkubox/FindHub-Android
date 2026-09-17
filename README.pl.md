@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="docs/assets/findhub-android-icon.png" width="128" height="128" alt="Ikona FindHub Android">
+  <img src="docs/assets/tagpin-icon.png" width="128" height="128" alt="Ikona Tagpin">
 </p>
 
-<h1 align="center">FindHub Android</h1>
+<h1 align="center">Tagpin</h1>
 
 <p align="center"><a href="README.md">English</a> · <b>Polski</b></p>
 
@@ -14,11 +14,11 @@
 ---
 
 > [!IMPORTANT]
-> **FindHub Android to niezależny, nieoficjalny projekt.** Nie jest powiązany z Google LLC, Motorola ani Apple Inc., nie jest przez nie wspierany ani zatwierdzony. Google nie udostępnia publicznego API Find Hub; aplikacja łączy się z usługami Google tak, jak robi to projekt [GoogleFindMyTools](https://github.com/leonboe1/GoogleFindMyTools), oparty na analizie protokołu. Google może to w każdej chwili zmienić lub zablokować, a korzystanie z nieoficjalnego klienta może naruszać warunki Google. Korzystasz na własne ryzyko.
+> **Tagpin to niezależny, nieoficjalny projekt.** Nie jest powiązany z Google LLC, Motorola ani Apple Inc., nie jest przez nie wspierany ani zatwierdzony. Google nie udostępnia publicznego API Find Hub; aplikacja łączy się z usługami Google tak, jak robi to projekt [GoogleFindMyTools](https://github.com/leonboe1/GoogleFindMyTools), oparty na analizie protokołu. Google może to w każdej chwili zmienić lub zablokować, a korzystanie z nieoficjalnego klienta może naruszać warunki Google. Korzystasz na własne ryzyko.
 
 ## Co robi
 
-FindHub Android pozwala użytkownikom iPhone’a zobaczyć tagi Find Hub (np. Motorola moto tag) **sparowane wcześniej na telefonie z Androidem** z ich kontem Google.
+Tagpin pozwala użytkownikom iPhone’a zobaczyć tagi Find Hub (np. Motorola moto tag) **sparowane wcześniej na telefonie z Androidem** z ich kontem Google.
 
 - **Mapa** tagów i Twojej pozycji, z grupowaniem, czasem raportu, dokładnością i odległością.
 - **Lokalizowanie** taga przez sieć Find Hub; raporty są odszyfrowywane **na iPhonie** (AES-GCM / SECP160r1 + AES-EAX).
@@ -68,13 +68,13 @@ Wymaga Xcode 26+ i [XcodeGen](https://github.com/yonaskolb/XcodeGen).
 ```bash
 cp App/Config/Local.xcconfig.example App/Config/Local.xcconfig   # ustaw swój DEVELOPMENT_TEAM
 xcodegen generate --spec App/project.yml
-open "App/FindHub Android.xcodeproj"
+open "App/Tagpin.xcodeproj"
 bash Scripts/check_local.sh          # testy regresji offline, bez konta i sieci
 ```
 
 ## Autorzy i licencje
 
-FindHub Android powstał dzięki pracy autorów poniższych projektów. Pełne teksty licencji są w [`ACKNOWLEDGEMENTS-pl.txt`](App/Resources/Licenses/ACKNOWLEDGEMENTS-pl.txt) ([English](App/Resources/Licenses/ACKNOWLEDGEMENTS-en.txt)) oraz w aplikacji: **Ustawienia → Licencje i kod źródłowy**.
+Tagpin powstał dzięki pracy autorów poniższych projektów. Pełne teksty licencji są w [`ACKNOWLEDGEMENTS-pl.txt`](App/Resources/Licenses/ACKNOWLEDGEMENTS-pl.txt) ([English](App/Resources/Licenses/ACKNOWLEDGEMENTS-en.txt)) oraz w aplikacji: **Ustawienia → Licencje i kod źródłowy**.
 
 | Projekt | Autorzy | Licencja | Wersja | Zastosowanie |
 |---|---|---|---|---|

@@ -1,4 +1,4 @@
-# Praca nad wydaniem FindHub Android
+# Praca nad wydaniem Tagpin
 
 Ten katalog jest oddzielnym projektem. Użytkownik wyraźnie polecił nie zmieniać oryginału.
 
@@ -7,8 +7,8 @@ Ten katalog jest oddzielnym projektem. Użytkownik wyraźnie polecił nie zmieni
 - Nie dodawaj ukrytych funkcji, przełączników „na czas recenzji” ani trybów zmieniających działanie po notaryzacji (Apple 2.3.1 obowiązuje także w notaryzacji). Opis i działanie muszą być zgodne.
 - Aplikacja jest nieoficjalnym klientem Find Hub. W UI, opisie i dokumentacji nie sugeruj powiązania z Google ani Motorola.
 - `App/project.yml` jest źródłem konfiguracji; regeneruj XcodeGen zamiast ręcznie zmieniać project.pbxproj. Zespół podpisujący ustawiaj tylko w nieśledzonym `App/Config/Local.xcconfig`.
-- Schemat i projekt to `FindHub Android`, a techniczny moduł to `FindHubAndroid`. Nazwa produktu to dokładnie „FindHub Android”; obecna ikona zostaje bez zmian (decyzje użytkownika 2026-09-16).
-- Wydawca: **mintstudio** (mintstudio Jakub Koncewicz), kontakt@mintstudio.pl; Bundle ID `pl.mintstudio.findhubandroid`; publiczne repozytorium https://github.com/darthkubox/FindHub-Android (commity z adresu kontakt@mintstudio.pl). Nowe pliki źródłowe dostają nagłówek SPDX `GPL-3.0-or-later`, a kod portowany — źródło, autora i licencję; aktualizuj też `NOTICE` i tabelę w `README.md`.
+- Schemat i projekt to `Tagpin`, a techniczny moduł to `Tagpin`. Nazwa produktu to dokładnie „Tagpin”; obecna ikona zostaje bez zmian (decyzje użytkownika 2026-09-16).
+- Wydawca: **mintstudio** (mintstudio Jakub Koncewicz), kontakt@mintstudio.pl; Bundle ID `pl.mintstudio.tagpin`; publiczne repozytorium https://github.com/darthkubox/Tagpin (commity z adresu kontakt@mintstudio.pl). Nowe pliki źródłowe dostają nagłówek SPDX `GPL-3.0-or-later`, a kod portowany — źródło, autora i licencję; aktualizuj też `NOTICE` i tabelę w `README.md`.
 - Logo mintstudio nie jest objęte GPL.
 - `Resources/Assets.xcassets/AppLogo.imageset/app_logo.png` to pomniejszona (512 px) kopia `AppIcon.appiconset/icon_1024.png` dla ekranu logowania; po regeneracji ikony odtwórz ją: `sips -Z 512 …/icon_1024.png --out …/app_logo.png`.
 - Ekrany wypychane w `NavigationStack` zakładek nie dziedziczą `safeAreaInset` powłoki, więc ich dół chował się pod paskiem nawigacji. Każdy taki ekran kończy łańcuch modyfikatorów `.clearsTabBar()` (rezerwa z `EnvironmentValues.tabBarReserve`); pilnuje tego `ScrollInsetTests`. Dodając nowy ekran wypychany z zakładki, dodaj też `.clearsTabBar()`.

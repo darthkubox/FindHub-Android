@@ -1,6 +1,6 @@
-FindHub Android
+Tagpin
 Copyright (c) 2026 mintstudio Jakub Koncewicz
-https://github.com/darthkubox/FindHub-Android
+https://github.com/darthkubox/Tagpin
 
 Licencja: GNU General Public License v3.0 lub nowsza (plik LICENSE;
 obowiązujący tekst licencji jest w języku angielskim).
@@ -26,7 +26,7 @@ Produkt zawiera elementy następujących projektów lub na nich się opiera:
 Pełne teksty licencji: App/Resources/Licenses/ACKNOWLEDGEMENTS-pl.txt,
 ACKNOWLEDGEMENTS-en.txt oraz katalog Legal/.
 
-FindHub Android jest niezależnym, nieoficjalnym projektem i nie jest
+Tagpin jest niezależnym, nieoficjalnym projektem i nie jest
 powiązany z Google LLC, Motorola ani Apple Inc., nie jest też przez nie
 wspierany ani zatwierdzony. Google, Find Hub i Android są znakami
 towarowymi Google LLC. Motorola i moto tag są znakami towarowymi Motorola

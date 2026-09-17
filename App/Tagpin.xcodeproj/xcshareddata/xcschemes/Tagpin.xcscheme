@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "06B8836720A0349795B75FB6"
-               BuildableName = "FindHub Android.app"
-               BlueprintName = "FindHub Android"
-               ReferencedContainer = "container:FindHub Android.xcodeproj">
+               BlueprintIdentifier = "0DAEBEC681A1BF3663E5230D"
+               BuildableName = "Tagpin.app"
+               BlueprintName = "Tagpin"
+               ReferencedContainer = "container:Tagpin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "06B8836720A0349795B75FB6"
-            BuildableName = "FindHub Android.app"
-            BlueprintName = "FindHub Android"
-            ReferencedContainer = "container:FindHub Android.xcodeproj">
+            BlueprintIdentifier = "0DAEBEC681A1BF3663E5230D"
+            BuildableName = "Tagpin.app"
+            BlueprintName = "Tagpin"
+            ReferencedContainer = "container:Tagpin.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -44,10 +44,10 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "40A34E56AB79F2ACC7515B27"
-               BuildableName = "FindHubAndroidAppearanceTests.xctest"
-               BlueprintName = "FindHubAndroidAppearanceTests"
-               ReferencedContainer = "container:FindHub Android.xcodeproj">
+               BlueprintIdentifier = "23B981E393F251A258209575"
+               BuildableName = "TagpinAppearanceTests.xctest"
+               BlueprintName = "TagpinAppearanceTests"
+               ReferencedContainer = "container:Tagpin.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -68,10 +68,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "06B8836720A0349795B75FB6"
-            BuildableName = "FindHub Android.app"
-            BlueprintName = "FindHub Android"
-            ReferencedContainer = "container:FindHub Android.xcodeproj">
+            BlueprintIdentifier = "0DAEBEC681A1BF3663E5230D"
+            BuildableName = "Tagpin.app"
+            BlueprintName = "Tagpin"
+            ReferencedContainer = "container:Tagpin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -85,10 +85,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "06B8836720A0349795B75FB6"
-            BuildableName = "FindHub Android.app"
-            BlueprintName = "FindHub Android"
-            ReferencedContainer = "container:FindHub Android.xcodeproj">
+            BlueprintIdentifier = "0DAEBEC681A1BF3663E5230D"
+            BuildableName = "Tagpin.app"
+            BlueprintName = "Tagpin"
+            ReferencedContainer = "container:Tagpin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

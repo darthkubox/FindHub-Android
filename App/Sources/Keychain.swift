@@ -1,15 +1,15 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import Foundation
 import Security
 
-/// Minimal Keychain wrapper for FindHub Android's own secrets (master/AAS token, etc.).
+/// Minimal Keychain wrapper for Tagpin's own secrets (master/AAS token, etc.).
 /// Items live in this app's Keychain only — sandboxed away from other apps.
 /// Stored with kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly: available in the
 /// background after first unlock, never migrated to another device or backup.
 enum Keychain {
-    private static let service = "pl.mintstudio.findhubandroid.secrets"
+    private static let service = "pl.mintstudio.tagpin.secrets"
 
     @discardableResult
     static func set(_ value: String, for key: String) -> Bool {

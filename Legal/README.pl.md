@@ -2,7 +2,7 @@
 
 [English](README.md) · **Polski**
 
-FindHub Android (wydawca: mintstudio Jakub Koncewicz) jest rozpowszechniana na licencji **GNU GPL v3.0 lub nowszej** (plik `../LICENSE`, podsumowanie w `../NOTICE.pl`), ponieważ zawiera logikę przeniesioną z [GoogleFindMyTools](https://github.com/leonboe1/GoogleFindMyTools) (GPLv3, Leon Böttger). Decyzja D14 z 2026-09-16.
+Tagpin (wydawca: mintstudio Jakub Koncewicz) jest rozpowszechniana na licencji **GNU GPL v3.0 lub nowszej** (plik `../LICENSE`, podsumowanie w `../NOTICE.pl`), ponieważ zawiera logikę przeniesioną z [GoogleFindMyTools](https://github.com/leonboe1/GoogleFindMyTools) (GPLv3, Leon Böttger). Decyzja D14 z 2026-09-16.
 
 Pełna lista komponentów, autorów i tekstów licencji, dołączana również do aplikacji: [`ACKNOWLEDGEMENTS-pl.txt`](../App/Resources/Licenses/ACKNOWLEDGEMENTS-pl.txt) (po angielsku: [`ACKNOWLEDGEMENTS-en.txt`](../App/Resources/Licenses/ACKNOWLEDGEMENTS-en.txt)).
 

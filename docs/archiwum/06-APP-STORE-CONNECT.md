@@ -38,7 +38,7 @@ Aktualny wymóg wysyłki to Xcode 26+ i SDK iOS 26+; może się zmienić przed w
 W Xcode otworzyć `App/FindHub Android.xcodeproj`, wybrać schemat `FindHub Android` i urządzenie ogólne iOS, następnie **Product → Archive**. Alternatywny przyszły command line, uruchamiany z katalogu nowego projektu:
 
 ```bash
-xcodebuild -project "App/FindHub Android.xcodeproj" -scheme "FindHub Android"   -configuration Release -destination 'generic/platform=iOS'   -derivedDataPath /tmp/findhub-android-appstore-archive-build   -archivePath /tmp/FindHubAndroid.xcarchive archive
+xcodebuild -project "App/FindHub Android.xcodeproj" -scheme "FindHub Android"   -configuration Release -destination 'generic/platform=iOS'   -derivedDataPath /tmp/tagpin-archive-build   -archivePath /tmp/FindHubAndroid.xcarchive archive
 ```
 
 Archiwizacja wymaga działającego podpisu dystrybucyjnego/automatycznego zarządzania podpisem. Jeśli Xcode wymaga provisioningu, skonfigurować go świadomie na właściwym koncie. Nie używać `CODE_SIGNING_ALLOWED=NO` do archiwum przeznaczonego na wysyłkę.

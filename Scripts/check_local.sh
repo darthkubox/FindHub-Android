@@ -13,8 +13,8 @@ bash App/Scripts/test_regressions.sh
 bash App/Scripts/test_journal.sh
 plutil -lint App/Resources/Info.plist
 if [[ "$build_release" == 1 ]]; then
-  xcodebuild -project "App/FindHub Android.xcodeproj" -scheme "FindHub Android" \
+  xcodebuild -project "App/Tagpin.xcodeproj" -scheme "Tagpin" \
     -configuration Release -destination 'generic/platform=iOS' \
-    -derivedDataPath /tmp/findhub-android-appstore-build build CODE_SIGNING_ALLOWED=NO
+    -derivedDataPath /tmp/tagpin-build build CODE_SIGNING_ALLOWED=NO
 fi
 echo 'Local checks completed. This does not establish App Store, Google or license approval.'

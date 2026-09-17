@@ -2,25 +2,25 @@
 
 Pola wersji w App Store Connect uzupełnia się także przy notaryzacji; opis w źródle AltStore: [altstore-source.json](altstore-source.json). Opis musi mówić, że aplikacja jest nieoficjalnym klientem niepowiązanym z Google (zob. [09-RYZYKA.md](../09-RYZYKA.md)).
 
-Nazwa jest ustalona: **FindHub Android**. Pozostałe metadane wymagają zamknięcia G1/G2 oraz potwierdzenia zakresu funkcji i wyników testów.
+Nazwa jest ustalona: **Tagpin**. Pozostałe metadane wymagają zamknięcia G1/G2 oraz potwierdzenia zakresu funkcji i wyników testów.
 
 ## Dane podstawowe
 
 | Pole | Do ustalenia |
 |---|---|
-| Nazwa publiczna | FindHub Android |
+| Nazwa publiczna | Tagpin |
 | Podtytuł | [KRÓTKI, PRAWDZIWY OPIS] |
 | Język podstawowy / lokalizacje | Angielski (podstawowy); lokalizacje: polski, niemiecki, francuski, hiszpański, włoski — opis i słowa kluczowe dla każdej |
 | Kategoria | [WYBRAĆ WEDŁUG GŁÓWNEJ FUNKCJI] |
-| Bundle ID / SKU | `pl.mintstudio.findhubandroid` / [SKU] |
+| Bundle ID / SKU | `pl.mintstudio.tagpin` / [SKU] |
 | Wersja i build | [DOKŁADNY KANDYDAT] |
-| Support URL / Privacy Policy URL | https://github.com/darthkubox/FindHub-Android (support: Issues, kontakt@mintstudio.pl) / https://github.com/darthkubox/FindHub-Android/blob/main/App/Resources/Legal/polityka-prywatnosci.md |
+| Support URL / Privacy Policy URL | https://github.com/darthkubox/Tagpin (support: Issues, kontakt@mintstudio.pl) / https://github.com/darthkubox/Tagpin/blob/main/App/Resources/Legal/polityka-prywatnosci.md |
 | Copyright / wydawca | © 2026 mintstudio Jakub Koncewicz / mintstudio |
 | Kraje / model płatności | [ ] |
 
 ## Szkic opisu funkcji
 
-FindHub Android pozwala przeglądać ostatnie dostępne lokalizacje kompatybilnych urządzeń powiązanych z Twoim kontem [NAZWA USŁUGI — zgodnie z uprawnieniem].
+Tagpin pozwala przeglądać ostatnie dostępne lokalizacje kompatybilnych urządzeń powiązanych z Twoim kontem [NAZWA USŁUGI — zgodnie z uprawnieniem].
 
 Zakres do pozostawienia tylko po przetestowaniu:
 
@@ -62,4 +62,4 @@ Każdy publiczny opis (App Store Connect, źródło AltStore, strona) zawiera: i
 
 ## Opis (EN, podstawowy)
 
-FindHub Android lets you view the latest known locations of compatible devices linked to your Google Find Hub account — on your iPhone. It is an independent, unofficial app published by mintstudio and is not affiliated with Google. Requires a Google account and trackers already paired on Android. Reports can be delayed; background alerts depend on iOS. Open source under GPLv3.
+Tagpin lets you view the latest known locations of compatible devices linked to your Google Find Hub account — on your iPhone. It is an independent, unofficial app published by mintstudio and is not affiliated with Google. Requires a Google account and trackers already paired on Android. Reports can be delayed; background alerts depend on iOS. Open source under GPLv3.

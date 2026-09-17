@@ -1,4 +1,4 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import SwiftUI
@@ -6,7 +6,7 @@ import OSLog
 import CoreLocation
 import Network
 
-private let locLog = Logger(subsystem: "pl.mintstudio.findhubandroid", category: "locate")
+private let locLog = Logger(subsystem: "pl.mintstudio.tagpin", category: "locate")
 
 @MainActor
 final class AppModel: ObservableObject {
@@ -72,7 +72,7 @@ final class AppModel: ObservableObject {
             let online = path.status == .satisfied
             Task { @MainActor in self?.networkChanged(online: online) }
         }
-        pathMonitor.start(queue: DispatchQueue(label: "pl.mintstudio.findhubandroid.network"))
+        pathMonitor.start(queue: DispatchQueue(label: "pl.mintstudio.tagpin.network"))
     }
 
     // MARK: - Issues

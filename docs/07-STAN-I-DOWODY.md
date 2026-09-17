@@ -7,8 +7,8 @@ Data utworzenia: 2026-09-16.
 | Kontrola | Wynik | Dowód |
 |---|---|---|
 | Osobny katalog i kopia kodu | WYKONANE | `App/`, `App/project.yml` |
-| Oddzielne Bundle ID, Keychain i zadanie tła | WYKONANE | roboczo `com.kuba.motohub.appstorecandidate`, od 2026-09-16 `pl.mintstudio.findhubandroid` |
-| Generowanie XcodeGen | PASS | Utworzony `App/FindHub Android.xcodeproj`, schemat `FindHub Android` |
+| Oddzielne Bundle ID, Keychain i zadanie tła | WYKONANE | roboczo `com.kuba.motohub.appstorecandidate`, od 2026-09-16 `pl.mintstudio.tagpin` |
+| Generowanie XcodeGen | PASS | Utworzony `App/Tagpin.xcodeproj`, schemat `Tagpin` |
 | Release, iOS device, bez podpisu | PASS | `evidence/build-release-summary.txt`; Xcode 26.6, SDK iOS 26.5 |
 | Regresje offline | PASS — 45 kontroli | `evidence/regressions.txt` |
 | Historia i reguły ochrony offline | PASS — 44 kontrole | `evidence/journal.txt` |
@@ -31,8 +31,8 @@ Kompilacja zgłosiła ostrzeżenie „Metadata extraction skipped. No AppIntents
 |---|---|---|---|---|
 | D01 | Dopuszczalny zakres Google/API | ZASTĄPIONE przez D13 — brak publicznego API; ryzyko przyjęte | `09-RYZYKA.md` | Użytkownik, 2026-09-16 |
 | D02 | Licencja portowanych elementów | ZASTĄPIONE przez D14 | `LICENSE`, `App/Resources/Licenses/` | Użytkownik, 2026-09-16 |
-| D03 | Nazwa publiczna: FindHub Android | ZAAKCEPTOWANE | Wyraźna decyzja użytkownika w rozmowie | Użytkownik, 2026-09-16 |
-| D12 | Finalny Bundle ID: `pl.mintstudio.findhubandroid` | ZAAKCEPTOWANE | Plan zatwierdzony w rozmowie | Użytkownik, 2026-09-16 |
+| D03 | Nazwa publiczna: Tagpin | ZAAKCEPTOWANE | Wyraźna decyzja użytkownika w rozmowie | Użytkownik, 2026-09-16 |
+| D12 | Finalny Bundle ID: `pl.mintstudio.tagpin` | ZAAKCEPTOWANE | Plan zatwierdzony w rozmowie | Użytkownik, 2026-09-16 |
 | D11 | Zachowanie obecnej ikony w wydaniu App Store | ZAAKCEPTOWANE | Wyraźna decyzja użytkownika w rozmowie | Użytkownik, 2026-09-16 |
 | D04 | Wydawca, kraje i status DSA | OTWARTE | — | — |
 | D05 | Model płatności | OTWARTE | — | — |
@@ -44,7 +44,7 @@ Kompilacja zgłosiła ostrzeżenie „Metadata extraction skipped. No AppIntents
 | D13 | Kanał dystrybucji: AltStore PAL w UE z notaryzacją; bez App Store | ZAAKCEPTOWANE | Decyzja w rozmowie po analizie 5.2.2 i notaryzacji | Użytkownik, 2026-09-16 |
 | D14 | Licencja aplikacji: GNU GPL v3.0 lub nowsza, publiczny kod | ZAAKCEPTOWANE | Wynika z D13 i portu GoogleFindMyTools | Użytkownik, 2026-09-16 |
 | D15 | Wydawca: mintstudio (mintstudio Jakub Koncewicz), kontakt@mintstudio.pl | ZAAKCEPTOWANE | Decyzja w rozmowie | Użytkownik, 2026-09-16 |
-| D16 | Publiczne repozytorium `darthkubox/FindHub-Android`, commity z kontakt@mintstudio.pl | ZAAKCEPTOWANE | Decyzja w rozmowie | Użytkownik, 2026-09-16 |
+| D16 | Publiczne repozytorium `darthkubox/Tagpin`, commity z kontakt@mintstudio.pl | ZAAKCEPTOWANE | Decyzja w rozmowie | Użytkownik, 2026-09-16 |
 
 ## Zasady dowodów
 
@@ -60,7 +60,7 @@ Kopia obu plików Swift odpowiada dokładnie początkowemu snapshotowi. Porówna
 
 ## Ujednolicenie nazwy — 2026-09-16
 
-Na polecenie użytkownika nazwa produktu to **FindHub Android**. Zmieniono nazwę folderu wydania, projektu/schematu Xcode, modułu, tekstów UI i opisów uprawnień; uzupełniono dokumentację i szablony. Obecna ikona oraz Bundle ID i przestrzeń Keychain pozostały bez zmian. Historyczne dowody poprzedniej kompilacji zachowano pod pierwotnymi nazwami; nowy wynik zapisujemy osobno w `evidence/build-name-update.txt`.
+Na polecenie użytkownika nazwa produktu to **Tagpin**. Zmieniono nazwę folderu wydania, projektu/schematu Xcode, modułu, tekstów UI i opisów uprawnień; uzupełniono dokumentację i szablony. Obecna ikona oraz Bundle ID i przestrzeń Keychain pozostały bez zmian. Historyczne dowody poprzedniej kompilacji zachowano pod pierwotnymi nazwami; nowy wynik zapisujemy osobno w `evidence/build-name-update.txt`.
 
 Weryfikacja zmiany nazwy: zwykły build Release — PASS; build-for-testing z jednorazowym `ENABLE_TESTABILITY=YES` — PASS. Sprawdzono nazwę w zbudowanym Info.plist i opisy uprawnień oraz identyczność ikony. Testów XCTest nie uruchamiano i nie instalowano nowej kopii na telefonie.
 
@@ -80,7 +80,7 @@ Weryfikacja: [evidence/altstore-prep-2026-09-16.txt](evidence/altstore-prep-2026
 
 ## Repozytorium, licencje i wydawca — 2026-09-16
 
-- Bundle ID `pl.mintstudio.findhubandroid`: `project.yml`, usługa Keychain, zadanie w tle, identyfikator przywracania Bluetooth, subsystem logów. Instalacja nie przejmuje danych wcześniejszego roboczego ID.
+- Bundle ID `pl.mintstudio.tagpin`: `project.yml`, usługa Keychain, zadanie w tle, identyfikator przywracania Bluetooth, subsystem logów. Instalacja nie przejmuje danych wcześniejszego roboczego ID.
 - Ustawienia → O aplikacji: wydawca, kontakt, link do kodu (`FHAPublisher`, `FHAPublisherContact`, `FHASourceCodeURL`).
 - Nagłówki SPDX `GPL-3.0-or-later` we wszystkich plikach Swift aplikacji, testów i skryptu ikony; w plikach portowanych źródło, autor i licencja.
 - `ACKNOWLEDGEMENTS.txt`: wydawca, znaki towarowe, specyfikacje i materiały referencyjne, cytowanie GoogleFindMyTools. Nowe `NOTICE`, angielski `README.md` z tabelą autorów i licencji, polski przegląd w `docs/00-PRZEGLAD.md`, logo mintstudio w `docs/assets` (poza GPL).
@@ -92,7 +92,7 @@ Weryfikacja: [evidence/github-release-prep-2026-09-16.txt](evidence/github-relea
 
 - `App/Resources/Legal/polityka-prywatnosci.md` i `warunki-korzystania.md` (wersja 1). Treść polityki oparta na przeglądzie kodu: endpointy Google (`android.clients.google.com`, `android.googleapis.com/nova`, `spot-pa.googleapis.com`, FCM/Firebase Installations, `mtalk.google.com`, `accounts.google.com`, `openidconnect.googleapis.com`), MapKit i `CLGeocoder` Apple, zewnętrzne aplikacje map na polecenie użytkownika, `PhotosPicker`, Keychain `AfterFirstUnlockThisDeviceOnly`, historia wyłączona z kopii zapasowej.
 - `LegalDocumentView.swift`: wyświetlanie dokumentów, `LegalConsent` z wersjonowaniem. Ekran logowania: informacja o nieoficjalnym kliencie, linki i akceptacja; logowanie nieaktywne bez akceptacji. Ustawienia: sekcja „Informacje prawne”.
-- Publiczne URL: https://github.com/darthkubox/FindHub-Android/blob/main/App/Resources/Legal/polityka-prywatnosci.md oraz https://github.com/darthkubox/FindHub-Android/blob/main/App/Resources/Legal/warunki-korzystania.md.
+- Publiczne URL: https://github.com/darthkubox/Tagpin/blob/main/App/Resources/Legal/polityka-prywatnosci.md oraz https://github.com/darthkubox/Tagpin/blob/main/App/Resources/Legal/warunki-korzystania.md.
 - Testy: `Tests/LegalTests.swift` (dokumenty i licencje w paczce, wydawca, renderowanie, wersjonowanie zgody). Wyniki: [evidence/legal-2026-09-17.txt](evidence/legal-2026-09-17.txt) — XCTest 6/6, regresje 45, historia 50, build Release PASS. Zrzut ekranu logowania z symulatora obejrzany. Ekranów dokumentów nie klikano ręcznie; na telefonie nie testowano.
 - Po podbiciu `LegalDocument.currentVersion` zalogowany użytkownik widzi pełnoekranową prośbę o ponowną akceptację (nie da się jej zamknąć bez akceptacji).
 
@@ -163,7 +163,15 @@ Polecenie użytkownika: dokumenty i licencje po polsku i angielsku, aplikacja w 
 
 - Cel: notaryzacja bez podawania recenzentowi konta Google, hasła i PIN-u telefonu z Androidem (Apple 2.1 dopuszcza pełny tryb demo dla aplikacji wymagających zewnętrznego konta lub sprzętu).
 - Przycisk „Wypróbuj demo bez logowania” na ekranie logowania, widoczny dla wszystkich. Dane: 4 tagi w Warszawie (w tym udostępniony), miejsca Dom i Praca z przypisaniami, notatka, historia trasy z przerwą. Plakietka DEMO w pasku, karta „Tryb demonstracyjny” w szufladach, „Zakończ tryb demo” w menu konta i ustawieniach.
-- Bez sieci i Bluetooth: `loadDevices`, lokalizowanie (symulowane odświeżenie), odświeżanie w tle, zdjęcia konta, monitor sieci i dzwonienie mają strażnik `isDemo`; ekran „Namierz w pobliżu” nie skanuje. Widok ogólny mapy w demo pomija pozycję telefonu (recenzent poza Polską). Dziennik demo pod kontem `demo@findhub-android.invalid`, usuwany przy wyjściu i przy starcie aplikacji.
+- Bez sieci i Bluetooth: `loadDevices`, lokalizowanie (symulowane odświeżenie), odświeżanie w tle, zdjęcia konta, monitor sieci i dzwonienie mają strażnik `isDemo`; ekran „Namierz w pobliżu” nie skanuje. Widok ogólny mapy w demo pomija pozycję telefonu (recenzent poza Polską). Dziennik demo pod kontem `demo@tagpin.invalid`, usuwany przy wyjściu i przy starcie aplikacji.
 - Notatka dla recenzenta po angielsku: `templates/NOTARIZATION-REVIEW-NOTES.md`.
 - Wersja podbita do 1.0.1 (build 2); tag `v1.0.1` przy wysłaniu do notaryzacji. `v1.0.0` zostaje bez zmian.
 - Weryfikacja: `DemoModeTests` (dane, brak sieci/BLE, sprzątanie), zrzuty mapy, miejsc, szczegółów i historii w demo obejrzane; 404 teksty w 6 językach.
+
+## Zmiana nazwy na Tagpin — 2026-09-18
+
+- Powód: „FindHub Android” zawierało znaki towarowe Google (Find Hub, Android) i sugerowało oficjalną aplikację; punkt 2.2(C) Alternative Terms Addendum i wytyczne AltStore wymagają praw do zawartości. Sprawdzono dostępność: „Tagpin” wolne w App Store, na GitHubie i w domenach tagpin.app/.pl/.io (stan 2026-09-18; to nie jest badanie rejestrów znaków towarowych).
+- Nazwa produktu i na ekranie telefonu: **Tagpin**. Podtytuł: „Lokalizatory Android na iPhonie” / „Android trackers on your iPhone” (6 języków).
+- Zmienione: Bundle ID `pl.mintstudio.tagpin`, usługa Keychain, identyfikator zadania w tle i przywracania Bluetooth, subsystem logów, moduł i schemat `Tagpin`, `App/Tagpin.xcodeproj`, konto demo `demo@tagpin.invalid`, teksty w aplikacji, dokumenty prawne PL/EN, licencje, README PL/EN, NOTICE, szablony AltStore i notatka dla recenzenta. Repozytorium: `darthkubox/Tagpin`.
+- Skutek dla użytkownika testowego: nowy Bundle ID to nowa instalacja obok starej; trzeba zalogować się ponownie i odblokować klucze. Starą wersję można usunąć.
+- Weryfikacja: regresje 45, historia 50, XCTest 13/13, build Release PASS, katalog 404 tekstów w 6 językach.

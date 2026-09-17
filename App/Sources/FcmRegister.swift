@@ -1,4 +1,4 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 //
 // Portions ported from:
@@ -31,7 +31,7 @@ enum FcmError: LocalizedError {
     }
 }
 
-/// Swift port of the FCM registration flow (firebase-messaging) that FindHub Android needs:
+/// Swift port of the FCM registration flow (firebase-messaging) that Tagpin needs:
 /// checkin → c2dm register → firebase installation → fcm registration.
 /// Config values are the Google Find Hub (com.google.android.apps.adm) app's.
 struct FcmRegister {

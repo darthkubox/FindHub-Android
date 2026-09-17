@@ -28,11 +28,11 @@ Google nie udostępnia API Find Hub niezależnym aplikacjom; istnieje tylko [pro
 
 ## Decyzje właściciela do zapisania
 
-- [x] Nazwa: **FindHub Android**; ikona bez zmian.
+- [x] Nazwa: **Tagpin**; ikona bez zmian.
 - [x] Kanał: AltStore PAL w UE; licencja GPLv3.
 - [x] Wydawca: **mintstudio** (działalność mintstudio Jakub Koncewicz); status przedsiębiorcy (DSA) do zadeklarowania w App Store Connect.
-- [x] Ostateczny Bundle ID: `pl.mintstudio.findhubandroid`.
-- [x] Kod: https://github.com/darthkubox/FindHub-Android. [ ] Hosting ADP i strony (np. GitHub Releases / Pages).
+- [x] Ostateczny Bundle ID: `pl.mintstudio.tagpin`.
+- [x] Kod: https://github.com/darthkubox/Tagpin. [ ] Hosting ADP i strony (np. GitHub Releases / Pages).
 - [x] Kontakt: kontakt@mintstudio.pl.
 - [ ] Aplikacja bezpłatna (zalecane — brak płatności w kodzie).
 - [ ] Języki opisu (PL, opcjonalnie EN).

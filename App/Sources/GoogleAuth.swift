@@ -1,4 +1,4 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 //
 // Portions ported from:
@@ -22,7 +22,7 @@ enum GoogleAuthError: LocalizedError {
     }
 }
 
-/// Swift port of the pieces of gpsoauth + GCM checkin that FindHub Android needs.
+/// Swift port of the pieces of gpsoauth + GCM checkin that Tagpin needs.
 /// Endpoints, form fields and parsing mirror the reference implementation exactly.
 struct GoogleAuth {
     static let authURL = URL(string: "https://android.clients.google.com/auth")!

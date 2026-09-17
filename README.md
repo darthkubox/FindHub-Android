@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="docs/assets/findhub-android-icon.png" width="128" height="128" alt="FindHub Android icon">
+  <img src="docs/assets/tagpin-icon.png" width="128" height="128" alt="Tagpin icon">
 </p>
 
-<h1 align="center">FindHub Android</h1>
+<h1 align="center">Tagpin</h1>
 
 <p align="center"><b>English</b> · <a href="README.pl.md">Polski</a></p>
 
@@ -14,11 +14,11 @@
 ---
 
 > [!IMPORTANT]
-> **FindHub Android is an independent, unofficial project.** It is not affiliated with, endorsed or supported by Google LLC, Motorola or Apple Inc. Google does not offer a public Find Hub API; this app talks to Google services the way the reverse-engineered [GoogleFindMyTools](https://github.com/leonboe1/GoogleFindMyTools) project does. Google may change or block this at any time, and use of an unofficial client may conflict with Google's terms. Use it at your own risk.
+> **Tagpin is an independent, unofficial project.** It is not affiliated with, endorsed or supported by Google LLC, Motorola or Apple Inc. Google does not offer a public Find Hub API; this app talks to Google services the way the reverse-engineered [GoogleFindMyTools](https://github.com/leonboe1/GoogleFindMyTools) project does. Google may change or block this at any time, and use of an unofficial client may conflict with Google's terms. Use it at your own risk.
 
 ## What it does
 
-FindHub Android lets iPhone users see the Find Hub tags (for example Motorola moto tag) that were **already paired on an Android phone** with their Google account.
+Tagpin lets iPhone users see the Find Hub tags (for example Motorola moto tag) that were **already paired on an Android phone** with their Google account.
 
 - **Map** of your tags and your own position, with clustering, report time, accuracy and distance.
 - **Locate** a tag through the Find Hub network; reports are decrypted **on the iPhone** (AES-GCM / SECP160r1 + AES-EAX).
@@ -68,13 +68,13 @@ Requires Xcode 26+ and [XcodeGen](https://github.com/yonaskolb/XcodeGen).
 ```bash
 cp App/Config/Local.xcconfig.example App/Config/Local.xcconfig   # set your DEVELOPMENT_TEAM
 xcodegen generate --spec App/project.yml
-open "App/FindHub Android.xcodeproj"
+open "App/Tagpin.xcodeproj"
 bash Scripts/check_local.sh          # offline regression tests, no account or network
 ```
 
 ## Credits and licenses
 
-FindHub Android stands on the work of these projects. Full licence texts are in [`ACKNOWLEDGEMENTS-en.txt`](App/Resources/Licenses/ACKNOWLEDGEMENTS-en.txt) ([Polish](App/Resources/Licenses/ACKNOWLEDGEMENTS-pl.txt)) and are shown in the app under **Settings → Licences and source code**.
+Tagpin stands on the work of these projects. Full licence texts are in [`ACKNOWLEDGEMENTS-en.txt`](App/Resources/Licenses/ACKNOWLEDGEMENTS-en.txt) ([Polish](App/Resources/Licenses/ACKNOWLEDGEMENTS-pl.txt)) and are shown in the app under **Settings → Licences and source code**.
 
 | Project | Authors | License | Version | Used for |
 |---|---|---|---|---|

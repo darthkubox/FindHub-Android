@@ -1,9 +1,9 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import XCTest
 import SwiftUI
-@testable import FindHubAndroid
+@testable import Tagpin
 
 /// The demo shows every feature on sample data, never touches the network or a
 /// tracker, and leaves nothing behind when it ends.

@@ -1,4 +1,4 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 //
 // Portions ported from:
@@ -8,7 +8,7 @@ import Foundation
 import SwiftProtobuf
 import OSLog
 
-private let novaLog = Logger(subsystem: "pl.mintstudio.findhubandroid", category: "nova")
+private let novaLog = Logger(subsystem: "pl.mintstudio.tagpin", category: "nova")
 
 struct TrackerDevice: Identifiable, Hashable {
     let id: String     // canonic id

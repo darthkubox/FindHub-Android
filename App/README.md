@@ -1,6 +1,6 @@
 # Projekt Xcode kopii wydaniowej
 
-Otwórz `FindHub Android.xcodeproj`, schemat `FindHub Android`. Target i nazwa aplikacji to „FindHub Android”; techniczny moduł Swift to `FindHubAndroid`.
+Otwórz `Tagpin.xcodeproj`, schemat `Tagpin`. Target i nazwa aplikacji to „Tagpin”; techniczny moduł Swift to `Tagpin`.
 
 Pełne instrukcje i status znajdują się w [README głównym](../README.md). To odrębna kopia do przygotowania publikacji; istniejące logowanie i dostęp Google nie są jeszcze zatwierdzoną integracją produkcyjną.
 

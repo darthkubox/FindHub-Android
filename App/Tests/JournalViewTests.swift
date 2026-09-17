@@ -1,10 +1,10 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import XCTest
 import SwiftUI
 import MapKit
-@testable import FindHubAndroid
+@testable import Tagpin
 
 final class JournalViewTests: XCTestCase {
     @MainActor

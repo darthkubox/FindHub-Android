@@ -1,4 +1,4 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import UIKit
@@ -64,7 +64,7 @@ private extension UIColor {
 
 @MainActor
 enum GuardianBackground {
-    static let identifier = "pl.mintstudio.findhubandroid.journal-refresh"
+    static let identifier = "pl.mintstudio.tagpin.journal-refresh"
 
     static func schedule() {
         guard Session.shared.isLoggedIn else {

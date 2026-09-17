@@ -1,11 +1,11 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import Foundation
 import CoreBluetooth
 import OSLog
 
-private let bleLog = Logger(subsystem: "pl.mintstudio.findhubandroid", category: "ble")
+private let bleLog = Logger(subsystem: "pl.mintstudio.tagpin", category: "ble")
 
 enum BleError: LocalizedError {
     case unavailable

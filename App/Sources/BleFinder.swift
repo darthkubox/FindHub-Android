@@ -1,11 +1,11 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import Foundation
 import CoreBluetooth
 import OSLog
 
-private let finderLog = Logger(subsystem: "pl.mintstudio.findhubandroid", category: "finder")
+private let finderLog = Logger(subsystem: "pl.mintstudio.tagpin", category: "finder")
 
 /// Live BLE proximity finder ("hot/cold"). Continuously scans for FMDN tags and
 /// reports a smoothed signal strength for the target. When the target device's

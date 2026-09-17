@@ -1,14 +1,14 @@
-# FindHub Android Terms of Use
+# Tagpin Terms of Use
 
 Version 1, effective 17 September 2026. This is the English version; a Polish version is also available. If the versions differ, the Polish version prevails to the extent permitted by law.
 
 ## 1. The app and its publisher
 
-FindHub Android (“the app”) is published by **mintstudio Jakub Koncewicz** (“mintstudio”), contact: kontakt@mintstudio.pl. The app is free and its source code is open: https://github.com/darthkubox/FindHub-Android
+Tagpin (“the app”) is published by **mintstudio Jakub Koncewicz** (“mintstudio”), contact: kontakt@mintstudio.pl. The app is free and its source code is open: https://github.com/darthkubox/Tagpin
 
 ## 2. Unofficial app
 
-- FindHub Android is an **independent, unofficial project**. It is not affiliated with, supported or approved by Google LLC, Motorola or Apple Inc.
+- Tagpin is an **independent, unofficial project**. It is not affiliated with, supported or approved by Google LLC, Motorola or Apple Inc.
 - Google does not provide a public Find Hub interface. The app connects to Google services in a way developed by the community (the GoogleFindMyTools project). **Google may change or block this access at any time**, and the app may stop working.
 - Using an unofficial client may not comply with Google’s terms. Google may restrict or suspend an account that uses it. You decide to use the app knowingly and at your own risk.
 - Google, Find Hub and Android are trademarks of Google LLC. Motorola and moto tag are trademarks of Motorola Trademark Holdings, LLC. Apple and iPhone are trademarks of Apple Inc. These names are used only to describe compatibility.

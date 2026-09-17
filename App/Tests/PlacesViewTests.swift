@@ -1,10 +1,10 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import XCTest
 import SwiftUI
 import MapKit
-@testable import FindHubAndroid
+@testable import Tagpin
 
 /// Renders the rebuilt places tab and the Material navigation bar from synthetic
 /// fixtures, in both appearances. No account, network or Bluetooth is involved.

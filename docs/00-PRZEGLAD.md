@@ -1,4 +1,4 @@
-# FindHub Android: przegląd projektu i wydania (PL)
+# Tagpin: przegląd projektu i wydania (PL)
 
 Stan: **16 września 2026. Kod gotowy do dalszych prac nad wydaniem; aplikacji nie notaryzowano ani nie opublikowano.**
 
@@ -23,7 +23,7 @@ W tym folderze jest kopia natywnej aplikacji iOS przygotowywana do publicznej dy
 
 | Ścieżka | Zawartość |
 |---|---|
-| `App/project.yml` | Źródło konfiguracji XcodeGen; projekt `App/FindHub Android.xcodeproj` jest generowany |
+| `App/project.yml` | Źródło konfiguracji XcodeGen; projekt `App/Tagpin.xcodeproj` jest generowany |
 | `App/Sources`, `App/Resources`, `App/Tests`, `App/Proto` | Kod, zasoby (w tym `PrivacyInfo.xcprivacy` i `Licenses/`), testy, definicje protokołu |
 | `App/Config` | `Base.xcconfig` w repozytorium; lokalny `Local.xcconfig` z zespołem podpisującym jest pomijany przez Git |
 | `LICENSE`, `NOTICE`/`NOTICE.pl`, `Legal/` | GPLv3 projektu, podsumowanie autorów i licencje komponentów |
@@ -43,11 +43,11 @@ Wymagany jest Xcode 26 lub nowszy; minimalna wersja systemu to iOS 17. `check_lo
 
 ## Co różni tę kopię od MotoHub
 
-- Nazwa „FindHub Android”, moduł `FindHubAndroid`, Bundle ID `pl.mintstudio.findhubandroid`, osobny Keychain i identyfikator zadania w tle.
+- Nazwa „Tagpin”, moduł `Tagpin`, Bundle ID `pl.mintstudio.tagpin`, osobny Keychain i identyfikator zadania w tle.
 - Funkcja „Usuń dane tego konta z telefonu” w Ustawieniach.
 - Ekran „Licencje i kod źródłowy”, manifest prywatności, nazwy urządzeń ukryte w logach systemowych.
 - Poprawki z MotoHub przeniesione 2026-09-16: wysokość panelu 124 pt, szczegóły urządzenia bez linii statusu. Kolejne zmiany w oryginale nie przechodzą tu automatycznie.
 
-Obecna ikona i nazwa „FindHub Android” zostały zaakceptowane przez użytkownika (2026-09-16).
+Obecna ikona i nazwa „Tagpin” zostały zaakceptowane przez użytkownika (2026-09-16).
 
-Wydawca: **mintstudio** (mintstudio Jakub Koncewicz), kontakt@mintstudio.pl. Repozytorium: https://github.com/darthkubox/FindHub-Android.
+Wydawca: **mintstudio** (mintstudio Jakub Koncewicz), kontakt@mintstudio.pl. Repozytorium: https://github.com/darthkubox/Tagpin.

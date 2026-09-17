@@ -3607,108 +3607,6 @@
         }
       }
     },
-    "FindHub Android": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android"
-          }
-        }
-      }
-    },
-    "FindHub Android to niezależna, nieoficjalna aplikacja wydawana przez mintstudio. Nie jest powiązana z Google, Motorola ani Apple. Find Hub i Android są znakami towarowymi Google LLC; nazwy służą wyłącznie opisaniu zgodności.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android is an independent, unofficial app published by mintstudio. It is not affiliated with Google, Motorola or Apple. Find Hub and Android are trademarks of Google LLC; the names are used only to describe compatibility."
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android ist eine unabhängige, inoffizielle App von mintstudio. Sie steht in keiner Verbindung zu Google, Motorola oder Apple. Find Hub und Android sind Marken der Google LLC; die Namen dienen nur zur Beschreibung der Kompatibilität."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android est une app indépendante et non officielle éditée par mintstudio. Elle n’est affiliée ni à Google, ni à Motorola, ni à Apple. Find Hub et Android sont des marques de Google LLC ; ces noms servent uniquement à décrire la compatibilité."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android es una app independiente y no oficial publicada por mintstudio. No está afiliada a Google, Motorola ni Apple. Find Hub y Android son marcas de Google LLC; los nombres solo se usan para describir la compatibilidad."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android è un’app indipendente e non ufficiale pubblicata da mintstudio. Non è affiliata a Google, Motorola o Apple. Find Hub e Android sono marchi di Google LLC; i nomi servono solo a descrivere la compatibilità."
-          }
-        }
-      }
-    },
-    "FindHub Android — test": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android — test"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android — test"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android — test"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android — test"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FindHub Android — test"
-          }
-        }
-      }
-    },
     "GNU General Public License v3.0": {
       "localizations": {
         "en": {
@@ -5105,6 +5003,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Accesso non riuscito (%lld)."
+          }
+        }
+      }
+    },
+    "Lokalizatory Android na iPhonie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android trackers on your iPhone"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android-Tracker auf deinem iPhone"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vos traceurs Android sur iPhone"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus localizadores Android en el iPhone"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I tuoi localizzatori Android su iPhone"
           }
         }
       }
@@ -10301,40 +10233,6 @@
         }
       }
     },
-    "Sprawdź swoje androidowe lokalizatory na iOS": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Check your Android trackers on iOS"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deine Android-Tracker auf iOS im Blick"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retrouvez vos traceurs Android sur iOS"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Consulta tus localizadores de Android en iOS"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Controlla i tuoi localizzatori Android su iOS"
-          }
-        }
-      }
-    },
     "Spróbuj ponownie": {
       "localizations": {
         "en": {
@@ -10705,6 +10603,108 @@
           "stringUnit": {
             "state": "translated",
             "value": "Localizzatori e altri dispositivi si aggiungono nell’app Find Hub su un telefono Android con lo stesso account Google. Poi aggiorna l’elenco."
+          }
+        }
+      }
+    },
+    "Tagpin": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin"
+          }
+        }
+      }
+    },
+    "Tagpin to niezależna, nieoficjalna aplikacja wydawana przez mintstudio. Nie jest powiązana z Google, Motorola ani Apple. Find Hub i Android są znakami towarowymi Google LLC; nazwy służą wyłącznie opisaniu zgodności.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin is an independent, unofficial app published by mintstudio. It is not affiliated with Google, Motorola or Apple. Find Hub and Android are trademarks of Google LLC; the names are used only to describe compatibility."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin ist eine unabhängige, inoffizielle App von mintstudio. Sie steht in keiner Verbindung zu Google, Motorola oder Apple. Find Hub und Android sind Marken der Google LLC; die Namen dienen nur zur Beschreibung der Kompatibilität."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin est une app indépendante et non officielle éditée par mintstudio. Elle n’est affiliée ni à Google, ni à Motorola, ni à Apple. Find Hub et Android sont des marques de Google LLC ; ces noms servent uniquement à décrire la compatibilité."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin es una app independiente y no oficial publicada por mintstudio. No está afiliada a Google, Motorola ni Apple. Find Hub y Android son marcas de Google LLC; los nombres solo se usan para describir la compatibilidad."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin è un’app indipendente e non ufficiale pubblicata da mintstudio. Non è affiliata a Google, Motorola o Apple. Find Hub e Android sono marchi di Google LLC; i nomi servono solo a descrivere la compatibilità."
+          }
+        }
+      }
+    },
+    "Tagpin — test": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin — test"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin — test"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin — test"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin — test"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagpin — test"
           }
         }
       }

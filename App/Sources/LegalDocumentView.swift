@@ -1,4 +1,4 @@
-// FindHub Android — Copyright (c) 2026 mintstudio Jakub Koncewicz
+// Tagpin — Copyright (c) 2026 mintstudio Jakub Koncewicz
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import SwiftUI
@@ -37,7 +37,7 @@ enum LegalDocument: String, CaseIterable, Identifiable {
     }
 
     func publicURL(language: String = LegalDocument.language) -> URL {
-        URL(string: "https://github.com/darthkubox/FindHub-Android/blob/main/App/Resources/Legal/\(resource(language: language)).md")!
+        URL(string: "https://github.com/darthkubox/Tagpin/blob/main/App/Resources/Legal/\(resource(language: language)).md")!
     }
 
     func text(language: String = LegalDocument.language) -> String {

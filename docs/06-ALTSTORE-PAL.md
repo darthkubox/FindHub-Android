@@ -7,8 +7,8 @@ Stan źródeł: 2026-09-16. Żadnego z poniższych kroków jeszcze nie wykonano.
 ## 0. Warunki wstępne w kodzie
 
 - [ ] Bramki G2 i G3 z [01-PLAN-WYDANIA.md](01-PLAN-WYDANIA.md).
-- [x] Ostateczny Bundle ID `pl.mintstudio.findhubandroid` (2026-09-16).
-- [x] `SOURCE_CODE_URL` = https://github.com/darthkubox/FindHub-Android. [ ] Wersja w repozytorium ma tag równy `MARKETING_VERSION`.
+- [x] Ostateczny Bundle ID `pl.mintstudio.tagpin` (2026-09-16).
+- [x] `SOURCE_CODE_URL` = https://github.com/darthkubox/Tagpin. [ ] Wersja w repozytorium ma tag równy `MARKETING_VERSION`.
 - [ ] `MARKETING_VERSION` i `CURRENT_PROJECT_VERSION` podbite.
 - [ ] `bash Scripts/check_local.sh --build` i XCTest bez błędów; wynik zapisany w `docs/evidence/`.
 
@@ -32,7 +32,7 @@ Stan źródeł: 2026-09-16. Żadnego z poniższych kroków jeszcze nie wykonano.
 
 - [ ] W App Store Connect utworzyć rekord aplikacji z ostatecznym Bundle ID. Przy wersji wybrać ocenę według **Notarization Review Guidelines** (dystrybucja wyłącznie alternatywna).
 - [ ] Przed wysyłką przejrzeć [wytyczne](https://developer.apple.com/app-store/review/guidelines/) z filtrem **Highlight Notarization Review Guidelines Only**; zapisać listę obowiązujących punktów w `docs/evidence/notarization-guidelines-<data>.txt`.
-- [ ] Xcode: `App/FindHub Android.xcodeproj`, schemat `FindHub Android`, urządzenie *Any iOS Device* → **Product → Archive** (automatyczny podpis na koncie z kroku 1; nie używać `CODE_SIGNING_ALLOWED=NO`).
+- [ ] Xcode: `App/Tagpin.xcodeproj`, schemat `Tagpin`, urządzenie *Any iOS Device* → **Product → Archive** (automatyczny podpis na koncie z kroku 1; nie używać `CODE_SIGNING_ALLOWED=NO`).
 - [ ] Organizer → **Distribute App → App Store Connect** → upload.
 - [ ] W polu **App Review Information → Notes** wkleić [NOTARIZATION-REVIEW-NOTES.md](templates/NOTARIZATION-REVIEW-NOTES.md). Recenzent sprawdza aplikację w trybie demo; konto Google i PIN telefonu z Androidem nie są potrzebne.
 - [ ] Uzupełnić wymagane dane wersji (opis, kontakt, polityka prywatności, zrzuty, jeśli wymagane) według szablonu [METADANE-SKLEPU.md](templates/METADANE-SKLEPU.md).
@@ -53,7 +53,7 @@ Przy odmowie: zapisać punkt wytycznych i treść, poprawić aplikację lub opis
 
 ## 7. Test instalacji i publikacja
 
-- [ ] Na iPhonie z regionem UE zainstalować AltStore PAL, dodać źródło, zainstalować FindHub Android.
+- [ ] Na iPhonie z regionem UE zainstalować AltStore PAL, dodać źródło, zainstalować Tagpin.
 - [ ] Sprawdzić: logowanie, listę tagów, lokalizację, Ustawienia → Licencje i kod źródłowy (link działa), usuwanie danych konta.
 - [ ] Zapisać wersję, build, datę i wynik w `docs/07-STAN-I-DOWODY.md`.
 
