@@ -183,6 +183,7 @@ struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var confirmingDeletion = false
     @State private var deleting = false
+    @State private var testScheduled = false
 
     private var appVersion: String {
         let v = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?"
@@ -211,6 +212,26 @@ struct SettingsView: View {
                     Button { onAddAccount() } label: {
                         Label("Dodaj konto", systemImage: "person.badge.plus")
                     }
+                }
+
+                Section {
+                    NotificationPermissionCard(showWhenAllowed: true)
+                    Toggle("Opuszczenie miejsca", isOn: $settings.notifyPlaceExit)
+                    Toggle("Utrata kontaktu Bluetooth", isOn: $settings.notifySeparation)
+                    Toggle("Nazwy urządzeń i miejsc w treści", isOn: $settings.notificationDetails)
+                    Button {
+                        Task { testScheduled = await DeviceProtection.shared.sendTestNotification() }
+                    } label: {
+                        Label("Wyślij powiadomienie testowe", systemImage: "paperplane")
+                    }
+                    if testScheduled {
+                        Text("Powiadomienie pojawi się za 5 sekund — możesz zablokować telefon.")
+                            .font(.footnote).foregroundStyle(M3.onSurfaceVariant(scheme))
+                    }
+                } header: {
+                    Text("Powiadomienia")
+                } footer: {
+                    Text("Alert o opuszczeniu miejsca wysyłamy po dwóch świeżych raportach poza obszarem. Gdy aplikacja jest w tle, iOS sam decyduje, kiedy odświeżyć pozycje — zwykle nie częściej niż co kilkanaście minut. Nazwy w treści są widoczne na zablokowanym ekranie.")
                 }
 
                 Section("Miejsca") {

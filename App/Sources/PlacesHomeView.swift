@@ -13,6 +13,10 @@ enum PlaceAssignment {
     }
 
     static func set(_ assigned: Bool, device: TrackerDevice, place: UUID) {
+        if assigned {
+            // Assigning arms place alerts, which are useless without permission.
+            Task { _ = await DeviceProtection.shared.requestNotifications() }
+        }
         TrackerJournal.shared.updateDevice(device.id, name: name(of: device)) { rec in
             if assigned {
                 rec.placeIDs.insert(place)
@@ -225,6 +229,7 @@ struct PlacesHomeView: View {
                 if places.isEmpty {
                     emptyState
                 } else {
+                    notificationStatus
                     ForEach(places) { place in placeCard(place) }
                     addButton.padding(.top, 4)
                 }
@@ -296,6 +301,13 @@ struct PlacesHomeView: View {
         .padding(10)
         .background(M3.background(scheme))
         .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+
+    /// Only when alerts cannot reach the user; nothing is shown once allowed.
+    private var notificationStatus: some View {
+        NotificationPermissionCard()
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 10).padding(.bottom, 4)
     }
 
     private var addButton: some View {

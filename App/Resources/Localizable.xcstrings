@@ -983,6 +983,40 @@
         }
       }
     },
+    "Aby dostawać alerty, włącz powiadomienia.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on notifications to receive alerts."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktiviere Mitteilungen, um Warnungen zu erhalten."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activez les notifications pour recevoir les alertes."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa las notificaciones para recibir avisos."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Attiva le notifiche per ricevere gli avvisi."
+          }
+        }
+      }
+    },
     "Adres": {
       "localizations": {
         "en": {
@@ -1047,6 +1081,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Accetto i termini di utilizzo e l’informativa sulla privacy"
+          }
+        }
+      }
+    },
+    "Alert o opuszczeniu miejsca wysyłamy po dwóch świeżych raportach poza obszarem. Gdy aplikacja jest w tle, iOS sam decyduje, kiedy odświeżyć pozycje — zwykle nie częściej niż co kilkanaście minut. Nazwy w treści są widoczne na zablokowanym ekranie.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A place alert is sent after two fresh reports outside the area. While the app is in the background, iOS decides when to refresh locations — usually no more often than every 15 minutes or so. Names in alerts are visible on the lock screen."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Ortswarnung wird nach zwei aktuellen Berichten außerhalb des Bereichs gesendet. Im Hintergrund entscheidet iOS, wann Positionen aktualisiert werden – meist nicht öfter als etwa alle 15 Minuten. Namen in Mitteilungen sind auf dem Sperrbildschirm sichtbar."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une alerte de lieu est envoyée après deux rapports récents hors de la zone. En arrière-plan, iOS décide quand actualiser les positions — en général pas plus d’une fois toutes les 15 minutes environ. Les noms dans les alertes sont visibles sur l’écran verrouillé."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El aviso de lugar se envía tras dos informes recientes fuera de la zona. En segundo plano, iOS decide cuándo actualizar las ubicaciones, normalmente no más de una vez cada 15 minutos aproximadamente. Los nombres de los avisos se ven en la pantalla bloqueada."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’avviso del luogo viene inviato dopo due rapporti recenti fuori dall’area. In background è iOS a decidere quando aggiornare le posizioni, di solito non più di circa ogni 15 minuti. I nomi negli avvisi sono visibili sulla schermata di blocco."
           }
         }
       }
@@ -2213,40 +2281,6 @@
         }
       }
     },
-    "Błąd dzwonienia: %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ring error: %@"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Klingelfehler: %@"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Erreur de sonnerie : %@"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Error al hacer sonar: %@"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Errore di suoneria: %@"
-          }
-        }
-      }
-    },
     "Błąd listy: %@": {
       "localizations": {
         "en": {
@@ -3365,6 +3399,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "FindHub Android è un’app indipendente e non ufficiale pubblicata da mintstudio. Non è affiliata a Google, Motorola o Apple. Find Hub e Android sono marchi di Google LLC; i nomi servono solo a descrivere la compatibilità."
+          }
+        }
+      }
+    },
+    "FindHub Android — test": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FindHub Android — test"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FindHub Android — test"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FindHub Android — test"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FindHub Android — test"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FindHub Android — test"
           }
         }
       }
@@ -5313,6 +5381,40 @@
         }
       }
     },
+    "Nazwy urządzeń i miejsc w treści": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Device and place names in alerts"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geräte- und Ortsnamen in Mitteilungen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noms des appareils et des lieux dans les alertes"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombres de dispositivos y lugares en los avisos"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nomi di dispositivi e luoghi negli avvisi"
+          }
+        }
+      }
+    },
     "Nie ma już urządzeń do dodania.": {
       "localizations": {
         "en": {
@@ -5819,6 +5921,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Impossibile programmare l’avviso di perdita di connessione."
+          }
+        }
+      }
+    },
+    "Nie udało się zaplanować powiadomienia testowego.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn’t schedule the test notification."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Testmitteilung konnte nicht geplant werden."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de programmer la notification de test."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo programar la notificación de prueba."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile programmare la notifica di prova."
           }
         }
       }
@@ -6855,6 +6991,40 @@
         }
       }
     },
+    "Opuszczenie miejsca": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leaving a place"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verlassen eines Orts"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sortie d’un lieu"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salida de un lugar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uscita da un luogo"
+          }
+        }
+      }
+    },
     "Ostatnia lokalizacja": {
       "localizations": {
         "en": {
@@ -6987,6 +7157,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ultima"
+          }
+        }
+      }
+    },
+    "Otwórz aplikację, aby zobaczyć szczegóły.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open the app to see the details."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffne die App, um die Details zu sehen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvrez l’app pour voir les détails."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre la app para ver los detalles."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apri l’app per vedere i dettagli."
           }
         }
       }
@@ -7807,6 +8011,74 @@
         }
       }
     },
+    "Powiadomienia": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitteilungen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notificaciones"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifiche"
+          }
+        }
+      }
+    },
+    "Powiadomienia działają. Tak będą wyglądać alerty o miejscach i utracie kontaktu.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications work. Place and lost-connection alerts will look like this."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitteilungen funktionieren. So sehen Orts- und Verbindungswarnungen aus."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les notifications fonctionnent. Les alertes de lieu et de perte de connexion ressembleront à ceci."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las notificaciones funcionan. Así se verán los avisos de lugares y de pérdida de conexión."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le notifiche funzionano. Gli avvisi dei luoghi e di perdita di connessione avranno questo aspetto."
+          }
+        }
+      }
+    },
     "Powiadomienia i działanie w tle": {
       "localizations": {
         "en": {
@@ -7841,6 +8113,40 @@
         }
       }
     },
+    "Powiadomienia są wyłączone w ustawieniach iPhone’a — alerty nie przyjdą.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications are turned off in iPhone Settings — alerts won’t arrive."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitteilungen sind in den iPhone-Einstellungen deaktiviert – Warnungen kommen nicht an."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les notifications sont désactivées dans les réglages de l’iPhone — les alertes n’arriveront pas."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las notificaciones están desactivadas en los ajustes del iPhone: no recibirás avisos."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le notifiche sono disattivate nelle impostazioni dell’iPhone: gli avvisi non arriveranno."
+          }
+        }
+      }
+    },
     "Powiadomienia włączone": {
       "localizations": {
         "en": {
@@ -7871,6 +8177,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Notifiche attive"
+          }
+        }
+      }
+    },
+    "Powiadomienie pojawi się za 5 sekund — możesz zablokować telefon.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The notification will appear in 5 seconds — you can lock your phone."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Mitteilung erscheint in 5 Sekunden – du kannst das Telefon sperren."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La notification s’affichera dans 5 secondes — vous pouvez verrouiller votre téléphone."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La notificación aparecerá en 5 segundos; puedes bloquear el teléfono."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La notifica apparirà tra 5 secondi: puoi bloccare il telefono."
           }
         }
       }
@@ -8421,40 +8761,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elaborazione delle chiavi della cassaforte…"
-          }
-        }
-      }
-    },
-    "Przygotowanie kanału powiadomień…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preparing the notification channel…"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mitteilungskanal wird vorbereitet…"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Préparation du canal de notifications…"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preparando el canal de notificaciones…"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preparazione del canale di notifica…"
           }
         }
       }
@@ -9757,6 +10063,40 @@
         }
       }
     },
+    "Urządzenie opuściło miejsce": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A device left a place"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein Gerät hat einen Ort verlassen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un appareil a quitté un lieu"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un dispositivo ha salido de un lugar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un dispositivo ha lasciato un luogo"
+          }
+        }
+      }
+    },
     "Ustalam Twoją lokalizację…": {
       "localizations": {
         "en": {
@@ -10233,6 +10573,40 @@
         }
       }
     },
+    "Utracono kontakt z urządzeniem": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lost contact with a device"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbindung zu einem Gerät verloren"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contact perdu avec un appareil"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se perdió el contacto con un dispositivo"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contatto perso con un dispositivo"
+          }
+        }
+      }
+    },
     "Utracono kontakt — czekam %lld s na ponowne połączenie": {
       "localizations": {
         "en": {
@@ -10297,6 +10671,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Connessione Bluetooth persa. L’oggetto potrebbe essere fuori portata."
+          }
+        }
+      }
+    },
+    "Utrata kontaktu Bluetooth": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lost Bluetooth connection"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bluetooth-Verbindung verloren"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perte de connexion Bluetooth"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pérdida de conexión Bluetooth"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perdita di connessione Bluetooth"
           }
         }
       }
@@ -11083,74 +11491,6 @@
         }
       }
     },
-    "Wysyłam…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sending…"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wird gesendet…"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Envoi…"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enviando…"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Invio…"
-          }
-        }
-      }
-    },
-    "Wysyłanie sygnału dźwiękowego…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sending ring request…"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Klingelanfrage wird gesendet…"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Envoi de la demande de sonnerie…"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enviando la solicitud de sonido…"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Invio della richiesta di suoneria…"
-          }
-        }
-      }
-    },
     "Wysłano komendę dźwięku do najbliższego tagu.": {
       "localizations": {
         "en": {
@@ -11185,36 +11525,36 @@
         }
       }
     },
-    "Wysłano żądanie dzwonienia do: %@": {
+    "Wyślij powiadomienie testowe": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ring request sent to: %@"
+            "value": "Send a test notification"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Klingelanfrage gesendet an: %@"
+            "value": "Testmitteilung senden"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Demande de sonnerie envoyée à : %@"
+            "value": "Envoyer une notification de test"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Solicitud de sonido enviada a: %@"
+            "value": "Enviar notificación de prueba"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Richiesta di suoneria inviata a: %@"
+            "value": "Invia notifica di prova"
           }
         }
       }
@@ -11321,6 +11661,40 @@
         }
       }
     },
+    "Włącz powiadomienia": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on notifications"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitteilungen aktivieren"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activer les notifications"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activar notificaciones"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Attiva notifiche"
+          }
+        }
+      }
+    },
     "Włącz powiadomienia, aby otrzymywać alerty.": {
       "localizations": {
         "en": {
@@ -11419,40 +11793,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fai suonare il più vicino"
-          }
-        }
-      }
-    },
-    "Zadzwoń przez sieć": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ring via network"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Über Netzwerk klingeln"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Faire sonner via le réseau"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hacer sonar por la red"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fai suonare via rete"
           }
         }
       }

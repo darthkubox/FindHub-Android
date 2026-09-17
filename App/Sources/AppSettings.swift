@@ -34,6 +34,9 @@ final class AppSettings: ObservableObject {
         static let diagnostics = "set_showDiagnostics"
         static let namedPlaces = "set_showNamedPlaces"
         static let theme = "set_theme"
+        static let notifyPlaceExit = "set_notifyPlaceExit"
+        static let notifySeparation = "set_notifySeparation"
+        static let notificationDetails = "set_notificationDetails"
     }
 
     /// Defaults new display flags to on; returns stored value otherwise.
@@ -49,6 +52,12 @@ final class AppSettings: ObservableObject {
     @Published var showDiagnostics: Bool { didSet { d.set(showDiagnostics, forKey: K.diagnostics) } }
     @Published var showNamedPlaces: Bool { didSet { d.set(showNamedPlaces, forKey: K.namedPlaces) } }
     @Published var theme: AppTheme { didSet { d.set(theme.rawValue, forKey: K.theme) } }
+    /// Alert when fresh reports confirm a device left one of its places.
+    @Published var notifyPlaceExit: Bool { didSet { d.set(notifyPlaceExit, forKey: K.notifyPlaceExit) } }
+    /// Alert when a confirmed Bluetooth connection to a keep-near device is lost.
+    @Published var notifySeparation: Bool { didSet { d.set(notifySeparation, forKey: K.notifySeparation) } }
+    /// Show device and place names in notifications (visible on the lock screen).
+    @Published var notificationDetails: Bool { didSet { d.set(notificationDetails, forKey: K.notificationDetails) } }
 
     private init() {
         useImperial = d.bool(forKey: K.imperial)          // defaults false
@@ -59,5 +68,8 @@ final class AppSettings: ObservableObject {
         showDiagnostics = Self.flag(K.diagnostics)
         showNamedPlaces = Self.flag(K.namedPlaces)
         theme = AppTheme(rawValue: d.string(forKey: K.theme) ?? "") ?? .system
+        notifyPlaceExit = Self.flag(K.notifyPlaceExit)
+        notifySeparation = Self.flag(K.notifySeparation)
+        notificationDetails = Self.flag(K.notificationDetails)
     }
 }

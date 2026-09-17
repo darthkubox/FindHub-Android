@@ -153,6 +153,8 @@ struct PlaceDetailView: View {
                         .foregroundStyle(M3.onSurfaceVariant(scheme))
                 }
 
+                if !assigned.isEmpty { NotificationPermissionCard() }
+
                 if assigned.isEmpty {
                     Text("Żadne urządzenie nie jest jeszcze przypisane do tego miejsca.")
                         .font(.footnote).foregroundStyle(M3.onSurfaceVariant(scheme))

@@ -15,6 +15,7 @@ final class DeviceProtection: NSObject, ObservableObject {
     @Published private(set) var bluetoothStatus = String(localized: "Pilnowanie Bluetooth wyłączone")
     @Published private(set) var deviceStatus: [String: String] = [:]
     @Published private(set) var notificationsAllowed = false
+    @Published private(set) var authorizationStatus: UNAuthorizationStatus = .notDetermined
     @Published private(set) var notificationMessage: String?
     private let journal = TrackerJournal.shared
     private let notifications = UNUserNotificationCenter.current()
@@ -38,6 +39,7 @@ final class DeviceProtection: NSObject, ObservableObject {
 
     func refreshNotificationPermission() async {
         let settings = await notifications.notificationSettings()
+        authorizationStatus = settings.authorizationStatus
         notificationsAllowed = [.authorized, .provisional, .ephemeral].contains(settings.authorizationStatus)
         notificationMessage = notificationsAllowed ? nil : String(localized: "Włącz powiadomienia, aby otrzymywać alerty.")
     }
@@ -169,14 +171,15 @@ final class DeviceProtection: NSObject, ObservableObject {
 
     private func separation(_ id: String) {
         guard let account = journal.account, journal.device(id).closeDevice,
-              pendingAlerts[id] == nil else { return }
+              AppSettings.shared.notifySeparation, pendingAlerts[id] == nil else { return }
         let record = journal.device(id)
         let requestID = "guardian.separation." + UUID().uuidString
         pendingAlerts[id] = requestID
         deviceStatus[id] = String(localized: "Utracono kontakt — czekam \(Int(record.disconnectDelay)) s na ponowne połączenie")
         let content = UNMutableNotificationContent()
-        content.title = String(localized: "Czy masz przy sobie \(record.name)?")
-        content.body = String(localized: "Utracono połączenie Bluetooth. Przedmiot może być poza zasięgiem.")
+        let text = NotificationText.separation(deviceName: record.name, showDetails: AppSettings.shared.notificationDetails)
+        content.title = text.title
+        content.body = text.body
         content.sound = .default
         content.userInfo = ["account": account, "device": id, "kind": "separation", "scheduledAt": Date().timeIntervalSince1970]
         let request = UNNotificationRequest(identifier: requestID, content: content,
@@ -192,11 +195,13 @@ final class DeviceProtection: NSObject, ObservableObject {
     }
 
     func deliver(_ events: [PlaceExitEvent]) {
-        guard let account = journal.account else { return }
+        guard let account = journal.account, AppSettings.shared.notifyPlaceExit else { return }
         for event in events {
             let content = UNMutableNotificationContent()
-            content.title = String(localized: "\(event.deviceName) poza miejscem: \(event.placeName)")
-            content.body = String(localized: "Dwa raporty potwierdziły pozycję poza obszarem. Ostatni: \(LocationPresentation.fullDate(event.reportedAt)).")
+            let text = NotificationText.placeExit(deviceName: event.deviceName, placeName: event.placeName,
+                                                  reportedAt: event.reportedAt, showDetails: AppSettings.shared.notificationDetails)
+            content.title = text.title
+            content.body = text.body
             content.sound = .default
             content.userInfo = ["account": account, "device": event.deviceID, "kind": "place"]
             let requestID = "guardian.place." + UUID().uuidString
@@ -212,6 +217,21 @@ final class DeviceProtection: NSObject, ObservableObject {
                 } catch { notificationMessage = String(localized: "Nie udało się wysłać powiadomienia o opuszczeniu miejsca.") }
             }
         }
+    }
+
+    /// Schedules a sample alert a few seconds ahead, so the user can lock the phone
+    /// and check that banners, sound and the lock screen really work.
+    func sendTestNotification(after seconds: TimeInterval = 5) async -> Bool {
+        guard await requestNotifications() else { return false }
+        let content = UNMutableNotificationContent()
+        content.title = String(localized: "FindHub Android — test")
+        content.body = String(localized: "Powiadomienia działają. Tak będą wyglądać alerty o miejscach i utracie kontaktu.")
+        content.sound = .default
+        content.userInfo = ["kind": "test"]
+        let request = UNNotificationRequest(identifier: "findhub.test." + UUID().uuidString, content: content,
+                                            trigger: UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false))
+        do { try await notifications.add(request); return true }
+        catch { notificationMessage = String(localized: "Nie udało się zaplanować powiadomienia testowego."); return false }
     }
 
     /// Withdraws pending and already delivered alerts of one account, which may
@@ -316,5 +336,25 @@ extension DeviceProtection: @preconcurrency UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.banner, .sound, .list])
+    }
+}
+
+/// Alert wording, optionally without device and place names, which are otherwise
+/// readable on the lock screen.
+enum NotificationText {
+    static func placeExit(deviceName: String, placeName: String, reportedAt: Date,
+                          showDetails: Bool) -> (title: String, body: String) {
+        guard showDetails else {
+            return (String(localized: "Urządzenie opuściło miejsce"),
+                    String(localized: "Otwórz aplikację, aby zobaczyć szczegóły."))
+        }
+        return (String(localized: "\(deviceName) poza miejscem: \(placeName)"),
+                String(localized: "Dwa raporty potwierdziły pozycję poza obszarem. Ostatni: \(LocationPresentation.fullDate(reportedAt))."))
+    }
+
+    static func separation(deviceName: String, showDetails: Bool) -> (title: String, body: String) {
+        (showDetails ? String(localized: "Czy masz przy sobie \(deviceName)?")
+                     : String(localized: "Utracono kontakt z urządzeniem"),
+         String(localized: "Utracono połączenie Bluetooth. Przedmiot może być poza zasięgiem."))
     }
 }

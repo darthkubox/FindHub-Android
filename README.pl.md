@@ -24,8 +24,9 @@ FindHub Android pozwala użytkownikom iPhone’a zobaczyć tagi Find Hub (np. Mo
 - **Lokalizowanie** taga przez sieć Find Hub; raporty są odszyfrowywane **na iPhonie** (AES-GCM / SECP160r1 + AES-EAX).
 - **Lokalna historia z 7 dni** z uczciwie pokazanymi przerwami (bez zmyślonych punktów trasy).
 - **Miejsca**: dom, praca i inne obszary, z lokalnymi alertami, gdy świeże raporty potwierdzą, że tag opuścił obszar.
-- **Dzwonienie**: przez sieć do wybranego taga albo przez Bluetooth do najbliższego, standardowym dźwiękiem DULT.
+- **Dzwonienie** do najbliższego taga przez Bluetooth, standardowym dźwiękiem DULT.
 - **Alerty o oddaleniu przez Bluetooth** po potwierdzonym połączeniu z tagiem.
+- **Ustawienia powiadomień**: włączanie alertów miejsc i utraty kontaktu, ukrywanie nazw na ekranie blokady, powiadomienie testowe.
 - Własne nazwy, ikony, zdjęcia i notatki, wiele kont Google, jasny i ciemny motyw.
 - **Usuwanie danych konta z telefonu** w Ustawieniach.
 
@@ -37,7 +38,7 @@ FindHub Android pozwala użytkownikom iPhone’a zobaczyć tagi Find Hub (np. Mo
 
 ## Prywatność
 
-Projekt **nie ma żadnego serwera**. Tokeny i klucze szyfrowania zostają w pęku kluczy (Keychain) iPhone’a. Historia, miejsca i notatki są zapisywane lokalnie i wyłączone z kopii zapasowej; własne nazwy, ikony i zdjęcia urządzeń trafiają do zwykłego magazynu aplikacji. Aplikacja łączy się z Google (logowanie, lista urządzeń, raporty lokalizacji, dzwonienie) i Apple (mapy) wyłącznie po to, by działać. Nic nie trafia do mintstudio.
+Projekt **nie ma żadnego serwera**. Tokeny i klucze szyfrowania zostają w pęku kluczy (Keychain) iPhone’a. Historia, miejsca i notatki są zapisywane lokalnie i wyłączone z kopii zapasowej; własne nazwy, ikony i zdjęcia urządzeń trafiają do zwykłego magazynu aplikacji. Aplikacja łączy się z Google (logowanie, lista urządzeń, raporty lokalizacji) i Apple (mapy) wyłącznie po to, by działać. Nic nie trafia do mintstudio.
 
 ## Dokumenty prawne
 

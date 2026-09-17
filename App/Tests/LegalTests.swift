@@ -86,6 +86,7 @@ final class LegalScreensTests: XCTestCase {
             ("account-menu", AnyView(AccountSheet(model: model, onAddAccount: {}, onSettings: {}))),
             ("legal-info", AnyView(NavigationStack { LegalInfoView() })),
             ("licences", AnyView(NavigationStack { LicensesView() })),
+            ("settings", AnyView(SettingsView(model: model, onAddAccount: {}))),
         ]
         for (name, view) in screens {
             window.rootViewController = UIHostingController(rootView: view)
@@ -131,5 +132,18 @@ final class LocalizationTests: XCTestCase {
         XCTAssertEqual(String.localizedStringWithFormat(format, 5), "5 urządzeń")
         XCTAssertEqual(Bundle.main.infoDictionary?["CFBundleDevelopmentRegion"] as? String, "en",
                        "untranslated languages must fall back to English")
+    }
+}
+
+/// Alert wording respects the lock-screen privacy switch.
+final class NotificationSettingsTests: XCTestCase {
+    func testAlertTextHidesNamesWhenRequested() {
+        let date = Date(timeIntervalSince1970: 1_800_000_000)
+        let detailed = NotificationText.placeExit(deviceName: "Portfel", placeName: "Dom", reportedAt: date, showDetails: true)
+        XCTAssertTrue(detailed.title.contains("Portfel") && detailed.title.contains("Dom"))
+        let hidden = NotificationText.placeExit(deviceName: "Portfel", placeName: "Dom", reportedAt: date, showDetails: false)
+        XCTAssertFalse(hidden.title.contains("Portfel") || hidden.title.contains("Dom") || hidden.body.contains("Portfel"))
+        XCTAssertTrue(NotificationText.separation(deviceName: "Klucze", showDetails: true).title.contains("Klucze"))
+        XCTAssertFalse(NotificationText.separation(deviceName: "Klucze", showDetails: false).title.contains("Klucze"))
     }
 }

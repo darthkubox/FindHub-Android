@@ -187,10 +187,10 @@ struct DeviceProtectionView: View {
             }
 
             Section("Powiadomienia i działanie w tle") {
-                if let message = protection.notificationMessage {
+                NotificationPermissionCard(showWhenAllowed: true)
+                if let message = protection.notificationMessage, protection.notificationsAllowed {
                     Text(message).font(.footnote)
-                    Button("Otwórz ustawienia powiadomień") { openSettings() }
-                } else { Label("Powiadomienia włączone", systemImage: "bell.badge") }
+                }
                 Text("Pilnowanie dotyczy aktywnego konta. iOS decyduje, kiedy odświeżyć pozycje w tle, więc alert miejsca może być opóźniony. Ręczne zamknięcie aplikacji może zatrzymać pilnowanie do ponownego otwarcia.")
                     .font(.footnote).foregroundStyle(.secondary)
                 if UIApplication.shared.backgroundRefreshStatus != .available {
@@ -355,7 +355,13 @@ struct PlaceEditor: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Anuluj") { dismiss() } }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Zapisz") { if journal.savePlace(draft) { dismiss() } }
+                    Button("Zapisz") {
+                        if journal.savePlace(draft) {
+                            // Places exist to raise alerts; ask while the intent is fresh.
+                            Task { _ = await DeviceProtection.shared.requestNotifications() }
+                            dismiss()
+                        }
+                    }
                         .fontWeight(.semibold).disabled(!draft.isValid || !pickedCenter)
                 }
             }
@@ -448,5 +454,41 @@ struct PlaceEditor: View {
         else if let area = p.administrativeArea { parts.append(area) }
         if parts.isEmpty, let name = p.name { parts.append(name) }
         return parts.joined(separator: ", ")
+    }
+}
+
+/// Notification permission state with the one action that fixes it: ask when
+/// iOS has not asked yet, or open the app's notification settings when denied.
+struct NotificationPermissionCard: View {
+    @ObservedObject private var protection = DeviceProtection.shared
+    /// Also show a short confirmation when notifications are allowed.
+    var showWhenAllowed = false
+
+    var body: some View {
+        Group {
+            switch protection.authorizationStatus {
+            case .authorized, .provisional, .ephemeral:
+                if showWhenAllowed {
+                    Label("Powiadomienia włączone", systemImage: "bell.badge.fill").foregroundStyle(.green)
+                }
+            case .denied:
+                VStack(alignment: .leading, spacing: 8) {
+                    Label("Powiadomienia są wyłączone w ustawieniach iPhone’a — alerty nie przyjdą.",
+                          systemImage: "bell.slash.fill").foregroundStyle(.orange)
+                    Button("Otwórz ustawienia powiadomień") { Self.openSettings() }
+                }
+            default:
+                VStack(alignment: .leading, spacing: 8) {
+                    Label("Aby dostawać alerty, włącz powiadomienia.", systemImage: "bell.fill")
+                    Button("Włącz powiadomienia") { Task { _ = await protection.requestNotifications() } }
+                }
+            }
+        }
+        .font(.footnote)
+        .task { await protection.refreshNotificationPermission() }
+    }
+
+    static func openSettings() {
+        if let url = URL(string: UIApplication.openNotificationSettingsURLString) { UIApplication.shared.open(url) }
     }
 }

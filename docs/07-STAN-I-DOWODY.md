@@ -124,3 +124,11 @@ Polecenie użytkownika: dokumenty i licencje po polsku i angielsku, aplikacja w 
 - Objaw: w szczegółach urządzenia ostatnia karta („Diagnostyka odczytu”) była ucięta przez dolny pasek nawigacji. Test `ScrollInsetTests` odtworzył to: po przewinięciu do końca treść kończyła się 80 pt pod paskiem, bo ekrany wypchnięte w `NavigationStack` nie dziedziczą rezerwy powłoki.
 - Poprawka: `EnvironmentValues.tabBarReserve` ustawiane w `MainTabsView` i modyfikator `.clearsTabBar()` na ekranach szczegółów urządzenia, historii, pilnowania, listy miejsc i szczegółów miejsca.
 - Weryfikacja: `ScrollInsetTests` PASS (treść kończy się nad paskiem, bez nadmiernej przerwy; zrzut obejrzany), XCTest 9/9, regresje 45, historia 50, build Release PASS.
+
+## Powiadomienia i usunięcie dzwonienia przez sieć — 2026-09-17 (zgłoszenie z telefonu)
+
+- Przyczyna braku powiadomień: zgoda iOS była wymagana tylko w „Pilnowanie urządzenia”. Przypisanie urządzenia do miejsca w zakładce Miejsca (`PlaceAssignment.set`) włączało alerty bez prośby o zgodę, więc iOS ich nie wyświetlał.
+- Teraz: prośba o zgodę przy zapisaniu miejsca i przy przypisaniu urządzenia; `NotificationPermissionCard` (włącz / otwórz ustawienia iOS) w Ustawieniach, liście miejsc, szczegółach miejsca i pilnowaniu urządzenia.
+- Ustawienia → Powiadomienia: przełączniki „Opuszczenie miejsca”, „Utrata kontaktu Bluetooth”, „Nazwy urządzeń i miejsc w treści” (tekst bez nazw na ekranie blokady), „Wyślij powiadomienie testowe” (za 5 s).
+- Usunięto dzwonienie przez sieć (`AppModel.ring`, `Nova.playSound`, przycisk w szczegółach) — nie zostało potwierdzone na urządzeniu. Dzwonienie przez Bluetooth zostaje. Polityka prywatności PL/EN 1.1: bez zapytań o dzwonienie, opis przełącznika nazw w powiadomieniach (zawężenie przetwarzania, bez ponownej akceptacji).
+- Weryfikacja: XCTest 10/10 (nowy `NotificationSettingsTests`, zrzut Ustawień obejrzany), regresje 45, historia 50, build Release PASS, 355 tekstów w 6 językach. Dostarczenia alertu miejsca w tle na telefonie nie potwierdzono — do sprawdzenia przyciskiem testowym i w terenie.

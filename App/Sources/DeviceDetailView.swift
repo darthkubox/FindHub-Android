@@ -89,8 +89,6 @@ struct DeviceDetailView: View {
                 dismiss()
             }
             actionButton("Namierz w pobliżu", "dot.radiowaves.left.and.right") { showFinder = true }
-            actionButton(model.ringingDeviceID == device.id ? "Wysyłam…" : "Zadzwoń przez sieć", "bell.and.waves.left.and.right.fill") { Task { await model.ring(currentDevice) } }
-                .disabled(model.ringingDeviceID != nil)
         }
     }
 

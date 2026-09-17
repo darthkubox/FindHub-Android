@@ -20,7 +20,6 @@ final class AppModel: ObservableObject {
     @Published var status: String = ""
     @Published var isBusy = false
     @Published private(set) var isLocating = false
-    @Published var ringingDeviceID: String?
     @Published var isRingingNearby = false
     @Published var hasE2EE: Bool
     @Published var showingVaultUnlock = false
@@ -125,7 +124,6 @@ final class AppModel: ObservableObject {
         focus = nil; focusToken += 1
         didAutoLocate = false
         isRingingNearby = false
-        ringingDeviceID = nil
         isLocating = false
         isBusy = false
         status = ""
@@ -178,29 +176,6 @@ final class AppModel: ObservableObject {
         if devices.isEmpty { await loadDevices() }
         guard !Task.isCancelled, session == sessionID, !isBusy, !isLocating else { return }
         await locateAll(force: true)
-    }
-
-    /// Ring a tracker. Registers with FCM once (cached), then fires the Nova action.
-    func ring(_ device: TrackerDevice) async {
-        guard Session.shared.masterToken != nil, ringingDeviceID == nil else { return }
-        let session = sessionID
-        ringingDeviceID = device.id
-        defer { if session == sessionID { ringingDeviceID = nil } }
-        do {
-            status = String(localized: "Przygotowanie kanału powiadomień…")
-            let creds = try await FcmRegister.ensureRegistered()
-            guard session == sessionID else { return }
-            let adm = try await currentAdmToken()
-            guard session == sessionID else { return }
-            status = String(localized: "Wysyłanie sygnału dźwiękowego…")
-            try await Nova.playSound(canonicId: device.id, fcmToken: creds.fcmToken, admToken: adm)
-            guard session == sessionID else { return }
-            let ringName = device.name.isEmpty ? String(localized: "(bez nazwy)") : device.name
-            status = String(localized: "Wysłano żądanie dzwonienia do: \(ringName)")
-        } catch {
-            guard session == sessionID else { return }
-            status = String(localized: "Błąd dzwonienia: \(error.localizedDescription)")
-        }
     }
 
     // MARK: - E2EE (M4)

@@ -130,32 +130,6 @@ struct Nova {
     /// Fixed per app run, mirrors the reference client's fmdClientUuid.
     private static let clientID = UUID().uuidString
 
-    /// Ring the tracker (fire-and-forget). Requires an FCM registration token.
-    static func playSound(canonicId: String, fcmToken: String, admToken: String) async throws {
-        var req = ExecuteActionRequest()
-        req.scope.type = .spotDevice
-        req.scope.device.canonicID.id = canonicId
-        req.requestMetadata.type = .spotDevice
-        req.requestMetadata.requestUuid = UUID().uuidString
-        req.requestMetadata.fmdClientUuid = clientID
-        req.requestMetadata.gcmRegistrationID.id = fcmToken
-        req.requestMetadata.unknown = true
-        req.action.startSound.component = .unspecified
-
-        var request = URLRequest(url: URL(string: "https://android.googleapis.com/nova/nbe_execute_action")!)
-        request.httpMethod = "POST"
-        request.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(admToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("en-US", forHTTPHeaderField: "Accept-Language")
-        request.setValue("fmd/20006320; gzip", forHTTPHeaderField: "User-Agent")
-        request.httpBody = try req.serializedData()
-
-        let (_, resp) = try await URLSession.shared.data(for: request)
-        guard let http = resp as? HTTPURLResponse, http.statusCode == 200 else {
-            throw NovaError.http((resp as? HTTPURLResponse)?.statusCode ?? -1)
-        }
-    }
-
     /// Request a location update for a device. The encrypted report is delivered
     /// asynchronously via FCM/MCS push (not in this HTTP response).
     static func sendLocate(canonicId: String, fcmToken: String, requestUuid: String,

@@ -1,6 +1,6 @@
 # Polityka prywatności FindHub Android
 
-Wersja 1, obowiązuje od 17 września 2026 r. To wersja polska; dostępna jest też wersja angielska. W razie rozbieżności rozstrzyga wersja polska w zakresie dopuszczalnym przez prawo.
+Wersja 1.1, obowiązuje od 17 września 2026 r. To wersja polska; dostępna jest też wersja angielska. W razie rozbieżności rozstrzyga wersja polska w zakresie dopuszczalnym przez prawo.
 
 ## 1. Kto odpowiada za aplikację
 
@@ -26,7 +26,7 @@ FindHub Android jest niezależną, nieoficjalną aplikacją. Nie jest powiązana
 - **Pozycja iPhone’a:** używana, gdy aplikacja jest otwarta, do pokazania Cię na mapie, liczenia odległości i tworzenia miejsc. Nie zapisujemy historii Twojej pozycji.
 - **Bluetooth:** wykrywanie pobliskich tagów, dzwonienie i alerty o utracie połączenia. Zapamiętujemy systemowy identyfikator połączonego taga.
 - **Zdjęcia:** tylko zdjęcie, które sam wybierzesz dla urządzenia; zapisujemy jego pomniejszoną kopię. Aplikacja nie ma dostępu do reszty biblioteki.
-- **Powiadomienia:** lokalne alerty tworzone na telefonie, mogą zawierać nazwę urządzenia i miejsca.
+- **Powiadomienia:** lokalne alerty tworzone na telefonie; domyślnie zawierają nazwę urządzenia i miejsca, co można wyłączyć w Ustawieniach → Powiadomienia.
 
 ## 4. Komu przekazywane są dane
 
@@ -34,7 +34,7 @@ FindHub Android jest niezależną, nieoficjalną aplikacją. Nie jest powiązana
 
 - dane logowania wpisywane na stronie Google (logowanie odbywa się na stronie Google; aplikacja nie zapisuje Twojego hasła);
 - tokeny konta, identyfikator urządzenia i dane rejestracji powiadomień push;
-- zapytania o listę urządzeń, o lokalizację i o dzwonienie wraz z identyfikatorami urządzeń;
+- zapytania o listę urządzeń i o ich lokalizację wraz z identyfikatorami urządzeń;
 - Twój adres IP i informacje techniczne połączenia.
 
 Google zwraca listę urządzeń, zaszyfrowane raporty lokalizacji, klucz właściciela w postaci zaszyfrowanej oraz zdjęcia profilu i produktów. Google przetwarza te dane według własnych zasad: https://policies.google.com/privacy

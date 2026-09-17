@@ -24,8 +24,9 @@ FindHub Android lets iPhone users see the Find Hub tags (for example Motorola mo
 - **Locate** a tag through the Find Hub network; reports are decrypted **on the iPhone** (AES-GCM / SECP160r1 + AES-EAX).
 - **7-day local history** with honest gaps (no fabricated route points).
 - **Places**: home, work and other zones, with local alerts when fresh reports confirm a tag left a zone.
-- **Ring**: over the network for a specific tag, or the nearest tag via Bluetooth using the standard DULT non-owner sound.
+- **Ring** the nearest tag via Bluetooth using the standard DULT non-owner sound.
 - **Bluetooth separation alerts** after a confirmed connection to a tag.
+- **Notification settings**: turn place and separation alerts on or off, hide names on the lock screen, send a test notification.
 - Custom names, icons, photos and notes, multiple Google accounts, light and dark mode.
 - **Delete this account's data from the phone** in Settings.
 
@@ -37,7 +38,7 @@ FindHub Android lets iPhone users see the Find Hub tags (for example Motorola mo
 
 ## Privacy
 
-There is **no server** operated by this project. Tokens and encryption keys stay in the iPhone Keychain. History, places and notes are stored locally and excluded from device backups; custom device names, icons and photos are stored in regular app storage. The app contacts Google (sign-in, device list, location reports, ring requests) and Apple (MapKit) only to provide its features. Nothing is sent to mintstudio.
+There is **no server** operated by this project. Tokens and encryption keys stay in the iPhone Keychain. History, places and notes are stored locally and excluded from device backups; custom device names, icons and photos are stored in regular app storage. The app contacts Google (sign-in, device list, location reports) and Apple (MapKit) only to provide its features. Nothing is sent to mintstudio.
 
 ## Legal
 

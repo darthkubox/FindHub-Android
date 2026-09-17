@@ -1,6 +1,6 @@
 # FindHub Android Privacy Policy
 
-Version 1, effective 17 September 2026. This is the English version; a Polish version is also available. If the versions differ, the Polish version prevails to the extent permitted by law.
+Version 1.1, effective 17 September 2026. This is the English version; a Polish version is also available. If the versions differ, the Polish version prevails to the extent permitted by law.
 
 ## 1. Who is responsible for the app
 
@@ -26,7 +26,7 @@ FindHub Android is an independent, unofficial app. It is not affiliated with Goo
 - **iPhone location:** used while the app is open to show you on the map, calculate distances and create places. We do not keep a history of your position.
 - **Bluetooth:** finding nearby trackers, ringing and lost-connection alerts. The system identifier of a connected tracker is remembered.
 - **Photos:** only the photo you choose for a device; a downscaled copy is stored. The app has no access to the rest of your library.
-- **Notifications:** local alerts created on the phone; they may contain device and place names.
+- **Notifications:** local alerts created on the phone; by default they contain device and place names, which you can turn off in Settings → Notifications.
 
 ## 4. Who receives data
 
@@ -34,7 +34,7 @@ FindHub Android is an independent, unofficial app. It is not affiliated with Goo
 
 - the sign-in details you enter on Google’s page (sign-in takes place on Google’s page; the app does not store your password);
 - account tokens, the device identifier and push notification registration data;
-- requests for the device list, locations and ringing, including device identifiers;
+- requests for the device list and device locations, including device identifiers;
 - your IP address and technical connection information.
 
 Google returns the device list, encrypted location reports, the owner key in encrypted form, and profile and product images. Google processes this data under its own policy: https://policies.google.com/privacy
