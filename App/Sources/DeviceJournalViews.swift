@@ -32,6 +32,7 @@ struct DeviceNoteCard: View {
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
+        .labelStyle(.m3Icon)
         .background(M3.surface(scheme), in: RoundedRectangle(cornerRadius: 16))
         .overlay(RoundedRectangle(cornerRadius: 16).stroke(M3.outline(scheme).opacity(0.18), lineWidth: 1))
         .onAppear { noteAccount = journal.account; text = journal.device(deviceID).note }
@@ -494,6 +495,7 @@ struct NotificationPermissionCard: View {
             }
         }
         .font(.footnote)
+        .labelStyle(.m3Icon)
         .padding(.vertical, inCard ? 0 : 4)
         .modifier(CardIf(enabled: inCard && !allowed, scheme: scheme))
         .task { await protection.refreshNotificationPermission() }

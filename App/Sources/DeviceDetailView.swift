@@ -54,6 +54,7 @@ struct DeviceDetailView: View {
                 Spacer(minLength: 20)
             }
             .padding(20)
+            .labelStyle(.m3Icon)
         }
         .background(M3.background(scheme).ignoresSafeArea())
         .navigationTitle(displayName)

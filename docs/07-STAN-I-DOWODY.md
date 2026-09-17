@@ -175,3 +175,9 @@ Polecenie użytkownika: dokumenty i licencje po polsku i angielsku, aplikacja w 
 - Zmienione: Bundle ID `pl.mintstudio.tagpin`, usługa Keychain, identyfikator zadania w tle i przywracania Bluetooth, subsystem logów, moduł i schemat `Tagpin`, `App/Tagpin.xcodeproj`, konto demo `demo@tagpin.invalid`, teksty w aplikacji, dokumenty prawne PL/EN, licencje, README PL/EN, NOTICE, szablony AltStore i notatka dla recenzenta. Repozytorium: `darthkubox/Tagpin`.
 - Skutek dla użytkownika testowego: nowy Bundle ID to nowa instalacja obok starej; trzeba zalogować się ponownie i odblokować klucze. Starą wersję można usunąć.
 - Weryfikacja: regresje 45, historia 50, XCTest 13/13, build Release PASS, katalog 404 tekstów w 6 językach.
+
+## Wyrównanie ikon i mapa — 2026-09-18 (zgłoszenie z telefonu)
+
+- Symbole SF mają różne szerokości, więc tytuły w kartach zaczynały się w różnych miejscach. Nowy `M3IconLabelStyle` (pole ikony 24 pt) zastosowany w szczegółach urządzenia, notatce, karcie zgody na powiadomienia, szczegółach miejsca i szufladzie urządzeń.
+- Mapa urządzeń pokazywała nazwę miejsca dwa razy (pigułka + tytuł MapKit); tytuł ukryty przez `annotationTitles(.hidden)`.
+- Weryfikacja: zrzuty szczegółów urządzenia i mapy obejrzane; XCTest 13/13, regresje 45, historia 50, build Release PASS.

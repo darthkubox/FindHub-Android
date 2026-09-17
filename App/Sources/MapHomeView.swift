@@ -41,10 +41,12 @@ struct MapHomeView: View {
                 ForEach(journal.document.places) { place in
                     MapCircle(center: place.coordinate, radius: place.radius)
                         .foregroundStyle(.green.opacity(0.08)).stroke(.green.opacity(0.5), lineWidth: 1)
+                    // The pill already carries the name; MapKit's own title would repeat it.
                     Annotation(place.name, coordinate: place.coordinate) {
                         Text(place.name).font(.caption2.weight(.medium))
                             .padding(5).background(.regularMaterial, in: Capsule())
                     }
+                    .annotationTitles(.hidden)
                 }
                 if settings.showAccuracy, let id = mapDeviceID, let loc = model.locations[id],
                    let accuracy = loc.accuracyMeters, accuracy > 0 {
@@ -291,6 +293,7 @@ struct MapHomeView: View {
                     }
                 }
                 .padding(.horizontal, 16).padding(.bottom, bottomInset + 24)
+                .labelStyle(.m3Icon)
             }
         }
         .frame(height: height, alignment: .top)

@@ -188,3 +188,21 @@ struct M3FieldStyle: ViewModifier {
 extension View {
     func m3Field() -> some View { modifier(M3FieldStyle()) }
 }
+
+/// SF Symbols differ in width, so titles after them start at different offsets.
+/// Every label inside the app's own cards reserves the same icon box, which puts
+/// the titles on one line.
+struct M3IconLabelStyle: LabelStyle {
+    var width: CGFloat = 24
+    var spacing: CGFloat = 10
+    func makeBody(configuration: Configuration) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: spacing) {
+            configuration.icon.frame(width: width, alignment: .center)
+            configuration.title
+        }
+    }
+}
+
+extension LabelStyle where Self == M3IconLabelStyle {
+    static var m3Icon: M3IconLabelStyle { M3IconLabelStyle() }
+}

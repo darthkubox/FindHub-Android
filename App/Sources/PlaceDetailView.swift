@@ -139,6 +139,7 @@ struct PlaceDetailView: View {
                 .buttonStyle(M3TonalButtonStyle())
             }
             .padding(16)
+            .labelStyle(.m3Icon)
         }
     }
 
@@ -180,6 +181,7 @@ struct PlaceDetailView: View {
                 }
             }
             .padding(16)
+            .labelStyle(.m3Icon)
         }
     }
 
